@@ -1,0 +1,816 @@
+﻿/*----------------------------------------------------------
+The base color for this template is #5c87b2. If you'd like
+to use a different color start by replacing all instances of
+#5c87b2 with your new color.
+----------------------------------------------------------*/
+body
+{
+	background-image: url("../Content/Images/Gradient.jpg");
+	background-color: #8BA1AC;
+	background-repeat: repeat-x;
+	font-size: .75em;
+	font-family: Verdana, Helvetica, Sans-Serif;
+	margin: 0;
+	padding: 0;
+	color: #000;
+}
+
+.unread 
+{
+    padding-right: 3px;
+    font-weight: bold;
+    color: #B00000;
+    background-color: #FFFFFF;
+    border: solid #000000 thin;
+}
+
+a:link
+{
+    color: #034af3;
+    text-decoration: underline;
+}
+a:visited
+{
+    color: #505abc;
+}
+a:hover
+{
+    color: #1d60ff;
+    text-decoration: none;
+}
+a:active
+{
+    color: #12eb87;
+}
+
+p, ul
+{
+    /*margin-bottom: 20px;
+    line-height: 1.6em;*/
+}
+
+/* HEADINGS   
+----------------------------------------------------------*/
+h1, h2, h3, h4, h5, h6
+{
+    font-size: 1.5em;
+    color: #000;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1
+{
+    font-size: 2em;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+h2
+{
+    padding: 0 0 10px 0;
+    /*clear:both;*/
+}
+h3
+{
+    font-size: 1.2em;
+}
+h4
+{
+    font-size: 1.1em;
+}
+h5, h6
+{
+    font-size: 1em;
+}
+
+/* this rule styles <h2> tags that are the 
+first child of the left and right table columns */
+.rightColumn > h1, .rightColumn > h2, .leftColumn > h1, .leftColumn > h2
+{
+    margin-top: 0;
+}
+
+/* PRIMARY LAYOUT ELEMENTS   
+----------------------------------------------------------*/
+
+/* you can specify a greater or lesser percentage for the 
+page width. Or, you can specify an exact pixel width. */
+.page
+{
+    width: 95%;
+    min-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
+
+#header
+{
+	margin: 20px 0px 0px 0px;
+	color: #000;
+	padding: 5px;
+	height: 125px;
+	background-color: #fff;
+	border-right: 1px solid #000050;
+	border-left: 1px solid #000050;
+	border-top: 1px solid #000050;
+}
+
+#header h1
+{
+	font-weight: bold;
+	padding: 5px 0px;
+	margin: 0;
+	color: #000050;
+	border: none;
+	/*line-height: 2em;*/
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 32px !important;
+	float: left;
+}
+
+#menucontainer
+{
+	border-right: 1px solid #000050;
+	border-left: 1px solid #000050;
+	background-color: #fff;
+	padding-top: 5px;
+}
+
+#main
+{
+	border-right: 1px solid #000050;
+	border-left: 1px solid #000050;
+	border-bottom: 1px solid #000050;
+	/*padding: 30px 30px 15px 30px; top, right, bottom, left */
+	padding-left: 30px;
+	background-color: #6264C9;
+	_height: 1px;
+}
+
+#content
+{
+    color: #000;
+    background-color: #fff;
+	margin-left: 209px;
+	padding: 25px 25px 25px 25px;
+	border-left-style: solid;
+	border-left-width: 2px;
+	border-left-color: #2E3192;
+}
+
+#footer
+{
+	clear: both;
+	font-weight: bold;
+    color: #555;
+    padding: 10px 0;
+    text-align: left;
+    line-height: normal;
+    margin: 0;
+    font-size: .9em;
+}
+
+/* TAB MENU   
+----------------------------------------------------------*/
+
+#tabmenu a
+{
+	color: #fff;
+	font-weight: bold;
+	background: #6264C9 url("../Content/images/tab-left.jpg") left top no-repeat;
+	text-decoration: none;
+	padding-left: 15px;
+}
+
+#tabmenu a span
+{
+	background: url("../Content/images/tab-right.jpg") right top no-repeat;
+	padding-right: 15px;
+}
+
+#tabmenu li.selected a, #tabmenu a:hover
+{
+	background: #2E3192 url("../Content/images/tab-left-hover.jpg") left top no-repeat;
+}
+
+#tabmenu li.selected span, #tabmenu a:hover span
+{
+	background: url("../Content/images/tab-right-hover.jpg") right top no-repeat;
+}
+
+#menuborder
+{
+	background: #2E3192;
+	height: 0.5em;
+}
+
+#tabmenu a, #tabmenu a span
+{
+	display: block;
+	float: left;
+}
+
+/* Commented backslash hack hides rule from IE5-Mac \*/ 
+#tabmenu a, #tabmenu a span 
+{ 
+	float: none;
+} 
+/* End IE5-Mac hack */
+
+#tabmenu
+{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	padding-left: 240px;
+}
+
+#tabmenu li
+{
+	float: left;
+	display: block;
+	margin: 0;
+	padding: 0;
+}
+
+
+/* FORM LAYOUT ELEMENTS   
+----------------------------------------------------------*/
+
+fieldset 
+{
+    margin: 1em 0;
+    padding: 1em;
+    border: 1px solid #CCC;
+}
+
+fieldset p 
+{
+    margin: 2px 12px 10px 10px;
+}
+
+legend 
+{
+    font-size: 1.1em;
+    font-weight: 600;
+    padding: 2px 4px 8px 4px;
+}
+
+input[type="text"] 
+{
+    width: 200px;
+    border: 1px solid #CCC;
+}
+
+input[type="password"] 
+{
+    width: 200px;
+    border: 1px solid #CCC;
+}
+
+/* TABLE
+----------------------------------------------------------*/
+
+table 
+{
+  border: solid 1px #e8eef4;
+  border-collapse: collapse;
+}
+
+table td 
+{
+  padding: 5px;   
+  border: solid 1px #e8eef4;
+}
+
+table th
+{
+  padding: 6px 5px;
+  text-align: left;
+  vertical-align: bottom;
+  background-color: #e8eef4;
+  border: solid 1px #e8eef4;
+}
+
+/* MISC  
+----------------------------------------------------------*/
+
+.ColorCoding
+{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.ColorCoding div
+{
+    float: left;
+    margin-right: 10px;
+}
+
+.ColorCoding div div
+{
+    width: 10px; height: 10px;
+}
+
+.right
+{
+    float:right;
+}
+
+.left
+{
+    float:left;
+}
+
+.clear
+{
+    clear: both;
+}
+
+.error
+{
+    color:Red;
+}
+
+div#title
+{
+    display:block;
+    float:left;
+    text-align:left;
+}
+
+#logindisplay
+{
+    font-size:1.1em;
+    display:block;
+    text-align:right;
+    margin:10px;
+    color:#000066;
+}
+
+#logindisplay a:link
+{
+    color: #000066;
+    text-decoration: underline;
+}
+
+#logindisplay a:visited
+{
+    color: #000066;
+    text-decoration: underline;
+}
+
+#logindisplay a:hover
+{
+    color: #000066;
+    text-decoration: none;
+}
+
+/* Styles for Grid */
+
+#subjectcolumn
+{
+	width: 50%;
+}
+
+.gridview
+{
+	width: 100%;
+}
+
+/* Styles for Message Details */
+
+.bold
+{
+    font-weight: bold;
+}
+
+.display-subject
+{
+	font-weight: bold;
+}
+
+.display-user
+{
+	width: 20%;
+	font-size: 8pt;
+}
+
+#LoginForm
+{
+    float:left;
+    max-width: 350px;
+    width: 45%;
+    padding-right: 5px;
+}
+
+#SignUpForm
+{
+    float: left;
+    max-width: 350px;
+    width: 45%;
+}
+
+#loginfields
+{
+    height: 500px;
+}
+
+/* Styles for validation helpers
+-----------------------------------------------------------*/
+.field-validation-error
+{
+    color: #ff0000;
+}
+
+.field-validation-valid
+{
+    display: none;
+}
+
+.input-validation-error
+{
+    border: 1px solid #ff0000;
+    background-color: #ffeeee;
+}
+
+.validation-summary-errors
+{
+    font-weight: bold;
+    color: #ff0000;
+}
+
+.validation-summary-valid
+{
+    display: none;
+}
+
+/* Styles for editor and display helpers
+----------------------------------------------------------*/
+
+.display-field
+{
+    float: left;
+}
+
+.display-label,
+.editor-label,
+.display-field,
+.editor-field
+{
+    margin: 0.5em 0;
+}
+
+.display-label
+{
+	font-weight: bold;
+}
+
+.display-field
+{
+	padding-left: 1em;
+}
+
+.text-box
+{
+    width: 30em;
+}
+
+.text-box.multi-line
+{
+    height: 6.5em;
+}
+
+.tri-state
+{
+    width: 6em;
+}
+
+.categorybanner
+{
+	padding: 10px;
+	background-image: url(../Content/Images/bannergradient.jpg);
+	background-repeat: repeat-x;
+	color:#fff;
+	height:50px;
+}
+
+.categorybanner h2
+{
+    color:#fff;
+}
+
+.categorygridview
+{
+    width: 100%;
+    background-color: #fff;
+}
+
+.categorygridview td
+{
+    /*background-color: #e8eef4;*/
+    min-height: 50px;
+    border: 1px solid #fff;
+}
+
+.Current
+{
+    background-color: Green;
+    color: White;
+    border: 1px solid #000000;
+    font-weight:bold;
+}
+
+.Closed a,
+.Urgent a,
+.Current a
+{
+    color: White;
+}
+
+.Overdue
+{
+    background-color: Yellow;
+    color: Black;
+    border: 1px solid #000000;
+    font-weight:bold;
+}
+
+.Urgent
+{
+    background-color: Maroon;
+    color: White;
+    border: 1px solid #000000;
+    font-weight:bold;
+}
+
+.Closed
+{
+    background-color: #808080;
+    color: #fff;
+    border: 1px solid #000000;
+    font-weight: bold;
+}
+
+.postbanner
+{
+	padding-top: 10px;
+	padding-bottom: 10px;
+	background-image: url(../Content/Images/bannergradient.jpg);
+	background-repeat: repeat-x;
+	color:#fff;
+}
+
+.postbannerLeft
+{
+	float: left;
+}
+
+.postbannerRight
+{
+    padding-top: 3px;
+	float: right;
+	position: relative;
+}
+
+.ImageLink
+{
+	color: #000;
+	font-weight: bold;
+	background-image: url(../Content/Images/button_gradient.jpg);
+	padding: 5px 10px 5px 10px;
+	border: 2px outset #eee;
+}
+
+.ImageLink:link, .ImageLink:visited
+{
+	color:#000;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+.ImageLink:hover
+{
+	border: 2px inset #000080;
+}
+
+.ConfirmationHeading
+{
+	background-color: #2E3192;
+	color:#fff;
+	padding: 5px;
+}
+
+#WarningMessage
+{
+	padding-bottom: 50px;
+}
+
+.sponsor
+{
+	float:left;
+	padding: 5px;
+}
+.sponsor img
+{
+	height: 50px;
+	border: none;
+}
+
+.genericLogo
+{
+    float: left;
+}
+.genericLogo img
+{
+    height: 20px;
+    border: none;
+}
+
+#SponsorContainer
+{
+	float:left;
+}
+
+/* Styles for quicklinks and menus
+----------------------------------------------------------*/
+
+#quicklinks
+{
+    color: #fff;
+	float: left;
+	width: 204px;
+}
+
+.quicklinksheader
+{
+    color: #fff;
+    text-decoration: underline;
+    width: 100%;
+}
+
+#quicklinks ul
+{
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+#quicklinks li
+{
+	display: block;
+	margin: 0;
+	padding: 5px;
+}
+
+#quicklinks a
+{
+    color: #fff;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+#quicklinks a:hover, a.selected
+{
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+#quicklinks h3
+{
+    color: #fff;
+    text-decoration: underline;
+}
+
+.popupEnabled
+{
+    cursor: help;
+    position: relative;
+}
+
+.popup
+{
+    padding: 8px 15px;
+    position: absolute;
+    display: none;
+    color: #000;
+    font-weight: bold;
+    font-size: 9pt;
+    background-color: #e8eef4;
+    border: 1px solid #000;
+    z-index: 99;
+}
+
+.horizontalMenu ul
+{
+    list-style-type: none;
+}
+
+.horizontalMenu li
+{
+    display: inline;
+    list-style-type: none;
+}
+
+.horizontalMenu a
+{
+	font: bold 1.1em "Arial Narrow","Franklin Gothic Medium",Arial;
+	text-decoration: none; padding: .6em; color: Black;
+	border-bottom: 1px solid silver;
+}
+
+.horizontalMenu .menuItemDiv { float:left;}
+
+.horizontalMenu a.selected { background-color: #666; color: White; }
+.horizontalMenu A:hover { background-color: #CCC; }
+.horizontalMenu A.selected:hover { background-color: #666; }
+
+.verticalMenu li
+{
+    list-style-type: none;
+    display: block;
+}
+
+#questionMenu li div.menuItemDiv
+{
+    clear:both;
+    float:left;
+}
+
+#questionMenu li div.menuCountDiv
+{
+    float:right;
+}
+
+/* Styles for Profile and Registration
+----------------------------------------------------------*/
+#profile input, select, textarea
+{
+    font-family: Tahoma, Arial, sans-serif;
+    font-size: 100%;
+    color: #000000;
+}
+
+#profile label
+{
+   display: block;
+   font-weight: bold;
+   padding-bottom: 5px;
+   padding-top: 5px;
+}
+
+#profile .profile-label
+{
+    clear: both;
+    display: block;
+    float: left;
+    padding-right: 5px;
+    width: 150px;
+    text-align: right;
+    font-weight: bold;
+}
+
+#profile .profile-field
+{
+    float: left;
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+
+#UserAgreement
+{
+    padding: 5px 5px 5px 5px;
+    border-style: inset;
+    border-color: Gray;
+    width: 600px;
+    height: 600px;
+    overflow: scroll;
+}
+
+#admin-actions ul
+{
+    list-style-type: none;
+    padding-left: 0;
+}
+
+#admin-actions li
+{
+    display: block;
+    margin-top: 20px;
+}
+
+#admin-actions span
+{
+    margin-left: 8px;
+}
+
+/* Menus */
+
+.actions { white-space: nowrap;}
+DIV.pager { text-align:right; border-top: 2px solid silver; padding: .5em 0 0 0; margin-top: 1em; }
+DIV.pager A { font-size: 1.1em; color: #666; text-decoration: none; padding: 0 .4em 0 .4em; }
+DIV.pager A:hover { background-color: Silver; }
+DIV.pager A.selected { background-color: #353535; color: White; }
+
+DIV.Message { background: gray; color:White; padding: 1em; margin-top:1em; margin-bottom:1em; font-weight: bold; }
+DIV.UsersOnline { background: gray; color:White; padding: 1em; margin-top:1em; margin-bottom:1em; font-weight: bold; }

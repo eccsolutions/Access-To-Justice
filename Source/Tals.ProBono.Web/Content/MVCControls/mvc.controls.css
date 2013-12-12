@@ -1,0 +1,29 @@
+﻿.gridPagerTable
+{
+    cellpadding:0;
+    cellspacing:0;
+    border-style:none;
+    font-family:Arial; 
+    font-size:12px;
+}
+.gridPagerNormalButton { color:Black; }
+
+.gridPagerNormalButton:hover
+{ text-decoration:underline; cursor:pointer; }
+
+.gridPagerSelectedButton
+{
+    color:White;
+    background-image:url(../../Content/MVCControls/Grid/paging_bg.gif); 
+    background-repeat:no-repeat; 
+    background-position:50%;
+}
+
+/*
+.gridPagerSelectedButton:hover
+{ text-decoration:underline; cursor:pointer; }
+*/
+
+.gridPagerEndButtons { color:Red; }
+.gridPagerEndButtons:hover
+{ text-decoration:underline; cursor:pointer; }

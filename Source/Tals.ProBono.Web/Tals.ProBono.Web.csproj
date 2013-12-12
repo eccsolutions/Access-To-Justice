@@ -1,0 +1,654 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9C11EF05-C397-441B-8B6D-60D20BA9DF67}</ProjectGuid>
+    <ProjectTypeGuids>{e53f8fea-eae0-44a6-8774-ffd645390401};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Tals.ProBono.Web</RootNamespace>
+    <AssemblyName>Tals.ProBono.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <UseIISExpress>false</UseIISExpress>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Futures|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE;FUTURES</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Tals.ProBono.Web.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Elmah">
+      <HintPath>..\packages\elmah.corelibrary.1.2.2\lib\Elmah.dll</HintPath>
+    </Reference>
+    <Reference Include="Elmah.Mvc">
+      <HintPath>..\packages\Elmah.MVC.2.0.1\lib\net40\Elmah.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="MvcPaging">
+      <HintPath>..\packages\MvcPaging.2.0.2\lib\net40\MvcPaging.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject">
+      <HintPath>..\lib\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.WebPages, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Infrastructure\Auditor.cs" />
+    <Compile Include="Infrastructure\AuthorizeCurrentUserFilter.cs" />
+    <Compile Include="Infrastructure\DynamicMasterPageFilter.cs" />
+    <Compile Include="Infrastructure\IAuditor.cs" />
+    <Compile Include="Infrastructure\IUserModel.cs" />
+    <Compile Include="Infrastructure\SecurityQuestionFilter.cs" />
+    <Compile Include="Models\AccountInfoViewModel.cs" />
+    <Compile Include="Controllers\NavController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Helpers\EmailAttribute.cs" />
+    <Compile Include="Helpers\jQueryHelpers.cs" />
+    <Compile Include="Helpers\MembershipHelpers.cs" />
+    <Compile Include="Helpers\StringExtensions.cs" />
+    <Compile Include="Infrastructure\CultureHelper.cs" />
+    <Compile Include="Infrastructure\UserModel.cs" />
+    <Compile Include="Models\ProfileModels.cs" />
+    <Compile Include="Models\ProfileType.cs" />
+    <Compile Include="Models\UsersOnlineViewModel.cs" />
+    <Compile Include="Infrastructure\UrlModelBinder.cs" />
+    <Compile Include="Infrastructure\RolesWrapper.cs" />
+    <Compile Include="Models\AccountListViewModel.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\AttorneyController.cs" />
+    <Compile Include="Controllers\RulesController.cs" />
+    <Compile Include="Helpers\ColorCodingHelper.cs" />
+    <Compile Include="Infrastructure\NinjectControllerFactory.cs" />
+    <Compile Include="Models\NavLink.cs" />
+    <Compile Include="Models\QuestionStatuses.cs" />
+    <Compile Include="Models\DetailsPostViewModel.cs" />
+    <Compile Include="Models\DetailsViewModel.cs" />
+    <Compile Include="Models\ResetPasswordViewModel.cs" />
+    <Compile Include="Models\ReturnUrl.cs" />
+    <Compile Include="Reports\DisplayReport.aspx.cs">
+      <DependentUpon>DisplayReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\DisplayReport.aspx.designer.cs">
+      <DependentUpon>DisplayReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\WorkEntriesDetailAll.aspx.cs">
+      <DependentUpon>WorkEntriesDetailAll.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\WorkEntriesDetailAll.aspx.designer.cs">
+      <DependentUpon>WorkEntriesDetailAll.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\WorkEntriesDetailByAttorney.aspx.cs">
+      <DependentUpon>WorkEntriesDetailByAttorney.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\WorkEntriesDetailByAttorney.aspx.designer.cs">
+      <DependentUpon>WorkEntriesDetailByAttorney.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\ReportingController.cs" />
+    <Compile Include="Reports\AttorneyList.aspx.cs">
+      <DependentUpon>AttorneyList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\AttorneyList.aspx.designer.cs">
+      <DependentUpon>AttorneyList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\CategoryList.aspx.cs">
+      <DependentUpon>CategoryList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\CategoryList.aspx.designer.cs">
+      <DependentUpon>CategoryList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ClientList.aspx.cs">
+      <DependentUpon>ClientList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\ClientList.aspx.designer.cs">
+      <DependentUpon>ClientList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\CountyList.aspx.cs">
+      <DependentUpon>CountyList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\CountyList.aspx.designer.cs">
+      <DependentUpon>CountyList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ReportPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Models\AttorneyProfileViewModel.cs" />
+    <Compile Include="Models\EditViewModel.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ClientController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\RequestExtensions.cs" />
+    <Compile Include="Helpers\HtmlExtensions.cs" />
+    <Compile Include="Models\UserProfile.cs" />
+    <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\ReplyViewModel.cs" />
+    <Compile Include="Models\SubscribeViewModel.cs" />
+    <Compile Include="Models\UnsubscribeViewModel.cs" />
+    <Compile Include="Models\WorkEntryViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Views\Home\Index.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Index.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Views\Home\Index.es.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Index.es.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\atd.css" />
+    <Content Include="Content\EmailTemplates\AcceptedAnswer.htm" />
+    <Content Include="Content\EmailTemplates\AccountApproved.htm" />
+    <Content Include="Content\EmailTemplates\ClientReply.htm" />
+    <Content Include="Content\EmailTemplates\Subscription.htm" />
+    <Content Include="Content\EmailTemplates\QuestionAssigned.htm" />
+    <Content Include="Content\EmailTemplates\Subscribed.htm" />
+    <Content Include="Content\EmailTemplates\LawyerRegistration.htm" />
+    <Content Include="Content\EmailTemplates\LawyerReply.htm" />
+    <Content Include="Content\Images\atdbuttontr.gif" />
+    <Content Include="Content\Images\bbcode_images\bold.png" />
+    <Content Include="Content\Images\bbcode_images\clean.png" />
+    <Content Include="Content\Images\bbcode_images\code.png" />
+    <Content Include="Content\Images\bbcode_images\colors.png" />
+    <Content Include="Content\Images\bbcode_images\fonts.png" />
+    <Content Include="Content\Images\bbcode_images\h1.png" />
+    <Content Include="Content\Images\bbcode_images\h2.png" />
+    <Content Include="Content\Images\bbcode_images\h3.png" />
+    <Content Include="Content\Images\bbcode_images\h4.png" />
+    <Content Include="Content\Images\bbcode_images\h5.png" />
+    <Content Include="Content\Images\bbcode_images\h6.png" />
+    <Content Include="Content\Images\bbcode_images\handle.png" />
+    <Content Include="Content\Images\bbcode_images\image.png" />
+    <Content Include="Content\Images\bbcode_images\italic.png" />
+    <Content Include="Content\Images\bbcode_images\link.png" />
+    <Content Include="Content\Images\bbcode_images\list-bullet.png" />
+    <Content Include="Content\Images\bbcode_images\list-item.png" />
+    <Content Include="Content\Images\bbcode_images\list-numeric.png" />
+    <Content Include="Content\Images\bbcode_images\menu.png" />
+    <Content Include="Content\Images\bbcode_images\paragraph.png" />
+    <Content Include="Content\Images\bbcode_images\picture.png" />
+    <Content Include="Content\Images\bbcode_images\preview.png" />
+    <Content Include="Content\Images\bbcode_images\quotes.png" />
+    <Content Include="Content\Images\bbcode_images\stroke.png" />
+    <Content Include="Content\Images\bbcode_images\submenu.png" />
+    <Content Include="Content\Images\bbcode_images\underline.png" />
+    <Content Include="Content\Images\ColorPicker\blank.gif" />
+    <Content Include="Content\Images\ColorPicker\colorpicker_background.png" />
+    <Content Include="Content\Images\ColorPicker\colorpicker_hex.png" />
+    <Content Include="Content\Images\ColorPicker\colorpicker_hsb_b.png" />
+    <Content Include="Content\Images\ColorPicker\colorpicker_hsb_h.png" />
+    <Content Include="Content\Images\ColorPicker\colorpicker_hsb_s.png" />
+    <Content Include="Content\Images\ColorPicker\colorpicker_indic.gif" />
+    <Content Include="Content\Images\ColorPicker\colorpicker_overlay.png" />
+    <Content Include="Content\Images\ColorPicker\colorpicker_rgb_b.png" />
+    <Content Include="Content\Images\ColorPicker\colorpicker_rgb_g.png" />
+    <Content Include="Content\Images\ColorPicker\colorpicker_rgb_r.png" />
+    <Content Include="Content\Images\ColorPicker\colorpicker_select.gif" />
+    <Content Include="Content\Images\ColorPicker\colorpicker_submit.png" />
+    <Content Include="Content\Images\ColorPicker\custom_background.png" />
+    <Content Include="Content\Images\ColorPicker\custom_hex.png" />
+    <Content Include="Content\Images\ColorPicker\custom_hsb_b.png" />
+    <Content Include="Content\Images\ColorPicker\custom_hsb_h.png" />
+    <Content Include="Content\Images\ColorPicker\custom_hsb_s.png" />
+    <Content Include="Content\Images\ColorPicker\custom_indic.gif" />
+    <Content Include="Content\Images\ColorPicker\custom_rgb_b.png" />
+    <Content Include="Content\Images\ColorPicker\custom_rgb_g.png" />
+    <Content Include="Content\Images\ColorPicker\custom_rgb_r.png" />
+    <Content Include="Content\Images\ColorPicker\custom_submit.png" />
+    <Content Include="Content\Images\ColorPicker\select.png" />
+    <Content Include="Content\Images\ColorPicker\select2.png" />
+    <Content Include="Content\Images\ColorPicker\slider.png" />
+    <Content Include="Content\Images\editing.gif" />
+    <Content Include="Content\Images\important.png" />
+    <Content Include="Content\Images\TJC_colorlogo.png" />
+    <Content Include="Content\Images\writing.gif" />
+    <Content Include="Content\MVCControls\Grid\ellipsis-xbl.xml" />
+    <Content Include="Content\MVCControls\Grid\paging_bg.gif" />
+    <Content Include="Content\MVCControls\Grid\paging_bg.png" />
+    <Content Include="Content\MVCControls\Grid\ui-lightness\images\ui-anim_basic_16x16.gif" />
+    <Content Include="Content\MVCControls\Grid\ui-lightness\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="Content\MVCControls\Grid\ui-lightness\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="Content\MVCControls\Grid\ui-lightness\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\MVCControls\Grid\ui-lightness\images\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="Content\MVCControls\Grid\ui-lightness\images\ui-bg_flat_55_fbec88_40x100.png" />
+    <Content Include="Content\MVCControls\Grid\ui-lightness\images\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="Content\MVCControls\Grid\ui-lightness\images\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="Content\MVCControls\Grid\ui-lightness\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\MVCControls\Grid\ui-lightness\images\ui-bg_glass_75_d0e5f5_1x400.png" />
+    <Content Include="Content\MVCControls\Grid\ui-lightness\images\ui-bg_glass_85_dfeffc_1x400.png" />
+    <Content Include="Content\MVCControls\Grid\ui-lightness\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\MVCControls\Grid\ui-lightness\images\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="Content\MVCControls\Grid\ui-lightness\images\ui-bg_gloss-wave_55_5c9ccc_500x100.png" />
+    <Content Include="Content\MVCControls\Grid\ui-lightness\images\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="Content\MVCControls\Grid\ui-lightness\images\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="Content\MVCControls\Grid\ui-lightness\images\ui-bg_inset-hard_100_f5f8f9_1x100.png" />
+    <Content Include="Content\MVCControls\Grid\ui-lightness\images\ui-bg_inset-hard_100_fcfdfd_1x100.png" />
+    <Content Include="Content\MVCControls\Grid\ui-lightness\images\ui-icons_217bc0_256x240.png" />
+    <Content Include="Content\MVCControls\Grid\ui-lightness\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\MVCControls\Grid\ui-lightness\images\ui-icons_228ef1_256x240.png" />
+    <Content Include="Content\MVCControls\Grid\ui-lightness\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\MVCControls\Grid\ui-lightness\images\ui-icons_469bdd_256x240.png" />
+    <Content Include="Content\MVCControls\Grid\ui-lightness\images\ui-icons_6da8d5_256x240.png" />
+    <Content Include="Content\MVCControls\Grid\ui-lightness\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\MVCControls\Grid\ui-lightness\images\ui-icons_d8e7f3_256x240.png" />
+    <Content Include="Content\MVCControls\Grid\ui-lightness\images\ui-icons_ef8c08_256x240.png" />
+    <Content Include="Content\MVCControls\Grid\ui-lightness\images\ui-icons_f9bd01_256x240.png" />
+    <Content Include="Content\MVCControls\Grid\ui-lightness\images\ui-icons_ffd27a_256x240.png" />
+    <Content Include="Content\MVCControls\Grid\ui-lightness\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\MVCControls\Grid\ui-lightness\jquery-ui-1.8.2.custom.css" />
+    <Content Include="Content\MVCControls\Grid\ui.jqgrid.css" />
+    <Content Include="Content\MVCControls\mvc.controls.css" />
+    <Content Include="Content\NewSite.css" />
+    <Content Include="Content\EmailTemplates\ClientRegistration.htm" />
+    <Content Include="Content\ui\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\ui\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\ui\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\ui\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\ui\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\ui\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\ui\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\ui\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\ui\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\ui\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\ui\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\ui\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\ui\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\ui\jquery.ui.accordion.css" />
+    <Content Include="Content\ui\jquery.ui.all.css" />
+    <Content Include="Content\ui\jquery.ui.autocomplete.css" />
+    <Content Include="Content\ui\jquery.ui.base.css" />
+    <Content Include="Content\ui\jquery.ui.button.css" />
+    <Content Include="Content\ui\jquery.ui.core.css" />
+    <Content Include="Content\ui\jquery.ui.datepicker.css" />
+    <Content Include="Content\ui\jquery.ui.dialog.css" />
+    <Content Include="Content\ui\jquery.ui.menu.css" />
+    <Content Include="Content\ui\jquery.ui.progressbar.css" />
+    <Content Include="Content\ui\jquery.ui.resizable.css" />
+    <Content Include="Content\ui\jquery.ui.selectable.css" />
+    <Content Include="Content\ui\jquery.ui.slider.css" />
+    <Content Include="Content\ui\jquery.ui.spinner.css" />
+    <Content Include="Content\ui\jquery.ui.tabs.css" />
+    <Content Include="Content\ui\jquery.ui.theme.css" />
+    <Content Include="Content\ui\jquery.ui.tooltip.css" />
+    <Content Include="Error.htm" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Images\baker_logo.png" />
+    <Content Include="Content\Images\bannergradient.jpg" />
+    <Content Include="Content\Images\button_gradient.jpg" />
+    <Content Include="Content\Images\dell.png" />
+    <Content Include="Content\Images\Gradient.jpg" />
+    <Content Include="Content\Images\loading.gif" />
+    <Content Include="Content\Images\logo.png" />
+    <Content Include="Content\Images\microsoft.png" />
+    <Content Include="Content\Images\postbanner.png" />
+    <Content Include="Content\Images\rte2spchk.gif" />
+    <Content Include="Content\Images\tab-left-hover.jpg" />
+    <Content Include="Content\Images\tab-left.jpg" />
+    <Content Include="Content\Images\tab-right-hover.jpg" />
+    <Content Include="Content\Images\tab-right.jpg" />
+    <Content Include="Content\Images\TN-Justice-logo-1.gif" />
+    <Content Include="Content\Images\TN-Justice-logo-2.gif" />
+    <Content Include="Content\Images\TN-Justice-logo-3.gif" />
+    <Content Include="Content\Images\user_anonymous_64.png" />
+    <Content Include="Content\Images\warning.bmp" />
+    <Content Include="packages.config" />
+    <None Include="Properties\PublishProfiles\Futures.pubxml" />
+    <None Include="Properties\PublishProfiles\Production.pubxml" />
+    <None Include="Referenced Components\Telerik.Web.Mvc.dll" />
+    <Content Include="markitup\bbcode-set-parsed.js" />
+    <Content Include="markitup\colorpicker.js" />
+    <Content Include="markitup\jquery.markitup.pack.js" />
+    <Content Include="markitup\theme.css" />
+    <Content Include="Referenced Components\CodeKicker.BBCode.dll" />
+    <Content Include="Referenced Components\Ninject.dll" />
+    <Content Include="Reports\AttorneyList.aspx" />
+    <Content Include="Reports\CategoryList.aspx" />
+    <Content Include="Reports\ClientList.aspx" />
+    <Content Include="Reports\DisplayReport.aspx" />
+    <Content Include="Reports\CountyList.aspx" />
+    <Content Include="Reports\WorkEntriesDetailAll.aspx" />
+    <Content Include="Reports\WorkEntriesDetailByAttorney.aspx" />
+    <Content Include="Scripts\csshttprequest.js" />
+    <Content Include="Scripts\GoogleAnalytics.js" />
+    <Content Include="Scripts\jquery-1.4.2.js" />
+    <Content Include="Scripts\jquery-1.4.2.min.js" />
+    <Content Include="Scripts\jquery.atd.js" />
+    <Content Include="Scripts\jquery.atd.textarea.js" />
+    <Content Include="Scripts\MVCControls\Grid\grid.jqueryui.js" />
+    <Content Include="Scripts\MVCControls\Grid\grid.locale-en.js" />
+    <Content Include="Scripts\MVCControls\Grid\jquery.jqGrid.min.js" />
+    <Content Include="Scripts\MVCControls\jquery-ui-1.8.2.custom.min.js" />
+    <Content Include="Scripts\MVCControls\mvc.controls.manager.js" />
+    <Content Include="Scripts\uielements.js" />
+    <Content Include="Scripts\ui\jquery.effects.blind.js" />
+    <Content Include="Scripts\ui\jquery.effects.bounce.js" />
+    <Content Include="Scripts\ui\jquery.effects.clip.js" />
+    <Content Include="Scripts\ui\jquery.effects.core.js" />
+    <Content Include="Scripts\ui\jquery.effects.drop.js" />
+    <Content Include="Scripts\ui\jquery.effects.explode.js" />
+    <Content Include="Scripts\ui\jquery.effects.fade.js" />
+    <Content Include="Scripts\ui\jquery.effects.fold.js" />
+    <Content Include="Scripts\ui\jquery.effects.highlight.js" />
+    <Content Include="Scripts\ui\jquery.effects.pulsate.js" />
+    <Content Include="Scripts\ui\jquery.effects.scale.js" />
+    <Content Include="Scripts\ui\jquery.effects.shake.js" />
+    <Content Include="Scripts\ui\jquery.effects.slide.js" />
+    <Content Include="Scripts\ui\jquery.effects.transfer.js" />
+    <Content Include="Scripts\ui\jquery.ui.accordion.js" />
+    <Content Include="Scripts\ui\jquery.ui.autocomplete.js" />
+    <Content Include="Scripts\ui\jquery.ui.button.js" />
+    <Content Include="Scripts\ui\jquery.ui.combobox.js" />
+    <Content Include="Scripts\ui\jquery.ui.core.js" />
+    <Content Include="Scripts\ui\jquery.ui.datepicker.js" />
+    <Content Include="Scripts\ui\jquery.ui.dialog.js" />
+    <Content Include="Scripts\ui\jquery.ui.draggable.js" />
+    <Content Include="Scripts\ui\jquery.ui.droppable.js" />
+    <Content Include="Scripts\ui\jquery.ui.menu.js" />
+    <Content Include="Scripts\ui\jquery.ui.mouse.js" />
+    <Content Include="Scripts\ui\jquery.ui.position.js" />
+    <Content Include="Scripts\ui\jquery.ui.progressbar.js" />
+    <Content Include="Scripts\ui\jquery.ui.resizable.js" />
+    <Content Include="Scripts\ui\jquery.ui.selectable.js" />
+    <Content Include="Scripts\ui\jquery.ui.slider.js" />
+    <Content Include="Scripts\ui\jquery.ui.sortable.js" />
+    <Content Include="Scripts\ui\jquery.ui.spinner.js" />
+    <Content Include="Scripts\ui\jquery.ui.tabs.js" />
+    <Content Include="Scripts\ui\jquery.ui.tooltip.js" />
+    <Content Include="Scripts\ui\jquery.ui.widget.js" />
+    <Content Include="Views\Account\AttorneyFAQ.aspx" />
+    <Content Include="Views\Account\AttorneyUseAgreement.aspx" />
+    <Content Include="Views\Account\AttorneySignUp.aspx" />
+    <Content Include="Views\Account\ForgotPassword.aspx" />
+    <Content Include="Views\Account\ForgotPasswordAnswer.aspx" />
+    <Content Include="Views\Account\QuestionAndAnswerSuccess.aspx" />
+    <Content Include="Views\Account\QuestionAndAnswer.aspx" />
+    <Content Include="Views\Account\ResetPasswordSuccess.aspx" />
+    <Content Include="Views\Account\UseAgreement.aspx" />
+    <Content Include="Views\Account\UseAgreementText.ascx" />
+    <Content Include="Views\Admin\AccountList.aspx" />
+    <Content Include="Views\Admin\UsersOnline.ascx" />
+    <Content Include="Views\Admin\_AccountList.ascx" />
+    <Content Include="Views\Attorney\CategoriesView.ascx" />
+    <Content Include="Views\Attorney\Drafts.aspx" />
+    <Content Include="Views\Category\Edit.aspx" />
+    <Content Include="Views\Category\List.aspx" />
+    <Content Include="Views\Shared\ColorCoding.ascx" />
+    <Content Include="Views\Admin\ConfirmApproval.aspx" />
+    <Content Include="Views\Admin\ConfirmDenial.aspx" />
+    <Content Include="Views\Admin\List.aspx" />
+    <Content Include="Views\Admin\ResetApplication.aspx" />
+    <Content Include="Views\Attorney\List.aspx" />
+    <Content Include="Views\Attorney\AlreadyTaken.aspx" />
+    <Content Include="Views\Attorney\PracticeAreas.aspx" />
+    <Content Include="Views\Attorney\CLEInstructions.ascx" />
+    <Content Include="Views\Attorney\Take.aspx" />
+    <Content Include="Views\Attorney\Unsubscribe.aspx" />
+    <Content Include="Views\Attorney\Subscribe.aspx" />
+    <Content Include="Views\Admin\Edit.aspx" />
+    <Content Include="Views\Attorney\LogHours.aspx" />
+    <Content Include="Views\Attorney\Details.aspx" />
+    <Content Include="Views\Attorney\NoRecords.aspx" />
+    <Content Include="Views\Attorney\NotFound.aspx" />
+    <Content Include="Views\Nav\ListActionButtons.ascx" />
+    <Content Include="Views\Nav\Menu.ascx" />
+    <Content Include="Views\Nav\PostActionsButtons.ascx" />
+    <Content Include="Views\Nav\QuestionActionButtons.ascx" />
+    <Content Include="Views\Shared\CultureChooserUserControl.ascx" />
+    <Content Include="Views\Shared\MarkAsAnswer.aspx" />
+    <Content Include="Views\Client\QuestionSubmitted.aspx" />
+    <Content Include="Views\Home\ApprovalNeeded.aspx" />
+    <Content Include="Views\Home\Help.aspx" />
+    <Content Include="Views\Reporting\Index.aspx" />
+    <Content Include="Views\Rules\CheckRule.aspx" />
+    <Content Include="Views\Rules\Index.aspx" />
+    <Content Include="Views\Rules\NotEligible.aspx" />
+    <Content Include="Views\Account\DisplayAdminActions.ascx" />
+    <Content Include="Views\Shared\EditorTemplates\BoolEditor.ascx" />
+    <Content Include="Views\Shared\EditorTemplates\InvestmentEditor.ascx" />
+    <Content Include="Views\Shared\EditorTemplates\IntegerEditor.ascx" />
+    <Content Include="Views\Shared\EditorTemplates\IncomeEditor.ascx" />
+    <Content Include="Views\Shared\EditorTemplates\UserAgreementEditor.ascx" />
+    <Content Include="Views\Shared\EditorTemplates\CountyEditor.ascx" />
+    <Content Include="Views\Shared\QuestionListView.ascx" />
+    <Content Include="Views\Attorney\Reply.aspx" />
+    <Content Include="Views\Client\Ask.aspx" />
+    <Content Include="Views\Client\Details.aspx" />
+    <Content Include="Views\Client\FollowUp.aspx" />
+    <Content Include="Views\Client\Questions.aspx" />
+    <Content Include="Views\Client\InvalidOwner.aspx" />
+    <Content Include="Views\Client\NoRecords.aspx" />
+    <Content Include="Views\Client\NotFound.aspx" />
+    <Content Include="Views\Client\ReachedMax.aspx" />
+    <Content Include="Views\Shared\ClientProfileDetails.ascx" />
+    <Content Include="Views\Shared\DetailsForm.ascx" />
+    <Content Include="Views\Shared\AttorneyProfileDetails.ascx" />
+    <Content Include="Views\Shared\QuestionList.ascx" />
+    <Content Include="Views\Shared\TranslationControl.ascx" />
+    <Content Include="Views\User\ClientProfile.aspx" />
+    <Content Include="Views\User\DisplayClientProfile.ascx" />
+    <Content Include="Views\User\QuestionHistory.aspx" />
+    <Content Include="Views\User\DisplayAccountInfo.ascx" />
+    <Content Include="Views\User\EditAccountInfo.aspx" />
+    <Content Include="Views\User\Profile.aspx" />
+    <Content Include="Views\User\AttorneyProfile.aspx" />
+    <Content Include="Views\User\DisplayAttorneyProfile.ascx" />
+    <Content Include="Views\User\EditAttorneyProfile.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\jquery-1.4.1.js" />
+    <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\MicrosoftAjax.js" />
+    <Content Include="Scripts\MicrosoftAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.debug.js" />
+    <Content Include="Views\Account\ChangePassword.aspx" />
+    <Content Include="Views\Account\ChangePasswordSuccess.aspx" />
+    <Content Include="Views\Account\SignIn.aspx" />
+    <Content Include="Views\Account\SignUp.aspx" />
+    <Content Include="Views\Home\About.aspx" />
+    <Content Include="Views\Home\Index.aspx" />
+    <Content Include="Views\Shared\Error.aspx" />
+    <Content Include="Views\Shared\SignInUserControl.ascx" />
+    <Content Include="Views\Shared\Site.Master" />
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Views\Shared\Admin.Master" />
+    <Content Include="Views\Shared\Attorney.master" />
+    <Content Include="Views\Shared\Client.master" />
+    <Content Include="Views\Shared\Guest.master" />
+    <Content Include="Web.Futures.config">
+      <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Scripts\jquery-1.4.4.js" />
+    <Content Include="Scripts\jquery-1.4.4-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.4.4.min.js" />
+    <Content Include="Scripts\jquery-ui.js" />
+    <Content Include="Scripts\jquery-ui.min.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="App_Themes\" />
+    <Folder Include="Resources\Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Tals.ProBono.Domain\Tals.ProBono.Domain.csproj">
+      <Project>{71DB39A1-D146-46ED-8EAF-FCAB04BA3202}</Project>
+      <Name>Tals.ProBono.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Views\Home\Index.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Index.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Home\Index.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Index.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes</CustomToolNamespace>
+    </EmbeddedResource>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target> -->
+  <Target Name="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(ProjectDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>34574</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
