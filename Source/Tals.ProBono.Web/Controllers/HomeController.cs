@@ -25,8 +25,6 @@ namespace Tals.ProBono.Web.Controllers
                     return RedirectToAction("ApprovalNeeded");
             }
 
-            ViewData["Message"] = "Welcome to the OnlineTNJustice site!";
-
             return View();
         }
 
