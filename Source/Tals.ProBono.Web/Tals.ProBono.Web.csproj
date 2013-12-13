@@ -286,6 +286,9 @@
     <Content Include="Content\Images\ColorPicker\slider.png" />
     <Content Include="Content\Images\editing.gif" />
     <Content Include="Content\Images\important.png" />
+    <Content Include="Content\Images\sclalogo.gif" />
+    <Content Include="Content\Images\sclalogo.jpg" />
+    <Content Include="Content\Images\sclalogo.png" />
     <Content Include="Content\Images\TJC_colorlogo.png" />
     <Content Include="Content\Images\writing.gif" />
     <Content Include="Content\MVCControls\Grid\ellipsis-xbl.xml" />
@@ -372,9 +375,6 @@
     <Content Include="Content\Images\tab-left.jpg" />
     <Content Include="Content\Images\tab-right-hover.jpg" />
     <Content Include="Content\Images\tab-right.jpg" />
-    <Content Include="Content\Images\TN-Justice-logo-1.gif" />
-    <Content Include="Content\Images\TN-Justice-logo-2.gif" />
-    <Content Include="Content\Images\TN-Justice-logo-3.gif" />
     <Content Include="Content\Images\user_anonymous_64.png" />
     <Content Include="Content\Images\warning.bmp" />
     <Content Include="packages.config" />
