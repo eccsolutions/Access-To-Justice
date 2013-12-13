@@ -1,79 +1,34 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<dynamic>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-    Online Tennessee Justice - Other places to find legal help and information
+    SCLawAnswers – Free Legal Advice & Counsel for South Carolinians
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <h2>
-        Other places to find legal help and information:</h2>
-    <p>
-        <strong>Legal aid programs in Tennessee</strong></p>
-    <p>
-        They give free legal help. Mostly they help people whose income is low for a family
-        of that size. Sometimes they help people no matter how much they make. This is mostly
-        people who are abused or over age 60. They don’t take criminal cases, only cases
-        that you yourself can’t go to jail for.</p>
-    <p>
-        Need a free lawyer? Call one of these offices near you. Don’t know which office
-        to call? Go to <a href="http://www.tennlegalaid.com/LegalSvcs" target="_blank">TennLegalAid.com</a>
-        to find out.</p>
-    <ul>
-        <li><a href="http://www.laet.org/Contact-Us.aspx" target="_blank">Legal Aid of East
-            Tennessee</a></li>
-        <li><a href="http://www.las.org" target="_blank">Legal Aid Society of Middle Tennessee
-            and the Cumberlands</a> or call <strong>1-800-238-1443</strong></li>
-        <li><a href="http://www.wtls.org" target="_blank">West Tennessee Legal Services</a></li>
-        <li><a href="http://www.malsi.org" target="_blank">Memphis Area Legal Services</a></li>
-        <li>Are you a migrant or seasonal worker? Go to <a href="http://www.trla.org" target="_blank">
-            Southern Migrant Legal Services</a> or call <strong>1-888-988-9996</strong>. The
-            website is called TRLA but it is for Tennessee, too.</li>
-    </ul>
-    <p>
-        <strong>Here are some local organizations that can help you:</strong></p>
-    <ul>
-        <li><a href="http://www.chattanoogalaw.org/clips/home" target="_blank">Chattanooga Bar
-            Association Lawyer Referral</a></li>
-        <li><a href="http://www.knoxbar.org/index.php?option=com_content&view=article&id=152&Itemid=124"
-            target="_blank">Knoxville Bar Association Lawyer Referral</a> or call <strong>865-522-7501</strong></li>
-        <li><a href="http://www.memphisbar.org/displaycommon.cfm?an=1&subarticlenbr=35" target="_blank">
-            Memphis Bar Association Lawyer Referral</a></li>
-        <li><a href="http://www.nashvillebar.org/LRISMember.html" target="_blank">Nashville
-            Bar Association Lawyer Referral</a> or call <strong>615-242-6546</strong></li>
-    </ul>
-    <p>
-        <strong>You may find legal help and information at these places:</strong></p>
-    <ul>
-        <li><a href="http://www.tennlegalaid.com/Library" target="_blank">Self-Help Brochures
-            and Pamphlets</a></li>
-        <li><a href="http://www.tsc.state.tn.us/geninfo/Help/selfhelp.htm" target="_blank">How-to
-            Guide to Tennessee Courts</a></li>
-    </ul>
-    <p>
-        <strong>Need help with food, clothing, shelter, medicine or other services?</strong></p>
-    <ul>
-        <li><a href="http://www.tennhelp.com" target="_blank">TennHelp</a></li>
-        <li><a href="http://tn211.mycommunitypt.com" target="_blank">211 Tennessee</a></li>
-    </ul>
-    <p>
-        <strong>If you have a question about the appeal process from a trial court to an appeals
-            court in Tennessee, you may submit your question to "Ask the Clerk" at the following
-            link, and the Clerk of the Appellate Courts of Tennessee will answer your question.</strong></p>
-    <ul>
-        <li><a href="http://www.tncourts.gov/geninfo/ASP/AskClerkResult.asp">Ask the Clerk</a></li>
-    </ul>
-    <p>
-        <strong>Other helpful agencies:</strong></p>
-    <ul>
-        <li><a href="http://www.clcmemphis.com" target="_blank">Community Legal Center</a> (pro
-            bono legal help in Memphis)</li>
-        <li><a href="http://www.selegal.org" target="_blank">Southeast Tennessee Legal Services</a>
-            (legal aid in the Chattanooga area)</li>
-        <li><a href="http://www.tnjustice.org" target="_blank">Tennessee Justice Center</a>
-            (assists low-income people, particularly with health care and public benefit issues)
-            or call <strong>1-877-608-1009</strong></li>
-        <li><a href="http://www.dlactn.org" target="_blank">Disability Law &amp; Advocacy Center
-            of Tennessee</a> (assists clients with mental and physical disabilities) or call
-            <strong>1-800-342-1660</strong></li>
-        <li><a href="http://www.nashvillelawyerreferral.org/modest-means-initiative/">Nashville Modest Means Initiative</a></li>
-    </ul>
+<h2> Other places to find legal help and information:</h2>
+<p><strong>Legal information may be found on the following websites:</strong></p>
+<p><a href="http://www.scbar.org/PublicServices/LawLine.aspx">S.C. Bar – Lawline</a><br>
+    <a href="http://www.sccourts.org/selfHelp/index.cfm">S.C. Supreme Court – Self-Help Resource Center</a><br>
+    <a href="http://scjustice.org/">S.C. Appleseed Legal Justice Center</a><br>
+    <a href="http://www.lawhelp.org/SC/">S.C. Law Help</a></p>
+<br>
+<p><strong>If you need a lawyer:</strong></p>
+<p>S.C. Bar Lawyer Referral Service – 1-800-868-2284 – these lawyers will charge fees to handle your case</p>
+<p> <strong>Legal aid programs in South Carolina</strong></p>
+<p> South Carolina Legal Services - They give free legal help. Mostly they help people whose income is low for a family of that size. They don’t take criminal cases, only cases that you yourself can’t go to jail for. They also only take cases that are on the list of priorities they have set for each year. To find out if you are eligible for help from S.C. Legal Services call the Legal Aid Telephone Intake Service (LATIS) at 1-888-346-5592.</p>
+<p><strong>If you are in Beaufort County, you may also contact <a href="http://.lowcountrylegalaid.org">Low Country Legal Volunteers</a></strong></p>
+<p><strong>In Charleston County you may also contact <a href="http://charlestonbar.org/CM/Custom/Pro-Bono-Legal-Services.asp">Charleston Pro Bono Legal Services</a></strong></p>
+<p><strong>Other organizations that may assist with specific audiences/issues</strong></p>
+<ul>
+  <li><a href="http://www.heirsproperty.org/" target="_blank">S.C. Center for Heirs Property</a></li>
+  <li><a href="http://www.scfathersandfamilies.com/" target="_blank">S.C. Center for Fathers and Families</a></li>
+  <li><a href="http://scvolunteerlawyersforthearts.org/" target="_blank">S.C. Volunteer Lawyers for the Art</a></li>
+  <li><a href="http://pandasc.org/" target="_blank">S.C. Protection and Advocacy for People with Disabilities, Inc.</a></li>
+  <li><a href="http://scvan.org/" target="_blank">S.C. Victim’s Assistance Network</a></li>
+  <li><a href="http://aging.sc.gov/Pages/default.aspx" target="_blank">Lt. Governor’s Office on Aging</a></li>
+  <li><a href="http://www.scb.uscourts.gov/" target="_blank">U. S. Bankruptcy Court</a></li>
+  <li><a href="www.scconsumer.gov" target="_blank">S.C. Department of Consumer Affairs</a></li>
+  <li><a href="http://www.immigrationlawhelp.org/organization.393287-Digna_Ochoa_Center_for_Immigration_Legal_Assistance" target="_blank">Digna Ochoa Center for Immigration Legal Assistance</a></li>
+  <li><a href="http://www.sccatholic.org/catholic-charities/immigration-legal-services" target="_blank">Catholic Charities Immigration Legal Services</a></li>
+</ul>
+<p><strong>For help with a criminal matter, contact the Public Defender in your county.  For a list of Public Defender offices and contact information click <a href="http://www.sccid.sc.gov/">here</a> (link to SCCID site)</strong></p>
 </asp:Content>

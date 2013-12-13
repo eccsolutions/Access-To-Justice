@@ -378,8 +378,8 @@
     <Content Include="Content\Images\user_anonymous_64.png" />
     <Content Include="Content\Images\warning.bmp" />
     <Content Include="packages.config" />
-    <None Include="Properties\PublishProfiles\Futures.pubxml" />
     <None Include="Properties\PublishProfiles\Production.pubxml" />
+    <None Include="Properties\PublishProfiles\Staging.pubxml" />
     <None Include="Referenced Components\Telerik.Web.Mvc.dll" />
     <Content Include="markitup\bbcode-set-parsed.js" />
     <Content Include="markitup\colorpicker.js" />
@@ -558,10 +558,6 @@
     <Content Include="Views\Shared\Attorney.master" />
     <Content Include="Views\Shared\Client.master" />
     <Content Include="Views\Shared\Guest.master" />
-    <Content Include="Web.Futures.config">
-      <DependentUpon>Web.config</DependentUpon>
-      <SubType>Designer</SubType>
-    </Content>
     <Content Include="Scripts\jquery-1.4.4.js" />
     <Content Include="Scripts\jquery-1.4.4-vsdoc.js" />
     <Content Include="Scripts\jquery-1.4.4.min.js" />
@@ -585,6 +581,9 @@
     <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
     <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
     <Content Include="Content\themes\base\jquery-ui.css" />
+    <None Include="Web.Staging.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

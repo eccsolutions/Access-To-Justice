@@ -2,16 +2,16 @@
 
 <%@ Import Namespace="Tals.ProBono.Web.Helpers" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-   SCLawAnswers – Free Legal Advice & Counsel for South Carolinians
+    Online Tennessee Justice – Free Legal Advice & Counsel for Tennesseans
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <h2>
-        Welcome to the SCLawAnswers site!
-    </h2>
+        <%: ViewData["Message"] %></h2>
     <p>
         <%:ViewRes.Index.WelcomeMessage %>
     </p>
-    <h2>How it works</h2>
+    <h2>
+        How it works</h2>
     <ol>
         <li>See if you meet our rules for who we can help. Click on "Rules" at the bottom of
             this page. We will ask about your family, your income and your legal problem. We
