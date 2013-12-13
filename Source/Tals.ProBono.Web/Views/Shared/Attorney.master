@@ -26,6 +26,7 @@
         <%: Html.RoleActionMenuLink("FAQ", "AttorneyFAQ", "Account", UserRoles.Attorney) %>
         <%: Html.RoleActionMenuLink("Home", "ApprovalNeeded", "Home", UserRoles.PendingApproval) %>
         <%: Html.RoleActionMenuLink("Admin View", "List", "Admin", UserRoles.Administrators) %>
+        <%: Html.RoleActionMenuLink("Training/Resource Materials", "Resources", "Attorney", UserRoles.AdministratorsAndAttorny) %>
     </ul>
     </asp:ContentPlaceHolder>
 </asp:Content>

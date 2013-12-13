@@ -458,6 +458,7 @@
     <Content Include="Views\Attorney\Drafts.aspx" />
     <Content Include="Views\Category\Edit.aspx" />
     <Content Include="Views\Category\List.aspx" />
+    <Content Include="Views\Attorney\Resources.aspx" />
     <Content Include="Views\Shared\ColorCoding.ascx" />
     <Content Include="Views\Admin\ConfirmApproval.aspx" />
     <Content Include="Views\Admin\ConfirmDenial.aspx" />

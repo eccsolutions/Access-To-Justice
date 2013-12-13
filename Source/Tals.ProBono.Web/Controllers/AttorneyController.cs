@@ -48,6 +48,11 @@ namespace Tals.ProBono.Web.Controllers
             return View(model);
         }
 
+        public ActionResult Resources()
+        {
+            return View();
+        }
+
         public ViewResult Drafts(int page = 1)
         {
             var posts = _repositories.Posts.Get().AsQueryable().DraftsFor(UserModel.Current.UserName);
