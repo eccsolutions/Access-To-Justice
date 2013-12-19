@@ -36,7 +36,11 @@
 	    });
 	</script>
     <asp:ContentPlaceHolder ID="HeadContent" runat="server" />
-    <meta name="google-translate-customization" content="aa3530a07dbe7217-6312bf287a7c7783-gc8936b4c01e4c8f0-1b" />
+    <% if (Html.IsStaging()) { %>
+        <meta name="google-translate-customization" content="aa3530a07dbe7217-6312bf287a7c7783-gc8936b4c01e4c8f0-1b" />
+    <% } else { %>
+        <meta name="google-translate-customization" content="a37a2f36628211b5-a0ae4b3bd545b88d-g775db2aafeebbdf5-17" />
+    <% } %>
 </head>
 <body>
     <div class="page">
@@ -48,7 +52,7 @@
                 <% Html.RenderPartial("CultureChooserUserControl"); %>
                 <% Html.RenderPartial("SignInUserControl"); %>
                 <p>
-                    <% Html.RenderPartial("TranslationControl"); %>
+                    <!--<% Html.RenderPartial("TranslationControl"); %>-->
                 </p>
             </div>
         </div>
