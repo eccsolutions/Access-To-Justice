@@ -43,7 +43,7 @@ namespace Tals.ProBono.Web.Controllers
                                    makeLink("Queue", "List", null, _questionRepository.Questions.Active().NotTaken().Count()),
                                    makeLink("Taken", "MyTaken", null, _questionRepository.Questions.Active().WithTakenBy(UserModel.Current.UserName).Count()),
                                    makeLink("Urgent", "Urgent", null, _questionRepository.Questions.Active().NotTaken().Urgent().Count()),
-                                   makeLink("Drafts (Coming Soon...)", "Drafts", null, 0)
+                                   //makeLink("Drafts (Coming Soon...)", "Drafts", null, 0)
                                };
 
             return View("Menu", navLinks);
