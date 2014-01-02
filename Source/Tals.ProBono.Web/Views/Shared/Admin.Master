@@ -11,6 +11,7 @@
         <%: Html.ActionMenuItem("Question Management", "List", "Admin") %>
         <%: Html.ActionMenuItem("Account Management", "AccountList", "Admin") %>
         <%: Html.ActionMenuItem("Category Management", "List", "Category") %>
+        <%: Html.ActionMenuItem("County Management", "List", "County") %>
         <%: Html.ActionMenuItem("Reporting", "Index", "Reporting") %>
         <%: Html.ActionMenuItem("Attorney View", "List", "Attorney") %>
     </ul>
