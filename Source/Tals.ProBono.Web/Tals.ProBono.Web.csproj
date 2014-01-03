@@ -238,6 +238,7 @@
     <Content Include="Content\Images\bbcode_images\stroke.png" />
     <Content Include="Content\Images\bbcode_images\submenu.png" />
     <Content Include="Content\Images\bbcode_images\underline.png" />
+    <Content Include="Content\Images\bubble.png" />
     <Content Include="Content\Images\ColorPicker\blank.gif" />
     <Content Include="Content\Images\ColorPicker\colorpicker_background.png" />
     <Content Include="Content\Images\ColorPicker\colorpicker_hex.png" />
@@ -266,6 +267,7 @@
     <Content Include="Content\Images\ColorPicker\slider.png" />
     <Content Include="Content\Images\editing.gif" />
     <Content Include="Content\Images\important.png" />
+    <Content Include="Content\Images\legalservicesstatesupport.png" />
     <Content Include="Content\Images\TJC_colorlogo.png" />
     <Content Include="Content\Images\writing.gif" />
     <Content Include="Content\MVCControls\Grid\ellipsis-xbl.xml" />
@@ -598,6 +600,7 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Index.Designer.cs</LastGenOutput>
       <CustomToolNamespace>ViewRes</CustomToolNamespace>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

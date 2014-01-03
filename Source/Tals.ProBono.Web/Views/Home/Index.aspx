@@ -2,38 +2,31 @@
 
 <%@ Import Namespace="Tals.ProBono.Web.Helpers" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-    Online Tennessee Justice – Free Legal Advice & Counsel for Tennesseans
+    Minnesota Legal Advice Online – Free Legal Advice & Counsel
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <h2>Welcome to the OnlineTNJustice site!</h2>
+    <h2>Welcome to Minnesota Legal Advice Online!</h2>
     <p>
-        <%:ViewRes.Index.WelcomeMessage %>
+        Volunteer lawyers answer your legal questions for free. To use this website, you must first qualify for help.
     </p>
-    <h2>
-        How it works</h2>
+    <h2>How it works</h2>
     <ol>
-        <li>See if you meet our rules for who we can help. Click on "Rules" at the bottom of
-            this page. We will ask about your family, your income and your legal problem. We
-            keep all of your answers secret. The lawyer who answers you will only know your
-            name.</li>
-        <li>If you meet our rules, you pick a name and password to use. This keeps your information
-            secret. Don't give it to anyone else. Write it down and keep it in a safe place.
-            You will need it to see the answer to your question.</li>
-        <li>Sign in and ask your question.</li>
-        <li>If you have a court date, we can't promise you will have an answer before your court
-            date.</li>
-        <li>We will e-mail you when a lawyer answers. Come back to this web site and sign in
-            to read the answer. If the answer isn't clear, you can ask follow-up questions.</li>
+        <li>Click the "New User" button below to find out if you can get help. You will be asked questions about yourself, your income, and your legal problem. All of your answers are secret. Only the lawyer who answers your question will see your name.</li>
+        <li>If you qualify for help, pick out a username and password to use on this website. This keeps your information secret and saves your question.</li>
+        <li>Log in with your username and password.</li>
+        <li>Type in your question. If you have a court date coming up, we can't promise you will get an answer before it.</li>
+        <li>You will get an e-mail when a lawyer answered your question.</li>
+        <li>Log back into this website and read the lawyer’s advice. If it isn't clear, you can ask more questions.</li>
     </ol>
     <p>
-        <span class="bold">First time here?</span> Click on "Rules" below to see if you
-        can use this web site.
+        <%: Html.ImageLink("bubble.png", "New User", "SignUp", "Account") %><br/>
+        <%: Html.ActionLink("New User", "SignUp", "Account", null, new {@class="ImageLinkText"}) %>
     </p>
     <p>
-        <span class="bold">Already met the rules?</span> Click on "See Answers or Ask Questions".
+        Have you been here before? Click the sign in button to see your answer or ask a new question.
     </p>
-    <p style="padding: 30px 0 30px 0;">
-        <%: Html.ActionLink("Rules", "Index", "Rules", null, new {@class="ImageLink"}) %>
-        <%: Html.ActionLink("See Answers or Ask Questions", "Questions", "Client", null, new {@class="ImageLink"}) %>
+    <p>
+        <%: Html.ImageLink("bubble.png", "Sign in", "SignIn", "Account") %><br/>
+        <%: Html.ActionLink("Sign in", "SignIn", "Account", null, new {@class="ImageLinkText"}) %>
     </p>
 </asp:Content>
