@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>DotNetReCaptcha</id>
+    <version>1.0.6.0</version>
+    <title>reCAPTCHA plugin for .NET</title>
+    <authors>Adrian Godong,  Ben Maurer,  Mike Hatalski</authors>
+    <owners>Adrian Godong,  Ben Maurer,  Mike Hatalski</owners>
+    <projectUrl>http://code.google.com/p/recaptcha/</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>This was originally authored by Adrian Godong, but has not been updated to match the source for awhile now. This is the most up to date source as of 9/9/2013.</description>
+    <releaseNotes />
+    <copyright />
+    <language>en-US</language>
+  </metadata>
+</package>

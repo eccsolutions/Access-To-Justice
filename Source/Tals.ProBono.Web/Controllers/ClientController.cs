@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Web.Mvc;
 using System.Web.Security;
+using Recaptcha;
 using Tals.ProBono.Domain.Abstract;
 using Tals.ProBono.Domain.Entities;
 using Tals.ProBono.Domain.Filters;
@@ -75,9 +76,10 @@ namespace Tals.ProBono.Web.Controllers
         // POST: /Client/Create
 
         [HttpPost]
-        public ActionResult Ask(Question question)
+        [RecaptchaControlMvc.CaptchaValidator]
+        public ActionResult Ask(Question question, bool captchaValid, string captchaErrorMessage)
         {
-            if (this.ModelState.IsValid)
+            if (this.ModelState.IsValid && captchaValid)
             {
                 try
                 {
@@ -102,6 +104,11 @@ namespace Tals.ProBono.Web.Controllers
                 {
                     this.ModelState.AddModelError("*", e.Message);
                 }
+            }
+
+            if (!captchaValid)
+            {
+                this.ModelState.AddModelError("*", captchaErrorMessage);
             }
 
             ViewData["categories"] = _questionRepository.Categories;
@@ -138,11 +145,12 @@ namespace Tals.ProBono.Web.Controllers
         // POST: /Client/FollowUp/1
 
         [HttpPost]
-        public ActionResult FollowUp(Post reply, int id)
+        [RecaptchaControlMvc.CaptchaValidator]
+        public ActionResult FollowUp(Post reply, int id, bool captchaValid, string captchaErrorMessage)
         {
             var question = _questionRepository.Questions.WithId(id);
 
-            if (this.ModelState.IsValid)
+            if (this.ModelState.IsValid && captchaValid)
             {
                 try
                 {
@@ -174,6 +182,11 @@ namespace Tals.ProBono.Web.Controllers
                     else
                         this.ModelState.AddModelError("*", e.Message);
                 }
+            }
+
+            if (!captchaValid)
+            {
+                this.ModelState.AddModelError("*", captchaErrorMessage);
             }
 
             return View(new ReplyViewModel(question));

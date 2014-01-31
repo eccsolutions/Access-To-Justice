@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Configuration;
 using System.Web.Mvc;
 using System.Web.Routing;
 using Ninject;
@@ -30,6 +31,9 @@ namespace Tals.ProBono.Web.Infrastructure
     {
         public override void Load()
         {
+            Recaptcha.RecaptchaControlMvc.PrivateKey = ConfigurationManager.AppSettings["ReCaptchaPrivateKey"];
+            Recaptcha.RecaptchaControlMvc.PublicKey = ConfigurationManager.AppSettings["ReCaptchaPublicKey"];
+
             Bind<IQuestionRepository>().To<QuestionRepositorySql>().InRequestScope();
             Bind<IFormsAuthenticationService>().To<FormsAuthenticationService>();
             Bind<IMembershipService>().To<AccountMembershipService>();
