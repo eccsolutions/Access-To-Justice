@@ -547,7 +547,7 @@ div#title
 
 .ImageLink
 {
-	color: #FFFFFF;
+	color: #000;
 	font-weight: bold;
     background-color: #73714b;
 	padding: 5px 10px 5px 10px;
@@ -555,7 +555,7 @@ div#title
 
 .ImageLink:link, .ImageLink:visited
 {
-	color:#FFFFFF;
+	color:#000;
 	text-decoration: none;
 	font-weight: bold;
 }
