@@ -567,7 +567,7 @@ div#title
     border-radius: 8px;
 }
 
-#logindisplay .ImageLinkHeader
+#logindisplay a.ImageLinkHeader
 {
     color: #FFFFFF;
 }
