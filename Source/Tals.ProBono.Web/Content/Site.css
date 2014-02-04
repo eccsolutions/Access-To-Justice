@@ -567,6 +567,11 @@ div#title
     border-radius: 8px;
 }
 
+.ImageLinkHeader
+{
+    color: #FFFFFF;
+}
+
 .ImageLink:link, .ImageLink:visited
 {
 	color:#FFFFFF;
