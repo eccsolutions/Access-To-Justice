@@ -57,14 +57,11 @@ namespace Tals.ProBono.Web.Controllers
         // GET: /Client/Ask
         public ActionResult Ask()
         {
-#if DEBUG
-#else
             if (_questionRepository.Questions.ReachedLimit(UserModel.Current.UserName))
                 return View("ReachedMax");
 
             if (!_eligibilityService.IsEligible(Session.SessionID))
                 return RedirectToAction("Index", "Rules");
-#endif
 
             ViewData["categories"] = _questionRepository.Categories;
 
@@ -77,6 +74,12 @@ namespace Tals.ProBono.Web.Controllers
         [HttpPost]
         public ActionResult Ask(Question question)
         {
+            if (_questionRepository.Questions.ReachedLimit(UserModel.Current.UserName))
+                return View("ReachedMax");
+
+            if (!_eligibilityService.IsEligible(Session.SessionID))
+                return RedirectToAction("Index", "Rules");
+
             if (this.ModelState.IsValid)
             {
                 try
