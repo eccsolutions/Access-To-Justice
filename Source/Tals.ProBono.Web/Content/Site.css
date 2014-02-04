@@ -198,7 +198,7 @@ page width. Or, you can specify an exact pixel width. */
 	list-style: none;
 	padding: 0;
 	margin: 0;
-	padding-left: 240px;
+	padding-left: 229px;
 }
 
 #tabmenu li
@@ -211,6 +211,12 @@ page width. Or, you can specify an exact pixel width. */
     background-color: #bea457;
     width: 115px;
     text-align: center;
+    border-left: solid 1px #927122;
+}
+
+#tabmenu li:first-child
+{
+    border-left: none;
 }
 
 
