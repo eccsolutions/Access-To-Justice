@@ -96,26 +96,6 @@
                 <br />
                 <div style="clear: both">
                 </div>
-                <div class="HelpMessage">
-                    If you have problems navigating the site, or are experiencing problems with the
-                    site, you may contact us at <a href="mailto:help@tals.org">help@tals.org</a>. This
-                    email address is for technical questions or problems only. Legal questions will
-                    not be answered.</div>
-                <div style="clear: both;">
-                    <div class="genericLogo">
-                        <a href="http://www.tnjustice.org" target="_blank">
-                            <img src="<%: Url.Image("TJC_colorlogo.png") %>" alt="Tennessee Justice Center" />
-                        </a>
-                    </div>
-                    <p>
-                        <strong>Note:</strong> This is not the website for the Tennessee Justice Center.
-                        The Tennessee Justice Center is a nonprofit law firm that serves Tennessee families
-                        with various legal needs, with a focus on access to healthcare issues, including
-                        TennCare problems. If you have a problem that you believe the Tennessee Justice
-                        Center might be able to help with, please go to <a href="http://www.tnjustice.org"
-                            target="_blank">www.tnjustice.org</a>.
-                    </p>
-                </div>
             </div>
         </div>
     </div>
