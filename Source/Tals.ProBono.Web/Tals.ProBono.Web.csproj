@@ -78,9 +78,6 @@
     <Reference Include="Ninject">
       <HintPath>..\lib\Ninject.dll</HintPath>
     </Reference>
-    <Reference Include="Recaptcha">
-      <HintPath>..\packages\DotNetReCaptcha.1.0.6.0\lib\net40\Recaptcha.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Web.ApplicationServices" />

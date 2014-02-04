@@ -191,11 +191,5 @@ namespace Tals.ProBono.Web.Helpers
         public static string AttorneyQuestionDetailsLink(this UrlHelper helper, int questionId) {
             return ConfigSettings.SiteUrl.TrimEnd('/') + helper.Action("Details", "Attorney", new { id = questionId });
         }
-
-        public static MvcHtmlString GenerateCaptcha(this HtmlHelper helper)
-        {
-            var html = Recaptcha.RecaptchaControlMvc.GenerateCaptcha(helper);
-            return MvcHtmlString.Create(html);
-        }
     }
 }

@@ -28,9 +28,7 @@
                 <%: Html.TextAreaFor(model => model.Reply.Body, 20, 80, new { @class = "bbcode" })%>
                 <%: Html.ValidationMessageFor(model => model.Reply.Body) %>
             </div>
-            <div class="editor-field">
-                <%: Html.GenerateCaptcha() %>
-            </div>
+
             <%: Html.HiddenFor(model => model.OriginalQuestion.Id) %>
             <p>
                 <%: Html.ActionLink("Cancel", "Questions", "Client", null, new {@class = "ImageLink"}) %>

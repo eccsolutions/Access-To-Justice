@@ -2,7 +2,6 @@
 using System.Linq;
 using System.Web.Mvc;
 using System.Web.Security;
-using Recaptcha;
 using Tals.ProBono.Domain.Abstract;
 using Tals.ProBono.Domain.Entities;
 using Tals.ProBono.Domain.Filters;
@@ -76,10 +75,9 @@ namespace Tals.ProBono.Web.Controllers
         // POST: /Client/Create
 
         [HttpPost]
-        [RecaptchaControlMvc.CaptchaValidator]
-        public ActionResult Ask(Question question, bool captchaValid, string captchaErrorMessage)
+        public ActionResult Ask(Question question)
         {
-            if (this.ModelState.IsValid && captchaValid)
+            if (this.ModelState.IsValid)
             {
                 try
                 {
@@ -104,11 +102,6 @@ namespace Tals.ProBono.Web.Controllers
                 {
                     this.ModelState.AddModelError("*", e.Message);
                 }
-            }
-
-            if (!captchaValid)
-            {
-                this.ModelState.AddModelError("*", captchaErrorMessage);
             }
 
             ViewData["categories"] = _questionRepository.Categories;
@@ -145,12 +138,11 @@ namespace Tals.ProBono.Web.Controllers
         // POST: /Client/FollowUp/1
 
         [HttpPost]
-        [RecaptchaControlMvc.CaptchaValidator]
-        public ActionResult FollowUp(Post reply, int id, bool captchaValid, string captchaErrorMessage)
+        public ActionResult FollowUp(Post reply, int id)
         {
             var question = _questionRepository.Questions.WithId(id);
 
-            if (this.ModelState.IsValid && captchaValid)
+            if (this.ModelState.IsValid)
             {
                 try
                 {
@@ -177,16 +169,8 @@ namespace Tals.ProBono.Web.Controllers
                 }
                 catch (Exception e)
                 {
-                    if (e.InnerException != null)
-                        this.ModelState.AddModelError("*", e.InnerException.Message);
-                    else
-                        this.ModelState.AddModelError("*", e.Message);
+                    this.ModelState.AddModelError("*", e.InnerException != null ? e.InnerException.Message : e.Message);
                 }
-            }
-
-            if (!captchaValid)
-            {
-                this.ModelState.AddModelError("*", captchaErrorMessage);
             }
 
             return View(new ReplyViewModel(question));
