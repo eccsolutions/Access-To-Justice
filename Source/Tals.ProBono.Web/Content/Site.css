@@ -329,20 +329,13 @@ div#title
 
 #logindisplay a:link
 {
-    color: #000066;
-    text-decoration: underline;
+    color: #FFFFFF;
 }
 
 #logindisplay a:visited
 {
     color: #000066;
     text-decoration: underline;
-}
-
-#logindisplay a:hover
-{
-    color: #000066;
-    text-decoration: none;
 }
 
 /* Styles for Grid */
@@ -554,23 +547,22 @@ div#title
 
 .ImageLink
 {
-	color: #000;
+	color: #FFFFFF;
 	font-weight: bold;
-	background-image: url(../Content/Images/button_gradient.jpg);
+    background-color: #73714b;
 	padding: 5px 10px 5px 10px;
-	border: 2px outset #eee;
 }
 
 .ImageLink:link, .ImageLink:visited
 {
-	color:#000;
+	color:#FFFFFF;
 	text-decoration: none;
 	font-weight: bold;
 }
 
 .ImageLink:hover
 {
-	border: 2px inset #000080;
+	background-color: #65633e;
 }
 
 .ConfirmationHeading
