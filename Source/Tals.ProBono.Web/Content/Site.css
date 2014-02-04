@@ -209,6 +209,8 @@ page width. Or, you can specify an exact pixel width. */
 	padding: 0;
     height: 22px;
     background-color: #bea457;
+    width: 115px;
+    text-align: center;
 }
 
 
