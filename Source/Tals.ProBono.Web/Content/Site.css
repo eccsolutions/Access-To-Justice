@@ -329,7 +329,7 @@ div#title
 
 #logindisplay a:link
 {
-    color: #FFFFFF;
+    color: #000000;
 }
 
 #logindisplay a:visited
@@ -547,15 +547,16 @@ div#title
 
 .ImageLink
 {
-	color: #000;
+	color: #FFFFFF;
 	font-weight: bold;
     background-color: #73714b;
 	padding: 5px 10px 5px 10px;
+    border-radius: 8px;
 }
 
 .ImageLink:link, .ImageLink:visited
 {
-	color:#000;
+	color:#FFFFFF;
 	text-decoration: none;
 	font-weight: bold;
 }
