@@ -16,5 +16,5 @@
         [ <%: Html.ActionLink("Sign Out", "SignOut", "Account")%> ]
 <% } } else { %> 
         [ <%: Html.ActionLink("Sign In", "SignIn", "Account") %> ]<br /><br />
-        <%: Html.ActionLink("Lawyers Sign Up!", "AttorneySignUp", "Account", null, new {@class = "ImageLink"}) %>
+        <%: Html.ActionLink("Lawyers Sign Up!", "AttorneySignUp", "Account", null, new {@class = "ImageLink ImageLinkHeader"}) %>
 <% } %>
