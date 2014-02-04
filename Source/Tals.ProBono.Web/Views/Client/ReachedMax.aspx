@@ -10,6 +10,3 @@
     <p>Only three questions may be asked per year.</p>
     <p><%: Html.ActionLink("Back to list", "Questions") %></p>
 </asp:Content>
-
-<asp:Content ID="Content3" ContentPlaceHolderID="QuickLinksContent" runat="server">
-</asp:Content>
