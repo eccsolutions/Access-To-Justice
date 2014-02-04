@@ -110,9 +110,6 @@ page width. Or, you can specify an exact pixel width. */
 	padding: 5px;
 	height: 125px;
 	background-color: #fff;
-	border-right: 1px solid #000050;
-	border-left: 1px solid #000050;
-	border-top: 1px solid #000050;
 }
 
 #header h1
@@ -130,20 +127,17 @@ page width. Or, you can specify an exact pixel width. */
 
 #menucontainer
 {
-	border-right: 1px solid #000050;
-	border-left: 1px solid #000050;
 	background-color: #fff;
 	padding-top: 5px;
 }
 
 #main
 {
-	border-right: 1px solid #000050;
-	border-left: 1px solid #000050;
-	border-bottom: 1px solid #000050;
+    border-left: 11px solid #FFFFFF;
+	border-bottom: 9px solid #FFFFFF;
 	/*padding: 30px 30px 15px 30px; top, right, bottom, left */
-	padding-left: 30px;
-	background-color: #6264C9;
+	padding-left: 19px;
+	background-color: #c5ae62;
 	_height: 1px;
 }
 
@@ -177,30 +171,13 @@ page width. Or, you can specify an exact pixel width. */
 {
 	color: #fff;
 	font-weight: bold;
-	background: #6264C9 url("../Content/images/tab-left.jpg") left top no-repeat;
 	text-decoration: none;
 	padding-left: 15px;
 }
 
-#tabmenu a span
-{
-	background: url("../Content/images/tab-right.jpg") right top no-repeat;
-	padding-right: 15px;
-}
-
-#tabmenu li.selected a, #tabmenu a:hover
-{
-	background: #2E3192 url("../Content/images/tab-left-hover.jpg") left top no-repeat;
-}
-
-#tabmenu li.selected span, #tabmenu a:hover span
-{
-	background: url("../Content/images/tab-right-hover.jpg") right top no-repeat;
-}
-
 #menuborder
 {
-	background: #2E3192;
+	background-color: #c5ae62;
 	height: 0.5em;
 }
 
@@ -231,6 +208,8 @@ page width. Or, you can specify an exact pixel width. */
 	display: block;
 	margin: 0;
 	padding: 0;
+    height: 22px;
+    background-color: #bea457;
 }
 
 
