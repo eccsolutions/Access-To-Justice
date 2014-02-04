@@ -101,6 +101,7 @@ page width. Or, you can specify an exact pixel width. */
     margin-top: 20px;
     box-shadow: 0px 0px 10px #000000;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 1);
+    background-color: #FFFFFF;
 }
 
 #header
@@ -129,6 +130,7 @@ page width. Or, you can specify an exact pixel width. */
 {
 	background-color: #fff;
 	padding-top: 5px;
+    margin-left: 11px;
 }
 
 #main
