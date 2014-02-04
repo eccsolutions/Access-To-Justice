@@ -118,30 +118,6 @@
                 </div>
             </div>
         </div>
-        <div id="footer">
-            <div id="SponsorContainer">
-                <p>
-                    This site made possible through the generous donations of:
-                </p>
-                <% if (Roles.IsUserInRole(UserRoles.Attorney))
-                   { %>
-                <div class="sponsor">
-                    <a href="http://www.bakerdonelson.com" target="_blank">
-                        <img src="<%: Url.Image("baker_logo.png") %>" alt="Bakerdonelson.com" /></a>
-                </div>
-                <% } %>
-                <div class="sponsor">
-                    <a href="http://www.microsoft.com/" target="_blank">
-                        <img src="<%: Url.Image("microsoft.png") %>" alt="Microsoft.com" />
-                    </a>
-                </div>
-                <div class="sponsor">
-                    <a href="http://www.dell.com/" target="_blank">
-                        <img src="<%: Url.Image("dell.png") %>" alt="dell.com" />
-                    </a>
-                </div>
-            </div>
-        </div>
     </div>
 </body>
 </html>

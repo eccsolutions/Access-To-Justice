@@ -5,9 +5,7 @@ to use a different color start by replacing all instances of
 ----------------------------------------------------------*/
 body
 {
-	background-image: url("../Content/Images/Gradient.jpg");
-	background-color: #8BA1AC;
-	background-repeat: repeat-x;
+	background-color: #e5dfcf;
 	font-size: .75em;
 	font-family: Verdana, Helvetica, Sans-Serif;
 	margin: 0;
