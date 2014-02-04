@@ -136,7 +136,7 @@ page width. Or, you can specify an exact pixel width. */
     border-left: 11px solid #FFFFFF;
 	border-bottom: 9px solid #FFFFFF;
 	/*padding: 30px 30px 15px 30px; top, right, bottom, left */
-	padding-left: 19px;
+	padding-left: 21px;
 	background-color: #c5ae62;
 	_height: 1px;
 }
@@ -147,9 +147,6 @@ page width. Or, you can specify an exact pixel width. */
     background-color: #fff;
 	margin-left: 209px;
 	padding: 25px 25px 25px 25px;
-	border-left-style: solid;
-	border-left-width: 2px;
-	border-left-color: #2E3192;
 }
 
 #footer
@@ -315,7 +312,13 @@ div#title
 {
     display:block;
     float:left;
-    text-align:left;
+    text-align: center;
+    width: 204px;
+    margin-left: 32px;
+}
+
+#title > a {
+    display: inline-block;
 }
 
 #logindisplay
