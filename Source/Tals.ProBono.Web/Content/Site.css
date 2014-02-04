@@ -219,6 +219,10 @@ page width. Or, you can specify an exact pixel width. */
     border-left: none;
 }
 
+#tabmenu li:hover {
+    background-color: #73714b;
+}
+
 
 /* FORM LAYOUT ELEMENTS   
 ----------------------------------------------------------*/
