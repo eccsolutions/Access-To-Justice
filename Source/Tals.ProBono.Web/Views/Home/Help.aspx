@@ -35,9 +35,17 @@
  
     <p>
         <a href="http://www.alabar.org/members/vlp.cfm">Alabama State Bar Volunteer Lawyers Program</a> helps people in any county EXCEPT Baldwin, Clarke, Madison, Mobile or Washington.  Telephone: 1-888-857-8571
+    </p>
+    <p>
         <a href="http://www.vlpbirmingham.org/get-help">Birmingham Volunteer Lawyers Program</a> helps people in the Birmingham metropolitan area.  Telephone: 1-205-250-5198
+    </p>
+    <p>
         <a href="http://vlpmadisoncounty.com/contact-us/">Madison County Volunteer Lawyers Program</a> helps people in Madison County.  Telephone: 1-256-539-2275
+    </p>
+    <p>
         Montgomery County Volunteer Lawyers Program helps people in Montgomery County.  Email Mike Martin at <a href="mailto:mikem36111@yahoo.com">mikem36111@yahoo.com</a>
+    </p>
+    <p>
         <a href="http://www.savlp.org/">South Alabama Volunteer Lawyers Program</a> helps people in Mobile, Baldwin, Washington or Clarke Counties.  Telephone: 1-251-438-1102
     </p>
  
