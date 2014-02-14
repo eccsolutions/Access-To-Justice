@@ -1,79 +1,58 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<dynamic>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-    Online Tennessee Justice - Other places to find legal help and information
+    Online Alabama Justice - Other places to find legal help and information
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+    <h1>
+        Other places to find legal help and information:
+    </h1>
+    <p>Find statewide information about how to find a lawyer, how pro bono works, and where to get help near you on the <a href="http://www.alabamaatj.org/i-need-help/">Alabama Access to Justice Commission</a> website.
+    </p>
+ 
     <h2>
-        Other places to find legal help and information:</h2>
+        Legal Services Alabama (LSA)
+    </h2>
     <p>
-        <strong>Legal aid programs in Tennessee</strong></p>
+        Legal Services Alabama is a nonprofit organization with offices across the state that give free legal help in civil cases to people in Alabama who cannot pay for a lawyer.
+        </p>
+ 
     <p>
-        They give free legal help. Mostly they help people whose income is low for a family
-        of that size. Sometimes they help people no matter how much they make. This is mostly
-        people who are abused or over age 60. They don’t take criminal cases, only cases
-        that you yourself can’t go to jail for.</p>
+        To apply for Legal Services Alabama call the statewide intake hotline: 
+        Toll Free: 1-866-456-4995
+        En Español: 1-888-835-3505
+        OR
+        Go to <a href="http://www.legalservicesalabama.org/">LSA’s website</a> to apply on line 
+    </p>
+
+    <h2>
+        Volunteer Lawyer Programs
+    </h2>
+
     <p>
-        Need a free lawyer? Call one of these offices near you. Don’t know which office
-        to call? Go to <a href="http://www.tennlegalaid.com/LegalSvcs" target="_blank">TennLegalAid.com</a>
-        to find out.</p>
-    <ul>
-        <li><a href="http://www.laet.org/Contact-Us.aspx" target="_blank">Legal Aid of East
-            Tennessee</a></li>
-        <li><a href="http://www.las.org" target="_blank">Legal Aid Society of Middle Tennessee
-            and the Cumberlands</a> or call <strong>1-800-238-1443</strong></li>
-        <li><a href="http://www.wtls.org" target="_blank">West Tennessee Legal Services</a></li>
-        <li><a href="http://www.malsi.org" target="_blank">Memphis Area Legal Services</a></li>
-        <li>Are you a migrant or seasonal worker? Go to <a href="http://www.trla.org" target="_blank">
-            Southern Migrant Legal Services</a> or call <strong>1-888-988-9996</strong>. The
-            website is called TRLA but it is for Tennessee, too.</li>
-    </ul>
+        Alabama has five volunteer lawyers programs.  These programs help low-income Alabamians find a lawyer who will volunteer to help them with their legal issue for free.  
+    </p>
+ 
     <p>
-        <strong>Here are some local organizations that can help you:</strong></p>
-    <ul>
-        <li><a href="http://www.chattanoogalaw.org/clips/home" target="_blank">Chattanooga Bar
-            Association Lawyer Referral</a></li>
-        <li><a href="http://www.knoxbar.org/index.php?option=com_content&view=article&id=152&Itemid=124"
-            target="_blank">Knoxville Bar Association Lawyer Referral</a> or call <strong>865-522-7501</strong></li>
-        <li><a href="http://www.memphisbar.org/displaycommon.cfm?an=1&subarticlenbr=35" target="_blank">
-            Memphis Bar Association Lawyer Referral</a></li>
-        <li><a href="http://www.nashvillebar.org/LRISMember.html" target="_blank">Nashville
-            Bar Association Lawyer Referral</a> or call <strong>615-242-6546</strong></li>
-    </ul>
+        <a href="http://www.alabar.org/members/vlp.cfm">Alabama State Bar Volunteer Lawyers Program</a> helps people in any county EXCEPT Baldwin, Clarke, Madison, Mobile or Washington.  Telephone: 1-888-857-8571
+        <a href="http://www.vlpbirmingham.org/get-help">Birmingham Volunteer Lawyers Program</a> helps people in the Birmingham metropolitan area.  Telephone: 1-205-250-5198
+        <a href="http://vlpmadisoncounty.com/contact-us/">Madison County Volunteer Lawyers Program</a> helps people in Madison County.  Telephone: 1-256-539-2275
+        Montgomery County Volunteer Lawyers Program helps people in Montgomery County.  Email Mike Martin at <a href="mailto:mikem36111@yahoo.com">mikem36111@yahoo.com</a>
+        <a href="http://www.savlp.org/">South Alabama Volunteer Lawyers Program</a> helps people in Mobile, Baldwin, Washington or Clarke Counties.  Telephone: 1-251-438-1102
+    </p>
+ 
+    <h2>
+        Lawyer Referral Services
+    </h2>
     <p>
-        <strong>You may find legal help and information at these places:</strong></p>
-    <ul>
-        <li><a href="http://www.tennlegalaid.com/Library" target="_blank">Self-Help Brochures
-            and Pamphlets</a></li>
-        <li><a href="http://www.tsc.state.tn.us/geninfo/Help/selfhelp.htm" target="_blank">How-to
-            Guide to Tennessee Courts</a></li>
-    </ul>
+        Lawyer referral services are free services that help people who can pay for a lawyer. 
+    </p>
     <p>
-        <strong>Need help with food, clothing, shelter, medicine or other services?</strong></p>
-    <ul>
-        <li><a href="http://www.tennhelp.com" target="_blank">TennHelp</a></li>
-        <li><a href="http://tn211.mycommunitypt.com" target="_blank">211 Tennessee</a></li>
-    </ul>
+        <a href="http://www.alabar.org/lrs/">Alabama State Bar Lawyer Referral Service</a>
+    </p>
     <p>
-        <strong>If you have a question about the appeal process from a trial court to an appeals
-            court in Tennessee, you may submit your question to "Ask the Clerk" at the following
-            link, and the Clerk of the Appellate Courts of Tennessee will answer your question.</strong></p>
-    <ul>
-        <li><a href="http://www.tncourts.gov/geninfo/ASP/AskClerkResult.asp">Ask the Clerk</a></li>
-    </ul>
-    <p>
-        <strong>Other helpful agencies:</strong></p>
-    <ul>
-        <li><a href="http://www.clcmemphis.com" target="_blank">Community Legal Center</a> (pro
-            bono legal help in Memphis)</li>
-        <li><a href="http://www.selegal.org" target="_blank">Southeast Tennessee Legal Services</a>
-            (legal aid in the Chattanooga area)</li>
-        <li><a href="http://www.tnjustice.org" target="_blank">Tennessee Justice Center</a>
-            (assists low-income people, particularly with health care and public benefit issues)
-            or call <strong>1-877-608-1009</strong></li>
-        <li><a href="http://www.dlactn.org" target="_blank">Disability Law &amp; Advocacy Center
-            of Tennessee</a> (assists clients with mental and physical disabilities) or call
-            <strong>1-800-342-1660</strong></li>
-        <li><a href="http://www.nashvillelawyerreferral.org/modest-means-initiative/">Nashville Modest Means Initiative</a></li>
-    </ul>
+        <a href="http://www.birminghambar.org/displaycommon.cfm?an=1&subarticlenbr=10">Birmingham Bar Association Lawyer Referral Service</a>
+    </p>
+
+
 </asp:Content>

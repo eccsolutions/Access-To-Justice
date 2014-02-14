@@ -3,7 +3,7 @@
 <%@ Import Namespace="Tals.ProBono.Web.Helpers" %>
 
 <asp:Content ID="aboutTitle" ContentPlaceHolderID="TitleContent" runat="server">
-    Online Tennessee Justice - About Us
+    Online Alabama Justice - About Us
 </asp:Content>
 <asp:Content ID="aboutContent" ContentPlaceHolderID="MainContent" runat="server">
     <h2>
