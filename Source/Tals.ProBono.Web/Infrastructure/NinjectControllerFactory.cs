@@ -41,6 +41,7 @@ namespace Tals.ProBono.Web.Infrastructure
             Bind(typeof(IRepository<>)).To(typeof(EntityRepository<>)).InRequestScope();
             Bind<IUser>().ToMethod(x => UserModel.Current);
             Bind<IAuditor>().To<Auditor>();
+            Bind<ICountyRepository>().To<CountyRepositorySql>();
         }
     }
 }

@@ -19,6 +19,10 @@ namespace Tals.ProBono.Domain.Concrete
         public QuestionRepositorySql()
         {
             _container = new LegalAdviceContainer();
+            if (!_container.DatabaseExists())
+            {
+                _container.CreateDatabase();
+            }
         }
 
         public IQueryable<Question> Questions

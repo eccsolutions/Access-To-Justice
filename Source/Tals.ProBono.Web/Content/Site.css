@@ -108,11 +108,11 @@ page width. Or, you can specify an exact pixel width. */
 	margin: 20px 0px 0px 0px;
 	color: #000;
 	padding: 5px;
-	height: 125px;
+	height: 233px;
 	background-color: #fff;
-	border-right: 1px solid #000050;
-	border-left: 1px solid #000050;
-	border-top: 1px solid #000050;
+	border-right: 1px solid #4A494A;
+	border-left: 1px solid #4A494A;
+	border-top: 1px solid #4A494A;
 }
 
 #header h1
@@ -120,7 +120,7 @@ page width. Or, you can specify an exact pixel width. */
 	font-weight: bold;
 	padding: 5px 0px;
 	margin: 0;
-	color: #000050;
+	color: #4A494A;
 	border: none;
 	/*line-height: 2em;*/
 	font-family: Arial, Helvetica, sans-serif;
@@ -130,21 +130,19 @@ page width. Or, you can specify an exact pixel width. */
 
 #menucontainer
 {
-	border-right: 1px solid #000050;
-	border-left: 1px solid #000050;
+	border-right: 1px solid #4A494A;
+	border-left: 1px solid #4A494A;
 	background-color: #fff;
 	padding-top: 5px;
 }
 
-#main
-{
-	border-right: 1px solid #000050;
-	border-left: 1px solid #000050;
-	border-bottom: 1px solid #000050;
-	/*padding: 30px 30px 15px 30px; top, right, bottom, left */
-	padding-left: 30px;
-	background-color: #6264C9;
-	_height: 1px;
+#main {
+    border-right: 1px solid #4A494A;
+    border-left: 1px solid #4A494A;
+    border-bottom: 1px solid #4A494A; /*padding: 30px 30px 15px 30px; top, right, bottom, left */
+    padding-left: 30px; /*background-color: #6264C9;*/
+    _height: 1px;
+    background-color: #737573;
 }
 
 #content
@@ -155,7 +153,7 @@ page width. Or, you can specify an exact pixel width. */
 	padding: 25px 25px 25px 25px;
 	border-left-style: solid;
 	border-left-width: 2px;
-	border-left-color: #2E3192;
+	border-left-color: #4A494A;
 }
 
 #footer
@@ -173,34 +171,36 @@ page width. Or, you can specify an exact pixel width. */
 /* TAB MENU   
 ----------------------------------------------------------*/
 
-#tabmenu a
-{
-	color: #fff;
-	font-weight: bold;
-	background: #6264C9 url("../Content/images/tab-left.jpg") left top no-repeat;
-	text-decoration: none;
-	padding-left: 15px;
+#tabmenu a {
+    color: #fff;
+    font-weight: bold;
+    background: #737573;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    text-decoration: none;
+    padding-left: 15px;
 }
 
 #tabmenu a span
 {
-	background: url("../Content/images/tab-right.jpg") right top no-repeat;
 	padding-right: 15px;
 }
 
-#tabmenu li.selected a, #tabmenu a:hover
-{
-	background: #2E3192 url("../Content/images/tab-left-hover.jpg") left top no-repeat;
+#tabmenu li.selected a, #tabmenu a:hover {
+    background: #4A494A;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
-#tabmenu li.selected span, #tabmenu a:hover span
+/*#tabmenu li.selected span, #tabmenu a:hover span
 {
-	background: url("../Content/images/tab-right-hover.jpg") right top no-repeat;
-}
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}*/
 
 #menuborder
 {
-	background: #2E3192;
+	background: #4A494A;
 	height: 0.5em;
 }
 
@@ -231,6 +231,7 @@ page width. Or, you can specify an exact pixel width. */
 	display: block;
 	margin: 0;
 	padding: 0;
+    padding-left: 1px;
 }
 
 
@@ -573,6 +574,21 @@ div#title
 	position: relative;
 }
 
+.ImageLinkText {
+    font-family: Verdana, sans-serif;
+    font-size: 11pt;
+    font-weight: bold;
+}
+
+.ImageLinkText:link, .ImageLinkText:visited {
+    text-decoration: none;
+    color: #000;
+}
+
+.CenteredText {
+    text-align: center;
+}
+
 .ImageLink
 {
 	color: #000;
@@ -623,7 +639,7 @@ div#title
 }
 .genericLogo img
 {
-    height: 20px;
+    height: 75px;
     border: none;
 }
 

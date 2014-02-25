@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Management;
 using System.Web.Mvc;
 using Tals.ProBono.Domain.Services;
 using Tals.ProBono.Web.Helpers;
@@ -15,6 +16,11 @@ namespace Tals.ProBono.Web.Controllers
     {
         public ActionResult Index()
         {
+#if DEBUG
+            SqlServices.Install("localhost\\sqlexpress", "AccessToJusticeServices", SqlFeatures.All);
+#else
+            SqlServices.Install("localhost\\MLSC", "AccessToJusticeServices", SqlFeatures.All);
+#endif
             if(Request.IsAuthenticated)
             {
                 if (User.IsInRole(UserRoles.Administrators) || User.IsInRole(UserRoles.Attorney))

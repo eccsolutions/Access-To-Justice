@@ -82,7 +82,6 @@
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="CountyName" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="RegionId" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="WorkEntries">
     <Key>
@@ -318,7 +317,6 @@
           <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Type="String" Name="CountyName" Nullable="false" />
           <NavigationProperty Name="Questions" Relationship="LegalAdvice.CountyQuestion" FromRole="County" ToRole="Question" />
-          <Property Type="Int32" Name="RegionId" Nullable="false" />
         </EntityType>
         <Association Name="CountyQuestion">
           <End Type="LegalAdvice.County" Role="County" Multiplicity="1" />
@@ -472,7 +470,6 @@
         <MappingFragment StoreEntitySet="Counties">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="CountyName" ColumnName="CountyName" />
-          <ScalarProperty Name="RegionId" ColumnName="RegionId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -575,7 +572,7 @@
           <ConnectorPoint PointX="6.625" PointY="3.3561612955729165" />
           <ConnectorPoint PointX="2" PointY="3.3561612955729165" />
         </AssociationConnector>
-        <EntityTypeShape EntityType="LegalAdvice.County" Width="1.5" PointX="4.25" PointY="0.5" Height="0.4" IsExpanded="false" />
+        <EntityTypeShape EntityType="LegalAdvice.County" Width="1.5" PointX="4.25" PointY="0.5" Height="0.4" IsExpanded="true" />
         <AssociationConnector Association="LegalAdvice.CountyQuestion">
           <ConnectorPoint PointX="5" PointY="0.9" />
           <ConnectorPoint PointX="5" PointY="3.052925966796876" />

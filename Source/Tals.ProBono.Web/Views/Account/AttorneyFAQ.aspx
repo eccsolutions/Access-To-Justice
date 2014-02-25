@@ -178,8 +178,8 @@
         <strong>Navigating the Website and Selecting Questions to Answer</strong></p>
     <p>
         When your account has been approved by the website administrator, you will receive
-        a notification email. To get started you will go to <a href="http://www.onlinetnjustice.org">
-            www.onlinetnjustice.org</a> and select “Sign In” at the top right side of your
+        a notification email. To get started you will go to <a href="http://www.MNLegalAdvice.org">
+            www.MNLegalAdvice.org</a> and select “Sign In” at the top right side of your
         screen. After you enter your username and password, you will automatically be directed
         to a page that lists all the questions that have been posted for lawyers to answer.
     </p>

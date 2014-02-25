@@ -83,6 +83,7 @@
   <ItemGroup>
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\CountyController.cs" />
     <Compile Include="Infrastructure\Auditor.cs" />
     <Compile Include="Infrastructure\AuthorizeCurrentUserFilter.cs" />
     <Compile Include="Infrastructure\DynamicMasterPageFilter.cs" />
@@ -237,6 +238,7 @@
     <Content Include="Content\Images\bbcode_images\stroke.png" />
     <Content Include="Content\Images\bbcode_images\submenu.png" />
     <Content Include="Content\Images\bbcode_images\underline.png" />
+    <Content Include="Content\Images\bubble.png" />
     <Content Include="Content\Images\ColorPicker\blank.gif" />
     <Content Include="Content\Images\ColorPicker\colorpicker_background.png" />
     <Content Include="Content\Images\ColorPicker\colorpicker_hex.png" />
@@ -265,6 +267,7 @@
     <Content Include="Content\Images\ColorPicker\slider.png" />
     <Content Include="Content\Images\editing.gif" />
     <Content Include="Content\Images\important.png" />
+    <Content Include="Content\Images\legalservicesstatesupport.png" />
     <Content Include="Content\Images\TJC_colorlogo.png" />
     <Content Include="Content\Images\writing.gif" />
     <Content Include="Content\MVCControls\Grid\ellipsis-xbl.xml" />
@@ -438,6 +441,8 @@
     <Content Include="Views\Category\Edit.aspx" />
     <Content Include="Views\Category\List.aspx" />
     <Content Include="Views\Attorney\Resources.aspx" />
+    <Content Include="Views\County\Edit.aspx" />
+    <Content Include="Views\County\List.aspx" />
     <Content Include="Views\Shared\ColorCoding.ascx" />
     <Content Include="Views\Admin\ConfirmApproval.aspx" />
     <Content Include="Views\Admin\ConfirmDenial.aspx" />
@@ -595,6 +600,7 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Index.Designer.cs</LastGenOutput>
       <CustomToolNamespace>ViewRes</CustomToolNamespace>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
