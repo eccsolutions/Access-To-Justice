@@ -29,7 +29,7 @@
 
             <div class="editor-label">
                 <%: Html.LabelFor(model => model.CourtDate) %><br />
-                <span><strong>BE ADVISED:</strong> if you have a court date, you cannot rely on getting help before your court date.</span>
+                <span><strong>You might not get an answer to your question before your court date.</strong></span>
             </div>
 
             <div class="editor-field">

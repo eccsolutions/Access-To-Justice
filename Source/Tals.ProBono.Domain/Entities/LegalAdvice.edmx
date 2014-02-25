@@ -239,6 +239,10 @@
             <End Role="Question" EntitySet="Questions" />
             <End Role="Audit" EntitySet="Audits" />
           </AssociationSet>
+          <AssociationSet Name="QuestionCaseCounty" Association="LegalAdvice.QuestionCaseCounty">
+            <End Role="Question" EntitySet="Questions" />
+            <End Role="County" EntitySet="Counties" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Question">
           <Key>
@@ -260,6 +264,9 @@
           <Property Type="DateTime" Name="ClosedDate" Nullable="true" cg:SetterAccess="Private" />
           <Property Type="String" Name="ClosedBy" Nullable="true" cg:SetterAccess="Private" />
           <NavigationProperty Name="Audits" Relationship="LegalAdvice.QuestionAudit" FromRole="Question" ToRole="Audit" />
+          <NavigationProperty Name="CaseCounty" Relationship="LegalAdvice.QuestionCaseCounty" FromRole="Question" ToRole="County" />
+          <Property Type="Int32" Name="CaseCountyId" Nullable="false" />
+          <Property Type="String" Name="PersonOrOrganization" Nullable="true" />
         </EntityType>
         <EntityType Name="Post">
           <Key>
@@ -317,6 +324,7 @@
           <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Type="String" Name="CountyName" Nullable="false" />
           <NavigationProperty Name="Questions" Relationship="LegalAdvice.CountyQuestion" FromRole="County" ToRole="Question" />
+          <NavigationProperty Name="CaseQuestions" Relationship="LegalAdvice.QuestionCaseCounty" FromRole="County" ToRole="Question" />
         </EntityType>
         <Association Name="CountyQuestion">
           <End Type="LegalAdvice.County" Role="County" Multiplicity="1" />
@@ -414,6 +422,18 @@
             </Principal>
             <Dependent Role="Audit">
               <PropertyRef Name="QuestionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="QuestionCaseCounty">
+          <End Type="LegalAdvice.Question" Role="Question" Multiplicity="*" />
+          <End Type="LegalAdvice.County" Role="County" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="County">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Question">
+              <PropertyRef Name="CaseCountyId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -592,6 +612,7 @@
           <ConnectorPoint PointX="2" PointY="3.2711393229166661" />
           <ConnectorPoint PointX="9.75" PointY="3.2711393229166661" />
         </AssociationConnector>
+        <AssociationConnector Association="LegalAdvice.QuestionCaseCounty" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

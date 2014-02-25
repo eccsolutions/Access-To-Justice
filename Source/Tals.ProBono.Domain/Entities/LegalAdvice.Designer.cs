@@ -24,6 +24,7 @@ using System.Xml.Serialization;
 [assembly: EdmRelationshipAttribute("LegalAdvice", "CountyQuestion", "County", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Tals.ProBono.Domain.Entities.County), "Question", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Tals.ProBono.Domain.Entities.Question), true)]
 [assembly: EdmRelationshipAttribute("LegalAdvice", "SubscriptionsCategory", "Subscriptions", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Tals.ProBono.Domain.Entities.Subscription), "Category", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Tals.ProBono.Domain.Entities.Category), true)]
 [assembly: EdmRelationshipAttribute("LegalAdvice", "QuestionAudit", "Question", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Tals.ProBono.Domain.Entities.Question), "Audit", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Tals.ProBono.Domain.Entities.Audit), true)]
+[assembly: EdmRelationshipAttribute("LegalAdvice", "QuestionCaseCounty", "Question", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Tals.ProBono.Domain.Entities.Question), "County", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Tals.ProBono.Domain.Entities.County), true)]
 
 #endregion
 
@@ -1018,6 +1019,28 @@ namespace Tals.ProBono.Domain.Entities
                 }
             }
         }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("LegalAdvice", "QuestionCaseCounty", "Question")]
+        public EntityCollection<Question> CaseQuestions
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Question>("LegalAdvice.QuestionCaseCounty", "Question");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Question>("LegalAdvice.QuestionCaseCounty", "Question", value);
+                }
+            }
+        }
 
         #endregion
 
@@ -1458,7 +1481,8 @@ namespace Tals.ProBono.Domain.Entities
         /// <param name="createdBy">Initial value of the CreatedBy property.</param>
         /// <param name="createdDate">Initial value of the CreatedDate property.</param>
         /// <param name="countyId">Initial value of the CountyId property.</param>
-        public static Question CreateQuestion(global::System.Int32 id, global::System.String subject, global::System.String body, global::System.String createdBy, global::System.DateTime createdDate, global::System.Int32 countyId)
+        /// <param name="caseCountyId">Initial value of the CaseCountyId property.</param>
+        public static Question CreateQuestion(global::System.Int32 id, global::System.String subject, global::System.String body, global::System.String createdBy, global::System.DateTime createdDate, global::System.Int32 countyId, global::System.Int32 caseCountyId)
         {
             Question question = new Question();
             question.Id = id;
@@ -1467,6 +1491,7 @@ namespace Tals.ProBono.Domain.Entities
             question.CreatedBy = createdBy;
             question.CreatedDate = createdDate;
             question.CountyId = countyId;
+            question.CaseCountyId = caseCountyId;
             return question;
         }
 
@@ -1764,6 +1789,54 @@ namespace Tals.ProBono.Domain.Entities
         private global::System.String _ClosedBy;
         partial void OnClosedByChanging(global::System.String value);
         partial void OnClosedByChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 CaseCountyId
+        {
+            get
+            {
+                return _CaseCountyId;
+            }
+            set
+            {
+                OnCaseCountyIdChanging(value);
+                ReportPropertyChanging("CaseCountyId");
+                _CaseCountyId = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("CaseCountyId");
+                OnCaseCountyIdChanged();
+            }
+        }
+        private global::System.Int32 _CaseCountyId;
+        partial void OnCaseCountyIdChanging(global::System.Int32 value);
+        partial void OnCaseCountyIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String PersonOrOrganization
+        {
+            get
+            {
+                return _PersonOrOrganization;
+            }
+            set
+            {
+                OnPersonOrOrganizationChanging(value);
+                ReportPropertyChanging("PersonOrOrganization");
+                _PersonOrOrganization = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("PersonOrOrganization");
+                OnPersonOrOrganizationChanged();
+            }
+        }
+        private global::System.String _PersonOrOrganization;
+        partial void OnPersonOrOrganizationChanging(global::System.String value);
+        partial void OnPersonOrOrganizationChanged();
 
         #endregion
 
@@ -1886,6 +1959,44 @@ namespace Tals.ProBono.Domain.Entities
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Audit>("LegalAdvice.QuestionAudit", "Audit", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("LegalAdvice", "QuestionCaseCounty", "County")]
+        public County CaseCounty
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<County>("LegalAdvice.QuestionCaseCounty", "County").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<County>("LegalAdvice.QuestionCaseCounty", "County").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<County> CaseCountyReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<County>("LegalAdvice.QuestionCaseCounty", "County");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<County>("LegalAdvice.QuestionCaseCounty", "County", value);
                 }
             }
         }

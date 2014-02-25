@@ -184,7 +184,7 @@ namespace Tals.ProBono.Domain.Entities
         [Required(ErrorMessage = "Kind of problem is required.")]
         public int CategoryId { get; set; }
 
-        [DisplayName("Enter a court date, if you have one:")]
+        [DisplayName("If you have a court date, enter it here")]
         public DateTime? CourtDate { get; set; }
 
         public DateTime LastUpdated { get; set; }
