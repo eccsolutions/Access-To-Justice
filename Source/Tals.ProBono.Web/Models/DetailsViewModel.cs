@@ -12,12 +12,12 @@ namespace Tals.ProBono.Web.Models
         public IEnumerable<DetailsPostViewModel> Posts { get; set; }
 
 
-        public static DetailsViewModel CreateViewModel(Question q)
+        public static DetailsViewModel CreateViewModel(Question q, IEnumerable<Post> posts)
         {
             var model = new DetailsViewModel
                             {
                                 Question = q,
-                                Posts = q.Responses.Select(DetailsPostViewModel.CreateViewModel),
+                                Posts = posts.Select(DetailsPostViewModel.CreateViewModel),
                             };
 
             return model;

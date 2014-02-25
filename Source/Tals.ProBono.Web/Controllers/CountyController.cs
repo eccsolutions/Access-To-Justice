@@ -12,22 +12,22 @@ namespace Tals.ProBono.Web.Controllers
     [Authorize(Roles=UserRoles.Administrators)]
     public class CountyController : Controller
     {
-        private readonly ICountyRepository _repository;
+        private readonly IUnitOfWork _unitOfWork;
 
-        public CountyController(ICountyRepository repository)
+        public CountyController(IUnitOfWork unitOfWork)
         {
-            _repository = repository;
+            _unitOfWork = unitOfWork;
         }
 
         public ActionResult List()
         {
-            var model = _repository.Counties.OrderBy(c => c.CountyName);
+            var model = _unitOfWork.CountyRepository.Get().OrderBy(c => c.CountyName);
             return View(model);
         }
 
         public ActionResult Edit(int id = 0)
         {
-            County model = id == 0 ? new County() : _repository.Counties.FirstOrDefault(c => c.Id == id);
+            County model = id == 0 ? new County() : _unitOfWork.CountyRepository.Get().FirstOrDefault(c => c.Id == id);
             return View(model);
         }
 
@@ -36,7 +36,7 @@ namespace Tals.ProBono.Web.Controllers
         {
             if (ModelState.IsValid)
             {
-                _repository.Save(county);
+                _unitOfWork.CountyRepository.Update(county);
                 return RedirectToAction("List");
             }
 

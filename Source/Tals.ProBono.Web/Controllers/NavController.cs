@@ -15,10 +15,10 @@ namespace Tals.ProBono.Web.Controllers
 {
     public class NavController : Controller
     {
-        private readonly IQuestionRepository _questionRepository;
-        public NavController(IQuestionRepository questionRepository)
+        private readonly IUnitOfWork _unitOfWork;
+        public NavController(IUnitOfWork unitOfWork)
         {
-            _questionRepository = questionRepository;
+            _unitOfWork = unitOfWork;
         }
 
         public ViewResult QuestionMenu()
@@ -40,9 +40,9 @@ namespace Tals.ProBono.Web.Controllers
                                                            };
             var navLinks = new List<NavLink>
                                {
-                                   makeLink("Queue", "List", null, _questionRepository.Questions.Active().NotTaken().Count()),
-                                   makeLink("Taken", "MyTaken", null, _questionRepository.Questions.Active().WithTakenBy(UserModel.Current.UserName).Count()),
-                                   makeLink("Urgent", "Urgent", null, _questionRepository.Questions.Active().NotTaken().Urgent().Count()),
+                                   makeLink("Queue", "List", null, _unitOfWork.QuestionRepository.Get().Active().NotTaken().Count()),
+                                   makeLink("Taken", "MyTaken", null, _unitOfWork.QuestionRepository.Get().Active().WithTakenBy(UserModel.Current.UserName).Count()),
+                                   makeLink("Urgent", "Urgent", null, _unitOfWork.QuestionRepository.Get().Active().NotTaken().Urgent().Count()),
                                    makeLink("Drafts (Coming Soon...)", "Drafts", null, 0)
                                };
 
@@ -94,7 +94,7 @@ namespace Tals.ProBono.Web.Controllers
             };
 
             var navLinks = new List<NavLink> { makeLink(null) };
-            var categories = _questionRepository.Categories.Select(x => x.CategoryName).ToList();
+            var categories = _unitOfWork.CategoryRepository.Get().Select(x => x.CategoryName).ToList();
             navLinks.AddRange(categories.Select(makeLink));
 
             return View("Menu", navLinks);
@@ -162,8 +162,8 @@ namespace Tals.ProBono.Web.Controllers
 
         public ActionResult PostActionsButtons(int postId, int questionId)
         {
-            var question = _questionRepository.Questions.WithId(questionId);
-            var post = question.Responses.WithId(postId);
+            var question = _unitOfWork.QuestionRepository.Get().WithId(questionId);
+            var post = _unitOfWork.PostRepository.Get().WithId(postId);
             return View(post);
         }
     }

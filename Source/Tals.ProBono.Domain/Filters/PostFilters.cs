@@ -25,6 +25,11 @@ namespace Tals.ProBono.Domain.Filters
             return qry.Where(p => p.CreatedBy == userName);
         }
 
+        public static IQueryable<Post> WithQuestionId(this IQueryable<Post> qry, int id)
+        {
+            return qry.Where(p => p.QuestionId == id);
+        }
+
         //public static IQueryable<Post> Drafts(this IQueryable<Post> qry, string userName)
         //{
         //    return qry.Where(p => p.Draft && p.CreatedBy == userName);

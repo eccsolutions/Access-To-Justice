@@ -7,6 +7,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
 using Tals.ProBono.Domain.Abstract;
+using Tals.ProBono.Domain.Entities;
 using Tals.ProBono.Domain.Filters;
 using Tals.ProBono.Domain.Services;
 using Tals.ProBono.Web.Infrastructure;
@@ -20,13 +21,13 @@ namespace Tals.ProBono.Web.Controllers
     [DynamicMasterPageFilter]
     public class AccountController : Controller
     {
-        private readonly IQuestionRepository _repository;
+        private readonly IUnitOfWork _unitOfWork;
         private readonly IEmailService _emailService;
         readonly IUser _currentUser;
 
-        public AccountController(IQuestionRepository repository, IFormsAuthenticationService formsService, IMembershipService membershipService, IEmailService emailService, IUser currentUser)
+        public AccountController(IUnitOfWork unitOfWork, IFormsAuthenticationService formsService, IMembershipService membershipService, IEmailService emailService, IUser currentUser)
         {
-            _repository = repository;
+            _unitOfWork = unitOfWork;
             FormsService = formsService;
             MembershipService = membershipService;
             _emailService = emailService;
@@ -120,7 +121,7 @@ namespace Tals.ProBono.Web.Controllers
 
         public ActionResult SignUp()
         {
-            if (!_repository.RuleAnswers.IsUserEligible(Session.SessionID)) return RedirectToAction("Index", "Rules");
+            if (!_unitOfWork.RuleAnswerRepository.Get().IsUserEligible(Session.SessionID)) return RedirectToAction("Index", "Rules");
             ViewData["PasswordLength"] = MembershipService.MinPasswordLength;
 
             var model = new SignUpClientModel();
@@ -131,7 +132,7 @@ namespace Tals.ProBono.Web.Controllers
         [HttpPost]
         public ActionResult SignUp(SignUpClientModel model, string returnUrl)
         {
-            if (!_repository.RuleAnswers.IsUserEligible(Session.SessionID)) return RedirectToAction("Index", "Rules");
+            if (!_unitOfWork.RuleAnswerRepository.Get().IsUserEligible(Session.SessionID)) return RedirectToAction("Index", "Rules");
 
             if (ModelState.IsValid)
             {
@@ -148,7 +149,7 @@ namespace Tals.ProBono.Web.Controllers
                     if(Session["County"] != null)
                     {
                         var countyId = int.Parse(Session["County"].ToString());
-                        profile.County = _repository.Counties.First(x => x.Id == countyId).CountyName;
+                        profile.County = _unitOfWork.CountyRepository.Get().First(x => x.Id == countyId).CountyName;
                     }
                     
                     profile.Save();
@@ -210,7 +211,7 @@ namespace Tals.ProBono.Web.Controllers
                 
                 var model = new AttorneySignUpModel
                 {
-                    Counties = new SelectList(_repository.Counties.ToList(), "Id", "CountyName")
+                    Counties = new SelectList(_unitOfWork.CountyRepository.Get().ToList(), "Id", "CountyName")
                 };
 
                 return View(model);
@@ -236,7 +237,7 @@ namespace Tals.ProBono.Web.Controllers
                     profile.AddressLine1 = model.AddressLine1;
                     profile.AddressLine2 = model.AddressLine2;
                     profile.City = model.City;
-                    profile.County = _repository.Counties.First(x => x.Id == model.County).CountyName;
+                    profile.County = _unitOfWork.CountyRepository.Get().First(x => x.Id == model.County).CountyName;
                     profile.DisciplinaryBoardNumber = model.DisciplinaryBoardNumber;
                     profile.LawFirm = model.Organization;
                     profile.Phone = model.Phone;
@@ -261,7 +262,7 @@ namespace Tals.ProBono.Web.Controllers
 
             // If we got this far, something failed, redisplay form
             ViewData["PasswordLength"] = MembershipService.MinPasswordLength;
-            model.Counties = new SelectList(_repository.Counties.ToList(), "Id", "CountyName");
+            model.Counties = new SelectList(_unitOfWork.CountyRepository.Get().ToList(), "Id", "CountyName");
 
             return View(model);
         }
