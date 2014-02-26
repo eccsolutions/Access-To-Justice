@@ -10,7 +10,7 @@
 
     Need to ask a follow-up question about the answer? Click the <span class="ImageLink">Follow-up</span> button next to it.
 
-    <% if (Model.Question.Responses.Count(x => x.CreatedBy != Model.Question.CreatedBy) > 0) { %>
+    <% if (Model.Question.Posts.Count(x => x.CreatedBy != Model.Question.CreatedBy) > 0) { %>
     <div>
         <p>You have received an answer and can do the following:</p>
     <ul>

@@ -12,7 +12,7 @@ namespace Tals.ProBono.Domain.Entities
     using System;
     using System.Collections.Generic;
     
-    public partial class Subscription
+    public class Subscription
     {
         public int Id { get; set; }
         public int CategoryId { get; set; }

@@ -7,12 +7,14 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System.ComponentModel.DataAnnotations;
+
 namespace Tals.ProBono.Domain.Entities
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class BBCodeItem
+    public class BBCodeItem
     {
         public BBCodeItem()
         {
@@ -20,6 +22,7 @@ namespace Tals.ProBono.Domain.Entities
             this.AutoRenderContent = true;
         }
     
+        [Key]
         public int BBCodeID { get; set; }
         public string Tag { get; set; }
         public string BeginTag { get; set; }

@@ -7,6 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.ServiceModel;
 
@@ -15,13 +16,13 @@ namespace Tals.ProBono.Domain.Entities
     using System;
     using System.Collections.Generic;
     
-    public partial class Question
+    public class Question
     {
-        public Question()
-        {
-            this.Posts = new HashSet<Post>();
-            this.Audits = new HashSet<Audit>();
-        }
+        //public Question()
+        //{
+        //    this.Posts = new HashSet<Post>();
+        //    this.Audits = new HashSet<Audit>();
+        //}
     
         public int Id { get; set; }
         public string Subject { get; set; }
@@ -35,15 +36,17 @@ namespace Tals.ProBono.Domain.Entities
         public Nullable<System.DateTime> CourtDate { get; set; }
         public Nullable<System.DateTime> ClosedDate { get; private set; }
         public string ClosedBy { get; private set; }
-        public int CaseCountyId { get; set; }
         public string PersonOrOrganization { get; set; }
-    
-        public virtual ICollection<Post> Posts { get; set; }
+        public Nullable<int> CaseCountyId { get; set; }
+        
         public virtual Category Category { get; set; }
         public virtual County County { get; set; }
-        public virtual ICollection<Audit> Audits { get; set; }
         public virtual County CaseCounty { get; set; }
 
+        public virtual ICollection<Post> Posts { get; set; }
+        public virtual ICollection<Audit> Audits { get; set; }
+
+        [NotMapped]
         public string CourtDateAsShortString
         {
             get
@@ -114,6 +117,23 @@ namespace Tals.ProBono.Domain.Entities
             foreach (var post in Posts)
                 post.UnAccept();
 
+        }
+
+        [NotMapped]
+        public DateTime? LastUpdated
+        {
+            get
+            {
+                if (this.Posts != null && this.Posts.Count > 0)
+                    return Posts.Select(p => p.CreatedDate).Max();
+                return null;
+            }
+        }
+
+        public bool IsUnread(string userName)
+        {
+            var audit = Audits.LastOrDefault(x => x.UserName == userName);
+            return audit == null || Posts.Any(x => x.CreatedDate > audit.AuditDate);
         }
     }
 }

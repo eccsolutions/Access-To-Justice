@@ -73,7 +73,8 @@ namespace Tals.ProBono.Web.Controllers
         public ViewResult PracticeAreas()
         {
             var categories = _unitOfWork.CategoryRepository.Get();
-            return View(categories);
+            var model = new CategoryListViewModel(categories);
+            return View(model);
         }
 
         public ActionResult Take(int id)

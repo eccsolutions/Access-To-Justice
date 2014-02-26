@@ -7,18 +7,22 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
+using Tals.ProBono.Domain.Filters;
+
 namespace Tals.ProBono.Domain.Entities
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Category
+    public class Category
     {
-        public Category()
-        {
-            this.Questions = new HashSet<Question>();
-            this.Subscriptions = new HashSet<Subscription>();
-        }
+        //public Category()
+        //{
+        //    this.Questions = new HashSet<Question>();
+        //    this.Subscriptions = new HashSet<Subscription>();
+        //}
     
         public int Id { get; set; }
         public string CategoryName { get; set; }
@@ -28,5 +32,16 @@ namespace Tals.ProBono.Domain.Entities
     
         public virtual ICollection<Question> Questions { get; set; }
         public virtual ICollection<Subscription> Subscriptions { get; set; }
+
+        [NotMapped]
+        public Question LastQuestion
+        {
+            get { return Questions.AsQueryable().NotTaken().Active().OrderByDescending(x => x.CreatedDate).FirstOrDefault(); }
+        }
+
+        public bool IsSubscribed(string userName)
+        {
+            return Subscriptions.Any(s => s.UserName == userName);
+        }
     }
 }

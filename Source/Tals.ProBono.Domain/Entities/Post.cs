@@ -12,7 +12,7 @@ namespace Tals.ProBono.Domain.Entities
     using System;
     using System.Collections.Generic;
     
-    public partial class Post
+    public class Post
     {
         public int Id { get; set; }
         public int QuestionId { get; set; }

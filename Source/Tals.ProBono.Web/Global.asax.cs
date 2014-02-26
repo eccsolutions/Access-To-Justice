@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Globalization;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 using Elmah;
+using Tals.ProBono.Domain.Entities;
+using Tals.ProBono.Domain.Migrations;
 using Tals.ProBono.Web.Infrastructure;
 using Tals.ProBono.Web.Models;
 
@@ -103,6 +106,8 @@ namespace Tals.ProBono.Web
 
         protected void Application_Start()
         {
+            var db = new DatabaseInitializer();
+            db.MigrateDatabaseToLatestVersion();
             AreaRegistration.RegisterAllAreas();
             RegisterRoutes(RouteTable.Routes);
             ControllerBuilder.Current.SetControllerFactory(new NinjectControllerFactory());

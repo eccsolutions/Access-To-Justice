@@ -12,7 +12,7 @@ namespace Tals.ProBono.Domain.Entities
     using System;
     using System.Collections.Generic;
     
-    public partial class Audit
+    public class Audit
     {
         public int Id { get; set; }
         public int QuestionId { get; set; }
