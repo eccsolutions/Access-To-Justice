@@ -60,7 +60,7 @@ namespace Tals.ProBono.Web.Controllers
         {
 #if DEBUG
 #else
-            if (_unitOfWork.Questions.ReachedLimit(UserModel.Current.UserName))
+            if (_unitOfWork.QuestionRepository.Get().ReachedLimit(UserModel.Current.UserName))
                 return View("ReachedMax");
 
             if (!_eligibilityService.IsEligible(Session.SessionID))
