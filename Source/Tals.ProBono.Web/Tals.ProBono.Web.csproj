@@ -14,7 +14,7 @@
     <RootNamespace>Tals.ProBono.Web</RootNamespace>
     <AssemblyName>Tals.ProBono.Web</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <MvcBuildViews>false</MvcBuildViews>
+    <MvcBuildViews>true</MvcBuildViews>
     <UseIISExpress>false</UseIISExpress>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
@@ -51,6 +51,10 @@
     <Reference Include="Elmah.Mvc">
       <HintPath>..\packages\Elmah.MVC.2.0.1\lib\net40\Elmah.Mvc.dll</HintPath>
     </Reference>
+    <Reference Include="EntityFramework, Version=4.4.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -83,6 +87,8 @@
   <ItemGroup>
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Models\CategoryListViewModel.cs" />
+    <Compile Include="Controllers\CountyController.cs" />
     <Compile Include="Infrastructure\Auditor.cs" />
     <Compile Include="Infrastructure\AuthorizeCurrentUserFilter.cs" />
     <Compile Include="Infrastructure\DynamicMasterPageFilter.cs" />
@@ -485,9 +491,7 @@
     <Content Include="Views\Client\NoRecords.aspx" />
     <Content Include="Views\Client\NotFound.aspx" />
     <Content Include="Views\Client\ReachedMax.aspx" />
-    <Content Include="Views\Shared\ClientProfileDetails.ascx" />
     <Content Include="Views\Shared\DetailsForm.ascx" />
-    <Content Include="Views\Shared\AttorneyProfileDetails.ascx" />
     <Content Include="Views\Shared\QuestionList.ascx" />
     <Content Include="Views\Shared\TranslationControl.ascx" />
     <Content Include="Views\User\ClientProfile.aspx" />
@@ -495,7 +499,6 @@
     <Content Include="Views\User\QuestionHistory.aspx" />
     <Content Include="Views\User\DisplayAccountInfo.ascx" />
     <Content Include="Views\User\EditAccountInfo.aspx" />
-    <Content Include="Views\User\Profile.aspx" />
     <Content Include="Views\User\AttorneyProfile.aspx" />
     <Content Include="Views\User\DisplayAttorneyProfile.ascx" />
     <Content Include="Views\User\EditAttorneyProfile.aspx" />

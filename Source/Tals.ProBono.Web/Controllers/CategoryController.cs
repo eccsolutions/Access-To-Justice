@@ -45,7 +45,13 @@ namespace Tals.ProBono.Web.Controllers
         {
             if(ModelState.IsValid)
             {
-                _unitOfWork.CategoryRepository.Update(category);
+                if (category.Id == 0)
+                    _unitOfWork.CategoryRepository.Insert(category);
+                else
+                {
+                    _unitOfWork.CategoryRepository.Update(category);                    
+                }
+
                 _unitOfWork.Save();
                 return RedirectToAction("List");
             }

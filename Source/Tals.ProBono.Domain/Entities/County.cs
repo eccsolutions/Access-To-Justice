@@ -12,13 +12,13 @@ namespace Tals.ProBono.Domain.Entities
     using System;
     using System.Collections.Generic;
     
-    public partial class County
+    public class County
     {
-        public County()
-        {
-            this.Questions = new HashSet<Question>();
-            this.CaseQuestions = new HashSet<Question>();
-        }
+        //public County()
+        //{
+        //    this.Questions = new HashSet<Question>();
+        //    this.CaseQuestions = new HashSet<Question>();
+        //}
     
         public int Id { get; set; }
         public string CountyName { get; set; }
