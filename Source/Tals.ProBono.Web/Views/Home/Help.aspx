@@ -1,79 +1,36 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<dynamic>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-    Online Tennessee Justice - Other places to find legal help and information
+    Minnesota Legal Advice Online - Other places to find legal help and information
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <h2>
         Other places to find legal help and information:</h2>
     <p>
-        <strong>Legal aid programs in Tennessee</strong></p>
+        <strong>Legal Services Programs</strong></p>
     <p>
-        They give free legal help. Mostly they help people whose income is low for a family
-        of that size. Sometimes they help people no matter how much they make. This is mostly
-        people who are abused or over age 60. They don’t take criminal cases, only cases
-        that you yourself can’t go to jail for.</p>
+        Legal Services Programs They give free legal advice and sometimes a lawyer to represent you in court for free. Mostly they help people whose income is low. Sometimes they help people no matter how much they make. This is mostly people who are abused or over age 60. They don’t take criminal cases, only cases that you can’t go to jail for.</p>
     <p>
-        Need a free lawyer? Call one of these offices near you. Don’t know which office
-        to call? Go to <a href="http://www.tennlegalaid.com/LegalSvcs" target="_blank">TennLegalAid.com</a>
-        to find out.</p>
+        Go to <a href="http://www.lawhelpmn.org/find-legal-help">www.lawhelpmn.org/find-legal-help</a> to find your local legal aid office and other legal help.</p>
+    <p>
+        <strong>Here are some free legal clinics around the state where you can get advice from a lawyer: </strong>
+        <br />
+        <a href="http://www.lawhelpmn.org/walk-in-clinics-and-other-legal-help-clinics">www.lawhelpmn.org/walk-in-clinics-and-other-legal-help-clinics</a></p>
+    <p>
+        <strong>You can find sliding-fee scale and private attorneys at these places: </strong>
+        <br />
+        <a href="http://www.lawhelpmn.org/lawyer-referral-services">www.lawhelpmn.org/lawyer-referral-services</a></p>
+    <p>
+        <strong>Need help with food, clothing, shelter, medicine or other services?</strong>
+        <br />
+        <a href="http://www.lawhelpmn.org/resource/information-and-referrals-for-other-non-legal">www.lawhelpmn.org/resource/information-and-referrals-for-other-non-legal</a></p>
+    <p>
+        <strong>Other helpful information and organizations:</strong></p>
     <ul>
-        <li><a href="http://www.laet.org/Contact-Us.aspx" target="_blank">Legal Aid of East
-            Tennessee</a></li>
-        <li><a href="http://www.las.org" target="_blank">Legal Aid Society of Middle Tennessee
-            and the Cumberlands</a> or call <strong>1-800-238-1443</strong></li>
-        <li><a href="http://www.wtls.org" target="_blank">West Tennessee Legal Services</a></li>
-        <li><a href="http://www.malsi.org" target="_blank">Memphis Area Legal Services</a></li>
-        <li>Are you a migrant or seasonal worker? Go to <a href="http://www.trla.org" target="_blank">
-            Southern Migrant Legal Services</a> or call <strong>1-888-988-9996</strong>. The
-            website is called TRLA but it is for Tennessee, too.</li>
+        <li><a href="http://www.lawhelpmn.org/resource/criminal-law-info?ref=JOfhh" >Criminal Law Information and Resources</a></li>
+        <li><a href="http://www.lawhelpmn.org/resource/court-forms-review-service">Court Forms Review Service</a></li>
+        <li><a href="http://www.ag.state.mn.us/">Minnesota Attorney General’s Office</a></li>
     </ul>
     <p>
-        <strong>Here are some local organizations that can help you:</strong></p>
-    <ul>
-        <li><a href="http://www.chattanoogalaw.org/clips/home" target="_blank">Chattanooga Bar
-            Association Lawyer Referral</a></li>
-        <li><a href="http://www.knoxbar.org/index.php?option=com_content&view=article&id=152&Itemid=124"
-            target="_blank">Knoxville Bar Association Lawyer Referral</a> or call <strong>865-522-7501</strong></li>
-        <li><a href="http://www.memphisbar.org/displaycommon.cfm?an=1&subarticlenbr=35" target="_blank">
-            Memphis Bar Association Lawyer Referral</a></li>
-        <li><a href="http://www.nashvillebar.org/LRISMember.html" target="_blank">Nashville
-            Bar Association Lawyer Referral</a> or call <strong>615-242-6546</strong></li>
-    </ul>
-    <p>
-        <strong>You may find legal help and information at these places:</strong></p>
-    <ul>
-        <li><a href="http://www.tennlegalaid.com/Library" target="_blank">Self-Help Brochures
-            and Pamphlets</a></li>
-        <li><a href="http://www.tsc.state.tn.us/geninfo/Help/selfhelp.htm" target="_blank">How-to
-            Guide to Tennessee Courts</a></li>
-    </ul>
-    <p>
-        <strong>Need help with food, clothing, shelter, medicine or other services?</strong></p>
-    <ul>
-        <li><a href="http://www.tennhelp.com" target="_blank">TennHelp</a></li>
-        <li><a href="http://tn211.mycommunitypt.com" target="_blank">211 Tennessee</a></li>
-    </ul>
-    <p>
-        <strong>If you have a question about the appeal process from a trial court to an appeals
-            court in Tennessee, you may submit your question to "Ask the Clerk" at the following
-            link, and the Clerk of the Appellate Courts of Tennessee will answer your question.</strong></p>
-    <ul>
-        <li><a href="http://www.tncourts.gov/geninfo/ASP/AskClerkResult.asp">Ask the Clerk</a></li>
-    </ul>
-    <p>
-        <strong>Other helpful agencies:</strong></p>
-    <ul>
-        <li><a href="http://www.clcmemphis.com" target="_blank">Community Legal Center</a> (pro
-            bono legal help in Memphis)</li>
-        <li><a href="http://www.selegal.org" target="_blank">Southeast Tennessee Legal Services</a>
-            (legal aid in the Chattanooga area)</li>
-        <li><a href="http://www.tnjustice.org" target="_blank">Tennessee Justice Center</a>
-            (assists low-income people, particularly with health care and public benefit issues)
-            or call <strong>1-877-608-1009</strong></li>
-        <li><a href="http://www.dlactn.org" target="_blank">Disability Law &amp; Advocacy Center
-            of Tennessee</a> (assists clients with mental and physical disabilities) or call
-            <strong>1-800-342-1660</strong></li>
-        <li><a href="http://www.nashvillelawyerreferral.org/modest-means-initiative/">Nashville Modest Means Initiative</a></li>
-    </ul>
+        If you have problems with this website, you may contact us at mlao@mnlegalservices.org. This email address is for technical questions or website problems only. We will not answer your legal question.</p>
 </asp:Content>

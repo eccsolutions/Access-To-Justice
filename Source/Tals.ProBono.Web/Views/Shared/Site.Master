@@ -83,11 +83,6 @@
                 <br />
                 <br />
                 <br />
-                <div style="clear: both">
-                    <div class="genericLogo">
-                        <img src="<%: Url.Image("legalservicesstatesupport.png") %>" alt="Legal Services State Support" />
-                    </div>
-                </div>
                 <div class="HelpMessage" style="clear: both">
                     If you have problems navigating the site, or are experiencing problems with the site, you may contact us at <a href="mailto:mlao@mnlegalservices.org">mlao@mnlegalservices.org</a>. This email address is for technical questions or problems only. Legal questions will not be answered.
                 </div>
