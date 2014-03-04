@@ -15,7 +15,7 @@ namespace Tals.ProBono.Domain.Entities
 {
     using System;
     using System.Collections.Generic;
-    
+
     public class Question
     {
         //public Question()
@@ -23,7 +23,7 @@ namespace Tals.ProBono.Domain.Entities
         //    this.Posts = new HashSet<Post>();
         //    this.Audits = new HashSet<Audit>();
         //}
-    
+
         public int Id { get; set; }
         public string Subject { get; set; }
         public string Body { get; set; }
@@ -38,7 +38,7 @@ namespace Tals.ProBono.Domain.Entities
         public string ClosedBy { get; private set; }
         public string PersonOrOrganization { get; set; }
         public Nullable<int> CaseCountyId { get; set; }
-        
+
         public virtual Category Category { get; set; }
         public virtual County County { get; set; }
         public virtual County CaseCounty { get; set; }
@@ -90,7 +90,7 @@ namespace Tals.ProBono.Domain.Entities
         {
             if (TakenBy == assignedTo) return;
 
-            TakenDate = string.IsNullOrEmpty(assignedTo) ? null : (DateTime?) DateTime.Now;
+            TakenDate = string.IsNullOrEmpty(assignedTo) ? null : (DateTime?)DateTime.Now;
             TakenBy = assignedTo;
         }
 
@@ -136,50 +136,4 @@ namespace Tals.ProBono.Domain.Entities
             return audit == null || Posts.Any(x => x.CreatedDate > audit.AuditDate);
         }
     }
-<<<<<<< HEAD
-
-
-    public class QuestionValidation
-    {
-        [HiddenInput(DisplayValue = false)]
-        public int Id { get; set; }
-
-        [Required(ErrorMessage = "Subject is required!")]
-        [StringLength(100, ErrorMessage = "Subject may not be longer than 100 characters")]
-        [DisplayName("What is your question about?")]
-        public string Subject { get; set; }
-
-        [Required(ErrorMessage = "Question is required")]
-        [StringLength(8000, ErrorMessage = "Question may not be longer than 8000 characters")]
-        [DisplayName("Type your question here:")]
-        public string Body { get; set; }
-
-        [HiddenInput(DisplayValue = false)]
-        public string CreatedBy { get; set; }
-
-        [DisplayName("Kind of problem")]
-        [Required(ErrorMessage = "Kind of problem is required.")]
-        public int CategoryId { get; set; }
-
-        [DisplayName("Enter a court date, if you have one:")]
-        public DateTime? CourtDate { get; set; }
-
-        public DateTime LastUpdated { get; set; }
-
-        public DateTime TakenDate { get; set; }
-
-        public string County { get; set; }
-
-        public DateTime CreatedDate { get; set; }
-    }
-
-    public enum QuestionStatus
-    {
-        Current,
-        Overdue,
-        Urgent
-    }
 }
-=======
-}
->>>>>>> 7845f46... Changes to Repository pattern

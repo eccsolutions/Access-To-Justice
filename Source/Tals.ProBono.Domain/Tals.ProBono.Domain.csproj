@@ -66,17 +66,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\IRoles.cs" />
-    <Compile Include="Concrete\QuestionRepositorySql.cs" />
-    <Compile Include="Concrete\RepositoryFactory.cs" />
     <Compile Include="Entities\AdviceContext.cs" />
     <Compile Include="Entities\Audit.cs" />
     <Compile Include="Entities\BBCodeItem.cs" />
     <Compile Include="Entities\Category.cs" />
-    <Compile Include="Entities\LegalAdvice.Designer.cs">
-      <DependentUpon>LegalAdvice.edmx</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <Compile Include="Entities\County.cs" />
     <Compile Include="Entities\Email.cs" />
     <Compile Include="Entities\GenericRepository.cs" />
@@ -127,6 +120,9 @@
     <EmbeddedResource Include="Migrations\201402252324142_InitialCreate.resx">
       <DependentUpon>201402252324142_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Concrete\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
