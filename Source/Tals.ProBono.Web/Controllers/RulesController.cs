@@ -36,28 +36,41 @@ namespace Tals.ProBono.Web.Controllers
             return RedirectToAction("Step" + CurrentStepNumber);
         }
 
+        //public ActionResult Step1()
+        //{
+        //    return RenderStep(new AgeQuestion(), 1);
+        //}
+
+        //[HttpPost]
+        //public ActionResult Step1(AgeQuestion ageQuestion)
+        //{
+        //    return ExecuteStep(ageQuestion, 1);
+        //}
+
         public ActionResult Step1()
         {
-            return RenderStep(new AgeQuestion(), 1);
+            ViewData["Counties"] = new SelectList(UnitOfWork.CountyRepository.Get().OrderBy(x => x.CountyName), "Id", "CountyName");
+            return RenderStep(new CountyQuestion(), 1);
         }
 
         [HttpPost]
-        public ActionResult Step1(AgeQuestion ageQuestion)
+        public ActionResult Step1(CountyQuestion countyQuestion)
         {
-            return ExecuteStep(ageQuestion, 1);
+            Session["County"] = countyQuestion.ToString();
+            return ExecuteStep(countyQuestion, 1);
         }
 
         public ActionResult Step2()
         {
             ViewData["Counties"] = new SelectList(UnitOfWork.CountyRepository.Get().OrderBy(x => x.CountyName), "Id", "CountyName");
-            return RenderStep(new CountyQuestion(), 2);
+            return RenderStep(new CaseCountyQuestion(), 2);
         }
 
         [HttpPost]
-        public ActionResult Step2(CountyQuestion countyQuestion)
+        public ActionResult Step2(CaseCountyQuestion casecountyQuestion)
         {
-            Session["County"] = countyQuestion.ToString();
-            return ExecuteStep(countyQuestion, 2);
+            Session["CaseCounty"] = casecountyQuestion.ToString();
+            return ExecuteStep(casecountyQuestion, 2);
         }
 
         public ActionResult Step3()
@@ -70,59 +83,59 @@ namespace Tals.ProBono.Web.Controllers
             return ExecuteStep(new UserAgreementQuestion() { Answer = accepted }, 3);
         }
         
+        //public ActionResult Step4()
+        //{
+        //    return RenderStep(new IncarceratedQuestion(), 4);
+        //}
+
+        //[HttpPost]
+        //public ActionResult Step4(IncarceratedQuestion incarceratedQuestion)
+        //{
+        //    return ExecuteStep(incarceratedQuestion, 4);
+        //}
+
         public ActionResult Step4()
         {
-            return RenderStep(new IncarceratedQuestion(), 4);
+            return RenderStep(new HouseHoldSizeQuestion(), 4);
         }
 
         [HttpPost]
-        public ActionResult Step4(IncarceratedQuestion incarceratedQuestion)
+        public ActionResult Step4(HouseHoldSizeQuestion houseHoldSizeQuestion)
         {
-            return ExecuteStep(incarceratedQuestion, 4);
+            return ExecuteStep(houseHoldSizeQuestion, 4, new { HouseHoldSize = houseHoldSizeQuestion.Answer });
         }
 
-        public ActionResult Step5()
+        public ActionResult Step5(int? houseHoldSize)
         {
-            return RenderStep(new HouseHoldSizeQuestion(), 5);
-        }
-
-        [HttpPost]
-        public ActionResult Step5(HouseHoldSizeQuestion houseHoldSizeQuestion)
-        {
-            return ExecuteStep(houseHoldSizeQuestion, 5, new { HouseHoldSize = houseHoldSizeQuestion.Answer });
-        }
-
-        public ActionResult Step6(int? houseHoldSize)
-        {
-            if (houseHoldSize == null) CurrentStepNumber = 5;
+            if (houseHoldSize == null) CurrentStepNumber = 4;
             var value = houseHoldSize ?? 0;
             var question = new IncomeQuestion(value);
             ViewData["Frequencies"] = question.Frequencies;
 
-            return RenderStep(question, 6);
+            return RenderStep(question, 5);
         }
 
         [HttpPost]
-        public ActionResult Step6([Bind(Prefix = "Answer")]IncomeQuestion incomeQuestion)
+        public ActionResult Step5([Bind(Prefix = "Answer")]IncomeQuestion incomeQuestion)
         {
             ViewData["Frequencies"] = incomeQuestion.Frequencies;
-            return ExecuteStep(incomeQuestion, 6);
+            return ExecuteStep(incomeQuestion, 5);
         }
 
-        public ActionResult Step7()
-        {
-            return RenderStep(new InvestmentQuestion(), 7);
-        }
+        //public ActionResult Step7()
+        //{
+        //    return RenderStep(new InvestmentQuestion(), 7);
+        //}
 
-        [HttpPost]
-        public ActionResult Step7([Bind(Prefix = "Answer")]InvestmentQuestion investmentQuestion)
-        {
-            return ExecuteStep(investmentQuestion, 7);
-        }
+        //[HttpPost]
+        //public ActionResult Step7([Bind(Prefix = "Answer")]InvestmentQuestion investmentQuestion)
+        //{
+        //    return ExecuteStep(investmentQuestion, 7);
+        //}
 
-        public ActionResult Step8()
+        public ActionResult Step6()
         {
-            if (CurrentStepNumber != 8)
+            if (CurrentStepNumber != 6)
                 return RedirectToAction("Step" + CurrentStepNumber);
 
             RecordAnswer(new MeetsRules() { Answer = true });

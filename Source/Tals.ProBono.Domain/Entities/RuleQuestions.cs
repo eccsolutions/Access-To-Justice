@@ -27,7 +27,7 @@ namespace Tals.ProBono.Domain.Entities
 
         public bool IsValid
         {
-            get { return Answer > 12; }
+            get { return Answer > 14; }
         }
 
         public override string ToString()
@@ -40,7 +40,28 @@ namespace Tals.ProBono.Domain.Entities
     {
         public string Question
         {
-            get { return "In which county do you live?"; }
+            get { return "This website is only for Minnesota residents.  What Minnesota county do you live in?"; }
+        }
+
+        [UIHint("CountyEditor")]
+        public int Answer { get; set; }
+
+        public bool IsValid
+        {
+            get { return true; }
+        }
+
+        public override string ToString()
+        {
+            return Answer.ToString();
+        }
+    }
+
+    public class CaseCountyQuestion : IRuleQuestion<int>
+    {
+        public string Question
+        {
+            get { return "If your question is about an open legal case, what county is your case in?"; }
         }
 
         [UIHint("CountyEditor")]
@@ -78,26 +99,26 @@ namespace Tals.ProBono.Domain.Entities
         }
     }
 
-    public class IncarceratedQuestion : IRuleQuestion<bool>
-    {
-        public string Question
-        {
-            get { return "Are you currently in a jail or prison?"; }
-        }
+    //public class IncarceratedQuestion : IRuleQuestion<bool>
+    //{
+    //    public string Question
+    //    {
+    //        get { return "Are you currently in a jail or prison?"; }
+    //    }
 
-        [UIHint("BoolEditor")]
-        public bool Answer { get; set; }
+    //    [UIHint("BoolEditor")]
+    //    public bool Answer { get; set; }
 
-        public bool IsValid
-        {
-            get { return !Answer; }
-        }
+    //    public bool IsValid
+    //    {
+    //        get { return !Answer; }
+    //    }
 
-        public override string ToString()
-        {
-            return Answer.ToString();
-        }
-    }
+    //    public override string ToString()
+    //    {
+    //        return Answer.ToString();
+    //    }
+    //}
 
     public class HouseHoldSizeQuestion : IRuleQuestion<int>
     {
@@ -195,30 +216,30 @@ namespace Tals.ProBono.Domain.Entities
         }
     }
 
-    public class InvestmentQuestion : IRuleQuestion<List<double>>
-    {
-        public InvestmentQuestion()
-        {
-            Answer = new List<double> {0, 0, 0};
-        }
-        public string Question
-        {
-            get { return "Please answer the following question in regards to assets"; }
-        }
+    //public class InvestmentQuestion : IRuleQuestion<List<double>>
+    //{
+    //    public InvestmentQuestion()
+    //    {
+    //        Answer = new List<double> {0, 0, 0};
+    //    }
+    //    public string Question
+    //    {
+    //        get { return "Please answer the following question in regards to assets"; }
+    //    }
 
-        [UIHint("InvestmentEditor")]
-        public List<double> Answer { get; set; }
+    //    [UIHint("InvestmentEditor")]
+    //    public List<double> Answer { get; set; }
 
-        public bool IsValid
-        {
-            get { return Answer.Sum(a => a) < 5000.01; }
-        }
+    //    public bool IsValid
+    //    {
+    //        get { return Answer.Sum(a => a) < 5000.01; }
+    //    }
 
-        public override string ToString()
-        {
-            return Answer.Sum(a => a).ToString();
-        }
-    }
+    //    public override string ToString()
+    //    {
+    //        return Answer.Sum(a => a).ToString();
+    //    }
+    //}
 
     public class MeetsRules : IRuleQuestion<bool>
     {
