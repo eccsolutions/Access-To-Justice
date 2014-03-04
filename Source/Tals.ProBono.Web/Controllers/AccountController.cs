@@ -42,7 +42,33 @@ namespace Tals.ProBono.Web.Controllers
         // **************************************
 
         public ActionResult SignIn() {
+            InitializeMembership();
             return View("SignIn", "Guest");
+        }
+
+        private void InitializeMembership()
+        {
+            if (!Roles.RoleExists(UserRoles.Administrators))
+            {
+                Roles.CreateRole(UserRoles.Administrators);
+            }
+            if (!Roles.RoleExists(UserRoles.Attorney))
+            {
+                Roles.CreateRole(UserRoles.Attorney);
+            }
+            if (!Roles.RoleExists(UserRoles.BasicUser))
+            {
+                Roles.CreateRole(UserRoles.BasicUser);
+            }
+            if (!Roles.RoleExists(UserRoles.PendingApproval))
+            {
+                Roles.CreateRole(UserRoles.PendingApproval);
+            }
+            if (Membership.GetUser("atjadmin") == null)
+            {
+                Membership.CreateUser("atjadmin", "@tj@dm1n");
+                Roles.AddUserToRole("atjadmin", UserRoles.Administrators);
+            }
         }
 
         [HttpPost]
