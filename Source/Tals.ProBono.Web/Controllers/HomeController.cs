@@ -18,9 +18,9 @@ namespace Tals.ProBono.Web.Controllers
 #if DEBUG
             SqlServices.Install("localhost\\sqlexpress", "AccessToJusticeServices", SqlFeatures.All);
 #else
-            SqlServices.Install("localhost\\MLSC", "AccessToJusticeServices", SqlFeatures.All);
+            SqlServices.Install("10.10.1.27\\AccessToJusticeStagingDirectory", "AccessToJusticeServices", SqlFeatures.All);
 #endif
-            if(Request.IsAuthenticated)
+            if (Request.IsAuthenticated)
             {
                 if (User.IsInRole(UserRoles.Administrators) || User.IsInRole(UserRoles.Attorney))
                     return RedirectToAction("List", "Attorney");
