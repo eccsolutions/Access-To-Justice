@@ -19,7 +19,7 @@ namespace Tals.ProBono.Web.Controllers
 #if DEBUG
             SqlServices.Install("localhost\\sqlexpress", "AccessToJusticeServices", SqlFeatures.All);
 #else
-            SqlServices.Install("10.10.1.27\\AccessToJusticeStagingDirectory", "AccessToJusticeServices", SqlFeatures.All);
+            SqlServices.Install("10.10.1.27", "AccessToJusticeStagingDirectory", SqlFeatures.All);
 #endif
             if (Request.IsAuthenticated)
             {
