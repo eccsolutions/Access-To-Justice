@@ -8,5 +8,9 @@ namespace Tals.ProBono.Domain.Filters
 {
     public static class CategoryFilters
     {
+        public static Category WithId(this IQueryable<Category> qry, int id)
+        {
+            return qry.FirstOrDefault(q => q.Id == id);
+        }
     }
 }

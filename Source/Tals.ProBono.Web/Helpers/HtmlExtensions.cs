@@ -163,7 +163,7 @@ namespace Tals.ProBono.Web.Helpers
         public static MvcHtmlString Parse(this HtmlHelper helper, string text)
         {
             IKernel kernal = new StandardKernel(new LegalAdviceServices());
-            var parseService = new ParseServices((IRepository<BBCodeItem>)kernal.Get(typeof (IRepository<BBCodeItem>)));
+            var parseService = new ParseServices((IUnitOfWork)kernal.Get(typeof (IUnitOfWork)));
 
             return MvcHtmlString.Create(parseService.ParseBBCodeText(text));
         }

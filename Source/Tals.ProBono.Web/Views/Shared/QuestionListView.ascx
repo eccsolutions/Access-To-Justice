@@ -44,7 +44,7 @@
                     <%: item.CourtDate%>
                 </td>
                 <td class="gridcolumn">
-                    <%: item.Responses.Count()%>
+                    <%: item.Posts.Count()%>
                 </td>
             <%} %>
     <% } %>

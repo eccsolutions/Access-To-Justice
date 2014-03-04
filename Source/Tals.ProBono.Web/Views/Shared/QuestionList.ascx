@@ -18,7 +18,7 @@
        { %>
     <tr>
         <td class="gridcolumn" id="subjectcolumn">
-            <%: Html.ActionLink(item.Subject, "Details", new { id=item.Id }) %>
+            <%: Html.ActionLink(item.Subject, "Details", "Attorney", new { id=item.Id }, null) %>
             <% if (item.IsUnread(HttpContext.Current.User.Identity.Name))
                { %>
             <sup><span class="unread">&nbsp;New!</span></sup>
@@ -31,7 +31,7 @@
             <%: String.Format("{0:g}", item.CreatedDate )%>
         </td>
         <td class="gridcolumn">
-            <%: item.Responses.Count() %>
+            <%: item.Posts.Count() %>
         </td>
     </tr>
     <% } %>

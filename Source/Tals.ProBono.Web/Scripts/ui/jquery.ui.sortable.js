@@ -215,7 +215,7 @@ $.widget("ui.sortable", $.ui.mouse, {
 			this._cacheHelperProportions();
 
 
-		//Post 'activate' events to possible containers
+		//Post 'activate' events to possible UnitOfWorks
 		if(!noActivation) {
 			 for (var i = this.containers.length - 1; i >= 0; i--) { this.containers[i]._trigger("activate", event, self._uiHash(this)); }
 		}
@@ -296,7 +296,7 @@ $.widget("ui.sortable", $.ui.mouse, {
 				&&	this.placeholder[intersection == 1 ? "next" : "prev"]()[0] != itemElement //no useless actions that have been done before
 				&&	!$.ui.contains(this.placeholder[0], itemElement) //no action if the item moved is the parent of the item checked
 				&& (this.options.type == 'semi-dynamic' ? !$.ui.contains(this.element[0], itemElement) : true)
-				//&& itemElement.parentNode == this.placeholder[0].parentNode // only rearrange items within the same container
+				//&& itemElement.parentNode == this.placeholder[0].parentNode // only rearrange items within the same UnitOfWork
 			) {
 
 				this.direction = intersection == 1 ? "down" : "up";
@@ -312,7 +312,7 @@ $.widget("ui.sortable", $.ui.mouse, {
 			}
 		}
 
-		//Post events to containers
+		//Post events to UnitOfWorks
 		this._contactContainers(event);
 
 		//Interconnect with droppables
@@ -367,7 +367,7 @@ $.widget("ui.sortable", $.ui.mouse, {
 			else
 				this.currentItem.show();
 
-			//Post deactivating events to containers
+			//Post deactivating events to UnitOfWorks
 			for (var i = this.containers.length - 1; i >= 0; i--){
 				this.containers[i]._trigger("deactivate", null, self._uiHash(this));
 				if(this.containers[i].containerCache.over) {
@@ -684,19 +684,19 @@ $.widget("ui.sortable", $.ui.mouse, {
 
 	_contactContainers: function(event) {
 		
-		// get innermost container that intersects with item 
+		// get innermost UnitOfWork that intersects with item 
 		var innermostContainer = null, innermostIndex = null;		
 		
 		
 		for (var i = this.containers.length - 1; i >= 0; i--){
 
-			// never consider a container that's located within the item itself 
+			// never consider a UnitOfWork that's located within the item itself 
 			if($.ui.contains(this.currentItem[0], this.containers[i].element[0]))
 				continue;
 
 			if(this._intersectsWith(this.containers[i].containerCache)) {
 
-				// if we've already found a container and it's more "inner" than this, then continue 
+				// if we've already found a UnitOfWork and it's more "inner" than this, then continue 
 				if(innermostContainer && $.ui.contains(this.containers[i].element[0], innermostContainer.element[0]))
 					continue;
 
@@ -704,7 +704,7 @@ $.widget("ui.sortable", $.ui.mouse, {
 				innermostIndex = i;
 					
 			} else {
-				// container doesn't intersect. trigger "out" event if necessary 
+				// UnitOfWork doesn't intersect. trigger "out" event if necessary 
 				if(this.containers[i].containerCache.over) {
 					this.containers[i]._trigger("out", event, this._uiHash(this));
 					this.containers[i].containerCache.over = 0;
@@ -713,16 +713,16 @@ $.widget("ui.sortable", $.ui.mouse, {
 
 		}
 		
-		// if no intersecting containers found, return 
+		// if no intersecting UnitOfWorks found, return 
 		if(!innermostContainer) return; 
 
-		// move the item into the container if it's not there already
+		// move the item into the UnitOfWork if it's not there already
 		if(this.containers.length === 1) {
 			this.containers[innermostIndex]._trigger("over", event, this._uiHash(this));
 			this.containers[innermostIndex].containerCache.over = 1;
 		} else if(this.currentContainer != this.containers[innermostIndex]) { 
 
-			//When entering a new container, we will find the item with the least distance and append our item near it 
+			//When entering a new UnitOfWork, we will find the item with the least distance and append our item near it 
 			var dist = 10000; var itemWithLeastDistance = null; var base = this.positionAbs[this.containers[innermostIndex].floating ? 'left' : 'top']; 
 			for (var j = this.items.length - 1; j >= 0; j--) { 
 				if(!$.ui.contains(this.containers[innermostIndex].element[0], this.items[j].item[0])) continue; 
@@ -1002,7 +1002,7 @@ $.widget("ui.sortable", $.ui.mouse, {
 			};
 		};
 
-		//Post events to containers
+		//Post events to UnitOfWorks
 		for (var i = this.containers.length - 1; i >= 0; i--){
 			if(!noPropagation) delayedTriggers.push((function(c) { return function(event) { c._trigger("deactivate", event, this._uiHash(this)); };  }).call(this, this.containers[i]));
 			if(this.containers[i].containerCache.over) {

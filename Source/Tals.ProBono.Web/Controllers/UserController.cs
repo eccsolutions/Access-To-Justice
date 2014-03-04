@@ -5,6 +5,7 @@ using System.Web.Mvc;
 using System.Web.Security;
 using MvcPaging;
 using Tals.ProBono.Domain.Abstract;
+using Tals.ProBono.Domain.Entities;
 using Tals.ProBono.Domain.Filters;
 using Tals.ProBono.Domain.Services;
 using Tals.ProBono.Web.Infrastructure;
@@ -16,13 +17,13 @@ namespace Tals.ProBono.Web.Controllers
     [DynamicMasterPageFilter]
     public class UserController : Controller
     {
-        private readonly IQuestionRepository _questionRepository;
+        private readonly IUnitOfWork _unitOfWork;
         private readonly IRoles _roles;
         readonly IUser _currentUser;
 
-        public UserController(IQuestionRepository questionRepository, IRoles roles, IUser currentUser)
+        public UserController(IUnitOfWork unitOfWork, IRoles roles, IUser currentUser)
         {
-            _questionRepository = questionRepository;
+            _unitOfWork = unitOfWork;
             _roles = roles;
             _currentUser = currentUser;
         }
@@ -84,9 +85,9 @@ namespace Tals.ProBono.Web.Controllers
 
         public ActionResult DisplayClientProfile(string userName) {
             var model = new ClientProfileViewModel {
-                                                       QuestionsAsked = _questionRepository.Questions.WithCreatedBy(userName).Count(),
-                                                       QuestionsInQueue = _questionRepository.Questions.WithCreatedBy(userName).Active().NotTaken().Count(),
-                                                       QuestionsTaken = _questionRepository.Questions.WithCreatedBy(userName).Active().Taken().Count()
+                                                       QuestionsAsked = _unitOfWork.QuestionRepository.Get().WithCreatedBy(userName).Count(),
+                                                       QuestionsInQueue = _unitOfWork.QuestionRepository.Get().WithCreatedBy(userName).Active().NotTaken().Count(),
+                                                       QuestionsTaken = _unitOfWork.QuestionRepository.Get().WithCreatedBy(userName).Active().Taken().Count()
                                                    };
 
             return View(model);
@@ -101,7 +102,7 @@ namespace Tals.ProBono.Web.Controllers
         public ActionResult EditAttorneyProfile(string userName) {
             var profile = UserProfile.GetUserProfile(userName);
             var model = new AttorneyProfileViewModel(profile);
-            model.SetCountySelectList(_questionRepository.Counties);
+            model.SetCountySelectList(_unitOfWork.CountyRepository.Get());
 
             return View("EditAttorneyProfile", model);
         }
@@ -124,7 +125,7 @@ namespace Tals.ProBono.Web.Controllers
                 return RedirectToAction("Profile", new {userName = model.UserName });
             }
 
-            model.SetCountySelectList(_questionRepository.Counties);
+            model.SetCountySelectList(_unitOfWork.CountyRepository.Get());
 
             return View("EditAttorneyProfile", model);
         }
@@ -133,8 +134,8 @@ namespace Tals.ProBono.Web.Controllers
         public ActionResult QuestionHistory(string userName, int page = 1) {
             var pageIndex = page - 1;
             var questionsToShow = (Roles.IsUserInRole(userName, UserRoles.Attorney)
-                                       ? _questionRepository.Questions.WithTakenBy(userName)
-                                       : _questionRepository.Questions.WithCreatedBy(userName)).OrderBy(
+                                       ? _unitOfWork.QuestionRepository.Get().WithTakenBy(userName)
+                                       : _unitOfWork.QuestionRepository.Get().WithCreatedBy(userName)).OrderBy(
                                            x => x.CreatedDate);
 
             var model = questionsToShow.ToPagedList(pageIndex, PageSize);

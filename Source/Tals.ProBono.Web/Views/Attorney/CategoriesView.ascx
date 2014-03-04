@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<IEnumerable<Tals.ProBono.Domain.Entities.Category>>" %>
+﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<CategoryListViewModel>" %>
 <%@ Import Namespace="Tals.ProBono.Domain.Filters" %>
     <fieldset>
     <table class="categorygridview">
@@ -19,12 +19,12 @@
             </th>
             <th>Subscription</th>
         </tr>
-<% foreach(var item in Model) { %>
+<% foreach(var item in Model.Categories) { %>
 
         <tr>
             <td>
-                <%: Html.ActionLink(item.ShortDescription, "List", new { category = item.CategoryName })%><br /><br />
-                <%:item.LongDescription %>
+                <%: Html.ActionLink(item.Category.ShortDescription, "List", new { category = item.Category.CategoryName })%><br /><br />
+                <%:item.Category.LongDescription %>
             </td>
             <td valign="top">
                 <% if (item.LastQuestion != null) { %>
@@ -36,15 +36,15 @@
                 <%} %>
             </td>
             <td>
-                <div style="margin: 5px;"><span class="Current"><%: item.Questions.AsQueryable().Current().Count() %></span> questions under 10 days</div>
-                <div style="margin: 5px;"><span class="Overdue"><%: item.Questions.AsQueryable().Overdue().Count() %></span> questions over 10 days</div>
-                <div style="margin: 5px;"><span class="Urgent"><%: item.Questions.AsQueryable().Urgent().Count() %></span> questions over 25 days</div>
+                <div style="margin: 5px;"><span class="Current"><%: item.CurrentCount %></span> questions under 10 days</div>
+                <div style="margin: 5px;"><span class="Overdue"><%: item.OverdueCount %></span> questions over 10 days</div>
+                <div style="margin: 5px;"><span class="Urgent"><%: item.UrgentCount %></span> questions over 25 days</div>
             </td>
             <td>
-                <% if(item.IsSubscribed(Context.User.Identity.Name)) { %>
-                    <%: Html.ActionLink("Unsubscribe", "Unsubscribe", new { id = item.Id}) %>
+                <% if(item.Category.IsSubscribed(Context.User.Identity.Name)) { %>
+                    <%: Html.ActionLink("Unsubscribe", "Unsubscribe", new { id = item.Category.Id}) %>
                 <% } else { %>
-                    <%: Html.ActionLink("Subscribe", "Subscribe", new { id = item.Id}) %>
+                    <%: Html.ActionLink("Subscribe", "Subscribe", new { id = item.Category.Id}) %>
                 <% } %>
             </td>
         </tr>

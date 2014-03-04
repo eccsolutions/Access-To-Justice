@@ -9,12 +9,11 @@ namespace Tals.ProBono.Domain.Services
 {
     public class ParseServices
     {
-        readonly IRepository<BBCodeItem> _bbCodeRepository;
+        readonly IUnitOfWork _unitOfWork;
 
-        public ParseServices(
-            IRepository<BBCodeItem> bbCodeRepository)
+        public ParseServices(IUnitOfWork unitOfWork)
         {
-            _bbCodeRepository = bbCodeRepository;
+            _unitOfWork = unitOfWork;
         }
 
         public string GetTextOnly(string text)
@@ -30,7 +29,7 @@ namespace Tals.ProBono.Domain.Services
         /// <returns></returns>
         public string ParseBBCodeText(string text)
         {
-            var tags = _bbCodeRepository.Get().Select(GetTag).ToList();
+            var tags = _unitOfWork.BbCodeRepository.Get().Select(GetTag).ToList();
             var parser = new BBCodeParser(ErrorMode.ErrorFree, null, tags);
             var result = parser.ToHtml(text);
             result = result.Replace(Environment.NewLine, "<br />");

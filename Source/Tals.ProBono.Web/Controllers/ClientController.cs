@@ -18,15 +18,15 @@ namespace Tals.ProBono.Web.Controllers
     public class ClientController : Controller
     {
         private readonly IEligibilityService _eligibilityService;
-        private readonly IQuestionRepository _questionRepository;
+        private readonly IUnitOfWork _unitOfWork;
         private readonly IEmailService _emailService;
         readonly IAuditor _auditor;
         readonly IUser _currentUser;
 
-        public ClientController(IEligibilityService eligibilityService, IQuestionRepository questionRepository, IEmailService emailService, IAuditor auditor, IUser currentUser)
+        public ClientController(IEligibilityService eligibilityService, IUnitOfWork unitOfWork, IEmailService emailService, IAuditor auditor, IUser currentUser)
         {
             this._eligibilityService = eligibilityService;
-            this._questionRepository = questionRepository;
+            this._unitOfWork = unitOfWork;
             _emailService = emailService;
             _auditor = auditor;
             _currentUser = currentUser;
@@ -41,14 +41,15 @@ namespace Tals.ProBono.Web.Controllers
         // GET: /Client/Details/1
         public ActionResult Details(int id)
         {
-            var question = _questionRepository.Questions.WithId(id);
+            var question = _unitOfWork.QuestionRepository.Get().WithId(id);
 
             if (question == null)
                 return View("NotFound");
 
             _auditor.Audit(_currentUser.UserName, id);
 
-            var model = DetailsViewModel.CreateViewModel(question);
+            var posts = _unitOfWork.PostRepository.Get().WithQuestionId(question.Id);
+            var model = DetailsViewModel.CreateViewModel(question, posts);
 
             return (!question.IsOwner(UserModel.Current.UserName)) ? View("InvalidOwner") : View(model);
         }
@@ -59,14 +60,14 @@ namespace Tals.ProBono.Web.Controllers
         {
 #if DEBUG
 #else
-            if (_questionRepository.Questions.ReachedLimit(UserModel.Current.UserName))
+            if (_unitOfWork.QuestionRepository.Get().ReachedLimit(UserModel.Current.UserName))
                 return View("ReachedMax");
 
             if (!_eligibilityService.IsEligible(Session.SessionID))
                 return RedirectToAction("Index", "Rules");
 #endif
 
-            ViewData["categories"] = _questionRepository.Categories;
+            ViewData["categories"] = _unitOfWork.CategoryRepository.Get();
 
             return View(new Question());
         }
@@ -83,9 +84,10 @@ namespace Tals.ProBono.Web.Controllers
                 {
                     question.CreatedBy = UserModel.Current.UserName;
                     question.CreatedDate = DateTime.Now;
-                    question.CountyId = _questionRepository.Counties.WithCounty(UserModel.Current.UserProfile.County).First().Id;
+                    question.CountyId = _unitOfWork.CountyRepository.Get().WithCounty(UserModel.Current.UserProfile.County).First().Id;
 
-                    _questionRepository.SaveQuestion(question);
+                    _unitOfWork.QuestionRepository.Insert(question);
+                    _unitOfWork.Save();
 
                     var detailsUrl = Url.AttorneyQuestionDetailsLink(question.Id);
                     var unsubscribeUrl = ConfigSettings.SiteUrl.TrimEnd('/') +
@@ -104,7 +106,7 @@ namespace Tals.ProBono.Web.Controllers
                 }
             }
 
-            ViewData["categories"] = _questionRepository.Categories;
+            ViewData["categories"] = _unitOfWork.CategoryRepository.Get();
 
             return View(question);
         }
@@ -113,7 +115,7 @@ namespace Tals.ProBono.Web.Controllers
         // GET: /Client/
         public ActionResult Questions()
         {
-            var questions = _questionRepository.Questions.WithCreatedBy(UserModel.Current.UserName);
+            var questions = _unitOfWork.QuestionRepository.Get().WithCreatedBy(UserModel.Current.UserName);
 
             return !questions.Any() ? View("NoRecords") : View(questions);
         }
@@ -125,7 +127,7 @@ namespace Tals.ProBono.Web.Controllers
             if (id == null)
                 return View("NotFound");
 
-            var question = _questionRepository.Questions.WithId(id.Value);
+            var question = _unitOfWork.QuestionRepository.Get().WithId(id.Value);
 
             return question == null
                        ? View("NotFound")
@@ -140,7 +142,7 @@ namespace Tals.ProBono.Web.Controllers
         [HttpPost]
         public ActionResult FollowUp(Post reply, int id)
         {
-            var question = _questionRepository.Questions.WithId(id);
+            var question = _unitOfWork.QuestionRepository.Get().WithId(id);
 
             if (this.ModelState.IsValid)
             {
@@ -149,8 +151,8 @@ namespace Tals.ProBono.Web.Controllers
                     reply.CreatedBy = UserModel.Current.UserName;
                     reply.CreatedDate = DateTime.Now;
 
-                    question.AddReply(reply);
-                    _questionRepository.SaveChanges();
+                    question.Posts.Add(reply);
+                    _unitOfWork.Save();
 
                     if (!string.IsNullOrEmpty(question.TakenBy))
                     {
@@ -181,21 +183,21 @@ namespace Tals.ProBono.Web.Controllers
 
         public ViewResult AcceptAnswer(int questionId, int postId)
         {
-            var question = _questionRepository.Questions.WithId(questionId);
-            var post = question.Responses.WithId(postId);
-
+            var post = _unitOfWork.PostRepository.Get().WithId(postId);
             return View("MarkAsAnswer", post);
         }
 
         [HttpPost]
         public ActionResult AcceptAnswer(Post post)
         {
-            var question = _questionRepository.Questions.WithId(post.QuestionId);
+            var question = _unitOfWork.QuestionRepository.Get().WithId(post.QuestionId);
+            var postToUpdate = _unitOfWork.PostRepository.Get().WithId(post.Id);
 
             if (!question.IsOwner(UserModel.Current.UserName)) return View("InvalidOwner");
 
-            question.MarkAsAnswer(post.Id, UserModel.Current.UserName);
-            _questionRepository.SaveChanges();
+            postToUpdate.MarkAccepted();
+            question.Closed(UserModel.Current.UserName);
+            _unitOfWork.Save();
 
             return RedirectToAction("Details", new { id = question.Id });
         }
