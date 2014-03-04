@@ -20,11 +20,11 @@ namespace Tals.ProBono.Web.Controllers
             set { Session["CurrentStepNumber"] = value; }
         }
 
-        public LegalAdviceContainer Container { get; set; }
+        public IUnitOfWork UnitOfWork { get; set; }
 
         public RulesController()
         {
-            if (Container == null) Container = new LegalAdviceContainer();
+            if (UnitOfWork == null) UnitOfWork = new UnitOfWork();
         }
 
         //
@@ -49,7 +49,7 @@ namespace Tals.ProBono.Web.Controllers
 
         public ActionResult Step2()
         {
-            ViewData["Counties"] = new SelectList(Container.Counties, "Id", "CountyName");
+            ViewData["Counties"] = new SelectList(UnitOfWork.CountyRepository.Get().OrderBy(x => x.CountyName), "Id", "CountyName");
             return RenderStep(new CountyQuestion(), 2);
         }
 
@@ -174,8 +174,9 @@ namespace Tals.ProBono.Web.Controllers
                 UserHostAddress = System.Web.HttpContext.Current.Request.UserHostAddress
             };
 
-            Container.AddToRuleAnswers(answer);
-            Container.SaveChanges();
+            //UnitOfWork.AddToRuleAnswers(answer);
+            UnitOfWork.RuleAnswerRepository.Insert(answer);
+            UnitOfWork.Save();
         }
     }
 }

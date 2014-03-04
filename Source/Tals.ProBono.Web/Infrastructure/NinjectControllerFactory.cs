@@ -4,7 +4,7 @@ using System.Web.Routing;
 using Ninject;
 using Ninject.Modules;
 using Tals.ProBono.Domain.Abstract;
-using Tals.ProBono.Domain.Concrete;
+using Tals.ProBono.Domain.Entities;
 using Tals.ProBono.Domain.Services;
 using Tals.ProBono.Web.Models;
 
@@ -30,15 +30,14 @@ namespace Tals.ProBono.Web.Infrastructure
     {
         public override void Load()
         {
-            Bind<IQuestionRepository>().To<QuestionRepositorySql>().InRequestScope();
             Bind<IFormsAuthenticationService>().To<FormsAuthenticationService>();
             Bind<IMembershipService>().To<AccountMembershipService>();
             Bind<IEmailService>().To<EmailService>();
             Bind<IEligibilityService>().To<EligibilityService>();
             Bind<ISecurityService>().To<SecurityService>();
             Bind<IRoles>().To<RolesWrapper>();
-            Bind<IRepositoryFactory>().To<RepositoryFactory>();
-            Bind(typeof(IRepository<>)).To(typeof(EntityRepository<>)).InRequestScope();
+            //Bind(typeof(IRepository<>)).To(typeof(EntityRepository<>)).InRequestScope();
+            Bind<IUnitOfWork>().To<UnitOfWork>();
             Bind<IUser>().ToMethod(x => UserModel.Current);
             Bind<IAuditor>().To<Auditor>();
         }

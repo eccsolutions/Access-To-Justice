@@ -22,19 +22,19 @@ namespace Tals.ProBono.Domain.Services
 
     public class EmailService : IEmailService
     {
-        private LegalAdviceContainer _container;
+        //private readonly IUnitOfWork _unitOfWork;
 
-        public EmailService()
-        {
-            _container = new LegalAdviceContainer();
-        }
+        //public EmailService(IUnitOfWork unitOfWork)
+        //{
+        //    _unitOfWork = unitOfWork;
+        //}
 
         public void SendEmailTo(string emailAddress, IEmailAssembler assembler)
         {
             if (!string.IsNullOrEmpty(emailAddress))
             {
                 SendEmail(emailAddress, assembler);
-                _container.SaveChanges();
+                //_unitOfWork.Save();
             }
         }
 
@@ -66,7 +66,7 @@ namespace Tals.ProBono.Domain.Services
             foreach(var subscriber in subscribers)
                 SendEmail(subscriber, assembler);
 
-            _container.SaveChanges();
+            //_unitOfWork.Save();
         }
 
         private static string GetSubject(string text)

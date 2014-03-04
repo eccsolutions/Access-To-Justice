@@ -7,10 +7,10 @@ namespace Tals.ProBono.Domain.Services
 {
     public class EligibilityService : IEligibilityService
     {
-        private LegalAdviceContainer _container;
+        private readonly AdviceContext _container;
         public EligibilityService()
         {
-            _container = new LegalAdviceContainer();
+            _container = new AdviceContext();
         }
 
         public bool IsEligible(string sessionId)

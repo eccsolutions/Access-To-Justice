@@ -4,6 +4,7 @@ using System.Web.Mvc;
 using System.Web.Profile;
 using System.Web.Security;
 using Tals.ProBono.Domain.Abstract;
+using Tals.ProBono.Domain.Entities;
 using Tals.ProBono.Domain.Filters;
 using Tals.ProBono.Domain.Services;
 using System.Linq;
@@ -19,17 +20,17 @@ namespace Tals.ProBono.Web.Controllers
     public class AdminController : Controller
     {
         private readonly IEmailService _emailService;
-        private readonly IQuestionRepository _questionRepository;
+        private readonly IUnitOfWork _unitOfWork;
 
-        public AdminController(IEmailService emailService, IQuestionRepository questionRepository)
+        public AdminController(IEmailService emailService, IUnitOfWork unitOfWork)
         {
             _emailService = emailService;
-            _questionRepository = questionRepository;
+            _unitOfWork = unitOfWork;
         }
         
         public ViewResult List(string category = null, string status = null, bool? taken = null, int page = 1) {
             var pageIndex = page - 1;
-            var questions = _questionRepository.Questions;
+            var questions = _unitOfWork.QuestionRepository.Get();
             if (category != null)
                 questions = questions.WithCategory(category);
 
@@ -129,11 +130,12 @@ namespace Tals.ProBono.Web.Controllers
 
         public ActionResult Edit(int id)
         {
-            var question = _questionRepository.Questions.WithId(id);
-            var categories = _questionRepository.Categories;
+            var question = _unitOfWork.QuestionRepository.Get().WithId(id);
+            var posts = _unitOfWork.PostRepository.Get().WithQuestionId(id);
+            var categories = _unitOfWork.CategoryRepository.Get();
             var users = Roles.GetUsersInRole(UserRoles.Attorney);
 
-            var model = EditViewModel.CreateViewModel(question, categories, users);
+            var model = EditViewModel.CreateViewModel(question, posts, categories, users);
             return View(model);
         }
 
@@ -142,12 +144,12 @@ namespace Tals.ProBono.Web.Controllers
         [HttpPost]
         public ActionResult Edit(EditViewModel editViewModel)
         {
-            var question = _questionRepository.Questions.WithId(editViewModel.QuestionId);
+            var question = _unitOfWork.QuestionRepository.Get().WithId(editViewModel.QuestionId);
 
             question.CategoryId = editViewModel.CategoryId;
             question.Assign(editViewModel.AssignedTo);
 
-            _questionRepository.SaveChanges();
+            _unitOfWork.Save();
 
             if (!string.IsNullOrEmpty(editViewModel.AssignedTo))
             {
@@ -164,10 +166,10 @@ namespace Tals.ProBono.Web.Controllers
         [HttpPost]
         public ActionResult UnTake(int id)
         {
-            var question = _questionRepository.Questions.WithId(id);
+            var question = _unitOfWork.QuestionRepository.Get().WithId(id);
 
             question.UnTake();
-            _questionRepository.SaveChanges();
+            _unitOfWork.Save();
 
             return RedirectToAction("Details", "Attorney", new {id = id});
         }
@@ -176,9 +178,9 @@ namespace Tals.ProBono.Web.Controllers
         [HttpPost]
         public ActionResult Open(int id, string returnUrl)
         {
-            var question = _questionRepository.Questions.WithId(id);
+            var question = _unitOfWork.QuestionRepository.Get().WithId(id);
             question.Open();
-            _questionRepository.SaveChanges();
+            _unitOfWork.Save();
             return Redirect(returnUrl);
         }
 
@@ -191,7 +193,7 @@ namespace Tals.ProBono.Web.Controllers
                 .Where(m => m.UserName.ToLower() != "talsadmin")
                 .Select(m => m.UserName);
 
-            _questionRepository.DeleteDataFor(usersToDelete);
+            _unitOfWork.DeleteDataFor(usersToDelete);
 
             foreach (string userName in usersToDelete)
             {

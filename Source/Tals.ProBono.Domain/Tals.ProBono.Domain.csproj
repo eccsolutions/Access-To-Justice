@@ -44,6 +44,9 @@
     <Reference Include="CodeKicker.BBCode">
       <HintPath>..\Tals.ProBono.Web\Referenced Components\CodeKicker.BBCode.dll</HintPath>
     </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
@@ -59,27 +62,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Abstract\EntityRepository.cs" />
-    <Compile Include="Abstract\IQuestionRepository.cs" />
-    <Compile Include="Abstract\IRepository.cs" />
     <Compile Include="Abstract\IRoles.cs" />
     <Compile Include="Concrete\QuestionRepositorySql.cs" />
     <Compile Include="Concrete\RepositoryFactory.cs" />
+    <Compile Include="Entities\AdviceContext.cs" />
     <Compile Include="Entities\Audit.cs" />
+    <Compile Include="Entities\BBCodeItem.cs" />
     <Compile Include="Entities\Category.cs" />
     <Compile Include="Entities\LegalAdvice.Designer.cs">
       <DependentUpon>LegalAdvice.edmx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Entities\County.cs" />
+    <Compile Include="Entities\Email.cs" />
+    <Compile Include="Entities\GenericRepository.cs" />
+    <Compile Include="Entities\IUnitOfWork.cs" />
     <Compile Include="Entities\Post.cs" />
     <Compile Include="Entities\Question.cs" />
+    <Compile Include="Entities\QuestionStatus.cs" />
+    <Compile Include="Entities\RuleAnswer.cs" />
     <Compile Include="Entities\Subscription.cs" />
+    <Compile Include="Entities\UnitOfWork.cs" />
+    <Compile Include="Entities\WorkEntry.cs" />
     <Compile Include="Filters\CategoryFilters.cs" />
     <Compile Include="Filters\CountyFilters.cs" />
     <Compile Include="Filters\PostFilters.cs" />
     <Compile Include="Filters\QuestionFilters.cs" />
     <Compile Include="Filters\RuleAnswerFilter.cs" />
+    <Compile Include="Filters\SubscriptionFilter.cs" />
     <Compile Include="Filters\WorkEntryFilters.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Entities\RuleQuestions.cs" />
@@ -93,18 +104,18 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Scripts\AddAuditing.sql" />
-    <Content Include="Entities\LegalAdvice.edmx.sql" />
     <Content Include="Scripts\GenerateStaticData.sql" />
     <Content Include="Scripts\LegalAdvice.edmx.sql" />
   </ItemGroup>
   <ItemGroup>
-    <EntityDeploy Include="Entities\LegalAdvice.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>LegalAdvice.Designer.cs</LastGenOutput>
-    </EntityDeploy>
+    <None Include="App.Config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.Config" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Concrete\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

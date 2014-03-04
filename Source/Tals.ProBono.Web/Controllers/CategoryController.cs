@@ -14,11 +14,11 @@ namespace Tals.ProBono.Web.Controllers
     [DynamicMasterPageFilter]
     public class CategoryController : Controller
     {
-        private readonly IQuestionRepository _questionRepository;
+        private readonly IUnitOfWork _unitOfWork;
 
-        public CategoryController(IQuestionRepository questionRepository)
+        public CategoryController(IUnitOfWork unitOfWork)
         {
-            _questionRepository = questionRepository;
+            _unitOfWork = unitOfWork;
         }
 
         //
@@ -26,7 +26,7 @@ namespace Tals.ProBono.Web.Controllers
 
         public ActionResult List()
         {
-            var model = _questionRepository.Categories;
+            var model = _unitOfWork.CategoryRepository.Get();
             return View(model);
         }
 
@@ -35,7 +35,7 @@ namespace Tals.ProBono.Web.Controllers
             if(id == 0)
                 return View(new Category());
 
-            var model = _questionRepository.Categories.FirstOrDefault(c => c.Id == id);
+            var model = _unitOfWork.CategoryRepository.Get().FirstOrDefault(c => c.Id == id);
 
             return View(model);
         }
@@ -45,7 +45,8 @@ namespace Tals.ProBono.Web.Controllers
         {
             if(ModelState.IsValid)
             {
-                _questionRepository.SaveCategory(category);
+                _unitOfWork.CategoryRepository.Update(category);
+                _unitOfWork.Save();
                 return RedirectToAction("List");
             }
 

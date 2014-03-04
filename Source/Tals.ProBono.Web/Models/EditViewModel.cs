@@ -15,11 +15,11 @@ namespace Tals.ProBono.Web.Models
         public IEnumerable<SelectListItem> AssignmentList { get; set; }
         public IEnumerable<SelectListItem> CategoryList { get; set; }
 
-        public static EditViewModel CreateViewModel(Question q, IEnumerable<Category> categories, IEnumerable<string> users)
+        public static EditViewModel CreateViewModel(Question q, IEnumerable<Post> posts, IEnumerable<Category> categories, IEnumerable<string> users)
         {
             var model = new EditViewModel();
 
-            model.Details = DetailsViewModel.CreateViewModel(q);
+            model.Details = DetailsViewModel.CreateViewModel(q, posts);
             model.AssignedTo = q.TakenBy;
             model.CategoryId = q.CategoryId.GetValueOrDefault();
             model.QuestionId = q.Id;
