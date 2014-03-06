@@ -131,17 +131,17 @@ namespace Tals.ProBono.Domain.Entities
         }           
 
         [UIHint("UserSignupEditor")]
-        //public bool Answer { get; set; }
+        public bool Answer { get; set; }
 
-        //public bool IsValid
-        //{
-        //    get { return Answer; }
-        //}
+        public bool IsValid
+        {
+            get { return true; }
+        }
 
-        //public override string ToString()
-        //{
-        //    return Answer.ToString();
-        //}
+        public override string ToString()
+        {
+            return Answer.ToString();
+        }
     }
 
     //public class IncarceratedQuestion : IRuleQuestion<bool>

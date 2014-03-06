@@ -41,9 +41,10 @@ namespace Tals.ProBono.Web.Controllers
             return RenderStep(new StartSignupQuestion(), 1);
         }
 
-        public ActionResult StartSignup()
+        [HttpPost]
+        public ActionResult Step1(StartSignupQuestion signupQuestion)
         {
-            return ExecuteStep(new StartSignupQuestion(), 2);
+            return ExecuteStep(signupQuestion, 1);
         }
         
         public ActionResult Step2()
