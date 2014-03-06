@@ -120,6 +120,30 @@ namespace Tals.ProBono.Domain.Entities
         }
     }
 
+    public class StartSignupQuestion : IRuleQuestion<bool>
+    {
+        public string Question
+        {
+            get
+            {
+                return "New User Signup"; 
+            }
+        }           
+
+        [UIHint("UserSignupEditor")]
+        public bool Answer { get; set; }
+
+        public bool IsValid
+        {
+            get { return Answer; }
+        }
+
+        public override string ToString()
+        {
+            return Answer.ToString();
+        }
+    }
+
     //public class IncarceratedQuestion : IRuleQuestion<bool>
     //{
     //    public string Question

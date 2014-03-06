@@ -473,6 +473,7 @@
     <Content Include="Views\Nav\PostActionsButtons.ascx" />
     <Content Include="Views\Nav\QuestionActionButtons.ascx" />
     <Content Include="Views\Shared\CultureChooserUserControl.ascx" />
+    <Content Include="Views\Shared\EditorTemplates\CategoryEditor.ascx" />
     <Content Include="Views\Shared\EditorTemplates\CountyEditor.ascx" />
     <Content Include="Views\Shared\MarkAsAnswer.aspx" />
     <Content Include="Views\Client\QuestionSubmitted.aspx" />
