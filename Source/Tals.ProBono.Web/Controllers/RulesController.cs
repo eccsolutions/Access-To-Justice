@@ -38,52 +38,61 @@ namespace Tals.ProBono.Web.Controllers
 
         public ActionResult Step1()
         {
-            ViewData["Counties"] = new SelectList(UnitOfWork.CountyRepository.Get().OrderBy(x => x.CountyName), "Id", "CountyName");
-            return RenderStep(new CountyQuestion(), 1);
+            return RenderStep(new StartSignupQuestion(), 1);
         }
 
-        [HttpPost]
-        public ActionResult Step1(CountyQuestion countyQuestion)
+        public ActionResult StartSignup(bool accepted)
         {
-            Session["County"] = countyQuestion.ToString();
-            return ExecuteStep(countyQuestion, 1);
+            return ExecuteStep(new StartSignupQuestion() { Answer = accepted }, 1);
         }
-
+        
         public ActionResult Step2()
         {
             ViewData["Counties"] = new SelectList(UnitOfWork.CountyRepository.Get().OrderBy(x => x.CountyName), "Id", "CountyName");
-            return RenderStep(new CaseCountyQuestion(), 2);
+            return RenderStep(new CountyQuestion(), 2);
         }
 
         [HttpPost]
-        public ActionResult Step2(CaseCountyQuestion casecountyQuestion)
+        public ActionResult Step2(CountyQuestion countyQuestion)
         {
-            Session["CaseCounty"] = casecountyQuestion.ToString();
-            return ExecuteStep(casecountyQuestion, 2);
+            Session["County"] = countyQuestion.ToString();
+            return ExecuteStep(countyQuestion, 2);
         }
 
         public ActionResult Step3()
         {
-            ViewData["Categories"] = new SelectList(UnitOfWork.CategoryRepository.Get(), "Id", "CategoryName");
-            return RenderStep(new CategoryQuestion(), 3);
+            ViewData["Counties"] = new SelectList(UnitOfWork.CountyRepository.Get().OrderBy(x => x.CountyName), "Id", "CountyName");
+            return RenderStep(new CaseCountyQuestion(), 3);
         }
 
         [HttpPost]
-        public ActionResult Step3(CategoryQuestion categoryQuestion)
+        public ActionResult Step3(CaseCountyQuestion casecountyQuestion)
         {
-            Session["Categories"] = categoryQuestion.ToString();
-            return ExecuteStep(categoryQuestion, 3);
-        }     
-        
+            Session["CaseCounty"] = casecountyQuestion.ToString();
+            return ExecuteStep(casecountyQuestion, 3);
+        }
+
         public ActionResult Step4()
         {
-            return RenderStep(new AgeQuestion(), 4);
+            ViewData["Categories"] = new SelectList(UnitOfWork.CategoryRepository.Get(), "Id", "CategoryName");
+            return RenderStep(new CategoryQuestion(), 4);
         }
 
         [HttpPost]
-        public ActionResult Step4(AgeQuestion ageQuestion)
+        public ActionResult Step4(CategoryQuestion categoryQuestion)
         {
-            return ExecuteStep(ageQuestion, 4);
+            return ExecuteStep(categoryQuestion, 4);
+        }     
+        
+        public ActionResult Step5()
+        {
+            return RenderStep(new AgeQuestion(), 5);
+        }
+
+        [HttpPost]
+        public ActionResult Step5(AgeQuestion ageQuestion)
+        {
+            return ExecuteStep(ageQuestion, 5);
         }
 
         //public ActionResult Step4()
@@ -97,42 +106,42 @@ namespace Tals.ProBono.Web.Controllers
         //    return ExecuteStep(incarceratedQuestion, 4);
         //}
 
-        public ActionResult Step5()
+        public ActionResult Step6()
         {
-            return RenderStep(new HouseHoldSizeQuestion(), 5);
+            return RenderStep(new HouseHoldSizeQuestion(), 6);
         }
 
         [HttpPost]
-        public ActionResult Step5(HouseHoldSizeQuestion houseHoldSizeQuestion)
+        public ActionResult Step6(HouseHoldSizeQuestion houseHoldSizeQuestion)
         {
-            return ExecuteStep(houseHoldSizeQuestion, 5, new { HouseHoldSize = houseHoldSizeQuestion.Answer });
+            return ExecuteStep(houseHoldSizeQuestion, 6, new { HouseHoldSize = houseHoldSizeQuestion.Answer });
         }
 
-        public ActionResult Step6(int? houseHoldSize)
+        public ActionResult Step7(int? houseHoldSize)
         {
-            if (houseHoldSize == null) CurrentStepNumber = 5;
+            if (houseHoldSize == null) CurrentStepNumber = 6;
             var value = houseHoldSize ?? 0;
             var question = new IncomeQuestion(value);
             ViewData["Frequencies"] = question.Frequencies;
 
-            return RenderStep(question, 6);
+            return RenderStep(question, 7);
         }
 
         [HttpPost]
-        public ActionResult Step7([Bind(Prefix = "Answer")]IncomeQuestion incomeQuestion)
+        public ActionResult Step8([Bind(Prefix = "Answer")]IncomeQuestion incomeQuestion)
         {
             ViewData["Frequencies"] = incomeQuestion.Frequencies;
-            return ExecuteStep(incomeQuestion, 7);
+            return ExecuteStep(incomeQuestion, 8);
         }
 
-        public ActionResult Step8()
+        public ActionResult Step9()
         {
-            return RenderStep(new UserAgreementQuestion(), 8);
+            return RenderStep(new UserAgreementQuestion(), 9);
         }
 
         public ActionResult AcceptUseAgreement(bool accepted)
         {
-            return ExecuteStep(new UserAgreementQuestion() { Answer = accepted }, 8);
+            return ExecuteStep(new UserAgreementQuestion() { Answer = accepted }, 9);
         }
         
 
@@ -147,9 +156,9 @@ namespace Tals.ProBono.Web.Controllers
         //    return ExecuteStep(investmentQuestion, 7);
         //}
 
-        public ActionResult Step9()
+        public ActionResult Step10()
         {
-            if (CurrentStepNumber != 9)
+            if (CurrentStepNumber != 10)
                 return RedirectToAction("Step" + CurrentStepNumber);
 
             RecordAnswer(new MeetsRules() { Answer = true });
