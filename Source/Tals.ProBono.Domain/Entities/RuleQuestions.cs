@@ -27,7 +27,7 @@ namespace Tals.ProBono.Domain.Entities
 
         public bool IsValid
         {
-            get { return Answer > 14; }
+            get { return Answer > 13; }
         }
 
         public override string ToString()
