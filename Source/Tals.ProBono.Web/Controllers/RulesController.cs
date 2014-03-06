@@ -69,13 +69,11 @@ namespace Tals.ProBono.Web.Controllers
         }
 
         [HttpPost]
-        public ActionResult Step2(CategoryQuestion categoryQuestion)
+        public ActionResult Step3(CategoryQuestion categoryQuestion)
         {
             Session["Categories"] = categoryQuestion.ToString();
-            return ExecuteStep(categoryQuestion, 2);
-        }
-        
-        
+            return ExecuteStep(categoryQuestion, 3);
+        }     
         
         public ActionResult Step4()
         {

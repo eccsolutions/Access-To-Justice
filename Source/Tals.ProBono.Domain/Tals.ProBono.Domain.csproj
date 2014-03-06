@@ -76,7 +76,6 @@
     <Compile Include="Entities\Email.cs" />
     <Compile Include="Entities\GenericRepository.cs" />
     <Compile Include="Entities\IUnitOfWork.cs" />
-    <Compile Include="Entities\LegalIssueType.cs" />
     <Compile Include="Entities\Post.cs" />
     <Compile Include="Entities\Question.cs" />
     <Compile Include="Entities\QuestionStatus.cs" />
