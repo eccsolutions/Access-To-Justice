@@ -70,10 +70,13 @@
     <Compile Include="Entities\Audit.cs" />
     <Compile Include="Entities\BBCodeItem.cs" />
     <Compile Include="Entities\Category.cs" />
-    <Compile Include="Entities\County.cs" />
+    <Compile Include="Entities\County.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Entities\Email.cs" />
     <Compile Include="Entities\GenericRepository.cs" />
     <Compile Include="Entities\IUnitOfWork.cs" />
+    <Compile Include="Entities\LegalIssueType.cs" />
     <Compile Include="Entities\Post.cs" />
     <Compile Include="Entities\Question.cs" />
     <Compile Include="Entities\QuestionStatus.cs" />

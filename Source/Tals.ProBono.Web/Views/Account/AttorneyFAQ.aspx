@@ -11,48 +11,49 @@
         <%: Html.ActionLink("Back to Attorney Sign Up", "AttorneySignUp", "Account", null, new { @class = "ImageLink" })%></p>
     <% } %>
     <p>
-        <a href="#1">How does Minnesota Legal Advice Online (MLAO) work?</a>
+        <a href="#Q1">How does Minnesota Legal Advice Online (MLAO) work?</a>
         <br />
-        Who is eligible to use MLAO?
-        Will I earn CLE credit?
+        <a href="#Q2">Who is eligible to use MLAO?</a>
         <br />
-        What kinds of lawyers should participate?
+        <a href="#Q3">Will I earn CLE credit?</a>
         <br />
-        What happens if a lawyer cannot answer a user’s question?
+        <a href="#Q4">What kinds of lawyers should participate?</a>
         <br />
-        What type of relationship exists between the client and lawyer?
+        <a href="#Q5">What happens if a lawyer cannot answer a user’s question?</a>
         <br />
-        How do lawyers check for conflicts of interest?
+        <a href="#Q6">What type of relationship exists between the client and lawyer?</a>
         <br />
-        What about professional liability insurance coverage?
+        <a href="#Q7">How do lawyers check for conflicts of interest?</a>
         <br />
-        Is there a confidentiality issue with client information/lawyer advice being housed on the internet?
+        <a href="#Q8">What about professional liability insurance coverage?</a>
         <br />
-        Navigating the Website and Selecting Questions to Answer
+        <a href="#Q9">Is there a confidentiality issue with client information/lawyer advice being housed on the internet?</a>
         <br />
-        Selecting Questions You Want to Answer
+        <a href="#Q10">Navigating the Website and Selecting Questions to Answer</a>
         <br />
-        Entering Hours for CLE Credit
+        <a href="#Q11">Selecting Questions You Want to Answer</a>
+        <br />
+        <a href="#Q12">Entering Hours for CLE Credit</a>
         <br />
         <br />
-        Referral Questions:
+        <strong>Referral Questions:</strong>
         <br />
-        How do I contact the administrator with a question?
+        <a href="#Q13">How do I contact the administrator with a question?</a>
         <br />
-        What if I think the user needs more help?
+        <a href="#Q14">What if I think the user needs more help?</a>
         <br />
-        How do I make a referral?
+        <a href="#Q15">How do I make a referral?</a>
         <br />
-        What if I want to represent the client in their case?
+        <a href="#Q16">What if I want to represent the client in their case?</a>
         <br />
-        What if I see the same question over and over, is there something that I can use to provide answers?
+        <a href="#Q17">What if I see the same question over and over, is there something that I can use to provide answers?</a>
         <br />
-        Where can I find information related to the question's substantive area of law?
+        <a href="#Q18">Where can I find information related to the question's substantive area of law?</a>
         <br />
-        What if I have further questions or feedback?
+        <a href="#Q19">What if I have further questions or feedback?</a>
     </p>
     <p>
-        <strong><a id="#1">How does Minnesota Legal Advice Online (MLAO) work?</a></strong></p>
+        <strong><a id="Q1">How does Minnesota Legal Advice Online (MLAO) work?</a></strong></p>
     <p>
         MLAO is based on the walk-in clinic or dial-a-lawyer model where clients request 
         brief advice and counsel about a specific civil legal issue from a volunteer lawyer. 
@@ -89,7 +90,7 @@
     <p>
         Lawyers will be able to view a log of questions they have answered.</p>
     <p>
-        <strong>Who is eligible to use MLAO?</strong></p>
+        <strong><a id="Q2">Who is eligible to use MLAO?</a></strong></p>
     <p>
         Eligibility for use of MLAO is limited to the following:</p>
     <ul>
@@ -101,14 +102,14 @@
     <p>
         Users must provide their name and county in order to request advice.</p>
     <p>
-        <strong>Will I earn CLE credit?</strong></p>
+        <strong><a id="Q3">Will I earn CLE credit?</a></strong></p>
     <p>
         Lawyers earn CLE credit for time spent researching and answering questions. Lawyers keep their time and report 
         it in the MLAO system before logging out of each session. Lawyers may view the number of hours they have volunteered. 
         Lawyers may earn up to 1 hour of CLE credit for every six hours of pro bono provided. See the 
         <a href="http://www.mbcle.state.mn.us/mbcle/pages/probono.asp">rules</a> for more information.</p>
     <p>
-        <strong>What kinds of lawyers should participate?</strong></p>
+        <strong><a id="Q4">What kinds of lawyers should participate?</a></strong></p>
     <p>
         All lawyers are welcome! While there are certain types of legal questions that regularly come up at legal clinics, we 
         need lawyers with different areas of expertise to volunteer. We hope the website will appeal to lawyers who want to 
@@ -116,7 +117,7 @@
         geographic location. We also hope to engage lawyers who already provide pro bono and are willing to give more of their 
         time to those who need it.</p>
     <p>
-        <strong>What happens if a lawyer cannot answer a user’s question?</strong></p>
+        <strong><a id="Q5">What happens if a lawyer cannot answer a user’s question?</a></strong></p>
     <p>
         A lawyer might be unable to answer a user’s question for a number of reasons. Some examples might be a conflict of interest, 
         the user’s failure to respond to lawyer requests for additional information, or the question is determined to fall outside 
@@ -125,7 +126,7 @@
         to place the question back into the queue so that another volunteer lawyer may try to assist the user. The lawyer should 
         let the administrator know the reason why the question needs to be placed back in the queue.</p>
     <p>
-        <strong>What type of relationship exists between the client and lawyer?</strong></p>
+        <strong><a id="Q6">What type of relationship exists between the client and lawyer?</a></strong></p>
     <p>
         In the event a client submits a question and receives an answer from an attorney, there will be an attorney/client relationship 
         formed between that client and the attorney who responds. That relationship, however, will be limited in scope and duration. 
@@ -139,7 +140,7 @@
 
     <p>There is no attorney/client relationship between the client and State Support.</p>
     <p>
-        <strong>How do lawyers check for conflicts of interest?</strong></p>
+        <strong><a id="Q7">How do lawyers check for conflicts of interest?</a></strong></p>
     <p>
         Because of the pro bono publico nature of the limited scope representation provided through MLAO, Minnesota Rules of Professional 
         Conduct 1.2(c) and 6.5 apply to an attorney’s participation in MLAO. The only conflicts of interest that would preclude an attorney 
@@ -152,15 +153,15 @@
         If, based on the information the client provides, the attorney gains actual knowledge of a conflict of interest precluding her from 
         answering, the question will be returned to the queue to be accepted by another volunteer attorney.</p>
     <p>
-        <strong>What about professional liability insurance coverage?</strong></p>
+        <strong><a id="Q8">What about professional liability insurance coverage?</a></strong></p>
     <p>
         Volunteer lawyers who provide brief advice and counsel via the website will be covered by professional liability insurance maintained 
         by Mid-Minnesota Legal Aid (MMLA). MMLA has a specific pro bono rider to its general organizational policy for this purpose. If an 
         issue of malpractice arises, Legal Services State Support can trace each answered question back to the attorney who answered it. 
         Legal Services State Support may have to contact lawyers participating in the program from time to time related to this insurance coverage.</p>
     <p>
-        <strong>Is there a confidentiality issue with client information/lawyer advice being
-            housed on the internet?</strong></p>
+        <strong><a id="Q9">Is there a confidentiality issue with client information/lawyer advice being
+            housed on the internet?</a></strong></p>
     <p>
         This site is designed to ensure client privacy. Since the web program is administered via email through a platform that limits access 
         based on a screening, confidentiality will be maintained since only the website administrator has access to content between a client 
@@ -179,7 +180,7 @@
         Information may be disclosed when legally required at the request of government authorities conducting an investigation, to verify or enforce 
         compliance with the policies governing our website and applicable laws or to protect against misuses or unauthorized use of our website.</p>
     <p>
-        <strong>Navigating the Website and Selecting Questions to Answer</strong></p>
+        <strong><a id="Q10">Navigating the Website and Selecting Questions to Answer</a></strong></p>
     <p>
         When your account has been approved by the website administrator, you will receive
         a notification email. To get started you will go to <a href="http://www.MNLegalAdvice.org">
@@ -213,7 +214,7 @@
         to review and answer.
     </p>
     <p>
-        <strong>Selecting Questions You Want to Answer</strong></p>
+        <strong><a id="Q11">Selecting Questions You Want to Answer</a></strong></p>
     <p>
         You can read the first few lines of each posted question by moving your mouse over the Subject line. This feature will allow
         you to review questions before you select the “Take” button. When you have found a question you’d like to answer, click the 
@@ -226,7 +227,7 @@
         website to respond. The client will be given your name but no other information. None of your contact information will be 
         shared unless you choose to provide it to the client.</p>
     <p>
-        <strong>How Do I Subscribe to a Category</strong></p>
+        <strong><a id="Q12">How Do I Subscribe to a Category</a></strong></p>
     <p>
         If your area of practice is specialized and you only want to answer certain types of questions, you can subscribe to a 
         Category and receive an email notification each time a question in that particular Category is posted.</p>
@@ -237,25 +238,25 @@
         You can unsubscribe at any time.
     </p>
     <p>
-        <strong>Entering Hours for CLE Credit</strong></p>
+        <strong><a id="Q13">Entering Hours for CLE Credit</a></strong></p>
     <p>
         Each time you log out of the website, you will be prompted to enter the time you have spent researching and answering 
         questions. You may log your time in 15-minute increments. You may view your hours at any time by clicking on 
         “My Profile” at the top of the page.
     </p>
     <p>
-        <strong>How do I contact the administrator with a question?</strong></p>
+        <strong><a id="Q14">How do I contact the administrator with a question?</a></strong></p>
     <p>
         If you have a question or run into a technical problem with the site, you may contact the administrator by clicking 
         the email address <a href="mailto:mlao@mnlegalservices.org">mlao@mnlegalservices.org</a> located at the bottom of the page.</p>
 
-    <p><strong>What if I think the user needs more help?</strong></p>
+    <p><strong><a id="Q15">What if I think the user needs more help?</a></strong></p>
     <p>
        If you believe that the user requires more legal assistance than can be provided through MLAO, you can refer him to 
         his local legal services organization. Each organization is different and takes different types of cases, sometimes 
         even within the same organization.  
     </p>
-    <p><strong>How do I make a referral?</strong></p>
+    <p><strong><a id="Q16">How do I make a referral?</a></strong></p>
     <p>
         LawHelpMN.org has a Legal Directory that can be found <a href="">here</a>. Every county in Minnesota is covered by a 
         legal aid organization and many other organizations operate statewide. You are able to enter the user's zip code or 
@@ -268,14 +269,14 @@
         that the organization will automatically take their case. You can then put in the contact information for the office(s) 
         that covers the client's county or specific legal problem.
     </p>
-    <p><strong>What if I want to represent the client in their case?</strong></p>
+    <p><strong><a id="Q17">What if I want to represent the client in their case?</a></strong></p>
     <p>
        If you decide to take a client's case on a pro bono basis, that representation is outside the scope of the website's 
        user agreement. You must enter into a new agreement with the client. Your contact and correspondence with the client 
        should be conducted outside of the MLAO website. You should also notify the website administrator at <a href="mailto:mlao@mnlegalservices.org">mlao@mnlegalservices.org</a>
        that you are taking the case pro bono, so that information can be tracked.
     </p>
-    <p><strong>What if I see the same question over and over, is there something that I can use to provide answers?</strong></p>
+    <p><strong><a id="Q18">What if I see the same question over and over, is there something that I can use to provide answers?</a></strong></p>
     <p>
         For the convenience of the attorneys answering the questions, we have provided some basic informational language. This 
         language does not include any advice, only information on where to find more resources on common issues. You will have 
@@ -285,12 +286,12 @@
         If there is an area where you see many questions and you feel it would be useful to have some preset
         language, please contact the Administrator.
     </p>
-    <p><strong>Where can I find information related to the question's substantive area of law?</strong></p>
+    <p><strong><a id="Q19">Where can I find information related to the question's substantive area of law?</a></strong></p>
     <p>
         ProJusticeMN.org is a website for Legal Aid and Pro Bono attorneys. The website has numerous substantive resources for attorneys who are representing low-income clients
         or providing pro-bono services. The Law Library has resources related to every area of law that MLAO covers.
     </p>
-    <p><strong>What if I have further questions or feedback?</strong></p>
+    <p><strong><a id="Q20">What if I have further questions or feedback?</a></strong></p>
     <p>
         Contact the administrator at <a href="mailto:mlao@mnlegalservices.org">mlao@mnlegalservices.org</a>.
     </p>

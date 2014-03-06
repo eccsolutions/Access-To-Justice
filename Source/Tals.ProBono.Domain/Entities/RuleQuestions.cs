@@ -17,7 +17,7 @@ namespace Tals.ProBono.Domain.Entities
     {
         public string Question
         {
-            get { return "How old are you?"; }
+            get { return "How old are you? (You must be at least 14 years old)."; }
         }
 
         [Required]
@@ -65,6 +65,27 @@ namespace Tals.ProBono.Domain.Entities
         }
 
         [UIHint("CountyEditor")]
+        public int Answer { get; set; }
+
+        public bool IsValid
+        {
+            get { return true; }
+        }
+
+        public override string ToString()
+        {
+            return Answer.ToString();
+        }
+    }
+
+    public class CategoryQuestion : IRuleQuestion<int>
+    {
+        public string Question
+        {
+            get { return "What type of legal issue do you have?"; }
+        }
+
+        [UIHint("CategoryEditor")]
         public int Answer { get; set; }
 
         public bool IsValid
@@ -127,7 +148,7 @@ namespace Tals.ProBono.Domain.Entities
             get
             {
                 return
-                    "List the number of people that live in your household which either you support or that help support you.";
+                    "List the number of people that live in your household. Include yourself as one of the people. Include anyone else in your household who you support or who helps support you.";
             }
         }
 
@@ -178,7 +199,7 @@ namespace Tals.ProBono.Domain.Entities
             get
             {
                 return
-                    "Please enter the income and how often that income is received (if any) for each person in the household.";
+                    "Income is money you get from things like jobs, government benefits (like MFIP or unemployment), and child support. Add up the income for you and for each person in your household.";
             }
         }
 

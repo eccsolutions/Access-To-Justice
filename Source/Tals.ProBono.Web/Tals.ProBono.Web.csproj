@@ -473,6 +473,8 @@
     <Content Include="Views\Nav\PostActionsButtons.ascx" />
     <Content Include="Views\Nav\QuestionActionButtons.ascx" />
     <Content Include="Views\Shared\CultureChooserUserControl.ascx" />
+    <Content Include="Views\Shared\EditorTemplates\CountyEditor.ascx" />
+    <Content Include="Views\Shared\EditorTemplates\LegalIssueTypeEditor.ascx" />
     <Content Include="Views\Shared\MarkAsAnswer.aspx" />
     <Content Include="Views\Client\QuestionSubmitted.aspx" />
     <Content Include="Views\Home\ApprovalNeeded.aspx" />
@@ -487,7 +489,6 @@
     <Content Include="Views\Shared\EditorTemplates\IntegerEditor.ascx" />
     <Content Include="Views\Shared\EditorTemplates\IncomeEditor.ascx" />
     <Content Include="Views\Shared\EditorTemplates\UserAgreementEditor.ascx" />
-    <Content Include="Views\Shared\EditorTemplates\CountyEditor.ascx" />
     <Content Include="Views\Shared\QuestionListView.ascx" />
     <Content Include="Views\Attorney\Reply.aspx" />
     <Content Include="Views\Client\Ask.aspx" />
