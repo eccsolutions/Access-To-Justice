@@ -64,7 +64,7 @@ namespace Tals.ProBono.Web.Controllers
 
         public ActionResult Step3()
         {
-            ViewData["Categories"] = new SelectList(UnitOfWork.CategoryRepository.Get().OrderBy(x => x.CategoryName), "Id", "CategoryName");
+            ViewData["Categories"] = new SelectList(UnitOfWork.CategoryRepository.Get(), "Id", "CategoryName");
             return RenderStep(new CategoryQuestion(), 3);
         }
 
