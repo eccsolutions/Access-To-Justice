@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<List<Tals.ProBono.Domain.Entities.Category>>" %>
+﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<int>" %>
     <style type="text/css">
         .auto-style1
         {
