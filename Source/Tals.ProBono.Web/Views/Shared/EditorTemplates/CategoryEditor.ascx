@@ -9,7 +9,7 @@
 <table class="auto-style1">
     <tr>
         <td><div class="editor-field">
-             <%: Html.DropDownListFor(model => model.CategoryId, new SelectList((IEnumerable)ViewData["Categories"], "Id", "ShortDescription", Model.CategoryId), new {@class = "combobox"}) %>
+             <%: Html.DropDownListFor(model => model.CategoryId, new SelectList((IEnumerable)ViewData["categories"], "Id", "ShortDescription", Model.CategoryId), new {@class = "combobox"}) %>
              <%: Html.ValidationMessageFor(model => model.CategoryId) %>
     </div></td>
         <td>
