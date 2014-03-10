@@ -11,12 +11,12 @@
         <%: Html.ActionLink("Back to Attorney Sign Up", "AttorneySignUp", "Account", null, new { @class = "ImageLink" })%></p>
     <% } %>
     <p>
-        <strong>How does AlabamaLegalAnswers  work?</strong>
+        <strong>How does AlabamaLegalAnswers work?</strong>
     </p>
 
     <p>AlabamaLegalAnswers is based on the walk-in clinic or dial-a-lawyer model where clients request brief advice and counsel about a specific civil legal issue from a volunteer lawyer. Lawyers provide information and basic legal advice without any expectation of long-term representation.</p>
 
-    <p>Users who meet eligibility (see Eligibility below) sign the <a href="http://alabamalegalanswers.org/Account/AttorneyUseAgreement?Length=7">use agreement</a>, create a username and password, post a request for legal advice information and provide facts about their case that will help the lawyer answer the question. Users will be asked to select a category (such as “housing” or “debt”) that best describes their question. The lawyer may ask for additional information before responding to the user’s request, but the user will have a choice to respond to that request or not. Users will provide their name, but no other identifying information will be shared with the volunteer lawyer. Users are informed that there is no guarantee that a question will be answered. If a question is not answered within 30 days, the user will receive an email from the website administrator instructing them to seek assistance elsewhere. The user will also be provided with a list of additional resources.</p>
+    <p>Users who meet eligibility (see <strong>Eligibility</strong> below) sign the <a href="http://alabamalegalanswers.org/Account/AttorneyUseAgreement?Length=7">use agreement</a>, create a username and password, post a request for legal advice information and provide facts about their case that will help the lawyer answer the question. Users will be asked to select a category (such as “housing” or “debt”) that best describes their question. The lawyer may ask for additional information before responding to the user’s request, but the user will have a choice to respond to that request or not. Users will provide their name, but no other identifying information will be shared with the volunteer lawyer. Users are informed that there is no guarantee that a question will be answered. If a question is not answered within 30 days, the user will receive an email from the website administrator instructing them to seek assistance elsewhere. The user will also be provided with a list of additional resources.</p>
 
     <p>Lawyers who would like to participate must create a username and password, provide contact information and their Bar ID number, <a href="http://alabamalegalanswers.org/Account/AttorneyUseAgreement?Length=7">sign the lawyer use agreement</a> and request approval from the website administrator. Before the lawyer’s account is activated, the website administrator checks to ensure the lawyer is licensed in Alabama and is in good standing with the Alabama State Bar. Once a lawyer has been approved by the website administrator, the lawyer receives an email notification and can begin answering user questions.</p>
 
@@ -24,7 +24,7 @@
 
     <p>Lawyers will be able to view a log of questions they have answered.</p>
 
-    <p>Who is eligible to use AlabamaLegalAnswers?</p>
+    <p><strong>Who is eligible to use AlabamaLegalAnswers?</strong></p>
 
     <p>Eligibility for use of AlabamaLegalAnswers is limited to the following:</p>
 
@@ -39,27 +39,27 @@
 
     <p>Users agree to post no more than 3 legal questions per year.</p>
 
-    <p>What kinds of lawyers should participate?</p>
+    <p><strong>What kinds of lawyers should participate?</strong></p>
 
     <p>All lawyers are welcome! While there are certain types of legal questions that regularly come up at legal clinics, we need lawyers with different areas of expertise and practice to volunteer. We hope the website will appeal to lawyers who want to give back but have been unable to participate in traditional pro bono work due to family obligations, schedule or geographic location. We also hope to engage lawyers who already provide pro bono and are willing to give more of their time to those who need it.  If you need information about a specific topic see the resources for pro bono attorneys at <a href="http://www.alabamaatj.org/">www.alabamatj.org.</a></p>
 
-    <p>What happens if a lawyer cannot answer a user’s question?</p>
+    <p><strong>What happens if a lawyer cannot answer a user’s question?</strong></p>
 
     <p>A lawyer might be unable to answer a user’s question for a number of reasons. Some examples might be a conflict of interest, user’s failure to respond to lawyer requests for additional information or the question is determined to fall outside the lawyer’s area of expertise. . Lawyers will have access to resources at <a href="http://www.alabamaatj.org/">www.alabamaatj.org</a> on various areas of substantive law to help them answer questions. If a lawyer determines that (s)he cannot answer a question, the lawyer may contact the site administrator to place the question back into the queue so that another volunteer lawyer may try to assist the user. The lawyer should let the administrator know the reason why the question needs to be placed back in the queue.</p>
 
-    <p>What type of relationship exists between the client and lawyer?</p>
+    <p><strong>What type of relationship exists between the client and lawyer?</strong></p>
 
     <p>When a user submits a question and receives an answer from a lawyer, there will be a lawyer/client relationship formed between that client and the lawyer who responds. That relationship, however, will be limited in scope and duration as described in the use agreements for both users and lawyers. The representation will be limited to providing an answer to the legal question and will not involve any continuing representation of the client beyond the act of providing such an answer. The lawyer will provide short-term, limited legal services to a client (the eligible user of this site) without expectation by either the lawyer or the client (the eligible user of this site) that the lawyer will provide continuing representation in the matter. Both the eligible users and lawyers must consent to the limited nature of this relationship both as to scope and duration as indicated when they accept the terms of the use agreement. Eligible users and lawyers who do not accept the terms of the use agreement will not be allowed access to the site.</p>
 
-    <p>How do lawyers check for conflicts of interest?</p>
+    <p><strong>How do lawyers check for conflicts of interest?</strong></p>
 
     <p>Under Alabama Rule of Professional Conduct 6.5, because of the pro bono nature of the limited scope representation provided through AlabamaLegalAnswers and because of the involvement of AATJ as the administrator, the general rules for lawyers as to conflicts of interest do not apply to lawyers’ participation in AlabamaLegalAnswers. Instead, the only conflicts of interest that would preclude a lawyer from answering a question for an eligible user of AlabamaLegalAnswers are conflicts of interest that the lawyer actually knows of at the time that they receive or answer a client’s question. This means that the possibility exists, and the clients agree that they understand, that a lawyer who answers a question, or another lawyer with whom they practice in a firm, may actually be representing other parties with an interest in the question. The user’s name will be provided to the lawyer so that the lawyer can make sure not to answer the question if the lawyer knows that (s)he would have a conflict of interest. If based on the information the user provides, whether user name or any details of the question, the lawyer actually knows of a conflict of interest precluding him from answering, the question will be referred to another volunteer lawyer.</p>
 
-    <p>What about professional liability insurance coverage?</p>
+    <p><strong>What about professional liability insurance coverage?</strong></p>
 
     <p>Volunteer lawyers who provide brief advice and counsel via the website will be covered by professional liability insurance maintained by AATJ. AATJ has a specific pro bono rider to its general organizational policy for this purpose. If an issue of malpractice arises, AATJ can trace each answered question back to the attorney who answered it. AATJ may have to contact lawyers participating in the program from time to time related to this insurance coverage.</p>
 
-    <p>Is there a confidentiality issue with client information/lawyer advice being housed on the internet?</p>
+    <p><strong>Is there a confidentiality issue with client information/lawyer advice being housed on the internet?</strong></p>
 
     <p>This site is designed to insure client privacy. Since the web program is administered via email through a platform that limits access based on a screening, confidentiality will be maintained since only the website administrator has access to content between a client and a lawyer. Information available to the website administrator and the lawyer responding to a client request shall remain confidential, subject to the limitations of the Privacy/Confidentiality Policy. However, client requests for information and the response of the lawyers participating in AlabamaLegalAnswers may be maintained in a database for review in order to measure the effectiveness of the project. Steps will be taken to maintain the security of this database and it will only be utilized by the administrator but an absolute guarantee of security is not possible when using the internet and internet based systems.</p>
 
@@ -69,7 +69,7 @@
 
     <p>The information collected is used to improve the content of the Web page and is not shared with other organizations for commercial purposes. Information may be disclosed when legally required at the request of government authorities conducting an investigation, to verify or enforce compliance with the policies governing our website and applicable laws or to protect against misuses or unauthorized use of our website.</p>
 
-    <p>Navigating the Website and Selecting Questions to Answer</p>
+    <p><strong>Navigating the Website and Selecting Questions to Answer</strong></p>
 
     <p>When your account has been approved by the website administrator, you will receive a notification email. To get started you will go to <a href="www.alabamalegalanswers.org">www.alabamalegalanswers.org</a> and select “Sign In” at the top right side of your screen. After you enter your username and password, you will automatically be directed to a page that lists all the questions that have been posted for lawyers to answer. </p>
 
@@ -86,23 +86,23 @@
 
     <p>The client is asked to use the Subject line to tell you, in their own words, what the question is about (for example, eviction, divorce, bankruptcy, etc.). The Category and Subject functions are tools to help lawyers quickly decide which questions they would like to review and answer. </p>
 
-    <p>Selecting Questions You Want to Answer</p>
+    <p><strong>Selecting Questions You Want to Answer</strong></p>
 
     <p>You can read the first few lines of each posted question by moving your mouse over the Subject line. This feature will allow you to review questions before you select the “Take” button. When you have found a question you’d like to answer, click the “Take” button to the left of the question. You will be asked if you are sure you want to take the question. Click “yes” and the question will now appear under the “My Taken Questions” tab at the top of the screen. This screen allows you to quickly see which questions you have taken and track the activity on each. Please respond within 3 days of taking a question. If you fail to respond within 3 days, the question will be moved back into the queue.</p>
 
     <p>Once you have taken the question, you will be able to reply to the client and provide an answer or ask follow up questions. The client will not know your identity unless you choose to provide it. If you ask the client a question, you will receive an email when the client responds and a prompt to log back into the website to respond.</p>
 
-    <p>How Do I Subscribe to a Category</p>
+    <p><strong>How Do I Subscribe to a Category</strong></p>
 
     <p>If your area of practice is specialized and you only want to answer certain types of questions, you can subscribe to a Category and receive an email notification each time a question in that particular Category is posted.</p>
 
     <p>To subscribe to a Category (for example, immigration), click on the “Practice Areas” tab at the top of the screen. Scroll down to the Category you are interested in and click on the “Subscribe” button. You will be asked if you are sure that you want to subscribe to the category. You will then enter your email address and click “Subscribe.” You can unsubscribe at any time. </p>
 
-    <p>Entering Hours</p>
+    <p><strong>Entering Hours</strong></p>
 
     <p>Each time you attempt to log out of the website, you will be prompted to enter the time you have spent researching and answering questions. You may log your time in 15-minute increments. You may view your hours at any time by clicking on “My Profile” at the top of the page. </p>
 
-    <p>How do I contact the administrator with a question?</p>
+    <p><strong>How do I contact the administrator with a question?</strong></p>
 
     <p>If you have a question or run into a technical problem with the site, you may contact the administrator by clicking on the “Help” link located at the bottom of the page.</p>
 
