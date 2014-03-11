@@ -2,10 +2,10 @@
 
 <%@ Import Namespace="Tals.ProBono.Web.Helpers" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-    Online Alabama Justice – Free Legal Advice & Counsel for Alabamians
+    Alabama Legal Answers – Free Legal Advice & Counsel for Alabamians
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <h2>Welcome to the OnlineALJustice site!</h2>
+    <h2>Welcome to the AlabamaLegalAnswers site!</h2>
     <p>
         <%:ViewRes.Index.WelcomeMessage %>
     </p>
