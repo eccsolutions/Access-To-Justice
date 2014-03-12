@@ -1,4 +1,4 @@
-<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewPage<Tals.ProBono.Domain.Entities.Question>" %>
+﻿﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<int>" %>
     <style type="text/css">
         .auto-style1
         {
@@ -9,8 +9,8 @@
 <table class="auto-style1">
     <tr>
         <td><div class="editor-field">
-             <%: Html.DropDownListFor(model => model.CategoryId, new SelectList((IEnumerable)ViewData["categories"], "Id", "ShortDescription", Model.CategoryId), new {@class = "combobox"}) %>
-             <%: Html.ValidationMessageFor(model => model.CategoryId) %>
+           <%: Html.DropDownListFor(m => m, ViewData["Categories"] as SelectList) %>
+           <%: Html.ValidationMessageFor(m => m) %>    
     </div></td>
         <td>
             <p><strong>Bankruptcy</strong></p>
