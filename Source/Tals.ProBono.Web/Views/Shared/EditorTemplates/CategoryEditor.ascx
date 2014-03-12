@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewPage<Tals.ProBono.Domain.Entities.Question>" %>
+﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<int>" %>
     <style type="text/css">
         .auto-style1
         {

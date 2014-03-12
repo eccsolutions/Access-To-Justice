@@ -36,6 +36,27 @@ namespace Tals.ProBono.Domain.Entities
         }
     }
 
+    public class OpposingPartyQuestion : IRuleQuestion<string>
+    {
+        public string Question
+        {
+            get { return "Please enter the name of the opposing party."; }
+        }
+
+        [DisplayName("Opposing Party Name")]
+        public int Answer { get; set; }
+
+        public bool IsValid
+        {
+            get { return true; }
+        }
+
+        public override string ToString()
+        {
+            return Answer.ToString();
+        }
+    }
+
     public class CountyQuestion : IRuleQuestion<int>
     {
         public string Question
