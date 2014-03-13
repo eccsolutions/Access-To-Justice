@@ -18,7 +18,7 @@ namespace Tals.ProBono.Web.Controllers
         public ActionResult Index()
         {
 #if DEBUG
-            SqlServices.Install("localhost\\sqlexpress", "AccessToJusticeServices", SqlFeatures.All);
+            SqlServices.Install("(localdb)\\v11.0", "AccessToJusticeServices", SqlFeatures.All);
 #else
             SqlServices.Install("localhost\\MLSC", "AccessToJusticeServices", SqlFeatures.All);
 #endif

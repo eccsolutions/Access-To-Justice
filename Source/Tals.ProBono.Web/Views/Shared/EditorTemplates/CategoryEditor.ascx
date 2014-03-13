@@ -9,7 +9,7 @@
 <table class="auto-style1">
     <tr>
         <td><div class="editor-field">
-        <%: Html.DropDownListFor(m => m, ViewData["Counties"] as SelectList) %>
+                    <%: Html.DropDownListFor(m => m, ViewData["Categories"] as SelectList) %>
         <%: Html.ValidationMessageFor(m => m) %>
     </div></td>
         <td>
