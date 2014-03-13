@@ -44,7 +44,7 @@ namespace Tals.ProBono.Domain.Entities
         }
 
         [DisplayName("Opposing Party Name")]
-        public int Answer { get; set; }
+        public string Answer { get; set; }
 
         public bool IsValid
         {
