@@ -2,7 +2,7 @@
 
 <%@ Import Namespace="ViewRes" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-    Online Tennessee Justice - Set security question
+    Minnesota Legal Advice Online - Set security question
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <h2>Select a security question and provide an answer</h2>

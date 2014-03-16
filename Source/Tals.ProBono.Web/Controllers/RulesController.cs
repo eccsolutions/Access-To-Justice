@@ -129,20 +129,20 @@ namespace Tals.ProBono.Web.Controllers
         }
 
         [HttpPost]
-        public ActionResult Step8([Bind(Prefix = "Answer")]IncomeQuestion incomeQuestion)
+        public ActionResult Step7([Bind(Prefix = "Answer")]IncomeQuestion incomeQuestion)
         {
             ViewData["Frequencies"] = incomeQuestion.Frequencies;
-            return ExecuteStep(incomeQuestion, 8);
+            return ExecuteStep(incomeQuestion, 7);
         }
 
-        public ActionResult Step9()
+        public ActionResult Step8()
         {
-            return RenderStep(new UserAgreementQuestion(), 9);
+            return RenderStep(new UserAgreementQuestion(), 8);
         }
 
         public ActionResult AcceptUseAgreement(bool accepted)
         {
-            return ExecuteStep(new UserAgreementQuestion() { Answer = accepted }, 9);
+            return ExecuteStep(new UserAgreementQuestion() { Answer = accepted }, 8);
         }
         
 
@@ -157,9 +157,9 @@ namespace Tals.ProBono.Web.Controllers
         //    return ExecuteStep(investmentQuestion, 7);
         //}
 
-        public ActionResult Step10()
+        public ActionResult Step9()
         {
-            if (CurrentStepNumber != 10)
+            if (CurrentStepNumber != 9)
                 return RedirectToAction("Step" + CurrentStepNumber);
 
             RecordAnswer(new MeetsRules() { Answer = true });

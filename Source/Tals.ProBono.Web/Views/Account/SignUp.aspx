@@ -5,14 +5,14 @@
 </asp:Content>
 <asp:Content ID="registerContent" ContentPlaceHolderID="MainContent" runat="server">
     <h2>
-        Sign Up - New User</h2>
+        Sign Up Username and Password</h2>
     <p>
-        Use the form below to create a new account.
+        Make a username and password to use this website.
     </p>
     <p>
-        Passwords are required to be a minimum of
+        Your password has to be at least 
         <%: ViewData["PasswordLength"] %>
-        characters in length.
+        letters or numbers long.
     </p>
     <p><strong>Note:</strong> All fields are required except where otherwise specified</p>
     <% using (Html.BeginForm())
@@ -49,9 +49,7 @@
             <div class="editor-label">
                 <%: Html.LabelFor(m => m.Email) %>
                 (Optional)<br />
-                No email address? Then you must check back to see if you got an answer.<br />
-                Please add Onlinetnjustice@tals.org to your safe sender's list.<br />
-                Visit <a href="http://safesenderslist.com/">Safe Senders List</a> for instructions.
+                No email address? Then you must check the website to see if you got an answer to your question.<br />
             </div>
             <div class="editor-field">
                 <%: Html.TextBoxFor(m => m.Email) %>
@@ -73,9 +71,7 @@
             </div>
             <%: Html.Hidden("returnUrl", Request.QueryString["ReturnUrl"]) %>
             <p class="bold">
-                * Write down your username and password.
-                You will need them to ask questions and read the lawyer's answer.
-                Keep it in a safe place so no one else can use it.
+                Write down your username and password.  Keep them in a safe place so no one else can use them.  Don't give them to anyone else.  You will need your username and password to log back in and read the lawyer's answer to your question.
             </p>
             <p>
                 <input type="submit" value="Sign Up" class="ImageLink" />

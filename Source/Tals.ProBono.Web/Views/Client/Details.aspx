@@ -12,14 +12,14 @@
 
     <% if (Model.Question.Posts.Count(x => x.CreatedBy != Model.Question.CreatedBy) > 0) { %>
     <div>
-        <p>You have received an answer and can do the following:</p>
+        <p>You have received an answer to your question.  You can:</p>
     <ul>
-        <li>Follow-up with the answer given by clicking the follow-up button next to it</li>
+        <li>Follow-up with the answer given by clicking "Follow-up"</li>
         <li>Print or save the answer to your question</li>
-        <li>Mark the answer as accepted</li>
+        <li>End the question by clicking "Accept"</li>
     </ul>
     <p>
-        The last answer given will be automatically accepted after 30 days of inactivity.
+        The lawyer's last answer will automatically end the question if you do not follow up within 14 days.
     </p>
     </div>
     <% } %>

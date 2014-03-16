@@ -62,7 +62,4 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-	GlobalSection(TestCaseManagementSettings) = postSolution
-		CategoryFile = Tals.ProBono.vsmdi
-	EndGlobalSection
 EndGlobal
