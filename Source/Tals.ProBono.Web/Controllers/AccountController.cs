@@ -109,8 +109,8 @@ namespace Tals.ProBono.Web.Controllers
             FormsService.SignOut();
             Session.Abandon();
 
-            if (UserModel.Current.IsInRole(UserRoles.BasicUser))
-                return Redirect("http://survey.constantcontact.com/survey/a07e3ge5rijgkh0hfdr/start");
+            //if (UserModel.Current.IsInRole(UserRoles.BasicUser))
+            //    return Redirect("http://survey.constantcontact.com/survey/a07e3ge5rijgkh0hfdr/start");
 
             return RedirectToAction("Index", "Home");
         }

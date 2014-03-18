@@ -52,9 +52,9 @@ namespace Tals.ProBono.Web.Helpers
 
             var tagBuilder = new TagBuilder("tr");
 
-            var cssClass = question.IsClosed() ? "Closed" : created > DateTime.Now.AddDays(-10)
+            var cssClass = question.IsClosed() ? "Closed" : created > DateTime.Now.AddDays(-5)
                                 ? "Current"
-                                : created < DateTime.Now.AddDays(-25) ? "Urgent" : "Overdue";
+                                : created < DateTime.Now.AddDays(-10) ? "Urgent" : "Overdue";
 
             tagBuilder.AddCssClass(cssClass);
 

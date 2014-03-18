@@ -114,7 +114,7 @@ namespace Tals.ProBono.Web.Models
         public string Email { get; set; }
 
         [Required]
-        [DisplayName("BPR Number")]
+        [DisplayName("Attorney ID Number")]
         public string DisciplinaryBoardNumber { get; set; }
 
         [Required]
@@ -146,6 +146,7 @@ namespace Tals.ProBono.Web.Models
 
         [DisplayName("Allow Assignments")]
         public bool AllowAssignments { get; set; }
+
     }
     #endregion
 

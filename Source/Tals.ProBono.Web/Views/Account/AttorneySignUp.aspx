@@ -29,7 +29,6 @@
                 <%: Html.ValidationMessageFor(m => m.UserName) %>
             </div>
             <label class="editor-label">Email address</label><br/>
-            Note: Please add onlinetnjustice@tals.org to your safe senders list. <a href="http://safesenderslist.com/" target="_blank">Find instructions</a>
             <div class="editor-field">
                 <%: Html.TextBoxFor(m => m.Email) %>
                 <%: Html.ValidationMessageFor(m => m.Email) %>
@@ -68,7 +67,7 @@
                 <%: Html.ValidationMessageFor(m => m.LastName) %>
             </div>
             <label class="editor-label">
-                BPR Number</label>
+                Attorney ID Number</label>
             <div class="editor-field">
                 <%: Html.TextBoxFor(m => m.DisciplinaryBoardNumber) %>
                 <%: Html.ValidationMessageFor(m => m.DisciplinaryBoardNumber) %>
@@ -122,6 +121,15 @@
                 <div class="editor-field">
                     <%: Html.TextBoxFor(m => m.Zip) %>
                     <%: Html.ValidationMessageFor(m => m.Zip) %>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Referral Organization</legend>
+                <label class="editor-label">
+                    If you found out about this website from a program list it here:
+                </label>
+                <div class="editor-field">
+
                 </div>
             </fieldset>
             <p>

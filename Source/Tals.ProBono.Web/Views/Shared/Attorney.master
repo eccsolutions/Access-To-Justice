@@ -36,7 +36,17 @@
         <div id="questionMenu" class="verticalMenu">
             <% Html.RenderAction("QuestionMenu", "Nav"); %>
         </div>
-    </asp:ContentPlaceHolder>
+        <br />
+        <br />
+        <div>
+            <p>
+                Looking for legal resources for housing, family, or other legal issues?</p>
+            <p>
+                Visit <a href="http://www.projusticemn.org" target="_blank">www.ProJusticeMN.org</a> to see training materials, recorded trainings and webinars, sample language with legal information for commonly asked questions, and other reference materials.</p>
+            <p>
+                Signing up is easy. Just click “Join ProJusticeMN” on the left side of the webpage, and then follow the prompts. If you are a private attorney, just indicate that you are engaged in pro bono work. We will review your application and approve your membership.</p>
+        </div>
+        </asp:ContentPlaceHolder>
 </asp:Content>
 <asp:Content runat="server" ID="Main" ContentPlaceHolderID="MainContent">
     <asp:ContentPlaceHolder runat="server" ID="MainContent" />

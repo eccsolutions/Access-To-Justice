@@ -38,6 +38,7 @@ namespace Tals.ProBono.Domain.Entities
         public string ClosedBy { get; private set; }
         public string PersonOrOrganization { get; set; }
         public Nullable<int> CaseCountyId { get; set; }
+        public string ReferralOrg { get; set; }
 
         public virtual Category Category { get; set; }
         public virtual County County { get; set; }
