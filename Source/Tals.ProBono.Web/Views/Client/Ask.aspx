@@ -21,13 +21,15 @@
                         <td width="30%"> <%: Html.DropDownListFor(model => model.CategoryId, new SelectList((IEnumerable)ViewData["categories"], "Id", "ShortDescription", Model.CategoryId), new {@class = "combobox"}) %>
                              <%: Html.ValidationMessageFor(model => model.CategoryId) %>
                         </td>
-                         <td width="70%">
-                             <p><strong>Bankruptcy</strong></p>
-                             <p>If you live in Aitkin, Carlton, Cass, Cook, Crow Wing, Itasca, Kanabec, Koochiching, Lake, Pine, or St. Louis County, contact the Volunteer Attorney Program by clicking <a href="http://volunteerattorney.org/AboutUs/VolunteerAttorneyProgram/ConsumerCreditAdvocacyProjectCCAP.aspx" target="_blank">here</a>. If you live in any other Minnesota county, contact the Volunteer Lawyers Network by clicking <a href="https://www.formstack.com/forms/vln-intake" target="_blank">here.</a></p>
-                             <p><strong>Sealing (Expunging) Criminal Records</strong></p>
-                             <p>If you live in Aitkin, Carlton, Cass, Cook, Crow Wing, Itasca, Kanabec, Lake, Pine, or St. Louis County, contact the Volunteer Attorney Program by clicking <a href="http://volunteerattorney.org/AboutUs/VolunteerAttorneyProgram/AskanAttorneyProgram.aspx" target="_blank">here</a> If you live in any other Minnesota county, contact the Volunteer Lawyers Network by clicking <a href="https://www.formstack.com/forms/vln-intake " target="_blank">here.</a></p>
-                             <p><strong>Received Court Papers about a Debt Issue</strong></p>
-                             <p>If your debt case is in Aitkin, Carlton, Cass, Cook, Crow Wing, Itasca, Kanabec, Koochiching, Lake, Pine, or St. Louis County, contact the Volunteer Attorney Program by clicking <a href="http://volunteerattorney.org/AboutUs/VolunteerAttorneyProgram/AskanAttorneyProgram.aspx" target="_blank">here.</a> If your case is in any other Minnesota county, contact the Volunteer Lawyers Network by clicking <a href="https://www.formstack.com/forms/vln-intake" target="_blank">here.</a></p>
+                         <td width="70%">     
+                               Don't see your legal issue listed? Click <a href="http://www.lawhelpmn.org/resource/mlao-referrals-1?ref=m1muK" target="_blank">here</a> if your question is about:
+                               <ul>
+                                    <li>bankruptcy,</li>
+                                    <li>sealing (expunging) criminal records, or</li>
+                                    <li>being sued by a debt collector or credit card company.</li>
+                               </ul>
+                                This site can't help you with a problem you could go to jail for. 
+                                Click <a href="http://www.lawhelpmn.org/resource/criminal-law-info?ref=hliW4" target="_blank">here</a> for other places to get help with a criminal problem.
                         </td>
                     </tr>
                 </table>
@@ -62,7 +64,8 @@
             </div>
 
             <div class="editor-field">
-               <%: Html.TextBoxFor(model => model.CaseCounty) %>
+               <%: Html.DropDownListFor(model => model.CaseCountyId, new SelectList((IEnumerable)ViewData["casecounties"], "Id", "CountyName", Model.CaseCountyId), new {@class = "combobox"}) %>
+                <%--ViewData["Counties"] = new SelectList(UnitOfWork.CountyRepository.Get().OrderBy(x => x.CountyName), "Id", "CountyName");--%>
             </div>
             
             <div class="editor-label">

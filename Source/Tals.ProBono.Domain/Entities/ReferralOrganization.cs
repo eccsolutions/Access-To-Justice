@@ -12,7 +12,7 @@ namespace Tals.ProBono.Domain.Entities
     using System;
     using System.Collections.Generic;
 
-    public class ReferralOrg
+    public class ReferralOrganization
     {
 
         public int Id { get; set; }

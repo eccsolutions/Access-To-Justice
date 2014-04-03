@@ -12,6 +12,7 @@ namespace Tals.ProBono.Domain.Entities
 
         private GenericRepository<Question> _questionRepository;
         private GenericRepository<County> _countyRepository;
+        private GenericRepository<ReferralOrganization> _referralorganizationRepository;
         private GenericRepository<Post> _postRepository;
         private GenericRepository<BBCodeItem> _bbCodeRepository;
         private GenericRepository<Audit> _auditRepository;
@@ -28,6 +29,11 @@ namespace Tals.ProBono.Domain.Entities
         public GenericRepository<County> CountyRepository
         {
             get { return _countyRepository ?? (_countyRepository = new GenericRepository<County>(_context)); }
+        }
+
+        public GenericRepository<ReferralOrganization> ReferralOrganizationRepository
+        {
+            get { return _referralorganizationRepository ?? (_referralorganizationRepository = new GenericRepository<ReferralOrganization>(_context)); }
         }
 
         public GenericRepository<Post> PostRepository

@@ -129,7 +129,8 @@
                     If you found out about this website from a program list it here:
                 </label>
                 <div class="editor-field">
-
+                    <%: Html.DropDownListFor(m => m.ReferralOrganization, Model.ReferralOrganizations, "Select an organization") %>
+                    <%: Html.ValidationMessageFor(m => m.ReferralOrganization) %>
                 </div>
             </fieldset>
             <p>

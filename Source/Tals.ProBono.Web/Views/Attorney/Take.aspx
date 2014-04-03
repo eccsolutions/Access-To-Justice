@@ -37,6 +37,12 @@
                 <td>
                     <div class="display-subject">Subject: <%: Model.Subject %></div>
                     <br />
+                    <div>Client County of Residence:<%: Model.County.CountyName %></div>
+                    <br />
+                    <div>Client County of Venue:<%: Model.CaseCounty.CountyName %></div>
+                    <br />
+                    <div>Adverse Party:<%: Model.OpposingParty %></div>
+                    <br />
                     <%: Html.Parse(Model.Body) %>
                 </td>
             </tr>

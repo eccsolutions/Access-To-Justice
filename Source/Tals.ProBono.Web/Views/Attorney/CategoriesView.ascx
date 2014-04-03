@@ -36,9 +36,9 @@
                 <%} %>
             </td>
             <td>
-                <div style="margin: 5px;"><span class="Current"><%: item.CurrentCount %></span> questions under 10 days</div>
-                <div style="margin: 5px;"><span class="Overdue"><%: item.OverdueCount %></span> questions over 10 days</div>
-                <div style="margin: 5px;"><span class="Urgent"><%: item.UrgentCount %></span> questions over 25 days</div>
+                <div style="margin: 5px;"><span class="Current"><%: item.CurrentCount %></span> questions posted within last 5 days</div>
+                <div style="margin: 5px;"><span class="Overdue"><%: item.OverdueCount %></span> questions posted within last 6 to 10 days</div>
+                <div style="margin: 5px;"><span class="Urgent"><%: item.UrgentCount %></span> questions posted over 10 days ago</div>
             </td>
             <td>
                 <% if(item.Category.IsSubscribed(Context.User.Identity.Name)) { %>

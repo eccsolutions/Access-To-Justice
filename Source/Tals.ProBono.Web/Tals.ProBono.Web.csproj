@@ -90,6 +90,7 @@
   <ItemGroup>
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\ReferralOrganizationController.cs" />
     <Compile Include="Models\CategoryListViewModel.cs" />
     <Compile Include="Controllers\CountyController.cs" />
     <Compile Include="Infrastructure\Auditor.cs" />
@@ -452,6 +453,8 @@
     <Content Include="Views\Attorney\Resources.aspx" />
     <Content Include="Views\County\Edit.aspx" />
     <Content Include="Views\County\List.aspx" />
+    <Content Include="Views\ReferralOrganization\Edit.aspx" />
+    <Content Include="Views\ReferralOrganization\List.aspx" />
     <Content Include="Views\Shared\ColorCoding.ascx" />
     <Content Include="Views\Admin\ConfirmApproval.aspx" />
     <Content Include="Views\Admin\ConfirmDenial.aspx" />

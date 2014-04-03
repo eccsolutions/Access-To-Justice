@@ -7,11 +7,13 @@ namespace Tals.ProBono.Domain.Entities
     {
         GenericRepository<Question> QuestionRepository { get; }
         GenericRepository<County> CountyRepository { get; }
+        GenericRepository<ReferralOrganization> ReferralOrganizationRepository { get; }
         GenericRepository<Post> PostRepository { get; }
         GenericRepository<BBCodeItem> BbCodeRepository { get; }
         GenericRepository<Audit> AuditRepository { get; }
         GenericRepository<RuleAnswer> RuleAnswerRepository { get; }
         GenericRepository<Category> CategoryRepository { get; }
+        
         GenericRepository<Subscription> SubscriptionRepository { get; }
         GenericRepository<WorkEntry> WorkEntryRepository { get; }
         void Save();

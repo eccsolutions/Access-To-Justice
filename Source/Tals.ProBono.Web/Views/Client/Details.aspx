@@ -19,7 +19,7 @@
         <li>End the question by clicking "Accept"</li>
     </ul>
     <p>
-        The lawyer's last answer will automatically end the question if you do not follow up within 14 days.
+        The attorney's last answer will automatically end the question if you do not follow up within 14 days.
     </p>
     </div>
     <% } %>

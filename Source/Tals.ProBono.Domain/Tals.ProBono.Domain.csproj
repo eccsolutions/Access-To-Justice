@@ -71,7 +71,7 @@
     <Compile Include="Entities\BBCodeItem.cs" />
     <Compile Include="Entities\Category.cs" />
     <Compile Include="Entities\CaseCounty.cs" />
-    <Compile Include="Entities\ReferralOrg.cs" />
+    <Compile Include="Entities\ReferralOrganization.cs" />
     <Compile Include="Entities\County.cs">
       <SubType>Code</SubType>
     </Compile>

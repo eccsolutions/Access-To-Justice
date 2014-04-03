@@ -211,7 +211,8 @@ namespace Tals.ProBono.Web.Controllers
                 
                 var model = new AttorneySignUpModel
                 {
-                    Counties = new SelectList(_unitOfWork.CountyRepository.Get().ToList(), "Id", "CountyName")
+                    Counties = new SelectList(_unitOfWork.CountyRepository.Get().ToList(), "Id", "CountyName"),
+                    ReferralOrganizations = new SelectList(_unitOfWork.ReferralOrganizationRepository.Get().ToList(),"Id","OrgName")
                 };
 
                 return View(model);
@@ -244,6 +245,7 @@ namespace Tals.ProBono.Web.Controllers
                     profile.State = model.State;
                     profile.Zip = model.Zip;
                     profile.RegistrationDate = DateTime.Now;
+                    profile.ReferralOrganization = _unitOfWork.ReferralOrganizationRepository.Get().First(x => x.Id == model.ReferralOrganization).OrgName;
 
                     profile.Save();
 
