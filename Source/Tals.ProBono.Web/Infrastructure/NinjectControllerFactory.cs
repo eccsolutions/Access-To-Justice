@@ -37,7 +37,7 @@ namespace Tals.ProBono.Web.Infrastructure
             Bind<ISecurityService>().To<SecurityService>();
             Bind<IRoles>().To<RolesWrapper>();
             //Bind(typeof(IRepository<>)).To(typeof(EntityRepository<>)).InRequestScope();
-            Bind<IUnitOfWork>().To<UnitOfWork>();
+            Bind<IUnitOfWork>().To<UnitOfWork>().InRequestScope();
             Bind<IUser>().ToMethod(x => UserModel.Current);
             Bind<IAuditor>().To<Auditor>();
         }

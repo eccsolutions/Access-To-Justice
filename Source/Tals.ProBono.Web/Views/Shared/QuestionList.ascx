@@ -18,7 +18,7 @@
        { %>
     <tr>
         <td class="gridcolumn" id="subjectcolumn">
-            <%: Html.ActionLink(item.Subject, "Details", "Attorney", new { id=item.Id }, null) %>
+            <%: Html.ActionLink(item.Subject, "Details", new {id=item.Id}) %>
             <% if (item.IsUnread(HttpContext.Current.User.Identity.Name))
                { %>
             <sup><span class="unread">&nbsp;New!</span></sup>

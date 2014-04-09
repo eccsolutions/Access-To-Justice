@@ -12,6 +12,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tals.ProBono.Web", "Tals.Pr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tals.ProBono.Domain", "Tals.ProBono.Domain\Tals.ProBono.Domain.csproj", "{71DB39A1-D146-46ED-8EAF-FCAB04BA3202}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ATJ.Tests", "ATJ.Tests\ATJ.Tests.csproj", "{173FAC84-9F89-4A91-A396-E1852BE31319}"
+EndProject
 Global
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = Tals.ProBono.vsmdi
@@ -58,6 +60,21 @@ Global
 		{71DB39A1-D146-46ED-8EAF-FCAB04BA3202}.Staging|Mixed Platforms.ActiveCfg = Staging|Any CPU
 		{71DB39A1-D146-46ED-8EAF-FCAB04BA3202}.Staging|Mixed Platforms.Build.0 = Staging|Any CPU
 		{71DB39A1-D146-46ED-8EAF-FCAB04BA3202}.Staging|x86.ActiveCfg = Staging|Any CPU
+		{173FAC84-9F89-4A91-A396-E1852BE31319}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{173FAC84-9F89-4A91-A396-E1852BE31319}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{173FAC84-9F89-4A91-A396-E1852BE31319}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{173FAC84-9F89-4A91-A396-E1852BE31319}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{173FAC84-9F89-4A91-A396-E1852BE31319}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{173FAC84-9F89-4A91-A396-E1852BE31319}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{173FAC84-9F89-4A91-A396-E1852BE31319}.Release|Any CPU.Build.0 = Release|Any CPU
+		{173FAC84-9F89-4A91-A396-E1852BE31319}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{173FAC84-9F89-4A91-A396-E1852BE31319}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{173FAC84-9F89-4A91-A396-E1852BE31319}.Release|x86.ActiveCfg = Release|Any CPU
+		{173FAC84-9F89-4A91-A396-E1852BE31319}.Staging|Any CPU.ActiveCfg = Release|Any CPU
+		{173FAC84-9F89-4A91-A396-E1852BE31319}.Staging|Any CPU.Build.0 = Release|Any CPU
+		{173FAC84-9F89-4A91-A396-E1852BE31319}.Staging|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{173FAC84-9F89-4A91-A396-E1852BE31319}.Staging|Mixed Platforms.Build.0 = Release|Any CPU
+		{173FAC84-9F89-4A91-A396-E1852BE31319}.Staging|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

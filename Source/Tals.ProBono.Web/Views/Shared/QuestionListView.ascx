@@ -10,7 +10,7 @@
             <th>Court Date</th>
             <th>Replies</th>
         </tr>
-    <% if(Model.Count == 0) { %>
+    <% if(!Model.Any()) { %>
         <tr>
             <td></td>
             <td colspan="6">No records found</td>

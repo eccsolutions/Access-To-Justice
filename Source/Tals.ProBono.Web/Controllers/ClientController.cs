@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data.Entity;
 using System.Linq;
 using System.Web.Mvc;
 using System.Web.Security;
@@ -94,7 +95,9 @@ namespace Tals.ProBono.Web.Controllers
                     var unsubscribeUrl = ConfigSettings.SiteUrl.TrimEnd('/') +
                                          Url.Action("Unsubscribe", "Attorney", new {id = question.CategoryId});
 
-                    _emailService.SendEmailFor(question.Category, new SubscriptionEmail(question.Category.ShortDescription, question.CourtDateAsShortString,
+                    var category = _unitOfWork.CategoryRepository.Get().WithId(question.CategoryId.GetValueOrDefault());
+
+                    _emailService.SendEmailFor(category, new SubscriptionEmail(category.ShortDescription, question.CourtDateAsShortString,
                                                                       question.Subject, question.Body, detailsUrl, unsubscribeUrl));
 
                     _auditor.Audit(_currentUser.UserName, question.Id);
@@ -108,6 +111,7 @@ namespace Tals.ProBono.Web.Controllers
             }
 
             ViewData["categories"] = _unitOfWork.CategoryRepository.Get();
+            ViewData["casecounties"] = _unitOfWork.CountyRepository.Get();
 
             return View(question);
         }
@@ -116,7 +120,7 @@ namespace Tals.ProBono.Web.Controllers
         // GET: /Client/
         public ActionResult Questions()
         {
-            var questions = _unitOfWork.QuestionRepository.Get().WithCreatedBy(UserModel.Current.UserName);
+            var questions = _unitOfWork.QuestionRepository.Get().WithCreatedBy(UserModel.Current.UserName).ToList();
 
             return !questions.Any() ? View("NoRecords") : View(questions);
         }

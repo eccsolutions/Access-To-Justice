@@ -141,7 +141,6 @@ namespace Tals.ProBono.Web.Controllers
             var model = questionsToShow.ToPagedList(pageIndex, PageSize);
 
             ViewBag.UserName = userName;
-
             return View("QuestionHistory", model);
         }
     }

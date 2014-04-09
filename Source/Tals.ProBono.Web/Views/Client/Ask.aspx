@@ -64,8 +64,8 @@
             </div>
 
             <div class="editor-field">
-               <%: Html.DropDownListFor(model => model.CaseCountyId, new SelectList((IEnumerable)ViewData["casecounties"], "Id", "CountyName", Model.CaseCountyId), new {@class = "combobox"}) %>
-                <%--ViewData["Counties"] = new SelectList(UnitOfWork.CountyRepository.Get().OrderBy(x => x.CountyName), "Id", "CountyName");--%>
+                <%: Html.DropDownListFor(model => model.CaseCountyId, new SelectList((IEnumerable)ViewData["casecounties"], "Id", "CountyName", Model.CaseCountyId), new {@class = "combobox"}) %>
+                <%: Html.ValidationMessageFor(model => model.CaseCountyId) %>
             </div>
             
             <div class="editor-label">

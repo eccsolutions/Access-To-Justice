@@ -8,6 +8,6 @@
 
     <h2>Question History for <%: ViewBag.UserName%></h2>
     <% Html.RenderPartial("ColorCoding"); %>
-    <% Html.RenderPartial("QuestionListView", Model);%>
+    <% Html.RenderPartial("QuestionListView", Model, null); %>
 
 </asp:Content>
