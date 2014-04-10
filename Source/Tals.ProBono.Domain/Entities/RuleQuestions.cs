@@ -78,27 +78,6 @@ namespace Tals.ProBono.Domain.Entities
         }
     }
 
-    public class CaseCountyQuestion : IRuleQuestion<int>
-    {
-        public string Question
-        {
-            get { return "If your question is about an open legal case, what county is your case in?"; }
-        }
-
-        [UIHint("CountyEditor")]
-        public int Answer { get; set; }
-
-        public bool IsValid
-        {
-            get { return true; }
-        }
-
-        public override string ToString()
-        {
-            return Answer.ToString();
-        }
-    }
-
     public class CategoryQuestion : IRuleQuestion<int>
     {
         public string Question

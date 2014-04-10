@@ -62,38 +62,25 @@ namespace Tals.ProBono.Web.Controllers
 
         public ActionResult Step3()
         {
-            ViewData["Counties"] = new SelectList(UnitOfWork.CountyRepository.Get().OrderBy(x => x.CountyName), "Id", "CountyName");
-            return RenderStep(new CaseCountyQuestion(), 3);
-        }
-
-        [HttpPost]
-        public ActionResult Step3(CaseCountyQuestion casecountyQuestion)
-        {
-            Session["CaseCounty"] = casecountyQuestion.ToString();
-            return ExecuteStep(casecountyQuestion, 3);
-        }
-
-        public ActionResult Step4()
-        {
             ViewData["Categories"] = new SelectList(UnitOfWork.CategoryRepository.Get(), "Id", "CategoryName");
-            return RenderStep(new CategoryQuestion(), 4);
+            return RenderStep(new CategoryQuestion(), 3);
         }
 
         [HttpPost]
-        public ActionResult Step4(CategoryQuestion categoryQuestion)
+        public ActionResult Step3(CategoryQuestion categoryQuestion)
         {
-            return ExecuteStep(categoryQuestion, 4);
+            return ExecuteStep(categoryQuestion, 3);
         }     
         
-        public ActionResult Step5()
+        public ActionResult Step4()
         {
-            return RenderStep(new AgeQuestion(), 5);
+            return RenderStep(new AgeQuestion(), 4);
         }
 
         [HttpPost]
-        public ActionResult Step5(AgeQuestion ageQuestion)
+        public ActionResult Step4(AgeQuestion ageQuestion)
         {
-            return ExecuteStep(ageQuestion, 5);
+            return ExecuteStep(ageQuestion, 4);
         }
 
         //public ActionResult Step4()
@@ -107,42 +94,42 @@ namespace Tals.ProBono.Web.Controllers
         //    return ExecuteStep(incarceratedQuestion, 4);
         //}
 
-        public ActionResult Step6()
+        public ActionResult Step5()
         {
-            return RenderStep(new HouseHoldSizeQuestion(), 6);
+            return RenderStep(new HouseHoldSizeQuestion(), 5);
         }
 
         [HttpPost]
-        public ActionResult Step6(HouseHoldSizeQuestion houseHoldSizeQuestion)
+        public ActionResult Step5(HouseHoldSizeQuestion houseHoldSizeQuestion)
         {
-            return ExecuteStep(houseHoldSizeQuestion, 6, new { HouseHoldSize = houseHoldSizeQuestion.Answer });
+            return ExecuteStep(houseHoldSizeQuestion, 5, new { HouseHoldSize = houseHoldSizeQuestion.Answer });
         }
 
-        public ActionResult Step7(int? houseHoldSize)
+        public ActionResult Step6(int? houseHoldSize)
         {
-            if (houseHoldSize == null) CurrentStepNumber = 6;
+            if (houseHoldSize == null) CurrentStepNumber = 5;
             var value = houseHoldSize ?? 0;
             var question = new IncomeQuestion(value);
             ViewData["Frequencies"] = question.Frequencies;
 
-            return RenderStep(question, 7);
+            return RenderStep(question, 6);
         }
 
         [HttpPost]
-        public ActionResult Step7([Bind(Prefix = "Answer")]IncomeQuestion incomeQuestion)
+        public ActionResult Step6([Bind(Prefix = "Answer")]IncomeQuestion incomeQuestion)
         {
             ViewData["Frequencies"] = incomeQuestion.Frequencies;
-            return ExecuteStep(incomeQuestion, 7);
+            return ExecuteStep(incomeQuestion, 6);
         }
 
-        public ActionResult Step8()
+        public ActionResult Step7()
         {
-            return RenderStep(new UserAgreementQuestion(), 8);
+            return RenderStep(new UserAgreementQuestion(), 7);
         }
 
         public ActionResult AcceptUseAgreement(bool accepted)
         {
-            return ExecuteStep(new UserAgreementQuestion() { Answer = accepted }, 8);
+            return ExecuteStep(new UserAgreementQuestion() { Answer = accepted }, 7);
         }
         
 
@@ -157,9 +144,9 @@ namespace Tals.ProBono.Web.Controllers
         //    return ExecuteStep(investmentQuestion, 7);
         //}
 
-        public ActionResult Step9()
+        public ActionResult Step8()
         {
-            if (CurrentStepNumber != 9)
+            if (CurrentStepNumber != 8)
                 return RedirectToAction("Step" + CurrentStepNumber);
 
             RecordAnswer(new MeetsRules() { Answer = true });

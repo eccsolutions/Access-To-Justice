@@ -6,7 +6,7 @@
     <title>
         <asp:ContentPlaceHolder ID="TitleContent" runat="server" />
     </title>
-    <meta name="description=" content="Online Tennessee Justice is a website where you can ask a lawyer for help with a legal issue. It is a free service for Tennesseans who cannot afford a lawyer.">
+    <meta name="description=" content="Minnesota Legal Advice Online">
     <link href="<%= Url.Stylesheet() %>" rel="stylesheet" type="text/css" />
     <link href="/markitup/theme.css" rel="stylesheet" type="text/css" />
     <link href="/Content/ui/jquery.ui.all.css" rel="stylesheet" type="text/css" />
