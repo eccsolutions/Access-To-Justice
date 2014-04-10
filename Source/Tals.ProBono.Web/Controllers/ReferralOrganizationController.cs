@@ -34,9 +34,14 @@ namespace Tals.ProBono.Web.Controllers
         [HttpPost]
         public ActionResult Edit(ReferralOrganization referralOrganization)
         {
-            if (ModelState.IsValid)
-            {
-                _unitOfWork.ReferralOrganizationRepository.Update(referralOrganization);
+            if (ModelState.IsValid) {
+
+                if (referralOrganization.Id == 0)
+                    _unitOfWork.ReferralOrganizationRepository.Insert(referralOrganization);
+                else
+                    _unitOfWork.ReferralOrganizationRepository.Update(referralOrganization);
+
+                _unitOfWork.Save();
                 return RedirectToAction("List");
             }
 

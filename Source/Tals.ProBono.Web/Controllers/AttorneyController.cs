@@ -221,8 +221,11 @@ namespace Tals.ProBono.Web.Controllers
             return View("List", model);
         }
 
-        public ActionResult Subscribe(int id, string returnUrl)
-        {
+        public ActionResult Subscribe(int id, string returnUrl) {
+            if (_unitOfWork.SubscriptionRepository.Get().SubscriptionsExceededFor(UserModel.Current.UserName)) {
+                return View("SubscriptionLimitReached");
+            }
+
             var category = _unitOfWork.CategoryRepository.Get().WithId(id);
             var model = SubscribeViewModel.CreateViewModel(category, returnUrl);
             model.ReturnUrl = Request.UrlReferrer == null ? null : Request.UrlReferrer.PathAndQuery;
@@ -232,7 +235,15 @@ namespace Tals.ProBono.Web.Controllers
 
         [HttpPost]
         public ActionResult Subscribe(Subscription subscription, string returnUrl) {
+            if (_unitOfWork.SubscriptionRepository.Get().SubscriptionsExceededFor(UserModel.Current.UserName))
+            {
+                return View("SubscriptionLimitReached");
+            }
+
             var category = _unitOfWork.CategoryRepository.Get().WithId(subscription.CategoryId);
+
+            subscription.Subscribed = DateTime.Now;
+
             category.Subscriptions.Add(subscription);
             _unitOfWork.Save();
 
@@ -255,7 +266,7 @@ namespace Tals.ProBono.Web.Controllers
         public ActionResult Unsubscribe(int id, string returnUrl) {
             //var category = _unitOfWork.CategoryRepository.Get().WithId(id);
             //var subscription = category.GetSubscriptionFor(_currentUser.UserName);
-            var subscription = _unitOfWork.SubscriptionRepository.Get().For(id, _currentUser.UserName);
+            var subscription = _unitOfWork.SubscriptionRepository.Get().WithCategoryFor(id, _currentUser.UserName);
             var model = UnsubscribeViewModel.CreateViewModel(subscription, returnUrl);
 
             return View(model);

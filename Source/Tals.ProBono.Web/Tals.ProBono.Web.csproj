@@ -450,6 +450,7 @@
     <Content Include="Views\Admin\_AccountList.ascx" />
     <Content Include="Views\Attorney\CategoriesView.ascx" />
     <Content Include="Views\Attorney\Drafts.aspx" />
+    <Content Include="Views\Attorney\SubscriptionLimitReached.aspx" />
     <Content Include="Views\Category\Edit.aspx" />
     <Content Include="Views\Category\List.aspx" />
     <Content Include="Views\Attorney\Resources.aspx" />
