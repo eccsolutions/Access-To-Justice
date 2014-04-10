@@ -16,5 +16,6 @@
     <div id="profile">
         <% Html.RenderAction("DisplayAccountInfo", new { userName = ViewData["UserName"]}); %>
         <% Html.RenderAction("DisplayAttorneyProfile", new {userName = ViewData["UserName"]});%>
+        
     </div>
 </asp:Content>

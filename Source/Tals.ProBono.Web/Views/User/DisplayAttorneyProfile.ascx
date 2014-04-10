@@ -37,9 +37,5 @@
                 Referral Organization:</label>
             <div class="profile-field, clear">
                 <%:Model.ReferralOrganization %></div>
-            <label>
-                Total Logged Hours for this year:</label>
-            <div class="profile-field, clear">
-                </div>
         </fieldset>
     </fieldset>
