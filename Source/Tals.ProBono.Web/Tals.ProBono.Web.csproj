@@ -518,6 +518,7 @@
     <Content Include="Views\User\AttorneyProfile.aspx" />
     <Content Include="Views\User\DisplayAttorneyProfile.ascx" />
     <Content Include="Views\User\EditAttorneyProfile.aspx" />
+    <Content Include="Views\User\YearToDateHours.ascx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>

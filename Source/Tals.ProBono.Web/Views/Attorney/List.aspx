@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Attorney.Master" Inherits="System.Web.Mvc.ViewPage<MvcPaging.IPagedList<Tals.ProBono.Domain.Entities.Question>>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-	OnlineTNJustice : <%: ViewBag.Category ?? "All Questions in Queue" %>
+	MN Legal Advice Online : <%: ViewBag.Category ?? "All Questions in Queue" %>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">

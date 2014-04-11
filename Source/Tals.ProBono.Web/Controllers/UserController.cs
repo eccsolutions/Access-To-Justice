@@ -143,5 +143,13 @@ namespace Tals.ProBono.Web.Controllers
             ViewBag.UserName = userName;
             return View("QuestionHistory", model);
         }
+
+        public ActionResult YearToDateHours(string userName)
+        {
+            double model = _unitOfWork.WorkEntryRepository.Get().YearToDateFor(userName).Sum(w => w.Hours);
+            
+            return View(model);
+
+        }
     }
 }
