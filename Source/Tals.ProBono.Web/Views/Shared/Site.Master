@@ -36,7 +36,7 @@
 	    });
 	</script>
     <asp:ContentPlaceHolder ID="HeadContent" runat="server" />
-    <meta name="google-translate-customization" content="aa3530a07dbe7217-6312bf287a7c7783-gc8936b4c01e4c8f0-1b" />
+    <%--<meta name="google-translate-customization" content="aa3530a07dbe7217-6312bf287a7c7783-gc8936b4c01e4c8f0-1b" />--%>
 </head>
 <body>
     <div class="page">
@@ -48,7 +48,7 @@
                 <% Html.RenderPartial("CultureChooserUserControl"); %>
                 <% Html.RenderPartial("SignInUserControl"); %>
                 <p>
-                    <% Html.RenderPartial("TranslationControl"); %>
+                    <%--<% Html.RenderPartial("TranslationControl"); %>--%>
                 </p>
             </div>
         </div>
@@ -63,15 +63,15 @@
                 <asp:ContentPlaceHolder ID="QuickLinksContent" runat="server">
                     <h2 class="quicklinksheader">Other Places to Get Legal Help</h2>
                     <ul>
-                        <li><a href="http://www.lawhelpmn.org/find-legal-help">Find Your Local Legal Aid Office and Other Free Legal Help</a></li>
-                        <li><a href="http://www.lawhelpmn.org/walk-in-clinics-and-other-legal-help-clinics">Free or Low-Cost Legal Clinics</a></li>
-                        <li><a href="http://mncourts.gov/selfhelp/">Minnesota Courts Self-Help Center</a></li>
-                        <li><a href="http://www.lawhelpmn.org/resource/information-and-referrals-for-other-non-legal">Other Non-Legal Help</a></li>
-                        <li><a href="http://www.lawhelpmn.org/lawyer-referral-services">Private Attorney Referral Services</a></li>
-                        <li><a href="http://www.mncourts.gov/default.aspx?page=1927">Access Case Records/Find Your Court Date</a></li>
-                        <li><a href="http://www.ag.state.mn.us/">Minnesota Attorney General’s Office</a></li>
-                        <li><a href="http://www.lawhelpmn.org/resource/criminal-law-info?ref=hliW4">Criminal Case Information</a></li>
-                        <li><a href="www.lawhelpmn.org">LawHelpMN.org: Free Legal Information</a></li>
+                        <li><a href="http://www.lawhelpmn.org/find-legal-help" target="_blank">Find Your Local Legal Aid Office and Other Free Legal Help</a></li>
+                        <li><a href="http://www.lawhelpmn.org/walk-in-clinics-and-other-legal-help-clinics" target="_blank">Free or Low-Cost Legal Clinics</a></li>
+                        <li><a href="http://mncourts.gov/selfhelp/" target="_blank">Minnesota Courts Self-Help Center</a></li>
+                        <li><a href="http://www.lawhelpmn.org/resource/information-and-referrals-for-other-non-legal" target="_blank">Other Non-Legal Help</a></li>
+                        <li><a href="http://www.lawhelpmn.org/lawyer-referral-services" target="_blank">Private Attorney Referral Services</a></li>
+                        <li><a href="http://www.mncourts.gov/default.aspx?page=1927" target="_blank">Access Case Records/Find Your Court Date</a></li>
+                        <li><a href="http://www.ag.state.mn.us/" target="_blank">Minnesota Attorney General’s Office</a></li>
+                        <li><a href="http://www.lawhelpmn.org/resource/criminal-law-info?ref=hliW4" target="_blank">Criminal Case Information</a></li>
+                        <li><a href="http://www.lawhelpmn.org" target="_blank">LawHelpMN.org: Free Legal Information</a></li>
                     </ul>
                 </asp:ContentPlaceHolder>
             </div>

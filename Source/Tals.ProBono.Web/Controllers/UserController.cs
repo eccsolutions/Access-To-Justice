@@ -146,10 +146,17 @@ namespace Tals.ProBono.Web.Controllers
 
         public ActionResult YearToDateHours(string userName)
         {
-            double model = _unitOfWork.WorkEntryRepository.Get().YearToDateFor(userName).Sum(w => w.Hours);
-            
-            return View(model);
+            //<%: Model.YearToDateHours == null ? 0 : Model.YearToDateHours.Value %>
+            //if _unitOfWork.WorkEntryRepository.Get().YearToDateHours == null ? 0
+            //var yearToDateLoggedHours = _unitOfWork.WorkEntryRepository.Get().YearToDateFor(userName);
 
+            var entries = _unitOfWork.WorkEntryRepository.Get().YearToDateFor(UserModel.Current.UserName);
+            double model = entries.Any()
+                                      ? entries.Sum(x => x.Hours)
+                                      : 0;
+            //double model = _unitOfWork.WorkEntryRepository.Get().YearToDateFor(userName).Sum(w => w.Hours);
+
+            return View(model);
         }
     }
 }
