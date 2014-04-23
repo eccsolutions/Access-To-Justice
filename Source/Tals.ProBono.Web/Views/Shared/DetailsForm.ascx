@@ -28,7 +28,7 @@
                 <br />
                 <div>Client County of Residence:  <%: Model.Question.County.CountyName %></div>
                 <br />
-                <div>Client County of Venue:  <%: Model.Question.CaseCounty.CountyName %></div>
+                <div>Client County of Venue:  <%: Model.Question.CaseCounty == null ? "No County Selected" : Model.Question.CaseCounty.CountyName %></div>
                 <br />
                 <div>Adverse Party:  <%: Model.Question.OpposingParty %></div>
                 <br />

@@ -64,7 +64,7 @@
             </div>
 
             <div class="editor-field">
-                <%: Html.DropDownListFor(model => model.CaseCountyId, new SelectList((IEnumerable)ViewData["casecounties"], "Id", "CountyName", Model.CaseCountyId), new {@class = "combobox"}) %>
+                <%: Html.DropDownListFor(model => model.CaseCountyId, new SelectList((IEnumerable)ViewData["casecounties"], "Id", "CountyName", Model.CaseCountyId),"Select a county", new {@class = "combobox"}) %>
                 <%: Html.ValidationMessageFor(model => model.CaseCountyId) %>
             </div>
             
