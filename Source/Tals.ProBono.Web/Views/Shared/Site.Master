@@ -68,39 +68,28 @@
                     <h2 class="quicklinksheader">
                         Other Places to Get Legal Help</h2>
                     <ul>
-                        <li><a href="http://www.tennlegalaid.com" target="_blank">Find Your Local Legal Aid
-                            Program</a></li>
-                        <li><a href="http://www.justiceforalltn.com" target="_blank">Tennessee Access to Justice
-                            Portal</a></li>
-                        <li><a href="http://www.tennhelp.com" target="_blank">TennHelp</a></li>
+                        <li><a href="http://www.tn.gov/helpforfamilies/" target="_blank">Help for TN Families</a></li>
+                        <li><a href="http://www.legalinfotn.org" target="_blank">Legal Information for Tennesseans</a></li>
+                        <li><a href="http://www.tals.org/directory" target="_blank">Find Your Local Legal Aid Program</a></li>
+                        <li><a href="http://www.justiceforalltn.com" target="_blank">Tennessee Access to Justice Portal</a></li>
                         <li><a href="http://tn211.mycommunitypt.com" target="_blank">211 Tennessee</a></li>
                         <li><a href="http://www.laet.org/" target="_blank">Legal Aid of East Tennessee</a></li>
                         <li><a href="http://www.las.org">Legal Aid Society of Middle Tennessee and the Cumberlands</a></li>
                         <li><a href="http://www.malsi.org/" target="_blank">Memphis Area Legal Services</a></li>
                         <li><a href="http://www.wtls.org">West Tennessee Legal Services</a></li>
                         <li><a href="http://www.tals.org" target="_blank">Tennessee Alliance for Legal Services</a></li>
-                        <li><a href="http://www.tba.org/lawbytes.html" target="_blank">Tennessee Bar Association</a></li>
-                        <li><a href="http://www.tsc.state.tn.us/geninfo/programs/A2J/A2J.htm" target="_blank">
-                            Tennessee Supreme Court</a></li>
+                        <li><a href="http://www.tba.org/frequently-asked-questions" target="_blank">Tennessee Bar Association</a></li>
+                        <li><a href="http://www.justiceforalltn.com/" target="_blank">Tennessee Supreme Court</a></li>
                         <li><a href="http://www.tnjustice.org" target="_blank">Tennessee Justice Center</a></li>
-                        <li><a href="http://www.abcnashville.org/programs/vlpa/" target="_blank">
-                            Volunteer Lawyers & Professionals for the Arts</a></li>
+                        <li><a href="http://www.abcnashville.org/programs/vlpa/" target="_blank">Volunteer Lawyers & Professionals for the Arts</a></li>
                         <li><a href="http://www.selegal.org/" target="_blank">Southeast Tennessee Legal Services</a></li>
                         <li><a href="http://www.clcmemphis.com" target="_blank">Community Legal Center</a></li>
                         <li><a href="http://www.dlactn.org" target="_blank">Disability Law &amp; Advocacy Center of Tennessee</a></li>
-                        <li><a href="http://www.trla.org/sections/offices/?of=60" target="_blank">Southern Migrant
-                            Legal Services</a></li>
-                        <li><a href="http://www.chattanoogalaw.org/clips/home" target="_blank">Chattanooga Bar
-                            Association Lawyer Referral</a></li>
-                        <li><a href="http://www.knoxbar.org/index.php?option=com_content&view=article&id=152&Itemid=124"
-                            target="_blank">Knoxville Bar Association Lawyer Referral</a></li>
-                        <li><a href="http://www.memphisbar.org/displaycommon.cfm?an=1&subarticlenbr=35" target="_blank">
-                            Memphis Bar Association Lawyer Referral</a></li>
-                        <li><a href="http://www.nashvillebar.org/LRISMember.html" target="_blank">Nashville
-                            Bar Association Lawyer Referral</a></li>
-                        <li><a href="http://www.tncourts.gov/geninfo/ASP/AskClerkResult.asp">Ask the Clerk</a></li>
-                        <li><a href="http://www.nashvillelawyerreferral.org/modest-means-initiative/">Nashville
-                            Modest Means Initiative</a></li>
+                        <li><a href="http://www.trla.org/office/nashville-smls" target="_blank">Southern Migrant Legal Services</a></li>
+                        <li><a href="http://www.chattanoogalaw.org/clips/home" target="_blank">Chattanooga Bar Association Lawyer Referral</a></li>
+                        <li><a href="http://www.knoxbar.org/index.php?option=com_content&view=article&id=152&Itemid=124" target="_blank">Knoxville Bar Association Lawyer Referral</a></li>
+                        <li><a href="http://www.memphisbar.org/displaycommon.cfm?an=1&subarticlenbr=35" target="_blank">Memphis Bar Association Lawyer Referral</a></li>
+                        <li><a href="http://lawyer-referral.nashvillebar.org/" target="_blank">Nashville Bar Association Lawyer Referral</a></li>
                     </ul>
                 </asp:ContentPlaceHolder>
             </div>

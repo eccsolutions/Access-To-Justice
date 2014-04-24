@@ -51,15 +51,7 @@
     <p>
         <strong>Need help with food, clothing, shelter, medicine or other services?</strong></p>
     <ul>
-        <li><a href="http://www.tennhelp.com" target="_blank">TennHelp</a></li>
         <li><a href="http://tn211.mycommunitypt.com" target="_blank">211 Tennessee</a></li>
-    </ul>
-    <p>
-        <strong>If you have a question about the appeal process from a trial court to an appeals
-            court in Tennessee, you may submit your question to "Ask the Clerk" at the following
-            link, and the Clerk of the Appellate Courts of Tennessee will answer your question.</strong></p>
-    <ul>
-        <li><a href="http://www.tncourts.gov/geninfo/ASP/AskClerkResult.asp">Ask the Clerk</a></li>
     </ul>
     <p>
         <strong>Other helpful agencies:</strong></p>
@@ -74,6 +66,5 @@
         <li><a href="http://www.dlactn.org" target="_blank">Disability Law &amp; Advocacy Center
             of Tennessee</a> (assists clients with mental and physical disabilities) or call
             <strong>1-800-342-1660</strong></li>
-        <li><a href="http://www.nashvillelawyerreferral.org/modest-means-initiative/">Nashville Modest Means Initiative</a></li>
     </ul>
 </asp:Content>
