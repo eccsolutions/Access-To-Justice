@@ -60,7 +60,7 @@
             </div>
 
             <div class="editor-label">
-                <span>If this question is about an open legal case, what county is your case in?</span>
+                <span>If this question is about an open legal case, what county is your case in? (leave blank if you do not have an open legal case)</span>
             </div>
 
             <div class="editor-field">
