@@ -148,7 +148,7 @@ namespace Tals.ProBono.Web.Models
         public bool AllowAssignments { get; set; }
 
         [DisplayName("Referral Organizations")]
-       public int ReferralOrganization { get; set; }
+       public int? ReferralOrganization { get; set; }
 
         public SelectList ReferralOrganizations { get; set; }
     }

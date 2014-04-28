@@ -245,7 +245,7 @@ namespace Tals.ProBono.Web.Controllers
                     profile.State = model.State;
                     profile.Zip = model.Zip;
                     profile.RegistrationDate = DateTime.Now;
-                    profile.ReferralOrganization = _unitOfWork.ReferralOrganizationRepository.Get().First(x => x.Id == model.ReferralOrganization).OrgName;
+                    profile.ReferralOrganization = _unitOfWork.ReferralOrganizationRepository.Get().OrgNameWithId(model.ReferralOrganization.GetValueOrDefault());
 
                     profile.Save();
 
@@ -265,6 +265,7 @@ namespace Tals.ProBono.Web.Controllers
             // If we got this far, something failed, redisplay form
             ViewData["PasswordLength"] = MembershipService.MinPasswordLength;
             model.Counties = new SelectList(_unitOfWork.CountyRepository.Get().ToList(), "Id", "CountyName");
+            model.ReferralOrganizations = new SelectList(_unitOfWork.ReferralOrganizationRepository.Get().ToList(), "Id", "OrgName");
 
             return View(model);
         }

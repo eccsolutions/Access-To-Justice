@@ -90,6 +90,7 @@
     <Compile Include="Filters\CountyFilters.cs" />
     <Compile Include="Filters\PostFilters.cs" />
     <Compile Include="Filters\QuestionFilters.cs" />
+    <Compile Include="Filters\ReferralOrganizationFilters.cs" />
     <Compile Include="Filters\RuleAnswerFilter.cs" />
     <Compile Include="Filters\SubscriptionFilter.cs" />
     <Compile Include="Filters\WorkEntryFilters.cs" />
