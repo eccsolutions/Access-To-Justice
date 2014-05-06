@@ -12,6 +12,6 @@
 
     <p>Looking for basic legal information or legal referral information? Visit <a href="http://www.LawHelpMN.org" target="_blank">www.LawHelpMN.org</a> to see general information for the public.</p>
 
-    <p>Visit our <%: Html.ActionLink("F.A.Q. page", "AttorneyFAQ", "Account",null)%> for more commonly asked questions.</p>
+    <p>Visit our <%: Html.ActionLink("FAQs", "AttorneyFAQ", "Account", null,null) %> for more commonly asked questions.</p>
     
 </asp:Content>
