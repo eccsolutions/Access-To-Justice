@@ -7,8 +7,8 @@
     <h2>
         Thanks for your question.</h2>
     <p>
-        We will ask a lawyer to answer you. This can take up to 30 days. We can't promise
-        you will get an answer. If there is no answer after 30 days, we'll email you. If
+        We will ask a lawyer to answer you. This can take up to 14 days. We can't promise
+        you will get an answer. If there is no answer after 14 days, we'll email you. If
         you don't have an email address, you will have to sign into your account to check
         for answers.</p>
     <p>

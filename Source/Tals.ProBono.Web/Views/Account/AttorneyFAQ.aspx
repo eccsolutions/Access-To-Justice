@@ -258,14 +258,13 @@
     </p>
     <p><strong><a id="Q16">How do I make a referral?</a></strong></p>
     <p>
-        LawHelpMN.org has a Legal Directory that can be found <a href="">here</a>. Every county in Minnesota is covered by a 
-        legal aid organization and many other organizations operate statewide. You are able to enter the user's zip code or 
-        county and specific legal problem and find information on offices that can assist the user. You can also send a link 
-        to the LawHelpMN.org legal directory to the user through the website.</p>
+        Every county in Minnesota is covered by a legal aid organization and many other organizations operate statewide. 
+        LawHelpMN.org has a Legal Directory that can be found <a href="http://www.lawhelpmn.org" target="_blank">here</a>.
+        You are able to enter the user's zip code or county and specific legal problem and find information on offices 
+        that can assist the user. You can also send the user to United Way 2-1-1 for a targeted legal referral.</p>
     <p>
-        All nonprofit organizations have different types of cases they take. There is language that the administrator has 
-        devised to inform the client that you think they may need more assistance. This includes a statement for the client
-        that even though you are referring them to an organization for further representation, the referral does not mean 
+        All nonprofit organizations have different types of cases they take. On <a href="http://www.projusticemn.org" target="_blank">ProJusticeMN.org</a> 
+        This includes a statement for the client that even though you are referring them to an organization for further representation, the referral does not mean 
         that the organization will automatically take their case. You can then put in the contact information for the office(s) 
         that covers the client's county or specific legal problem.
     </p>
