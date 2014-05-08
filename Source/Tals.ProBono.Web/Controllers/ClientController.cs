@@ -64,8 +64,8 @@ namespace Tals.ProBono.Web.Controllers
             if (_unitOfWork.QuestionRepository.Get().ReachedLimit(UserModel.Current.UserName))
                 return View("ReachedMax");
 
-            if (!_eligibilityService.IsEligible(Session.SessionID))
-                return RedirectToAction("Index", "Rules");
+            //if (!_eligibilityService.IsEligible(Session.SessionID))
+            //    return RedirectToAction("Index", "Rules");
 #endif
 
             ViewData["categories"] = _unitOfWork.CategoryRepository.Get();

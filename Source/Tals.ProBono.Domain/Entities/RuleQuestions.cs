@@ -223,7 +223,7 @@ namespace Tals.ProBono.Domain.Entities
             get
             {
                 return
-                    "Income is money you get from things like jobs, government benefits (like MFIP or unemployment), and child support. Specify the income for you and for each person in your household.";
+                    "Income is money you get from things like jobs, government benefits (like MFIP or unemployment). Specify the income for you and for each person in your household.";
             }
         }
 
