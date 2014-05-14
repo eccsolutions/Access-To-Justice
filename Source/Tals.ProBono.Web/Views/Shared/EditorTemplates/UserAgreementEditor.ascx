@@ -13,7 +13,7 @@
     #Next { display: none;}
 </style>
 <div id="UserAgreement">
-    <h2>What you need to know to get FREE help from OnlineTNJustice</h2>
+    <h2>What you need to know to get FREE help from <a href="http://www.alabamalegalanswers.org">AlabamaLegalAnswers.org</a></h2>
 
 <p class="bold">You can use this web site IF all of these are true for you:</p>
 <ul>
@@ -39,8 +39,8 @@
         do anything else for you. You are not hiring the lawyer who answers you. The lawyer
         will not write letters, make calls or file papers for you. The lawyer will not go
         to meetings or court for you. If you use this web site, it means you understand
-        this. The lawyer who answers you will have a Tennessee law license. The lawyer will
-        say what the law is for Tennessee. Laws may be different in other states.
+        this. The lawyer who answers you will have a Alabama law license. The lawyer will
+        say what the law is for Alabama. Laws may be different in other states.
     </p>
 	
     <p style="font-weight: bold">
@@ -58,7 +58,7 @@
     <p style="font-weight: bold">
         We keep what you say secret</p>
     <p>
-        OnlineTNJustice is a web site of the Tennessee Alliance for Legal Services (TALS).
+        <a href="http://www.alabamalegalanswers.org">AlabamaLegalAnswers.org</a> is a web site of the Alabama Access to Justice Commission.
         The facts you put on this web site will be kept secret. We keep records of:</p>
 
     <ul>
