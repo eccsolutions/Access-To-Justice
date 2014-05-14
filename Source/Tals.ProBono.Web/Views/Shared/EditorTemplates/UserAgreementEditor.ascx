@@ -13,7 +13,7 @@
     #Next { display: none;}
 </style>
 <div id="UserAgreement">
-    <h2>What you need to know to get FREE help from <a href="http://www.alabamalegalanswers.org">AlabamaLegalAnswers.org</a></h2>
+    <h2>What you need to know to get FREE help from AlabamaLegalAnswers.org</h2>
 
 <p class="bold">You can use this web site IF all of these are true for you:</p>
 <ul>
@@ -58,7 +58,7 @@
     <p style="font-weight: bold">
         We keep what you say secret</p>
     <p>
-        <a href="http://www.alabamalegalanswers.org">AlabamaLegalAnswers.org</a> is a web site of the Alabama Access to Justice Commission.
+        AlabamaLegalAnswers.org is a web site of the Alabama Access to Justice Commission.
         The facts you put on this web site will be kept secret. We keep records of:</p>
 
     <ul>
