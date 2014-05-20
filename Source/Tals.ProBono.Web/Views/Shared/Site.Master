@@ -72,6 +72,7 @@
                         <li><a href="http://www.ag.state.mn.us/" target="_blank">Minnesota Attorney General’s Office</a></li>
                         <li><a href="http://www.lawhelpmn.org/resource/criminal-law-info?ref=hliW4" target="_blank">Criminal Case Information</a></li>
                         <li><a href="http://www.lawhelpmn.org" target="_blank">LawHelpMN.org: Free Legal Information</a></li>
+                        <li><a href="http://www.mncourts.gov/selfhelp/?page=253" target="_blank">Find a Minnesota Law Library</a></li>
                     </ul>
                 </asp:ContentPlaceHolder>
             </div>
