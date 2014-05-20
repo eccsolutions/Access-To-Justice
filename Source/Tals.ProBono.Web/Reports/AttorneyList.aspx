@@ -16,7 +16,7 @@
         <a href="/Reporting">Back to Reports</a>
         <rsweb:ReportViewer ID="ReportViewer1" runat="server" ProcessingMode="Remote" Width="100%">
             <ServerReport DisplayName="Lawyers" ReportPath="/AttorneyList" 
-                ReportServerUrl="http://MLSC-SQLWEB:80/Reports_MLSC" />
+                ReportServerUrl="http://www.mnlegaladvice.org/Reports_MLSC" />
         </rsweb:ReportViewer>
     
     </div>
