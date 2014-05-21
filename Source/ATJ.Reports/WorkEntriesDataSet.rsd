@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition">
+  <DataSet Name="DataSet1">
+    <Query>
+      <DataSourceReference>AccessToJustice</DataSourceReference>
+      <DataSetParameters>
+        <DataSetParameter Name="@StartTime">
+          <DefaultValue>=DateAdd(DateInterval.Month,-3,Now())</DefaultValue>
+          <ReadOnly>false</ReadOnly>
+          <Nullable>false</Nullable>
+          <OmitFromQuery>false</OmitFromQuery>
+          <rd:UserDefined>true</rd:UserDefined>
+          <rd:DbType>DateTime</rd:DbType>
+        </DataSetParameter>
+        <DataSetParameter Name="@EndTime">
+          <DefaultValue>=Now()</DefaultValue>
+          <ReadOnly>false</ReadOnly>
+          <Nullable>false</Nullable>
+          <OmitFromQuery>false</OmitFromQuery>
+          <rd:UserDefined>true</rd:UserDefined>
+          <rd:DbType>DateTime</rd:DbType>
+        </DataSetParameter>
+      </DataSetParameters>
+      <CommandText>SELECT
+  	we.UserName
+	,m.Email
+	,AccessToJusticeServices.dbo.GetProfileElement('FirstName', p.PropertyNames, p.PropertyValuesString) as FirstName
+	,AccessToJusticeServices.dbo.GetProfileElement('LastName', p.PropertyNames, p.PropertyValuesString) as LastName 
+	,AccessToJusticeServices.dbo.GetProfileElement('LawFirm', p.PropertyNames, p.PropertyValuesString) as LawFirm
+	,AccessToJusticeServices.dbo.GetProfileElement('DisciplinaryBoardNumber', p.PropertyNames, p.PropertyValuesString) as BoardNumber
+	,AccessToJusticeServices.dbo.GetProfileElement('Phone', p.PropertyNames, p.PropertyValuesString) as Phone
+  	,we.Hours
+  	,we.Logged
+FROM
+  	WorkEntries we
+  	INNER JOIN AccessToJusticeServices.dbo.aspnet_Users u ON we.UserName = u.UserName
+	INNER JOIN AccessToJusticeServices.dbo.aspnet_Membership m ON u.UserId = m.UserId
+	INNER JOIN AccessToJusticeServices.dbo.aspnet_UsersInRoles ur ON u.UserId = ur.UserId
+	INNER JOIN AccessToJusticeServices.dbo.aspnet_Roles r ON ur.RoleId = r.RoleId
+	INNER JOIN AccessToJusticeServices.dbo.aspnet_Profile p ON u.UserId = p.UserId
+WHERE
+  	we.Logged &gt;= @StartTime
+  	AND we.Logged &lt;= @EndTime
+	AND u.ApplicationId = '8051B0D2-A2C6-4454-B533-44CC86423EC8'
+	AND r.RoleName = 'Attorney'</CommandText>
+      <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+    </Query>
+    <Fields>
+      <Field Name="Email">
+        <DataField>Email</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="UserName">
+        <DataField>UserName</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Hours">
+        <DataField>Hours</DataField>
+        <rd:TypeName>System.Double</rd:TypeName>
+      </Field>
+      <Field Name="FirstName">
+        <DataField>FirstName</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Logged">
+        <DataField>Logged</DataField>
+        <rd:TypeName>System.DateTime</rd:TypeName>
+      </Field>
+      <Field Name="LastName">
+        <DataField>LastName</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="LawFirm">
+        <DataField>LawFirm</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="BoardNumber">
+        <DataField>BoardNumber</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Phone">
+        <DataField>Phone</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+    </Fields>
+  </DataSet>
+  <rd:ReportServerUrl>http://probonosql/ReportServer</rd:ReportServerUrl>
+</SharedDataSet>

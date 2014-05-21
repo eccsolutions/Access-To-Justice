@@ -113,6 +113,8 @@
   <ItemGroup>
     <Content Include="Scripts\AddAuditing.sql" />
     <Content Include="Scripts\GenerateStaticData.sql" />
+    <Content Include="Scripts\GetElement.sql" />
+    <Content Include="Scripts\GetProfileElement.sql" />
     <Content Include="Scripts\LegalAdvice.edmx.sql" />
   </ItemGroup>
   <ItemGroup>

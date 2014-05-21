@@ -15,7 +15,7 @@
         </asp:ScriptManager>
         <a href="/Reporting">Back to Reports</a>
         <rsweb:ReportViewer ID="ReportViewer1" runat="server" ProcessingMode="Remote" Width="100%" Height="100%">
-            <ServerReport ReportServerUrl="http://probonosql/reportserver" />
+            <ServerReport ReportServerUrl="/reportserver_MLSC" />
         </rsweb:ReportViewer>
     
     </div>
