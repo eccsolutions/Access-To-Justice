@@ -16,7 +16,7 @@
         <a href="/Reporting">Back to Reports</a>
         <rsweb:ReportViewer ID="ReportViewer1" runat="server" ProcessingMode="Remote" Width="100%">
             <ServerReport DisplayName="Clients" ReportPath="/ClientList" 
-                ReportServerUrl="/reportserver_MLSC" />
+                ReportServerUrl="http://mlsc-sqlweb/reportserver_MLSC" />
         </rsweb:ReportViewer>
     
     </div>
