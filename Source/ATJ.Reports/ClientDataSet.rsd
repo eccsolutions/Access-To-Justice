@@ -18,36 +18,10 @@ FROM
 	INNER JOIN aspnet_Roles r ON r.RoleId = ur.RoleId
 	INNER JOIN aspnet_Profile p ON p.UserId = u.UserId
 WHERE
-	u.ApplicationId = '8051B0D2-A2C6-4454-B533-44CC86423EC8'
+	u.ApplicationId = '59C792BA-52B3-40C2-9BCC-447B3081D611'
 	AND r.RoleName = 'Basic User'</CommandText>
       <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
     </Query>
-    <Fields>
-      <Field Name="UserName">
-        <DataField>UserName</DataField>
-        <rd:TypeName>System.String</rd:TypeName>
-      </Field>
-      <Field Name="Email">
-        <DataField>Email</DataField>
-        <rd:TypeName>System.String</rd:TypeName>
-      </Field>
-      <Field Name="FirstName">
-        <DataField>FirstName</DataField>
-        <rd:TypeName>System.String</rd:TypeName>
-      </Field>
-      <Field Name="LastName">
-        <DataField>LastName</DataField>
-        <rd:TypeName>System.String</rd:TypeName>
-      </Field>
-      <Field Name="QueuedCount">
-        <DataField>QueuedCount</DataField>
-        <rd:TypeName>System.Int32</rd:TypeName>
-      </Field>
-      <Field Name="TakenCount">
-        <DataField>TakenCount</DataField>
-        <rd:TypeName>System.Int32</rd:TypeName>
-      </Field>
-    </Fields>
   </DataSet>
   <rd:ReportServerUrl>http://probonosql/ReportServer</rd:ReportServerUrl>
 </SharedDataSet>

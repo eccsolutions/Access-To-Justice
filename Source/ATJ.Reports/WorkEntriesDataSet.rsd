@@ -41,48 +41,10 @@ FROM
 WHERE
   	we.Logged &gt;= @StartTime
   	AND we.Logged &lt;= @EndTime
-	AND u.ApplicationId = '8051B0D2-A2C6-4454-B533-44CC86423EC8'
+	AND u.ApplicationId = '59C792BA-52B3-40C2-9BCC-447B3081D611'
 	AND r.RoleName = 'Attorney'</CommandText>
       <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
     </Query>
-    <Fields>
-      <Field Name="Email">
-        <DataField>Email</DataField>
-        <rd:TypeName>System.String</rd:TypeName>
-      </Field>
-      <Field Name="UserName">
-        <DataField>UserName</DataField>
-        <rd:TypeName>System.String</rd:TypeName>
-      </Field>
-      <Field Name="Hours">
-        <DataField>Hours</DataField>
-        <rd:TypeName>System.Double</rd:TypeName>
-      </Field>
-      <Field Name="FirstName">
-        <DataField>FirstName</DataField>
-        <rd:TypeName>System.String</rd:TypeName>
-      </Field>
-      <Field Name="Logged">
-        <DataField>Logged</DataField>
-        <rd:TypeName>System.DateTime</rd:TypeName>
-      </Field>
-      <Field Name="LastName">
-        <DataField>LastName</DataField>
-        <rd:TypeName>System.String</rd:TypeName>
-      </Field>
-      <Field Name="LawFirm">
-        <DataField>LawFirm</DataField>
-        <rd:TypeName>System.String</rd:TypeName>
-      </Field>
-      <Field Name="BoardNumber">
-        <DataField>BoardNumber</DataField>
-        <rd:TypeName>System.String</rd:TypeName>
-      </Field>
-      <Field Name="Phone">
-        <DataField>Phone</DataField>
-        <rd:TypeName>System.String</rd:TypeName>
-      </Field>
-    </Fields>
   </DataSet>
   <rd:ReportServerUrl>http://probonosql/ReportServer</rd:ReportServerUrl>
 </SharedDataSet>
