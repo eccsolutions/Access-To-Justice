@@ -21,13 +21,55 @@ FROM
 	INNER JOIN aspnet_Roles r ON r.RoleId = ur.RoleId
 	INNER JOIN aspnet_Profile p ON p.UserId = u.UserId
 WHERE
-	u.ApplicationId = '59C792BA-52B3-40C2-9BCC-447B3081D611'
+	u.ApplicationId = '8051B0D2-A2C6-4454-B533-44CC86423EC8'
 	AND r.RoleName = 'Attorney'
 ORDER BY
 	dbo.GetProfileElement('LastName', p.PropertyNames, p.PropertyValuesString),
 	dbo.GetProfileElement('FirstName', p.PropertyNames, p.PropertyValuesString)</CommandText>
       <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
     </Query>
+    <Fields>
+      <Field Name="UserName">
+        <DataField>UserName</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Email">
+        <DataField>Email</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="FirstName">
+        <DataField>FirstName</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="LastName">
+        <DataField>LastName</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="LawFirm">
+        <DataField>LawFirm</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="BoardNumber">
+        <DataField>BoardNumber</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Phone">
+        <DataField>Phone</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="AllowAssignments">
+        <DataField>AllowAssignments</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="TakenCount">
+        <DataField>TakenCount</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="YtdHours">
+        <DataField>YtdHours</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+    </Fields>
   </DataSet>
   <rd:ReportServerUrl>http://probonosql/ReportServer</rd:ReportServerUrl>
 </SharedDataSet>
