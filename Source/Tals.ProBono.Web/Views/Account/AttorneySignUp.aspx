@@ -29,7 +29,7 @@
                 <%: Html.ValidationMessageFor(m => m.UserName) %>
             </div>
             <label class="editor-label">Email address</label><br/>
-            Note: Please add onlinetnjustice@tals.org to your safe senders list. <a href="http://safesenderslist.com/" target="_blank">Find instructions</a>
+            Note: Please add inf@alabamalawfoundation.org to your safe senders list. <a href="http://safesenderslist.com/" target="_blank">Find instructions</a>
             <div class="editor-field">
                 <%: Html.TextBoxFor(m => m.Email) %>
                 <%: Html.ValidationMessageFor(m => m.Email) %>
