@@ -7,7 +7,7 @@
     <h2 class="ConfirmationHeading">
         Log Hours</h2>
     <img src="<%: Url.Image("warning.bmp") %>" alt="Warning!" />
-    Before logging out, you must log the hours spent answering questions for CLE credit.
+    Before logging out, you must log the hours spent answering questions.
     <p id="WarningMessage">
         Hours should be recorded based on actual time spent researching and answering questions.
     </p>

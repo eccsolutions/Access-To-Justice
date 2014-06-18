@@ -65,11 +65,10 @@
                         Other Places to Get Legal Help</h2>
                     <ul>
                         <li>
-                            <a href="http://www.alabamaatj.org/i-need-help/find-help-near-you/" target="_blank">Find Your Local Legal Aid Program</a>
+                            <a href="http://www.alabamaatj.org/i-need-help/find-help-near-you/" target="_blank">Find Legal Help in Your Area</a>
                         </li>
                         <li>
-                            <a href="http://www.alabamaatj.org/i-need-help/representing-yourself/" target="_blank">Representing Yourself in Court
-                            Portal</a>
+                            <a href="http://www.alabamaatj.org/i-need-help/representing-yourself/" target="_blank">Representing Yourself in Court</a>
                         </li>
                         <li>
                             <a href="http://www.alabamaatj.org/i-need-help/representing-yourself/" target="_blank">How to Find a Lawyer</a>
@@ -98,6 +97,9 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div class="email-help">
+        <a href="mailto:info@alabamalegalanswers.org">Help</a>
     </div>
 </body>
 </html>
