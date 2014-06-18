@@ -68,7 +68,7 @@
                 <%: Html.ValidationMessageFor(m => m.LastName) %>
             </div>
             <label class="editor-label">
-                BPR Number</label>
+                ASB Number</label>
             <div class="editor-field">
                 <%: Html.TextBoxFor(m => m.DisciplinaryBoardNumber) %>
                 <%: Html.ValidationMessageFor(m => m.DisciplinaryBoardNumber) %>
