@@ -31,7 +31,7 @@ namespace Tals.ProBono.Domain.Services
         {
             var tags = _unitOfWork.BbCodeRepository.Get().Select(GetTag).ToList();
             var parser = new BBCodeParser(ErrorMode.ErrorFree, null, tags);
-            var result = parser.ToHtml(text);
+            var result = parser.ToHtml(text ?? "Nothing entered.");
             result = result.Replace(Environment.NewLine, "<br />");
 
             return result;
