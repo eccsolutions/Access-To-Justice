@@ -35,6 +35,17 @@
 	        $('textarea').addProofreader();
 	    });
 	</script>
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-52931828-1', 'auto');
+        ga('send', 'pageview');
+    </script>
     <asp:ContentPlaceHolder ID="HeadContent" runat="server" />
     <%--<meta name="google-translate-customization" content="aa3530a07dbe7217-6312bf287a7c7783-gc8936b4c01e4c8f0-1b" />--%>
 </head>
