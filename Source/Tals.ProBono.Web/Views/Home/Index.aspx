@@ -29,4 +29,7 @@
         <%: Html.ImageLink("bubble.png", "Sign in", "SignIn", "Account") %><br/>
         <%: Html.ActionLink("Sign in", "SignIn", "Account", null, new {@class="ImageLinkText"}) %>
     </p>
+    <p>
+        
+    </p>
 </asp:Content>
