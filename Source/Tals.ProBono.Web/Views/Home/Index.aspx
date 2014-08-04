@@ -7,10 +7,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <h2>Welcome to Minnesota Legal Advice Online!</h2>
     <p>
-        <h2>***We are currently having problems with emails through the website. Please log in occasionally to see if there has been a response to your question. ***</h2>
-    </p>
-    <p>
-        Volunteer lawyers answer your legal questions for free. To use this website, you must first qualify for help.
+        Volunteer lawyers may answer your legal questions for free. To use this website, you must first qualify for help.
     </p>
     <h2>How it works</h2>
     <ol>
