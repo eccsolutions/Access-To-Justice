@@ -65,6 +65,10 @@ namespace Tals.ProBono.Web.Controllers
             var question = _repositories.Questions.Get().WithId(id);
             var model = DetailsViewModel.CreateViewModel(question);
 
+            if (question.IsTaken())
+                if (!question.IsTaker(UserModel.Current.UserName))
+                    return View("AlreadyTaken");
+
             _auditor.Audit(_currentUser.UserName, id);
 
             return View(model);
