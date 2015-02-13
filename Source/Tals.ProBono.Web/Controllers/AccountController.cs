@@ -14,6 +14,7 @@ using Tals.ProBono.Web.Infrastructure;
 using Tals.ProBono.Web.Models;
 using ViewRes;
 
+//http://localhost:8089/asp.netwebadminfiles/default.aspx?applicationPhysicalPath=C:\Users\ped\Source\Repos\Access-To-Justice\Source\Tals.ProBono.Web\&applicationUrl=/
 namespace Tals.ProBono.Web.Controllers
 {
 
@@ -81,8 +82,8 @@ namespace Tals.ProBono.Web.Controllers
             FormsService.SignOut();
             Session.Abandon();
 
-            if (UserModel.Current.IsInRole(UserRoles.BasicUser))
-                return Redirect("http://survey.constantcontact.com/survey/a07e3ge5rijgkh0hfdr/start");
+            //if (UserModel.Current.IsInRole(UserRoles.BasicUser))
+            //    return Redirect("http://survey.constantcontact.com/survey/a07e3ge5rijgkh0hfdr/start");
 
             return RedirectToAction("Index", "Home");
         }

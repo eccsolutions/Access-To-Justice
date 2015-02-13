@@ -7,9 +7,10 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
     <h2>Reached Max Allowance</h2>
-    <p>Only three questions may be asked per year.</p>
+    <ol>
+        <li>Only one question may be asked per day.</li>
+        <li>Only three questions may be asked per year.</li>
+    </ol>
+    <p>If you feel you have reached this page in error, please <a href="mailto:onlinetnjustice@tals.org">Contact Us</a> for assistance</p>
     <p><%: Html.ActionLink("Back to list", "Questions") %></p>
-</asp:Content>
-
-<asp:Content ID="Content3" ContentPlaceHolderID="QuickLinksContent" runat="server">
 </asp:Content>

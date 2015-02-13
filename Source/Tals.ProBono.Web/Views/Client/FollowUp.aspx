@@ -28,6 +28,7 @@
                 <%: Html.TextAreaFor(model => model.Reply.Body, 20, 80, new { @class = "bbcode" })%>
                 <%: Html.ValidationMessageFor(model => model.Reply.Body) %>
             </div>
+
             <%: Html.HiddenFor(model => model.OriginalQuestion.Id) %>
             <p>
                 <%: Html.ActionLink("Cancel", "Questions", "Client", null, new {@class = "ImageLink"}) %>

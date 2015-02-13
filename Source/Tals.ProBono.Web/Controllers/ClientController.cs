@@ -58,14 +58,17 @@ namespace Tals.ProBono.Web.Controllers
         // GET: /Client/Ask
         public ActionResult Ask()
         {
+<<<<<<< HEAD
 #if DEBUG
 #else
             if (_unitOfWork.QuestionRepository.Get().ReachedLimit(UserModel.Current.UserName))
+=======
+            if (_questionRepository.Questions.ReachedLimit(UserModel.Current.UserName))
+>>>>>>> origin/tn
                 return View("ReachedMax");
 
             if (!_eligibilityService.IsEligible(Session.SessionID))
                 return RedirectToAction("Index", "Rules");
-#endif
 
             ViewData["categories"] = _unitOfWork.CategoryRepository.Get();
 
@@ -78,6 +81,12 @@ namespace Tals.ProBono.Web.Controllers
         [HttpPost]
         public ActionResult Ask(Question question)
         {
+            if (_questionRepository.Questions.ReachedLimit(UserModel.Current.UserName))
+                return View("ReachedMax");
+
+            if (!_eligibilityService.IsEligible(Session.SessionID))
+                return RedirectToAction("Index", "Rules");
+
             if (this.ModelState.IsValid)
             {
                 try
@@ -171,10 +180,7 @@ namespace Tals.ProBono.Web.Controllers
                 }
                 catch (Exception e)
                 {
-                    if (e.InnerException != null)
-                        this.ModelState.AddModelError("*", e.InnerException.Message);
-                    else
-                        this.ModelState.AddModelError("*", e.Message);
+                    this.ModelState.AddModelError("*", e.InnerException != null ? e.InnerException.Message : e.Message);
                 }
             }
 

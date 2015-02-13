@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 using System.Web.Security;
@@ -33,7 +34,8 @@ namespace Tals.ProBono.Web.Controllers
             _auditor = auditor;
         }
 
-        public ViewResult List(string category, int page = 1) {
+        public ViewResult List(string category, int page = 1)
+        {
             var pageIndex = page - 1;
             var questionsToShow = ((category == null)
                                       ? _unitOfWork.QuestionRepository.Get().Active().NotTaken()
@@ -41,7 +43,7 @@ namespace Tals.ProBono.Web.Controllers
                                       .OrderBy(x => x.CreatedDate);
 
             var model = questionsToShow.ToPagedList(pageIndex, PageSize);
-            
+
             ViewBag.Category = category;
 
             return View(model);
@@ -64,6 +66,10 @@ namespace Tals.ProBono.Web.Controllers
             var question = _unitOfWork.QuestionRepository.Get().WithId(id);
             var posts = _unitOfWork.PostRepository.Get().WithQuestionId(id);
             var model = DetailsViewModel.CreateViewModel(question, posts);
+
+            if (question.IsTaken())
+                if (!question.IsTaker(UserModel.Current.UserName))
+                    return View("AlreadyTaken");
 
             _auditor.Audit(_currentUser.UserName, id);
 
