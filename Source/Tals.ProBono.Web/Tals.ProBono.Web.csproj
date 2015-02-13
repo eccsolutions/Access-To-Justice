@@ -73,6 +73,10 @@
     <Reference Include="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
     <Reference Include="MvcPaging">
       <HintPath>..\packages\MvcPaging.2.0.2\lib\net40\MvcPaging.dll</HintPath>
     </Reference>
@@ -88,15 +92,34 @@
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
-    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Web" />
-    <Reference Include="System.Web.Extensions">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
     <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.40804.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20710.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.Routing" />
     <Reference Include="System.Configuration" />
-    <Reference Include="System.Web.WebPages, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\AccountController.cs" />
@@ -133,59 +156,7 @@
     <Compile Include="Models\DetailsViewModel.cs" />
     <Compile Include="Models\ResetPasswordViewModel.cs" />
     <Compile Include="Models\ReturnUrl.cs" />
-    <Compile Include="Reports\DisplayReport.aspx.cs">
-      <DependentUpon>DisplayReport.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Reports\DisplayReport.aspx.designer.cs">
-      <DependentUpon>DisplayReport.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Reports\WorkEntriesDetailAll.aspx.cs">
-      <DependentUpon>WorkEntriesDetailAll.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Reports\WorkEntriesDetailAll.aspx.designer.cs">
-      <DependentUpon>WorkEntriesDetailAll.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Reports\WorkEntriesDetailByAttorney.aspx.cs">
-      <DependentUpon>WorkEntriesDetailByAttorney.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Reports\WorkEntriesDetailByAttorney.aspx.designer.cs">
-      <DependentUpon>WorkEntriesDetailByAttorney.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Controllers\ReportingController.cs" />
-    <Compile Include="Reports\AttorneyList.aspx.cs">
-      <DependentUpon>AttorneyList.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Reports\AttorneyList.aspx.designer.cs">
-      <DependentUpon>AttorneyList.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Reports\CategoryList.aspx.cs">
-      <DependentUpon>CategoryList.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Reports\CategoryList.aspx.designer.cs">
-      <DependentUpon>CategoryList.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Reports\ClientList.aspx.cs">
-      <DependentUpon>ClientList.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Reports\ClientList.aspx.designer.cs">
-      <DependentUpon>ClientList.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Reports\CountyList.aspx.cs">
-      <DependentUpon>CountyList.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Reports\CountyList.aspx.designer.cs">
-      <DependentUpon>CountyList.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Reports\ReportPage.cs">
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
     <Compile Include="Models\AttorneyProfileViewModel.cs" />
     <Compile Include="Models\EditViewModel.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -384,13 +355,6 @@
     <Content Include="markitup\theme.css" />
     <Content Include="Referenced Components\CodeKicker.BBCode.dll" />
     <Content Include="Referenced Components\Ninject.dll" />
-    <Content Include="Reports\AttorneyList.aspx" />
-    <Content Include="Reports\CategoryList.aspx" />
-    <Content Include="Reports\ClientList.aspx" />
-    <Content Include="Reports\DisplayReport.aspx" />
-    <Content Include="Reports\CountyList.aspx" />
-    <Content Include="Reports\WorkEntriesDetailAll.aspx" />
-    <Content Include="Reports\WorkEntriesDetailByAttorney.aspx" />
     <Content Include="Scripts\csshttprequest.js" />
     <Content Include="Scripts\GoogleAnalytics.js" />
     <Content Include="Scripts\jquery-1.4.2.js" />

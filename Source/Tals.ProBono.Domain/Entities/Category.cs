@@ -1,9 +1,9 @@
-﻿using System;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web.Mvc;
 using Tals.ProBono.Domain.Filters;
+using Tals.ProBono.Domain.Validation;
 
 namespace Tals.ProBono.Domain.Entities
 {
@@ -33,6 +33,7 @@ namespace Tals.ProBono.Domain.Entities
         public int Id { get; set; }
 
         [Required]
+        [InvalidCharacter(new string[] {"\\", "/"})]
         [DisplayName("Category Name")]
         public string CategoryName { get; set; }
 

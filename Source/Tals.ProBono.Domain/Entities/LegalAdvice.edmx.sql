@@ -1,9 +1,9 @@
 
 -- --------------------------------------------------
--- Entity Designer DDL Script for SQL Server 2005, 2008, and Azure
+-- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 06/18/2012 11:43:27
--- Generated from EDMX file: C:\me-dev2\OnlineTNJustice\trunk\Tals.ProBono.Domain\Entities\LegalAdvice.edmx
+-- Date Created: 02/10/2015 13:34:33
+-- Generated from EDMX file: C:\Users\ped\Source\Repos\Access-To-Justice\Source\Tals.ProBono.Domain\Entities\LegalAdvice.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -107,7 +107,8 @@ CREATE TABLE [dbo].[Categories] (
     [CategoryName] nvarchar(max)  NOT NULL,
     [ShortDescription] nvarchar(max)  NULL,
     [LongDescription] nvarchar(max)  NULL,
-    [SortOrder] int  NULL
+    [SortOrder] int  NULL,
+    [Hidden] bit  NOT NULL
 );
 GO
 
@@ -255,6 +256,7 @@ ADD CONSTRAINT [FK_QuestionAnswer]
     REFERENCES [dbo].[Questions]
         ([Id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_QuestionAnswer'
 CREATE INDEX [IX_FK_QuestionAnswer]
@@ -269,6 +271,7 @@ ADD CONSTRAINT [FK_CategoryQuestion]
     REFERENCES [dbo].[Categories]
         ([Id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_CategoryQuestion'
 CREATE INDEX [IX_FK_CategoryQuestion]
@@ -283,6 +286,7 @@ ADD CONSTRAINT [FK_CountyQuestion]
     REFERENCES [dbo].[Counties]
         ([Id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_CountyQuestion'
 CREATE INDEX [IX_FK_CountyQuestion]
@@ -297,6 +301,7 @@ ADD CONSTRAINT [FK_SubscriptionsCategory]
     REFERENCES [dbo].[Categories]
         ([Id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_SubscriptionsCategory'
 CREATE INDEX [IX_FK_SubscriptionsCategory]
@@ -311,6 +316,7 @@ ADD CONSTRAINT [FK_QuestionAudit]
     REFERENCES [dbo].[Questions]
         ([Id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_QuestionAudit'
 CREATE INDEX [IX_FK_QuestionAudit]

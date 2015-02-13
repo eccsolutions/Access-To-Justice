@@ -1,7 +1,4 @@
-﻿USE [onlinetnjustice]
-INSERT INTO Regions
-SELECT 'Tals'
-GO
+﻿USE AccessToJustice
 INSERT INTO Counties
 (CountyName, RegionId)
 SELECT 'Anderson', 1
@@ -104,13 +101,8 @@ UNION ALL SELECT
   'Wilson', 1
   GO
   INSERT INTO Categories
-  SELECT 'Family' UNION ALL
-  SELECT 'Health Care' UNION ALL
-  SELECT 'Debt and Purchases' UNION ALL
-  SELECT 'Housing' UNION ALL
-  SELECT 'Benefits' UNION ALL
-  SELECT 'School/Juvenile' UNION ALL
-  SELECT 'Seniors' UNION ALL
-  SELECT 'Work' UNION ALL
-  SELECT 'Immigration/Citizenship' UNION ALL
-  SELECT 'Other'
+  (CategoryName, Hidden)
+  VALUES
+  ('Family', 0),
+  ('Other', 0),
+  ('Hidden', 1)

@@ -8,12 +8,13 @@
 //------------------------------------------------------------------------------
 
 using System;
+using System.ComponentModel;
+using System.Data.EntityClient;
 using System.Data.Objects;
 using System.Data.Objects.DataClasses;
-using System.Data.EntityClient;
-using System.ComponentModel;
-using System.Xml.Serialization;
+using System.Linq;
 using System.Runtime.Serialization;
+using System.Xml.Serialization;
 
 [assembly: EdmSchemaAttribute()]
 #region EDM Relationship Metadata
@@ -235,6 +236,7 @@ namespace Tals.ProBono.Domain.Entities
         private ObjectSet<Audit> _Audits;
 
         #endregion
+
         #region AddTo Methods
     
         /// <summary>
@@ -318,11 +320,11 @@ namespace Tals.ProBono.Domain.Entities
         }
 
         #endregion
+
     }
-    
 
     #endregion
-    
+
     #region Entities
     
     /// <summary>
@@ -355,6 +357,7 @@ namespace Tals.ProBono.Domain.Entities
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -481,6 +484,7 @@ namespace Tals.ProBono.Domain.Entities
         partial void OnAuditDateChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -523,6 +527,7 @@ namespace Tals.ProBono.Domain.Entities
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -551,6 +556,7 @@ namespace Tals.ProBono.Domain.Entities
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -701,6 +707,7 @@ namespace Tals.ProBono.Domain.Entities
         partial void OnAutoRenderContentChanged();
 
         #endregion
+
     
     }
     
@@ -719,15 +726,18 @@ namespace Tals.ProBono.Domain.Entities
         /// </summary>
         /// <param name="id">Initial value of the Id property.</param>
         /// <param name="categoryName">Initial value of the CategoryName property.</param>
-        public static Category CreateCategory(global::System.Int32 id, global::System.String categoryName)
+        /// <param name="hidden">Initial value of the Hidden property.</param>
+        public static Category CreateCategory(global::System.Int32 id, global::System.String categoryName, global::System.Boolean hidden)
         {
             Category category = new Category();
             category.Id = id;
             category.CategoryName = categoryName;
+            category.Hidden = hidden;
             return category;
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -852,8 +862,33 @@ namespace Tals.ProBono.Domain.Entities
         private Nullable<global::System.Int32> _SortOrder;
         partial void OnSortOrderChanging(Nullable<global::System.Int32> value);
         partial void OnSortOrderChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Boolean Hidden
+        {
+            get
+            {
+                return _Hidden;
+            }
+            set
+            {
+                OnHiddenChanging(value);
+                ReportPropertyChanging("Hidden");
+                _Hidden = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Hidden");
+                OnHiddenChanged();
+            }
+        }
+        private global::System.Boolean _Hidden;
+        partial void OnHiddenChanging(global::System.Boolean value);
+        partial void OnHiddenChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -902,6 +937,7 @@ namespace Tals.ProBono.Domain.Entities
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -930,6 +966,7 @@ namespace Tals.ProBono.Domain.Entities
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -1008,6 +1045,7 @@ namespace Tals.ProBono.Domain.Entities
         partial void OnRegionIdChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -1034,6 +1072,7 @@ namespace Tals.ProBono.Domain.Entities
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -1066,6 +1105,7 @@ namespace Tals.ProBono.Domain.Entities
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -1192,6 +1232,7 @@ namespace Tals.ProBono.Domain.Entities
         partial void OnBodyChanged();
 
         #endregion
+
     
     }
     
@@ -1229,6 +1270,7 @@ namespace Tals.ProBono.Domain.Entities
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -1403,6 +1445,7 @@ namespace Tals.ProBono.Domain.Entities
         partial void OnAcceptedChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -1445,6 +1488,7 @@ namespace Tals.ProBono.Domain.Entities
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -1479,6 +1523,7 @@ namespace Tals.ProBono.Domain.Entities
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -1773,6 +1818,7 @@ namespace Tals.ProBono.Domain.Entities
         partial void OnClosedByChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -1897,6 +1943,7 @@ namespace Tals.ProBono.Domain.Entities
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -1931,6 +1978,7 @@ namespace Tals.ProBono.Domain.Entities
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -2081,6 +2129,7 @@ namespace Tals.ProBono.Domain.Entities
         partial void OnUserHostAddressChanged();
 
         #endregion
+
     
     }
     
@@ -2112,6 +2161,7 @@ namespace Tals.ProBono.Domain.Entities
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -2238,6 +2288,7 @@ namespace Tals.ProBono.Domain.Entities
         partial void OnSubscribedChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -2280,6 +2331,7 @@ namespace Tals.ProBono.Domain.Entities
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -2310,6 +2362,7 @@ namespace Tals.ProBono.Domain.Entities
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -2412,9 +2465,11 @@ namespace Tals.ProBono.Domain.Entities
         partial void OnLoggedChanged();
 
         #endregion
+
     
     }
 
     #endregion
+
     
 }
