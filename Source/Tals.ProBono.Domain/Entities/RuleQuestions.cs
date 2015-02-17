@@ -61,7 +61,7 @@ namespace Tals.ProBono.Domain.Entities
     {
         public string Question
         {
-            get { return "This website is only for Minnesota residents.  What Minnesota county do you live in?"; }
+            get { return "This website is only for Mississippi residents.  What Mississippi county do you live in?"; }
         }
 
         [UIHint("CountyEditor")]

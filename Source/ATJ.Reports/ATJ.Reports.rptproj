@@ -33,44 +33,7 @@
       <FullPath>WorkEntriesDataSet.rsd</FullPath>
     </ProjectItem>
   </DataSets>
-  <Reports>
-    <ProjectItem>
-      <Name>AttorneyList.rdl</Name>
-      <FullPath>AttorneyList.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>CategoryList.rdl</Name>
-      <FullPath>CategoryList.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>ClientList.rdl</Name>
-      <FullPath>ClientList.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>CountyList.rdl</Name>
-      <FullPath>CountyList.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>EligibilityAnswersByQuestion.rdl</Name>
-      <FullPath>EligibilityAnswersByQuestion.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>QuestionEligibilityCount.rdl</Name>
-      <FullPath>QuestionEligibilityCount.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>TotalEligibilityCount.rdl</Name>
-      <FullPath>TotalEligibilityCount.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>WorkEntriesDetailAll.rdl</Name>
-      <FullPath>WorkEntriesDetailAll.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>WorkEntriesDetailByAttorney.rdl</Name>
-      <FullPath>WorkEntriesDetailByAttorney.rdl</FullPath>
-    </ProjectItem>
-  </Reports>
+  <Reports />
   <Configurations>
     <Configuration>
       <Name>Debug</Name>

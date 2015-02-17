@@ -20,9 +20,9 @@ namespace Tals.ProBono.Web.Controllers
 #if DEBUG
             SqlServices.Install("(localdb)\\v11.0", "AccessToJusticeServices", SqlFeatures.All);
 #else
-            SqlServices.Install("localhost\\MLSC", "AccessToJusticeServices", SqlFeatures.All);
+            SqlServices.Install("MVLPDB", "AccessToJusticeServices", SqlFeatures.All);
 #endif
-            if(Request.IsAuthenticated)
+            if (Request.IsAuthenticated)
             {
                 if (User.IsInRole(UserRoles.Administrators) || User.IsInRole(UserRoles.Attorney))
                     return RedirectToAction("List", "Attorney");

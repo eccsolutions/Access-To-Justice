@@ -17,13 +17,13 @@
    <p><a href="http://www.lawhelpmn.org/lawyer-referral-services" target="_blank">www.lawhelpmn.org/lawyer-referral-services</a></p>
    <p><strong>Need help with food, clothing, shelter, medicine or other services?</strong></p>
    <p><a href="http://www.lawhelpmn.org/resource/information-and-referrals-for-other-non-legal" target="_blank">www.lawhelpmn.org/resource/information-and-referrals-for-other-non-legal</a></p>
-   <p><strong>Are you a Minnesota tenant with a question about your housing?  E-mail a housing attorney here:</strong></p>
+   <p><strong>Are you a Mississippi tenant with a question about your housing?  E-mail a housing attorney here:</strong></p>
    <p><a href="http://www.homelinemn.org/e-mail-an-attorney/" target="_blank">www.homelinemn.org/e-mail-an-attorney/</a></p>
    <p><strong>Other helpful information and organizations:</strong></p>
    <ul>
        <li><a href="http://www.lawhelpmn.org/resource/criminal-law-info?ref=JOfhh" target="_blank">Criminal Law Information and Resources</a></li>
        <li><a href="http://www.lawhelpmn.org/resource/court-forms-review-service" target="_blank">Court Forms Review Service</a></li>
-       <li><a href="http://www.ag.state.mn.us/" target="_blank">Minnesota Attorney General's Office</a></li>
+       <li><a href="http://www.ag.state.mn.us/" target="_blank">Mississippi Attorney General's Office</a></li>
    </ul>
-    <p>If you have problems with this website, you may contact us at <a href="mailto:mlao@mnlegalservices.org">mlao@mnlegalservices.org</a>. This email address is for technical questions or website problems only. We will not answer your legal question.</p>
+    <p>If you have problems with this website, you may contact us at <a href="mailto:mvlp@mvlp.org">mvlp@mvlp.org</a>. This email address is for technical questions or website problems only. We will not answer your legal question.</p>
 </asp:Content>

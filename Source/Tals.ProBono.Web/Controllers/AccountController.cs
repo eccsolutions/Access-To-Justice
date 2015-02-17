@@ -109,8 +109,8 @@ namespace Tals.ProBono.Web.Controllers
             FormsService.SignOut();
             Session.Abandon();
 
-            if (UserModel.Current.IsInRole(UserRoles.BasicUser))
-                return Redirect("https://www.surveymonkey.com/s/PYGVK9M");
+            //if (UserModel.Current.IsInRole(UserRoles.BasicUser))
+            //    return Redirect("https://www.surveymonkey.com/s/PYGVK9M");
 
             return RedirectToAction("Index", "Home");
         }

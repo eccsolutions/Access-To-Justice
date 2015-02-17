@@ -26,8 +26,8 @@
         <li>If the lawyer asks you to send documents, and gives you contact information for you to be able to do that, you agree not to use that information to contact the lawyer for other help unless the lawyer gives you permission to do that.</li>
         </ul>
     </li>
-    <li>The lawyer has a Minnesota law license.</li>
-    <li>The lawyer only tells you Minnesota law. Laws may be different in other states.</li>
+    <li>The lawyer has a Mississippi law license.</li>
+    <li>The lawyer only tells you Mississippi law. Laws may be different in other states.</li>
     <li>All volunteer lawyers using the system can see what you ask in your question.</li>
     <li>Only the lawyer who helps you can see your name, county, and the other side’s name in the case. If you have an open legal case, the lawyer who helps you can see what county you entered for that case.</li>
     <li>The people who run this website do not provide the legal advice.</li>

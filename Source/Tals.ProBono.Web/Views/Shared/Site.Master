@@ -6,7 +6,7 @@
     <title>
         <asp:ContentPlaceHolder ID="TitleContent" runat="server" />
     </title>
-    <meta name="description=" content="Minnesota Legal Advice Online">
+    <meta name="description=" content="Mississippi Legal Help Online">
     <link href="<%= Url.Stylesheet() %>" rel="stylesheet" type="text/css" />
     <link href="/markitup/theme.css" rel="stylesheet" type="text/css" />
     <link href="/Content/ui/jquery.ui.all.css" rel="stylesheet" type="text/css" />
@@ -72,18 +72,14 @@
         <div id="main">
             <div id="quicklinks">
                 <asp:ContentPlaceHolder ID="QuickLinksContent" runat="server">
-                    <h2 class="quicklinksheader">Other Places to Get Legal Help</h2>
+                    <h2 class="quicklinksheader">Other Places to Get Help</h2>
                     <ul>
-                        <li><a href="http://www.lawhelpmn.org/find-legal-help" target="_blank">Find Your Local Legal Aid Office and Other Free Legal Help</a></li>
-                        <li><a href="http://www.lawhelpmn.org/walk-in-clinics-and-other-legal-help-clinics" target="_blank">Free or Low-Cost Legal Clinics</a></li>
-                        <li><a href="http://mncourts.gov/selfhelp/" target="_blank">Minnesota Courts Self-Help Center</a></li>
-                        <li><a href="http://www.lawhelpmn.org/resource/information-and-referrals-for-other-non-legal" target="_blank">Other Non-Legal Help</a></li>
-                        <li><a href="http://www.lawhelpmn.org/lawyer-referral-services" target="_blank">Private Attorney Referral Services</a></li>
-                        <li><a href="http://www.mncourts.gov/default.aspx?page=1927" target="_blank">Access Case Records/Find Your Court Date</a></li>
-                        <li><a href="http://www.ag.state.mn.us/" target="_blank">Minnesota Attorney General’s Office</a></li>
-                        <li><a href="http://www.lawhelpmn.org/resource/criminal-law-info?ref=hliW4" target="_blank">Criminal Case Information</a></li>
-                        <li><a href="http://www.lawhelpmn.org" target="_blank">LawHelpMN.org: Free Legal Information</a></li>
-                        <li><a href="http://www.mncourts.gov/selfhelp/?page=253" target="_blank">Find a Minnesota Law Library</a></li>
+                        <li><a href="http://www.mvlp.org" target="_blank">Mississippi Volunteer Lawyers Project</a></li>
+                        <li><a href="http://www.mscenterforlegalservices.org" target="_blank">Mississippi Center for Legal Services</a></li>
+                        <li><a href="http://www.nmrls.com" target="_blank">North Mississippi Rural Legal Services</a></li>
+                        <li><a href="http://www.msatjc.org" target="_blank">Mississippi Access to Justice Commission</a></li>
+                        <li><a href="http://www.ospd.ms.gov" target="_blank">Mississippi Office of the State Public Defender</a></li>
+                        <li><a href="http://www.ago.state.ms.us" target="_blank">Mississippi Attorney General's Office</a></li>
                     </ul>
                 </asp:ContentPlaceHolder>
             </div>
@@ -96,7 +92,7 @@
                 <br />
                 <br />
                 <div class="HelpMessage" style="clear: both">
-                    If you have problems navigating the site, or are experiencing problems with the site, you may contact us at <a href="mailto:mlao@mnlegalservices.org">mlao@mnlegalservices.org</a>. This email address is for technical questions or problems only. Legal questions will not be answered.
+                    If you have problems navigating the site, or are experiencing problems with the site, you may contact us at <a href="mailto:mvlp@mvlp.org">mvlp@mvlp.org</a>. This email address is for technical questions or problems only. Legal questions will not be answered.
                 </div>
             </div>
         </div>
