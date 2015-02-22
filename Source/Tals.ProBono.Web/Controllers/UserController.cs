@@ -131,8 +131,10 @@ namespace Tals.ProBono.Web.Controllers
         }
 
 
-        public ActionResult QuestionHistory(string userName, int page = 1) {
-            var pageIndex = page - 1;
+        public ActionResult QuestionHistory(string userName, int? page) {
+            int p = page.HasValue ? page.Value : 1;
+
+            var pageIndex = p - 1;
             var questionsToShow = (Roles.IsUserInRole(userName, UserRoles.Attorney)
                                        ? _unitOfWork.QuestionRepository.Get().WithTakenBy(userName)
                                        : _unitOfWork.QuestionRepository.Get().WithCreatedBy(userName)).OrderBy(

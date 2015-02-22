@@ -60,7 +60,7 @@ namespace Tals.ProBono.Web
                             new {controller = "User", action = "Profile"});
 
             routes.MapRoute(null, "QuestionHistory/",
-                new { controller = "User", action = "QuestionHistory", userName = (string)null, page = 1 });
+                new { controller = "User", action = "QuestionHistory" /*, userName = (string)null, page = 1*/ });
             routes.MapRoute(null, "QuestionHistory/{userName}",
                             new { controller = "User", action = "QuestionHistory", page = 1 });
             routes.MapRoute(null, "QuestionHistory/{userName}/Page{page}",

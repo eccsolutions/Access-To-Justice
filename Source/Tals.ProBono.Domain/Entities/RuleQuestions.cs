@@ -210,8 +210,8 @@ namespace Tals.ProBono.Domain.Entities
         private int AllowedIncome
         {
             get {
-                const int baseAmount = 13963;
-                const int perHouseHoldMemberAmount = 4950;
+                const int baseAmount = 11770;
+                const int perHouseHoldMemberAmount = 4160;
                 const int twoHundredPercent = 2;
                 var houseHoldMembers = Answer.Count() - 1;
 
