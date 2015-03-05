@@ -62,14 +62,16 @@ namespace Tals.ProBono.Web.Controllers
             return View(posts);
         }
 
-        public ViewResult Details(int id)
+        public ActionResult Details(int id)
         {
             var question = _repositories.Questions.Get().WithId(id);
             var model = DetailsViewModel.CreateViewModel(question);
 
-            if (question.IsTaken())
-                if (!question.IsTaker(UserModel.Current.UserName))
-                    return View("AlreadyTaken");
+            if (!_security.CanTake(question, UserModel.Current.UserName) && !_currentUser.IsInRole(UserRoles.Administrators))
+            {
+                TempData["message"] = _security.ErrorMessage;
+                return RedirectToAction("List");
+            }
 
             _auditor.Audit(_currentUser.UserName, id);
 

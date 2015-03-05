@@ -726,13 +726,11 @@ namespace Tals.ProBono.Domain.Entities
         /// </summary>
         /// <param name="id">Initial value of the Id property.</param>
         /// <param name="categoryName">Initial value of the CategoryName property.</param>
-        /// <param name="hidden">Initial value of the Hidden property.</param>
-        public static Category CreateCategory(global::System.Int32 id, global::System.String categoryName, global::System.Boolean hidden)
+        public static Category CreateCategory(global::System.Int32 id, global::System.String categoryName)
         {
             Category category = new Category();
             category.Id = id;
             category.CategoryName = categoryName;
-            category.Hidden = hidden;
             return category;
         }
 
@@ -862,30 +860,6 @@ namespace Tals.ProBono.Domain.Entities
         private Nullable<global::System.Int32> _SortOrder;
         partial void OnSortOrderChanging(Nullable<global::System.Int32> value);
         partial void OnSortOrderChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Boolean Hidden
-        {
-            get
-            {
-                return _Hidden;
-            }
-            set
-            {
-                OnHiddenChanging(value);
-                ReportPropertyChanging("Hidden");
-                _Hidden = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("Hidden");
-                OnHiddenChanged();
-            }
-        }
-        private global::System.Boolean _Hidden;
-        partial void OnHiddenChanging(global::System.Boolean value);
-        partial void OnHiddenChanged();
 
         #endregion
 

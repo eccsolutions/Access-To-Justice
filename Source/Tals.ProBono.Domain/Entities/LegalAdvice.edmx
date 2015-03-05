@@ -75,7 +75,6 @@
     <Property Name="ShortDescription" Type="nvarchar(max)" Nullable="true" />
     <Property Name="LongDescription" Type="nvarchar(max)" Nullable="true" />
     <Property Name="SortOrder" Type="int" Nullable="true" />
-    <Property Name="Hidden" Type="bit" Nullable="false" />
   </EntityType>
   <EntityType Name="Counties">
     <Key>
@@ -299,7 +298,6 @@
           <Property Type="String" Name="ShortDescription" Nullable="true" />
           <Property Type="String" Name="LongDescription" Nullable="true" />
           <Property Type="Int32" Name="SortOrder" Nullable="true" />
-          <Property Name="Hidden" Type="Boolean" Nullable="false" />
         </EntityType>
         <Association Name="CategoryQuestion">
           <End Type="LegalAdvice.Category" Role="Category" Multiplicity="0..1" />
@@ -466,7 +464,6 @@
           <ScalarProperty Name="ShortDescription" ColumnName="ShortDescription" />
           <ScalarProperty Name="LongDescription" ColumnName="LongDescription" />
           <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
-          <ScalarProperty Name="Hidden" ColumnName="Hidden" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
