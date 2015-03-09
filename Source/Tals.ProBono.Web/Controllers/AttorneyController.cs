@@ -67,7 +67,7 @@ namespace Tals.ProBono.Web.Controllers
             var question = _repositories.Questions.Get().WithId(id);
             var model = DetailsViewModel.CreateViewModel(question);
 
-            if (!_security.CanTake(question, UserModel.Current.UserName) && !_currentUser.IsInRole(UserRoles.Administrators))
+            if (!_security.CanView(question, UserModel.Current.UserName))
             {
                 TempData["message"] = _security.ErrorMessage;
                 return RedirectToAction("List");

@@ -69,6 +69,17 @@ namespace Tals.ProBono.Domain.Services
 
             return false;
         }
+
+        public bool CanView(Question question, string userName)
+        {
+            if (!question.IsTaken() || question.IsTaker(userName) || _roles.IsUserInRole(userName, UserRoles.Administrators))
+                return true;
+
+            ErrorMessage =
+                "The question you have selected has been taken by another attorney and is no longer available";
+
+            return false;
+        }
     }
 
     public interface ISecurityService
@@ -77,5 +88,6 @@ namespace Tals.ProBono.Domain.Services
         bool HasReplyAccess(Question question, string userName);
         bool CanMarkAsAnswer(Question question, string userName);
         bool CanTake(Question question, string userName);
+        bool CanView(Question question, string userName);
     }
 }

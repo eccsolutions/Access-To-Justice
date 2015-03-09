@@ -1,7 +1,7 @@
 ﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<IEnumerable<Tals.ProBono.Domain.Entities.Category>>" %>
 <%@ Import Namespace="Tals.ProBono.Domain.Filters" %>
     <fieldset>
-    <table class="categorygridview">
+    <table class="gridview">
         <tr>
             <th colspan="4" class="categorybanner">
                 <h2>Categories</h2>

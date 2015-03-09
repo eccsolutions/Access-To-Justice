@@ -27,13 +27,13 @@
     <% foreach (var item in Model) { %>
     
         <tr>
-            <td>
+            <td class="gridcolumn">
                 <%:Html.ActionLink("Edit", "Edit", new {id = item.Id}) %>
             </td>
-            <td><%:item.CategoryName %></td>
-            <td><%:item.ShortDescription %></td>
-            <td><%:item.LongDescription %></td>
-            <td><%:item.SortOrder %></td>
+            <td class="gridcolumn"><%:item.CategoryName %></td>
+            <td class="gridcolumn"><%:item.ShortDescription %></td>
+            <td class="gridcolumn"><%:item.LongDescription %></td>
+            <td class="gridcolumn"><%:item.SortOrder %></td>
         </tr>
 
     <%} %>
