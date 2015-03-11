@@ -12,7 +12,6 @@ namespace Tals.ProBono.Domain.Entities
 	{
         public bool IsSubscribed(string userName)
         {
-           
             return Subscriptions.Count(s => s.UserName == userName) > 0;
         }
 
@@ -47,5 +46,8 @@ namespace Tals.ProBono.Domain.Entities
         [DisplayName("Sort Order")]
         [Required]
         public int SortOrder { get; set; }
+
+        [DisplayName("Hide this category")]
+        public bool Hidden { get; set; }
     }
 }

@@ -149,14 +149,14 @@ namespace Tals.ProBono.Web.Controllers
 
             _questionRepository.SaveChanges();
 
-            if (!string.IsNullOrEmpty(editViewModel.AssignedTo))
-            {
-                var user = Membership.GetUser(editViewModel.AssignedTo);
+            //if (!string.IsNullOrEmpty(editViewModel.AssignedTo))
+            //{
+            //    var user = Membership.GetUser(editViewModel.AssignedTo);
 
-                if (user != null)
-                    _emailService.SendEmailTo(user.Email,
-                                              new StandardEmail(StandardEmail.EmailTemplate.QuestionAssigned));
-            }
+            //    if (user != null)
+            //        _emailService.SendEmailTo(user.Email,
+            //                                  new StandardEmail(StandardEmail.EmailTemplate.QuestionAssigned));
+            //}
 
             return RedirectToAction("Details", "Attorney", new { id = editViewModel.QuestionId });
         }

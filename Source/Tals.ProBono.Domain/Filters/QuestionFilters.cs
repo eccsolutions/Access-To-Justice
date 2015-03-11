@@ -116,7 +116,7 @@ namespace Tals.ProBono.Domain.Filters
 
         public static IQueryable<Question> Active(this IQueryable<Question> qry)
         {
-            return qry.Where(x => x.ClosedBy == null && x.ClosedDate == null);
+            return qry.Where(x => x.ClosedBy == null && x.ClosedDate == null && !x.Category.Hidden);
         }
 
         public static IQueryable<Question> AnsweredBySinceLastLogin(this IQueryable<Question> qry, string userName, DateTime lastLogin)

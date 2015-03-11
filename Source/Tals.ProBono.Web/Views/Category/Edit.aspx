@@ -44,6 +44,12 @@
                 <%: Html.TextBoxFor(model => model.SortOrder) %>
                 <%: Html.ValidationMessageFor(model => model.SortOrder)%>
             </div>
+            <div class="editor-label">
+                <%: Html.LabelFor(model => model.Hidden) %>
+            </div>
+            <div class="editor-field">
+                <%: Html.CheckBoxFor(model => model.Hidden) %>
+            </div>
             <p>
                 <input type="submit" value="Save" />
             </p>

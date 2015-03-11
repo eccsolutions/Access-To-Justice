@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Tals.ProBono.Domain.Abstract;
+using Tals.ProBono.Domain.Concrete;
 using Tals.ProBono.Domain.Entities;
 
 namespace Tals.ProBono.Domain.Services
@@ -10,9 +11,12 @@ namespace Tals.ProBono.Domain.Services
     public class SecurityService : ISecurityService
     {
         private IRoles _roles;
-        public SecurityService(IRoles roles)
+        private readonly IRepositoryFactory _factory;
+
+        public SecurityService(IRoles roles, IRepositoryFactory factory)
         {
             _roles = roles;
+            _factory = factory;
         }
 
         public string ErrorMessage { get; private set; }
@@ -80,6 +84,13 @@ namespace Tals.ProBono.Domain.Services
 
             return false;
         }
+
+        public bool ValidCategory(string categoryName)
+        {
+            var category = _factory.Categories.Get().FirstOrDefault(c => c.CategoryName == categoryName);
+
+            return category == null || !category.Hidden;
+        }
     }
 
     public interface ISecurityService
@@ -89,5 +100,6 @@ namespace Tals.ProBono.Domain.Services
         bool CanMarkAsAnswer(Question question, string userName);
         bool CanTake(Question question, string userName);
         bool CanView(Question question, string userName);
+        bool ValidCategory(string categoryName);
     }
 }

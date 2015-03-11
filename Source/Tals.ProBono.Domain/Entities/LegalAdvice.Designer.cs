@@ -860,6 +860,30 @@ namespace Tals.ProBono.Domain.Entities
         private Nullable<global::System.Int32> _SortOrder;
         partial void OnSortOrderChanging(Nullable<global::System.Int32> value);
         partial void OnSortOrderChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Boolean Hidden
+        {
+            get
+            {
+                return _Hidden;
+            }
+            set
+            {
+                OnHiddenChanging(value);
+                ReportPropertyChanging("Hidden");
+                _Hidden = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Hidden");
+                OnHiddenChanged();
+            }
+        }
+        private global::System.Boolean _Hidden = false;
+        partial void OnHiddenChanging(global::System.Boolean value);
+        partial void OnHiddenChanged();
 
         #endregion
 

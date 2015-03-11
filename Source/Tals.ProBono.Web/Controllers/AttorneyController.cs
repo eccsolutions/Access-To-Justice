@@ -9,6 +9,7 @@ using Tals.ProBono.Domain.Concrete;
 using Tals.ProBono.Domain.Entities;
 using Tals.ProBono.Domain.Filters;
 using Tals.ProBono.Domain.Services;
+using Tals.ProBono.Web.Helpers;
 using Tals.ProBono.Web.Infrastructure;
 using Tals.ProBono.Web.Models;
 
@@ -37,6 +38,9 @@ namespace Tals.ProBono.Web.Controllers
 
         public ViewResult List(string category, int page = 1)
         {
+            if (!_security.ValidCategory(category))
+                return View("InvalidCategory");
+
             var pageIndex = page - 1;
             var questionsToShow = ((category == null)
                                       ? _repositories.Questions.Get().Active().NotTaken()
@@ -80,7 +84,7 @@ namespace Tals.ProBono.Web.Controllers
 
         public ViewResult PracticeAreas()
         {
-            var categories = _repositories.Categories.Get();
+            var categories = _repositories.Categories.Get().PublicCategories();
             return View(categories);
         }
 
@@ -229,6 +233,10 @@ namespace Tals.ProBono.Web.Controllers
         public ActionResult Subscribe(int id, string returnUrl)
         {
             var category = _repositories.Categories.Get(id);
+
+            if (category != null && category.Hidden)
+                return View("InvalidCategory");
+
             var model = SubscribeViewModel.CreateViewModel(category, returnUrl);
             model.ReturnUrl = Request.UrlReferrer == null ? null : Request.UrlReferrer.PathAndQuery;
 

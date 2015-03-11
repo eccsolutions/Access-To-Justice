@@ -63,7 +63,7 @@ namespace Tals.ProBono.Web.Controllers
             if (!_eligibilityService.IsEligible(Session.SessionID))
                 return RedirectToAction("Index", "Rules");
 
-            ViewData["categories"] = _questionRepository.Categories;
+            ViewData["categories"] = _questionRepository.Categories.PublicCategories();
 
             return View(new Question());
         }
@@ -107,7 +107,7 @@ namespace Tals.ProBono.Web.Controllers
                 }
             }
 
-            ViewData["categories"] = _questionRepository.Categories;
+            ViewData["categories"] = _questionRepository.Categories.PublicCategories();
 
             return View(question);
         }

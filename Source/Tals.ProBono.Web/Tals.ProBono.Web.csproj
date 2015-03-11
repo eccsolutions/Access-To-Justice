@@ -15,7 +15,7 @@
     <AssemblyName>Tals.ProBono.Web</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
-    <UseIISExpress>false</UseIISExpress>
+    <UseIISExpress>true</UseIISExpress>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <UpgradeBackupLocation>
@@ -124,6 +124,7 @@
   <ItemGroup>
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Helpers\HiddenCategoryFilter.cs" />
     <Compile Include="Infrastructure\Auditor.cs" />
     <Compile Include="Infrastructure\AuthorizeCurrentUserFilter.cs" />
     <Compile Include="Infrastructure\DynamicMasterPageFilter.cs" />
@@ -442,6 +443,7 @@
     <Content Include="Views\Nav\PostActionsButtons.ascx" />
     <Content Include="Views\Nav\QuestionActionButtons.ascx" />
     <Content Include="Views\Shared\CultureChooserUserControl.ascx" />
+    <Content Include="Views\Shared\InvalidCategory.aspx" />
     <Content Include="Views\Shared\MarkAsAnswer.aspx" />
     <Content Include="Views\Client\QuestionSubmitted.aspx" />
     <Content Include="Views\Home\ApprovalNeeded.aspx" />
@@ -602,7 +604,7 @@
           <AutoAssignPort>False</AutoAssignPort>
           <DevelopmentServerPort>34574</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost/Tals.ProBono.Web</IISUrl>
+          <IISUrl>http://localhost:34574/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

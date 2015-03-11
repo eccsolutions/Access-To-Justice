@@ -5,7 +5,9 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-
+    <div class="ColorCoding">
+        <div><div class="Closed"></div> hidden</div>
+    </div>
     <h2>List of Categories</h2>
     <table class="gridview">
         <tr>
@@ -25,8 +27,12 @@
         </tr>
 
     <% foreach (var item in Model) { %>
-    
+        
+    <% if (item.Hidden) { %>
+        <tr class="Closed">
+    <% } else { %>
         <tr>
+    <% } %>
             <td class="gridcolumn">
                 <%:Html.ActionLink("Edit", "Edit", new {id = item.Id}) %>
             </td>
@@ -35,7 +41,7 @@
             <td class="gridcolumn"><%:item.LongDescription %></td>
             <td class="gridcolumn"><%:item.SortOrder %></td>
         </tr>
-
+        
     <%} %>
 
     </table>
