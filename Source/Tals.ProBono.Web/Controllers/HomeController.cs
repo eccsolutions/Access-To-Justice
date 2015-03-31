@@ -18,9 +18,9 @@ namespace Tals.ProBono.Web.Controllers
         public ActionResult Index()
         {
 #if DEBUG
-            SqlServices.Install("(localdb)\\v11.0", "AccessToJusticeServices", SqlFeatures.All);
+            SqlServices.Install("AccessToJustice", "AccessToJusticeServices", SqlFeatures.All);
 #else
-            SqlServices.Install("MVLPDB", "AccessToJusticeServices", SqlFeatures.All);
+            //SqlServices.Install("AccessToJustice", "AccessToJusticeServices", SqlFeatures.All);
 #endif
             if (Request.IsAuthenticated)
             {
