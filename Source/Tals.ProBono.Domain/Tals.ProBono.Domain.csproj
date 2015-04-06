@@ -102,6 +102,10 @@
     <Compile Include="Migrations\201402252324142_InitialCreate.Designer.cs">
       <DependentUpon>201402252324142_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201504060100366_Update.cs" />
+    <Compile Include="Migrations\201504060100366_Update.Designer.cs">
+      <DependentUpon>201504060100366_Update.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Entities\DatabaseInitializer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -116,6 +120,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Scripts\AddAuditing.sql" />
+    <Content Include="Scripts\AddCountySeedData.sql" />
     <Content Include="Scripts\GenerateStaticData.sql" />
     <Content Include="Scripts\GetElement.sql" />
     <Content Include="Scripts\GetProfileElement.sql" />
@@ -131,6 +136,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201402252324142_InitialCreate.resx">
       <DependentUpon>201402252324142_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201504060100366_Update.resx">
+      <DependentUpon>201504060100366_Update.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

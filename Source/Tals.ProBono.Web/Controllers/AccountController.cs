@@ -6,7 +6,6 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
-using Tals.ProBono.Domain.Abstract;
 using Tals.ProBono.Domain.Entities;
 using Tals.ProBono.Domain.Filters;
 using Tals.ProBono.Domain.Services;

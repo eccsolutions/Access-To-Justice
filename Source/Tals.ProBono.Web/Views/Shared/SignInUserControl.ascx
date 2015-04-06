@@ -8,7 +8,7 @@
         [ <%: Html.ActionLink("Change Password", "ChangePassword", "Account") %> ]
 <% if (UserModel.Current.IsInRole(UserRoles.Administrators))
    {%>
-        [ <%:Html.ActionLink("MLHO Administration", "List", "Admin") %> ]
+        [ <%:Html.ActionLink("Administration", "List", "Admin") %> ]
 <%} %>
 <% if (UserModel.Current.IsInRole(UserRoles.Attorney)) { %>
         [ <%:Html.ActionLink("Sign Out", "LogHours", "Attorney")%> ]

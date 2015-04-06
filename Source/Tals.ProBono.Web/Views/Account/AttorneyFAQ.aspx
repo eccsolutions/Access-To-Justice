@@ -1,7 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<dynamic>" %>
+<%@ Import Namespace="Tals.ProBono.Domain.Services" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-    Mississippi Legal Help Online - Attorney Sign Up FAQ
+    <%=ConfigSettings.AppName %> - Attorney Sign Up FAQ
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <h2>Attorney Sign Up - Frequently Asked Questions</h2>
@@ -11,9 +12,9 @@
         <%: Html.ActionLink("Back to Attorney Sign Up", "AttorneySignUp", "Account", null, new { @class = "ImageLink" })%></p>
     <% } %>
     <p>
-        <a href="#Q1">How does Mississippi Legal Help Online (MLHO) work?</a>
+        <a href="#Q1">How does the <%=ConfigSettings.AppName %> work?</a>
         <br />
-        <a href="#Q2">Who is eligible to use MLHO?</a>
+        <a href="#Q2">Who is eligible to use the <%=ConfigSettings.AppName %>?</a>
         <br />
         <a href="#Q3">Will I receive pro bono hours for participating?</a>
         <br />
@@ -53,19 +54,19 @@
         <a href="#Q19">What if I have further questions or feedback?</a>
     </p>
     <p>
-        <strong><a id="Q1">How does Mississippi Legal Help Online (MLHO) work?</a></strong></p>
-    <p>MLHO is based on the walk-in clinic or dial-a-lawyer model where clients request brief advice and counsel about a specific civil legal issue from a volunteer lawyer. Lawyers provide information and basic legal advice without any expectation of long-term representation.</p>
+        <strong><a id="Q1">How does the <%=ConfigSettings.AppName %> work?</a></strong></p>
+    <p>The <%=ConfigSettings.AppName %> is based on the walk-in clinic or dial-a-lawyer model where clients request brief advice and counsel about a specific civil legal issue from a volunteer lawyer. Lawyers provide information and basic legal advice without any expectation of long-term representation.</p>
     <p>Users who meet eligibility (see Eligibility below) sign the user agreement, create a username and password, post a request for legal advice information, and provide facts about their case that will help the lawyer answer the question. Users will be asked to select a category (such as “housing” or “family”) that best describes their question. The lawyer may ask for additional information before responding to the user’s request, but the user will have a choice to respond to that request or not. A user’s name, county, opposing party information, and county of venue for open legal matters will be shared with the attorney. Users are informed that there is no guarantee that a question will be answered. If a question is not answered within fourteen (14) days, the user will receive an email from the website administrator instructing the user to seek assistance elsewhere. The user will also be provided with a list of additional resources.</p>
-    <p>Lawyers who would like to participate must create a username and password, provide contact information and their attorney ID number, sign the lawyer use agreement, and request approval from the website administrator. Before the lawyer’s account is activated, the website administrator checks to ensure the lawyer is licensed in Mississippi and is in good standing with The Mississippi Bar. Once a lawyer has been approved by the website administrator, the lawyer receives an email notification and can begin answering user questions.</p>
+    <p>Lawyers who would like to participate must create a username and password, provide contact information and their attorney ID number, sign the lawyer use agreement, and request approval from the website administrator. Before the lawyer’s account is activated, the website administrator checks to ensure the lawyer is licensed in <%=ConfigSettings.StateName %> and is in good standing with The <%=ConfigSettings.StateName %> Bar. Once a lawyer has been approved by the website administrator, the lawyer receives an email notification and can begin answering user questions.</p>
     <p>Lawyers may log in at any time to review a list of user questions and select the one(s) they want to answer. Lawyers will use the categories provided by the user to help determine which questions they would like to answer. A lawyer will have the opportunity to read the full question before deciding to take it from the list and answer it. Once a lawyer takes a question from the list, the lawyer has three (3) days to answer it. Lawyers will be allowed to ask follow-up questions through the website if they need additional information in order to answer the user’s question. The lawyer’s name will not be revealed to the user. The lawyer’s contact information will not be shared with the user. Once a lawyer answers a question, the user will be asked to accept the answer or send a follow up question to the lawyer.</p>
     <p>
         Lawyers will be able to view a log of questions they have answered.</p>
     <p>
-        <strong><a id="Q2">Who is eligible to use MLHO?</a></strong></p>
+        <strong><a id="Q2">Who is eligible to use the <%=ConfigSettings.AppName %>?</a></strong></p>
     <p>
-        Eligibility for use of MLHO is limited to the following:</p>
+        Eligibility for use of the <%=ConfigSettings.AppName %> is limited to the following:</p>
     <ul>
-        <li>The user must be a Mississippi resident;</li>
+        <li>The user must be a <%=ConfigSettings.StateName %> resident;</li>
         <li>The user must have household income at or below 200% of the federal poverty level;</li>
         <li>The user must be at least 14 years of age;</li>
         <li>The user may not request assistance with criminal law matters; and</li>
@@ -75,7 +76,7 @@
         Users must provide their name and county in order to request advice.</p>
     <p>
         <strong><a id="Q3">Will I earn pro bono hours for participating?</a></strong></p>
-    <p>Lawyers earn pro bono hours for time spent researching and answering questions. Lawyers keep their time and report it in the MLHO system before logging out of each session. Lawyers may view the number of hours they have volunteered. Lawyers may earn up to 1 hour of CLE credit for every six hours of pro bono provided. See the rules for more information.</p>
+    <p>Lawyers earn pro bono hours for time spent researching and answering questions. Lawyers keep their time and report it in the <%=ConfigSettings.AppName %> before logging out of each session. Lawyers may view the number of hours they have volunteered. Lawyers may earn up to 1 hour of CLE credit for every six hours of pro bono provided. See the rules for more information.</p>
     <p>
         <strong><a id="Q4">What kinds of lawyers should participate?</a></strong></p>
     <p>All lawyers are welcome! While there are certain types of legal questions that regularly come up, we need lawyers with different areas of expertise to volunteer. We hope the website will appeal to lawyers who want to give back but have been unable to participate in traditional pro bono work due to family obligations, work limitations, schedule, or geographic location. We also hope to engage lawyers who already provide pro bono and are willing to give more of their time to those who need it.</p>
@@ -96,7 +97,7 @@
     <p>There is no attorney/client relationship between the client and the Mississippi Volunteer Lawyers Project.</p>
     <p>
         <strong><a id="Q7">How do lawyers check for conflicts of interest?</a></strong></p>
-    <p>Because of the pro bono publico nature of the limited scope representation provided through MLHO, Mississippi Rules of Professional Conduct 1.2(c) and 6.5 apply to an attorney’s participation in MLHO. The only conflicts of interest that would preclude an attorney from answering a question for an eligible user of MLHO are conflicts of interest that the attorney actually knows of at the time that she receives or answers a client's question. Because an attorney is only precluded from answering a question if she knows there is a conflict, the possibility exists, and clients agree that they understand, that an attorney who answers a question, or another attorney with whom she practices in a firm, may be representing other parties with an interest in the question.</p>
+    <p>Because of the pro bono publico nature of the limited scope representation provided through the <%=ConfigSettings.AppName %>, Mississippi Rules of Professional Conduct 1.2(c) and 6.5 apply to an attorney’s participation in the <%=ConfigSettings.AppName %>. The only conflicts of interest that would preclude an attorney from answering a question for an eligible user of the <%=ConfigSettings.AppName %> are conflicts of interest that the attorney actually knows of at the time that she receives or answers a client's question. Because an attorney is only precluded from answering a question if she knows there is a conflict, the possibility exists, and clients agree that they understand, that an attorney who answers a question, or another attorney with whom she practices in a firm, may be representing other parties with an interest in the question.</p>
     <p>The client name and opposing party name will be provided to the attorney so that the attorney can recognize known conflicts of interest. If, based on the information the client provides, the attorney gains actual knowledge of a conflict of interest precluding her from answering, the question will be returned to the queue to be accepted by another volunteer attorney.</p>
     <p>
         <strong><a id="Q8">What about professional liability insurance coverage?</a></strong></p>
@@ -104,7 +105,7 @@
     <p>
         <strong><a id="Q9">Is there a confidentiality issue with client information/lawyer advice being
             housed on the internet?</a></strong></p>
-    <p>This site is designed to ensure client privacy. Since the web program is administered via email through a platform that limits access based on a screening, confidentiality will be maintained since only the website administrator has access to content between a client and a lawyer. Information available to the website administrator and the lawyer responding to a client request shall remain confidential, subject to the limitations of the Privacy/Confidentiality Policy. However, client requests for information and the response of the lawyers participating in MLHO may be maintained in a database for review in order to measure the effectiveness of the project. Steps will be taken to maintain the security of this database and it will only be utilized by the administrator but an absolute guarantee of security is not possible when using the internet and internet based systems.</p>
+    <p>This site is designed to ensure client privacy. Since the web program is administered via email through a platform that limits access based on a screening, confidentiality will be maintained since only the website administrator has access to content between a client and a lawyer. Information available to the website administrator and the lawyer responding to a client request shall remain confidential, subject to the limitations of the Privacy/Confidentiality Policy. However, client requests for information and the response of the lawyers participating in the <%=ConfigSettings.AppName %> may be maintained in a database for review in order to measure the effectiveness of the project. Steps will be taken to maintain the security of this database and it will only be utilized by the administrator but an absolute guarantee of security is not possible when using the internet and internet based systems.</p>
     <p>For each visitor to the Webpage the web server automatically recognizes only the consumer domain name. This is the information that is collected for statistical purposes.</p>
     <p>Aggregate information is collected on the pages consumers access or visit on this website.</p>
     <p>The information collected is used to improve the content of the webpage and is not shared with other organizations for commercial purposes. Information may be disclosed when legally required at the request of government authorities conducting an investigation, to verify or enforce compliance with the policies governing our website and applicable laws or to protect against misuses or unauthorized use of our website.</p>
@@ -145,14 +146,14 @@
         the email address <a href="mailto:mvlp@mvlp.org">mvlp@mvlp.org</a> located at the bottom of the page.</p>
 
     <p><strong><a id="Q15">What if I think the user needs more help?</a></strong></p>
-    <p>If you believe that the user requires more legal assistance than can be provided through MLHO, you can refer him to a local legal services organization. Each organization is different and takes different types of cases, sometimes even within the same organization.  You are encouraged to contact MVLP to determine the organization that might be able to help the user.</p>
+    <p>If you believe that the user requires more legal assistance than can be provided through the <%=ConfigSettings.AppName %>, you can refer him to a local legal services organization. Each organization is different and takes different types of cases, sometimes even within the same organization.  You are encouraged to contact MVLP to determine the organization that might be able to help the user.</p>
     <p><strong><a id="Q16">How do I make a referral?</a></strong></p>
     <p>Every county in Mississippi is covered by a legal aid organization and many other organizations operate statewide. This website contains links to the websites of the Mississippi Volunteer Lawyers Project, the Mississippi Legal Services Programs, the Mississippi Access to Justice Commission, Mississippi Office of the State Public Defender and the Mississippi Attorney General’s Office.  The website of the Mississippi Access to Justice Commission contains links to the websites of all of the state’s civil legal services providers.  Be advised that for organizations, the referral does not mean that the organization will automatically take their case.</p>
     <p><strong><a id="Q17">What if I want to represent the client in their case?</a></strong></p>
     <p>
        If you decide to take a client's case on a pro bono basis, that representation is outside the scope of the website's 
        user agreement. You must enter into a new agreement with the client. Your contact and correspondence with the client 
-       should be conducted outside of the MLHO website. You should also notify the website administrator at <a href="mailto:mvlp@mvlp.org">mvlp@mvlp.org</a>
+       should be conducted outside of the <%=ConfigSettings.AppName %> website. You should also notify the website administrator at <a href="mailto:<%=ConfigSettings.SiteEmail %>g"><%=ConfigSettings.SiteEmail %></a>
        that you are taking the case pro bono, so that information can be tracked.
     </p>
     <p><strong><a id="Q18">What if I see the same question over and over, is there something that I can use to provide answers?</a></strong></p>

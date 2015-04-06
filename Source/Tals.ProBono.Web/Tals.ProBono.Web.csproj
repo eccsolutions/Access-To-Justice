@@ -343,6 +343,7 @@
     <Content Include="Content\Images\user_anonymous_64.png" />
     <Content Include="Content\Images\warning.bmp" />
     <Content Include="packages.config" />
+    <None Include="Properties\PublishProfiles\Local - Production.pubxml" />
     <None Include="Properties\PublishProfiles\Production.pubxml" />
     <None Include="Referenced Components\Telerik.Web.Mvc.dll" />
     <Content Include="markitup\bbcode-set-parsed.js" />
@@ -613,7 +614,7 @@
           <AutoAssignPort>False</AutoAssignPort>
           <DevelopmentServerPort>34574</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://justice.localhost</IISUrl>
+          <IISUrl>http://onlinejustice.localhost</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

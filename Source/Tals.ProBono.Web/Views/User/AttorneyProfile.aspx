@@ -2,7 +2,7 @@
 <%@ Import Namespace="Tals.ProBono.Domain.Services" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-	Profile (<%:ViewData["UserName"]%>)
+    Profile (<%:ViewData["UserName"]%>)
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">

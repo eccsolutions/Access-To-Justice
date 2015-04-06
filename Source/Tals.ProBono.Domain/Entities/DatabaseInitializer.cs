@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 using Tals.ProBono.Domain.Migrations;
 
 namespace Tals.ProBono.Domain.Entities

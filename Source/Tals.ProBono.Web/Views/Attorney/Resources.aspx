@@ -1,7 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.master" Inherits="System.Web.Mvc.ViewPage<dynamic>" %>
+<%@ Import Namespace="Tals.ProBono.Domain.Services" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-   Mississippi Legal Help Online - Training/Resource Materials
+   <%=ConfigSettings.AppName %> - Training/Resource Materials
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">

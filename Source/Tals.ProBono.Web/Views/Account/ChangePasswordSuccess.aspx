@@ -1,7 +1,8 @@
 ﻿<%@Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage" %>
+<%@ Import Namespace="Tals.ProBono.Domain.Services" %>
 
 <asp:Content ID="changePasswordTitle" ContentPlaceHolderID="TitleContent" runat="server">
-   Mississippi Legal Help Online - Update Security Question
+   <%=ConfigSettings.AppName %> - Update Security Question
 </asp:Content>
 
 <asp:Content ID="changePasswordSuccessContent" ContentPlaceHolderID="MainContent" runat="server">

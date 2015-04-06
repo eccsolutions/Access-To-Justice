@@ -3,6 +3,7 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web.Mvc;
+using Tals.ProBono.Domain.Services;
 
 namespace Tals.ProBono.Domain.Entities
 {
@@ -61,7 +62,7 @@ namespace Tals.ProBono.Domain.Entities
     {
         public string Question
         {
-            get { return "This website is only for Mississippi residents.  What Mississippi county do you live in?"; }
+            get { return "This website is only for " + ConfigSettings.StateName + " residents.  What " + ConfigSettings.StateName + " county do you live in?"; }
         }
 
         [UIHint("CountyEditor")]

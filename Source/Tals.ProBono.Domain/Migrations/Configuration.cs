@@ -1,18 +1,14 @@
-using System.Collections.Generic;
 using Tals.ProBono.Domain.Entities;
 
 namespace Tals.ProBono.Domain.Migrations
 {
-    using System;
-    using System.Data.Entity;
     using System.Data.Entity.Migrations;
-    using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<Tals.ProBono.Domain.Entities.AdviceContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<AdviceContext>
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationsEnabled = false;
         }
 
         //protected override void Seed(Tals.ProBono.Domain.Entities.AdviceContext context)

@@ -1,11 +1,12 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Views/Shared/Guest.Master" Inherits="System.Web.Mvc.ViewPage" %>
 
+<%@ Import Namespace="Tals.ProBono.Domain.Services" %>
 <%@ Import Namespace="Tals.ProBono.Web.Helpers" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-    Mississippi Legal Help Online – Free Legal Advice & Counsel
+    <%=ConfigSettings.AppName %> – Free Legal Advice & Counsel
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <h2>Welcome to Mississippi Legal Help Online!</h2>
+    <h2>Welcome to the <%=ConfigSettings.AppName %>!</h2>
     <p>
         Volunteer lawyers may answer your legal questions for free. To use this website, you must first qualify for help.
     </p>

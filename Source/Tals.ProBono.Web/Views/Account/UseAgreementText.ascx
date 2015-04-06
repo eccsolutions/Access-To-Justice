@@ -1,18 +1,19 @@
 ﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<dynamic>" %>
+<%@ Import Namespace="Tals.ProBono.Domain.Services" %>
 
 <div>
     <h2>Terms and Conditions of the Mississippi Legal Help Online Website</h2>
 
     <p style="margin-bottom: 30px;"><%: Html.ActionLink("Frequently Asked Questions", "AttorneyFAQ", "Account", null, new {@class="ImageLink"}) %></p>
 
-    <p>Mississippi Legal Help Online (MLHO) is a website operated by the Mississippi Volunteer Lawyers Project (MVLP). The purpose of the website is to increase access to advice and information about civil legal matters to those who cannot afford it. There is no fee for the use of the system or for the advice and information provided by the attorney. Because the advice provided is from volunteer attorneys, and not from anyone employed or supervised by MVLP, MVLP cannot guarantee the accuracy of the advice given.</p>
+    <p><%=ConfigSettings.AppName %> is a website operated by the Mississippi Volunteer Lawyers Project (MVLP). The purpose of the website is to increase access to advice and information about civil legal matters to those who cannot afford it. There is no fee for the use of the system or for the advice and information provided by the attorney. Because the advice provided is from volunteer attorneys, and not from anyone employed or supervised by MVLP, MVLP cannot guarantee the accuracy of the advice given.</p>
     <br />
     <br />
     <p class="bold">
-        Who Can Use MLHO
+        Who Can Use The <%=ConfigSettings.AppName %>
     </p>
     <p>
-        Eligibility for use of MLHO is limited to the following:
+        Eligibility for use of the <%=ConfigSettings.AppName %> is limited to the following:
         <ul>
             <li>The user must have household income less than 200% of the federal poverty level,
             </li>
@@ -33,7 +34,7 @@
     <p>
         If a user is not eligible to use the system, the user will be denied access to it and provided with some alternate resources for help.</p>
     <p class="bold">
-        What Happens When Users Use MLHO
+        What Happens When Users Use The <%=ConfigSettings.AppName %>
     </p>
     <p>
         After eligibility is established, the user will create a username and password.</p>
@@ -66,13 +67,13 @@
 
     <p class="bold">
         Conflicts</p>
-    <p>Because of the pro bono publico nature of the limited scope representation provided through MLHO, Mississippi Rules of Professional Conduct 1.2(c) and 6.5 apply to an attorney’s participation in MLHO. The only conflicts of interest that would preclude an attorney from answering a question for an eligible user of MLHO are conflicts of interest that the attorney actually knows of at the time that she receives or answers a client's question. Because an attorney is only precluded from answering a question if she knows there is a conflict, the possibility exists, and clients agree that they understand, that an attorney who answers a question, or another attorney with whom she practices in a firm, may be representing other parties with an interest in the question.</p>
+    <p>Because of the pro bono publico nature of the limited scope representation provided through the <%=ConfigSettings.AppName %>, Mississippi Rules of Professional Conduct 1.2(c) and 6.5 apply to an attorney’s participation in the <%=ConfigSettings.AppName %>. The only conflicts of interest that would preclude an attorney from answering a question for an eligible user of MLHO are conflicts of interest that the attorney actually knows of at the time that she receives or answers a client's question. Because an attorney is only precluded from answering a question if she knows there is a conflict, the possibility exists, and clients agree that they understand, that an attorney who answers a question, or another attorney with whom she practices in a firm, may be representing other parties with an interest in the question.</p>
     <p>The client name and opposing party name will be provided to the attorney so that the attorney can recognize known conflicts of interest. If, based on the information the client provides, the attorney gains actual knowledge of a conflict of interest precluding her from answering, the question will be returned to the queue to be accepted by another volunteer attorney.</p>
-    <p>Once the attorney accepts the client’s question and begins to offer advice through MLHO, the attorney should add that client’s name to the attorney’s conflict checking system for future conflict checks. Rule 6.5 states that any conflicts generated from pro bono publico limited scope representation will not be imputed to a lawyer’s firm unless the lawyer knows that another lawyer associated with the lawyer in a law firm is disqualified by Rule 1.7 or 1.9(a) with respect to the matter. Here, this means conflicts created by a volunteer attorney’s limited scope representation through MLHO will not be imputed to other members of the volunteer attorney’s firm unless the volunteer attorney knows another lawyer in the firm is disqualified.</p>
+    <p>Once the attorney accepts the client’s question and begins to offer advice through the <%=ConfigSettings.AppName %>, the attorney should add that client’s name to the attorney’s conflict checking system for future conflict checks. Rule 6.5 states that any conflicts generated from pro bono publico limited scope representation will not be imputed to a lawyer’s firm unless the lawyer knows that another lawyer associated with the lawyer in a law firm is disqualified by Rule 1.7 or 1.9(a) with respect to the matter. Here, this means conflicts created by a volunteer attorney’s limited scope representation through MLHO will not be imputed to other members of the volunteer attorney’s firm unless the volunteer attorney knows another lawyer in the firm is disqualified.</p>
     <p class="bold">
         Accepting Cases for Further Representation</p>
-    <p>This agreement only covers the limited scope representation of providing an answer to a legal question through the MLHO website. The agreement does not cover any continuing representation of the client beyond the act of providing an answer to a question through this website.</p>
-    <p>MVLP would like to keep track of any pro bono cases that are accepted for further representation. If an attorney chooses to extend representation of a client beyond advice offered through the MLHO website, that attorney is asked to contact <a href="mailto:mvlp@mvlp.org">mvlp@mvlp.org.</a></p>
+    <p>This agreement only covers the limited scope representation of providing an answer to a legal question through the <%=ConfigSettings.AppName %> website. The agreement does not cover any continuing representation of the client beyond the act of providing an answer to a question through this website.</p>
+    <p>MVLP would like to keep track of any pro bono cases that are accepted for further representation. If an attorney chooses to extend representation of a client beyond advice offered through the <%=ConfigSettings.AppName %> website, that attorney is asked to contact <a href="mailto:<%=ConfigSettings.SiteEmail %>"><%=ConfigSettings.SiteEmail %></a>.</p>
     <p class="bold">
         Privacy Policy/Confidentiality Statement</p>
     <p>MLHO is administered by MVLP. This site is designed to guard client privacy. Information available to MVLP and the attorney responding to a client request shall remain confidential, subject to the limitations of this Privacy/Confidentiality Policy. However, client requests for information and the response of the attorneys participating in MLHO will be maintained in a database for review in order to measure the effectiveness of the project. Steps will be taken to maintain the security of this database, but an absolute guarantee of security is not possible when using the internet and internet-based systems.</p>
@@ -88,7 +89,7 @@
         <li>You have read the terms and conditions of the Mississippi Legal Help Online website,</li>
         <li>You consent to the limited nature of the attorney/client relationship both as to scope and duration,</li>
         <li>You are licensed to practice law in Mississippi and you will respond to the question based on Mississippi and/or federal law,</li>
-        <li>If you accept a case from MLHO for ongoing representation you will notify State Support by sending an e-mail to <a href="mailto:mvlp@mvlp.org">mvlp@mvlp.org</a>, and</li>
+        <li>If you accept a case from the <%=ConfigSettings.AppName %> for ongoing representation you will notify State Support by sending an e-mail to <a href="mailto:<%=ConfigSettings.SiteEmail %>"><%=ConfigSettings.SiteEmail %></a>, and</li>
         <li>The information that you will provide is true and correct.</li>
     </ul>
 </div>
