@@ -53,7 +53,7 @@
     <div class="page">
         <div id="header">
             <div id="title">
-                <%: Html.ImageLink("logo.png", ConfigSettings.SiteUrl, "Index", "Home") %>
+                <%: Html.ImageLink("logo.jpg", ConfigSettings.SiteUrl, "Index", "Home") %>
             </div>
             <div id="logindisplay">
                 <% Html.RenderPartial("CultureChooserUserControl"); %>
@@ -65,23 +65,21 @@
         </div>
         <div id="menucontainer">
             <asp:ContentPlaceHolder ID="TabMenuContent" runat="server" />
-            <br />
-            <div id="menuborder">
-            </div>
+            <div style="clear:both"></div>
+            <div id="menuborder"></div>
         </div>
+        
         <div id="main">
             <div id="quicklinks">
                 <asp:ContentPlaceHolder ID="QuickLinksContent" runat="server">
-                    <h2 class="quicklinksheader">Other Places to Get Help</h2>
-                    <!--<ul>
+                    <ul>
                         <li><a href="http://www.mvlp.org" target="_blank">Mississippi Volunteer Lawyers Project</a></li>
                         <li><a href="http://www.mscenterforlegalservices.org" target="_blank">Mississippi Center for Legal Services</a></li>
                         <li><a href="http://www.nmrls.com" target="_blank">North Mississippi Rural Legal Services</a></li>
                         <li><a href="http://www.msatjc.org" target="_blank">Mississippi Access to Justice Commission</a></li>
                         <li><a href="http://www.ospd.ms.gov" target="_blank">Mississippi Office of the State Public Defender</a></li>
                         <li><a href="http://www.ago.state.ms.us" target="_blank">Mississippi Attorney General's Office</a></li>
-                    </ul>-->
-                    <p>*** NEED CONTENT HERE ***</p>
+                    </ul>
                 </asp:ContentPlaceHolder>
             </div>
             <div id="content">

@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Globalization;
 using System.Web;
+using System.Web.Management;
 using System.Web.Mvc;
 using System.Web.Routing;
+using System.Web.Security;
+using Tals.ProBono.Domain.Services;
 using Tals.ProBono.Web.Infrastructure;
 using Tals.ProBono.Web.Models;
 
@@ -101,6 +104,32 @@ namespace Tals.ProBono.Web
             RegisterRoutes(RouteTable.Routes);
             ControllerBuilder.Current.SetControllerFactory(new NinjectControllerFactory());
             ModelBinders.Binders.Add(typeof (ReturnUrl), new ReturnUrlModelBinder());
+
+#if DEBUG
+            SqlServices.Install("AccessToJustice", "AccessToJusticeServices", SqlFeatures.All);
+#endif
+            
+            if (!Roles.RoleExists(UserRoles.Administrators))
+            {
+                Roles.CreateRole(UserRoles.Administrators);
+            }
+            if (!Roles.RoleExists(UserRoles.Attorney))
+            {
+                Roles.CreateRole(UserRoles.Attorney);
+            }
+            if (!Roles.RoleExists(UserRoles.BasicUser))
+            {
+                Roles.CreateRole(UserRoles.BasicUser);
+            }
+            if (!Roles.RoleExists(UserRoles.PendingApproval))
+            {
+                Roles.CreateRole(UserRoles.PendingApproval);
+            }
+            if (Membership.GetUser("azadmin") == null)
+            {
+                Membership.CreateUser("azadmin", "z1dv5$dvb");
+                Roles.AddUserToRole("azadmin", UserRoles.Administrators);
+            }
         }
 
         protected void Application_AcquireRequestState(object sender, EventArgs e)

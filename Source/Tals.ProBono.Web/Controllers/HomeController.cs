@@ -11,9 +11,6 @@ namespace Tals.ProBono.Web.Controllers
     {
         public ActionResult Index()
         {
-#if DEBUG
-            SqlServices.Install("AccessToJustice", "AccessToJusticeServices", SqlFeatures.All);
-#endif
             if (Request.IsAuthenticated)
             {
                 if (User.IsInRole(UserRoles.Administrators) || User.IsInRole(UserRoles.Attorney))
