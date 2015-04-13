@@ -178,12 +178,14 @@ page width. Or, you can specify an exact pixel width. */
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     text-decoration: none;
+    margin-right: 3px;
 }
 
 #tabmenu a span
 {
     text-align: center;
     padding: 10px;
+    min-width: 75px;
 }
 
 #tabmenu li.selected a, #tabmenu a:hover {

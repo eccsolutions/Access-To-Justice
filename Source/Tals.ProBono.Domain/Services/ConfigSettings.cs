@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Configuration;
-using System.Web;
+using System.Web.Hosting;
 
 namespace Tals.ProBono.Domain.Services
 {
@@ -23,7 +23,7 @@ namespace Tals.ProBono.Domain.Services
                         throw new ConfigurationErrorsException("Config setting [TemplatePath] is not set or is invalid");
                     }
 
-                    _templatePath = VirtualPathUtility.ToAbsolute(ConfigurationManager.AppSettings["TemplatePath"]);
+                    _templatePath = HostingEnvironment.MapPath(ConfigurationManager.AppSettings["TemplatePath"]);
                 }
 
                 return _templatePath;

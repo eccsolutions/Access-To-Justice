@@ -2,7 +2,7 @@
 <RptDataSource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="AccessToJusticeServices">
   <ConnectionProperties>
     <Extension>SQL</Extension>
-    <ConnectString>Data Source=localhost\sqlexpress;Initial Catalog=AccessToJusticeServices</ConnectString>
+    <ConnectString>Data Source=AccessToJustice;Initial Catalog=AccessToJusticeServices</ConnectString>
     <IntegratedSecurity>true</IntegratedSecurity>
   </ConnectionProperties>
   <DataSourceID>fa79250f-6b1f-4e78-9607-f14e7ce48ece</DataSourceID>
