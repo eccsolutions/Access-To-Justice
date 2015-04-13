@@ -143,7 +143,7 @@
         <strong><a id="Q14">How do I contact the administrator with a question?</a></strong></p>
     <p>
         If you have a question or run into a technical problem with the site, you may contact the administrator by clicking 
-        the email address <a href="mailto:mvlp@mvlp.org">mvlp@mvlp.org</a> located at the bottom of the page.</p>
+        the email address <a href="mailto:edmund.gorski@gmail.com">edmund.gorski@gmail.com</a> located at the bottom of the page.</p>
 
     <p><strong><a id="Q15">What if I think the user needs more help?</a></strong></p>
     <p>If you believe that the user requires more legal assistance than can be provided through the <%=ConfigSettings.AppName %>, you can refer him to a local legal services organization. Each organization is different and takes different types of cases, sometimes even within the same organization.  You are encouraged to contact MVLP to determine the organization that might be able to help the user.</p>
@@ -172,7 +172,7 @@
         or <a href="http://www.nmrls.com">www.nmrls.com</a> for additional resources on different areas of substantive law.</p>
     <p><strong><a id="Q20">What if I have further questions or feedback?</a></strong></p>
     <p>
-        Contact the administrator at <a href="mailto:mvlp@mvlp.org">mvlp@mvlp.org</a>.
+        Contact the administrator at <a href="mailto:edmund.gorski@gmail.com">edmund.gorski@gmail.com</a>.
     </p>
     <% if (!Request.IsAuthenticated) %>
     <% { %>

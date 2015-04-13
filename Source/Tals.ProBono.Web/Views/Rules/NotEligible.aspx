@@ -25,5 +25,5 @@
        <li><a href="http://www.lawhelpmn.org/resource/court-forms-review-service" target="_blank">Court Forms Review Service</a></li>
        <li><a href="http://www.ag.state.mn.us/" target="_blank">Mississippi Attorney General's Office</a></li>
    </ul>
-    <p>If you have problems with this website, you may contact us at <a href="mailto:mvlp@mvlp.org">mvlp@mvlp.org</a>. This email address is for technical questions or website problems only. We will not answer your legal question.</p>
+    <p>If you have problems with this website, you may contact us at <a href="mailto:edmund.gorski@gmail.com">edmund.gorski@gmail.com</a>. This email address is for technical questions or website problems only. We will not answer your legal question.</p>
 </asp:Content>

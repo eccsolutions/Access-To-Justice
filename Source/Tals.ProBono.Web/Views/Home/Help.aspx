@@ -30,5 +30,5 @@
         <li><a href="http://www.ago.state.ms.us" target="_blank">Mississippi Attorney General's Office</a></li>
     </ul>
     <p>
-        If you have problems with this website, you may contact us at <a href="mailto:mvlp@mvlp.org">mvlp@mvlp.org</a>. This email address is for technical questions or website problems only. We will not answer your legal question.</p>
+        If you have problems with this website, you may contact us at <a href="mailto:edmund.gorski@gmail.com">edmund.gorski@gmail.com</a>. This email address is for technical questions or website problems only. We will not answer your legal question.</p>
 </asp:Content>

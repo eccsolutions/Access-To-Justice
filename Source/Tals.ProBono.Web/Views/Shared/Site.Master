@@ -72,6 +72,7 @@
         <div id="main">
             <div id="quicklinks">
                 <asp:ContentPlaceHolder ID="QuickLinksContent" runat="server">
+                    <h2 class="quicklinksheader">Other Places to Get Help</h2>
                     <ul>
                         <li><a href="http://www.mvlp.org" target="_blank">Mississippi Volunteer Lawyers Project</a></li>
                         <li><a href="http://www.mscenterforlegalservices.org" target="_blank">Mississippi Center for Legal Services</a></li>
