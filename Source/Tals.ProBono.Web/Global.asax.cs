@@ -1,23 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
 using System.Globalization;
-using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
-using Elmah;
 using Tals.ProBono.Domain.Entities;
-using Tals.ProBono.Domain.Migrations;
 using Tals.ProBono.Web.Infrastructure;
 using Tals.ProBono.Web.Models;
 
 namespace Tals.ProBono.Web
 {
-    // Note: For instructions on enabling IIS6 or IIS7 classic mode, 
-    // visit http://go.microsoft.com/?LinkId=9394801
-
-    public class MvcApplication : System.Web.HttpApplication
+    public class MvcApplication : HttpApplication
     {
         public static void RegisterRoutes(RouteCollection routes)
         {
@@ -104,14 +96,12 @@ namespace Tals.ProBono.Web
             );
         }
 
-        protected void Application_Start()
-        {
-            var db = new DatabaseInitializer();
-            db.MigrateDatabaseToLatestVersion();
+        protected void Application_Start() {
             AreaRegistration.RegisterAllAreas();
             RegisterRoutes(RouteTable.Routes);
             ControllerBuilder.Current.SetControllerFactory(new NinjectControllerFactory());
             ModelBinders.Binders.Add(typeof (ReturnUrl), new ReturnUrlModelBinder());
+            MembershipConfig.Config();
         }
 
         protected void Application_AcquireRequestState(object sender, EventArgs e)

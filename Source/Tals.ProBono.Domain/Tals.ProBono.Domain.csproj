@@ -46,13 +46,11 @@
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\EntityFramework.6.0.2\lib\net40\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net40\EntityFramework.dll</HintPath>
     </Reference>
-    <Reference Include="EntityFramework.SqlServer">
-      <HintPath>..\packages\EntityFramework.6.0.2\lib\net40\EntityFramework.SqlServer.dll</HintPath>
-    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net40\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -61,29 +59,10 @@
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.ServiceModel" />
-    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.Helpers.dll</HintPath>
-    </Reference>
+    <Reference Include="System.Web" />
     <Reference Include="System.Web.Mvc, Version=4.0.0.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <Private>True</Private>
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.40804.0\lib\net40\System.Web.Mvc.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20710.0\lib\net40\System.Web.Razor.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -92,18 +71,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\IRoles.cs" />
-    <Compile Include="Concrete\QuestionRepositorySql.cs" />
-    <Compile Include="Concrete\RepositoryFactory.cs" />
     <Compile Include="Entities\AdviceContext.cs" />
     <Compile Include="Entities\Audit.cs" />
     <Compile Include="Entities\BBCodeItem.cs" />
     <Compile Include="Entities\Category.cs" />
-    <Compile Include="Entities\LegalAdvice.Designer.cs">
-      <DependentUpon>LegalAdvice.edmx</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
+    <Compile Include="Entities\CaseCounty.cs" />
+    <Compile Include="Entities\ReferralOrganization.cs" />
+    <Compile Include="Entities\County.cs">
+      <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Entities\County.cs" />
     <Compile Include="Entities\Email.cs" />
     <Compile Include="Entities\GenericRepository.cs" />
     <Compile Include="Entities\IUnitOfWork.cs" />
@@ -118,12 +94,17 @@
     <Compile Include="Filters\CountyFilters.cs" />
     <Compile Include="Filters\PostFilters.cs" />
     <Compile Include="Filters\QuestionFilters.cs" />
+    <Compile Include="Filters\ReferralOrganizationFilters.cs" />
     <Compile Include="Filters\RuleAnswerFilter.cs" />
     <Compile Include="Filters\SubscriptionFilter.cs" />
     <Compile Include="Filters\WorkEntryFilters.cs" />
     <Compile Include="Migrations\201402252324142_InitialCreate.cs" />
     <Compile Include="Migrations\201402252324142_InitialCreate.Designer.cs">
       <DependentUpon>201402252324142_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201504060100366_Update.cs" />
+    <Compile Include="Migrations\201504060100366_Update.Designer.cs">
+      <DependentUpon>201504060100366_Update.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Entities\DatabaseInitializer.cs" />
@@ -136,11 +117,13 @@
     <Compile Include="Services\ParseServices.cs" />
     <Compile Include="Services\SecurityService.cs" />
     <Compile Include="Services\UserRoles.cs" />
-    <Compile Include="Validation\InvalidCharacterAttribute.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Scripts\AddAuditing.sql" />
+    <Content Include="Scripts\AddCountySeedData.sql" />
     <Content Include="Scripts\GenerateStaticData.sql" />
+    <Content Include="Scripts\GetElement.sql" />
+    <Content Include="Scripts\GetProfileElement.sql" />
     <Content Include="Scripts\LegalAdvice.edmx.sql" />
   </ItemGroup>
   <ItemGroup>
@@ -154,8 +137,9 @@
     <EmbeddedResource Include="Migrations\201402252324142_InitialCreate.resx">
       <DependentUpon>201402252324142_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="App.Config" />
-    <None Include="packages.config" />
+    <EmbeddedResource Include="Migrations\201504060100366_Update.resx">
+      <DependentUpon>201504060100366_Update.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

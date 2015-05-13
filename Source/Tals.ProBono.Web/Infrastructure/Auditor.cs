@@ -1,4 +1,4 @@
-using Tals.ProBono.Domain.Abstract;
+using System;
 using Tals.ProBono.Domain.Entities;
 
 namespace Tals.ProBono.Web.Infrastructure {
@@ -10,8 +10,9 @@ namespace Tals.ProBono.Web.Infrastructure {
         }
 
         public void Audit(string username, int id) {
-            var entity = new Audit {UserName = username, QuestionId = id, AuditType = "Read"};
+            var entity = new Audit {UserName = username, QuestionId = id, AuditType = "Read", AuditDate = DateTime.Now};
             _unitOfWork.AuditRepository.Insert(entity);
+            _unitOfWork.Save();
         }
     }
 }

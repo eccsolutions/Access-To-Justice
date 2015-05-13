@@ -28,8 +28,7 @@ namespace Tals.ProBono.Domain.Entities
             _dbSet.Add(entity);
         }
 
-        public virtual void Update(TEntity entity)
-        {
+        public virtual void Update(TEntity entity) {
             _dbSet.Attach(entity);
             _context.Entry(entity).State = EntityState.Modified;
         }

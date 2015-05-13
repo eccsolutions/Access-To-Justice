@@ -16,13 +16,6 @@ namespace Tals.ProBono.Web.Helpers
 {
     public static class HtmlExtensions
     {
-        public static bool IsStaging(this HtmlHelper htmlHelper) {
-#if FUTURES
-            return true;
-#else
-            return false;
-#endif
-        }
         public static MvcHtmlString DisplayProfileButton(this HtmlHelper helper, string userName)
         {
             if (Roles.IsUserInRole(userName, UserRoles.Administrators)) return MvcHtmlString.Empty;

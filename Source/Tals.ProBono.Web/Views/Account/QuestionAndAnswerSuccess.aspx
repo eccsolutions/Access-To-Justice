@@ -1,4 +1,5 @@
 ﻿<%@Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage" %>
+<%@ Import Namespace="Tals.ProBono.Domain.Services" %>
 
 <asp:Content ID="updateSecurityQuestionSuccessTitle" ContentPlaceHolderID="TitleContent" runat="server">
     Change Password
@@ -10,6 +11,6 @@
         You have successfully updated your security question and answer. If you ever forget your password, you will now be able to use this security question and answer to recover your password.
     </p>
     <p>
-        <%: Html.ActionLink("Continue to Online Tennessee Justice", "Index", "Home") %>
+        <%: Html.ActionLink("Continue to the "+ConfigSettings.SiteName, "Index", "Home") %>
     </p>
 </asp:Content>

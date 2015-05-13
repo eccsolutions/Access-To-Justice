@@ -3,7 +3,6 @@
 <asp:Content ID="loginTitle" ContentPlaceHolderID="TitleContent" runat="server">
     Sign In or Sign Up
 </asp:Content>
-
 <asp:Content ID="loginContent" ContentPlaceHolderID="MainContent" runat="server">
     <h2>Sign In</h2>
     <p>
@@ -15,7 +14,6 @@
         <div>
             <fieldset>
                 <legend>Sign In</legend>
-                
                 <div class="editor-label">
                     <%: Html.LabelFor(m => m.UserName) %>
                 </div>
@@ -31,9 +29,7 @@
                     <%: Html.PasswordFor(m => m.Password) %>
                     <%: Html.ValidationMessageFor(m => m.Password) %>
                 </div>
-              
-
-                <%: Html.Hidden("returnUrl", Request.QueryString["ReturnUrl"])%>
+              <%: Html.Hidden("returnUrl", Request.QueryString["ReturnUrl"])%>
                 <p>
                     <input type="submit" value="Sign In" class="ImageLink" />
                 </p>

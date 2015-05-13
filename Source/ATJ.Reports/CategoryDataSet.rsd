@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition">
+  <DataSet Name="DataSet1">
+    <Query>
+      <DataSourceReference>AccessToJustice</DataSourceReference>
+      <CommandText>SELECT
+  c.Id
+  ,c.CategoryName
+  ,(SELECT COUNT(q.Id) FROM Questions q WHERE q.CategoryId = c.id AND TakenBy IS NULL) AS QueuedCount
+  ,(SELECT COUNT(q.Id) FROM Questions q WHERE q.CategoryId = c.id AND TakenBy IS NOT NULL) AS TakenCount
+FROM
+  Categories c
+ORDER BY
+  c.CategoryName</CommandText>
+      <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+    </Query>
+    <Fields>
+      <Field Name="Id">
+        <DataField>Id</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="CategoryName">
+        <DataField>CategoryName</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="QueuedCount">
+        <DataField>QueuedCount</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="TakenCount">
+        <DataField>TakenCount</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+    </Fields>
+  </DataSet>
+  <rd:ReportServerUrl>http://probonosql/ReportServer</rd:ReportServerUrl>
+</SharedDataSet>

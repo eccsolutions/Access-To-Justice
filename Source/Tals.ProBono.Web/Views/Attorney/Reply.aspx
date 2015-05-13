@@ -47,9 +47,15 @@
                     Created By: <%: Model.OriginalQuestion.CreatedBy %>
                 </td>
                 <td>
-                    <div class="display-subject">Subject: <%: Model.OriginalQuestion.Subject %></div>
-                    <br />
-                    <%: Html.Parse(Model.OriginalQuestion.Body) %>
+                <div class="display-subject">Subject: <%: Model.OriginalQuestion.Subject %></div>
+                <br />
+                <div>Client County of Residence:  <%: Model.OriginalQuestion.County.CountyName %></div>
+                <br />
+                <div>Client County of Venue: <%: Model.OriginalQuestion.CaseCounty == null ? "No County Selected" : Model.OriginalQuestion.CaseCounty.CountyName %></div>
+                <br />
+                <div>Adverse Party:  <%: Model.OriginalQuestion.OpposingParty %></div>
+                <br />
+                <%: Html.Parse(Model.OriginalQuestion.Body) %>
                 </td>
             </tr>
         </table>

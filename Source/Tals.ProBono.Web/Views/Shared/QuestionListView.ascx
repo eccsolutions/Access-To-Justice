@@ -10,7 +10,7 @@
             <th>Court Date</th>
             <th>Replies</th>
         </tr>
-    <% if(Model.Count == 0) { %>
+    <% if(!Model.Any()) { %>
         <tr>
             <td></td>
             <td colspan="6">No records found</td>
@@ -27,7 +27,7 @@
                 </td>
                 <td class="gridcolumn" id="subjectcolumn">
                     <div class="popupEnabled">
-                        <%: Html.ActionLink(item.Subject, "Details", "Attorney", new { id = item.Id, r = Page.Request.Url.PathAndQuery }, null)%>
+                        <%: Html.ActionLink(item.Subject ?? "No Subject Entered", "Details", "Attorney", new { id = item.Id, r = Page.Request.Url.PathAndQuery }, null)%>
                         <% if (item.IsUnread(HttpContext.Current.User.Identity.Name)) { %>
                         <sup><span class="unread">&nbsp;New!</span></sup>
                         <% } %>

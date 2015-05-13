@@ -6,7 +6,6 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
-using Tals.ProBono.Domain.Abstract;
 using Tals.ProBono.Domain.Entities;
 using Tals.ProBono.Domain.Filters;
 using Tals.ProBono.Domain.Services;
@@ -14,7 +13,6 @@ using Tals.ProBono.Web.Infrastructure;
 using Tals.ProBono.Web.Models;
 using ViewRes;
 
-//http://localhost:8089/asp.netwebadminfiles/default.aspx?applicationPhysicalPath=C:\Users\ped\Source\Repos\Access-To-Justice\Source\Tals.ProBono.Web\&applicationUrl=/
 namespace Tals.ProBono.Web.Controllers
 {
 
@@ -42,7 +40,8 @@ namespace Tals.ProBono.Web.Controllers
         // URL: /Account/SignIn
         // **************************************
 
-        public ActionResult SignIn() {
+        public ActionResult SignIn()
+        {
             return View("SignIn", "Guest");
         }
 
@@ -83,7 +82,7 @@ namespace Tals.ProBono.Web.Controllers
             Session.Abandon();
 
             //if (UserModel.Current.IsInRole(UserRoles.BasicUser))
-            //    return Redirect("http://survey.constantcontact.com/survey/a07e3ge5rijgkh0hfdr/start");
+            //    return Redirect("https://www.surveymonkey.com/s/PYGVK9M");
 
             return RedirectToAction("Index", "Home");
         }
@@ -184,7 +183,8 @@ namespace Tals.ProBono.Web.Controllers
                 
                 var model = new AttorneySignUpModel
                 {
-                    Counties = new SelectList(_unitOfWork.CountyRepository.Get().ToList(), "Id", "CountyName")
+                    Counties = new SelectList(_unitOfWork.CountyRepository.Get().ToList(), "Id", "CountyName"),
+                    ReferralOrganizations = new SelectList(_unitOfWork.ReferralOrganizationRepository.Get().ToList(),"Id","OrgName")
                 };
 
                 return View(model);
@@ -217,6 +217,7 @@ namespace Tals.ProBono.Web.Controllers
                     profile.State = model.State;
                     profile.Zip = model.Zip;
                     profile.RegistrationDate = DateTime.Now;
+                    profile.ReferralOrganization = _unitOfWork.ReferralOrganizationRepository.Get().OrgNameWithId(model.ReferralOrganization.GetValueOrDefault());
 
                     profile.Save();
 
@@ -236,6 +237,7 @@ namespace Tals.ProBono.Web.Controllers
             // If we got this far, something failed, redisplay form
             ViewData["PasswordLength"] = MembershipService.MinPasswordLength;
             model.Counties = new SelectList(_unitOfWork.CountyRepository.Get().ToList(), "Id", "CountyName");
+            model.ReferralOrganizations = new SelectList(_unitOfWork.ReferralOrganizationRepository.Get().ToList(), "Id", "OrgName");
 
             return View(model);
         }

@@ -16,7 +16,8 @@ namespace Tals.ProBono.Web.Models
                                    {
                                        Category = category,
                                        UserName = UserModel.Current.UserName,
-                                       Email = UserModel.Current.Email
+                                       Email = UserModel.Current.Email,
+                                       CategoryId = category.Id
                                    },
                 ReturnUrl = returnUrl
             };

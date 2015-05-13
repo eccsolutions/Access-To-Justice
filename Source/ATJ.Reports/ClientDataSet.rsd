@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition">
+  <DataSet Name="DataSet1">
+    <Query>
+      <DataSourceReference>AccessToJusticeServices</DataSourceReference>
+      <CommandText>/****** Script for SelectTopNRows command from SSMS  ******/
+SELECT 
+	u.UserName,
+	m.Email,
+	dbo.GetProfileElement('FirstName', p.PropertyNames, p.PropertyValuesString) as FirstName,
+	dbo.GetProfileElement('LastName', p.PropertyNames, p.PropertyValuesString) as LastName,
+	(SELECT Count(q.Id) FROM AccessToJustice.dbo.Questions q WHERE q.CreatedBy = u.UserName AND q.TakenBy IS NULL) as QueuedCount,
+	(SELECT Count(q.Id) FROM AccessToJustice.dbo.Questions q WHERE q.CreatedBy = u.UserName AND q.TakenBy IS NOT NULL) as TakenCount
+FROM
+	aspnet_Users u
+	INNER JOIN aspnet_Membership m ON u.UserId = m.UserId
+	INNER JOIN aspnet_UsersInRoles ur ON u.UserId = ur.UserId
+	INNER JOIN aspnet_Roles r ON r.RoleId = ur.RoleId
+	INNER JOIN aspnet_Profile p ON p.UserId = u.UserId
+WHERE
+	u.ApplicationId = '8051B0D2-A2C6-4454-B533-44CC86423EC8'
+	AND r.RoleName = 'Basic User'</CommandText>
+      <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+    </Query>
+    <Fields>
+      <Field Name="UserName">
+        <DataField>UserName</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Email">
+        <DataField>Email</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="FirstName">
+        <DataField>FirstName</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="LastName">
+        <DataField>LastName</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="QueuedCount">
+        <DataField>QueuedCount</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="TakenCount">
+        <DataField>TakenCount</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+    </Fields>
+  </DataSet>
+  <rd:ReportServerUrl>http://probonosql/ReportServer</rd:ReportServerUrl>
+</SharedDataSet>

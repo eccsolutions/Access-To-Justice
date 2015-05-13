@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data.Entity;
 using System.Linq;
 using System.Web.Mvc;
 using System.Web.Security;
@@ -58,19 +59,17 @@ namespace Tals.ProBono.Web.Controllers
         // GET: /Client/Ask
         public ActionResult Ask()
         {
-<<<<<<< HEAD
 #if DEBUG
 #else
             if (_unitOfWork.QuestionRepository.Get().ReachedLimit(UserModel.Current.UserName))
-=======
-            if (_questionRepository.Questions.ReachedLimit(UserModel.Current.UserName))
->>>>>>> origin/tn
                 return View("ReachedMax");
 
-            if (!_eligibilityService.IsEligible(Session.SessionID))
-                return RedirectToAction("Index", "Rules");
+            //if (!_eligibilityService.IsEligible(Session.SessionID))
+            //    return RedirectToAction("Index", "Rules");
+#endif
 
             ViewData["categories"] = _unitOfWork.CategoryRepository.Get();
+            ViewData["casecounties"] = _unitOfWork.CountyRepository.Get();
 
             return View(new Question());
         }
@@ -81,12 +80,6 @@ namespace Tals.ProBono.Web.Controllers
         [HttpPost]
         public ActionResult Ask(Question question)
         {
-            if (_questionRepository.Questions.ReachedLimit(UserModel.Current.UserName))
-                return View("ReachedMax");
-
-            if (!_eligibilityService.IsEligible(Session.SessionID))
-                return RedirectToAction("Index", "Rules");
-
             if (this.ModelState.IsValid)
             {
                 try
@@ -102,7 +95,9 @@ namespace Tals.ProBono.Web.Controllers
                     var unsubscribeUrl = ConfigSettings.SiteUrl.TrimEnd('/') +
                                          Url.Action("Unsubscribe", "Attorney", new {id = question.CategoryId});
 
-                    _emailService.SendEmailFor(question.Category, new SubscriptionEmail(question.Category.ShortDescription, question.CourtDateAsShortString,
+                    var category = _unitOfWork.CategoryRepository.Get().WithId(question.CategoryId.GetValueOrDefault());
+
+                    _emailService.SendEmailFor(category, new SubscriptionEmail(category.ShortDescription, question.CourtDateAsShortString,
                                                                       question.Subject, question.Body, detailsUrl, unsubscribeUrl));
 
                     _auditor.Audit(_currentUser.UserName, question.Id);
@@ -116,6 +111,7 @@ namespace Tals.ProBono.Web.Controllers
             }
 
             ViewData["categories"] = _unitOfWork.CategoryRepository.Get();
+            ViewData["casecounties"] = _unitOfWork.CountyRepository.Get();
 
             return View(question);
         }
@@ -124,7 +120,7 @@ namespace Tals.ProBono.Web.Controllers
         // GET: /Client/
         public ActionResult Questions()
         {
-            var questions = _unitOfWork.QuestionRepository.Get().WithCreatedBy(UserModel.Current.UserName);
+            var questions = _unitOfWork.QuestionRepository.Get().WithCreatedBy(UserModel.Current.UserName).ToList();
 
             return !questions.Any() ? View("NoRecords") : View(questions);
         }
@@ -180,7 +176,10 @@ namespace Tals.ProBono.Web.Controllers
                 }
                 catch (Exception e)
                 {
-                    this.ModelState.AddModelError("*", e.InnerException != null ? e.InnerException.Message : e.Message);
+                    if (e.InnerException != null)
+                        this.ModelState.AddModelError("*", e.InnerException.Message);
+                    else
+                        this.ModelState.AddModelError("*", e.Message);
                 }
             }
 

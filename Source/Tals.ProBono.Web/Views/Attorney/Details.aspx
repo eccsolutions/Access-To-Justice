@@ -13,12 +13,10 @@
 
     <h2>Replies</h2>
     <p>
-        Here are the replies from the client.  You can choose to follow up with the client 
-        by clicking the reply button next to the response.  If you have fully answered the 
-        client's question and no longer wish to receive follow up communication regarding 
-        this specific legal question, click the "mark as answer" button and follow the prompts.  
-        Following these steps will close the question for both you and the client and no 
-        further posts will be allowed on this thread.
+        Here are the replies from the client. You can choose to follow up with the client by clicking the "Reply" button next to the response.
+        If you have fully answered the client's question and no longer wish to receive follow up communication regarding this specific legal question,
+        click the "Close this Question" button and follow the prompts.  Following these steps will close the question for both you and the client and
+        no further posts will be allowed on the thread.
     </p>
 
     <% Html.RenderPartial("DetailsForm");%>

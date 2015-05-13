@@ -18,7 +18,7 @@ namespace Tals.ProBono.Domain.Entities
         public int QuestionId { get; set; }
         public string AuditType { get; set; }
         public string UserName { get; set; }
-        public System.DateTime AuditDate { get; set; }
+        public DateTime AuditDate { get; set; }
     
         public virtual Question Question { get; set; }
     }

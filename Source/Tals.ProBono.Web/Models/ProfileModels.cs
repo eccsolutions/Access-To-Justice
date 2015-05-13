@@ -49,10 +49,17 @@ namespace Tals.ProBono.Web.Models
             RegistrationDate = profile.RegistrationDate;
             UserName = profile.UserName;
             FullName = profile.FullName;
+            ReferralOrganization = profile.ReferralOrganization;
         }
 
         public void SetCountySelectList(IEnumerable<County> counties) {
             CountySelectList = new SelectList(counties, "CountyName", "CountyName", County);
+        }
+
+        public void SetReferralOrganizationSelectList(IEnumerable<ReferralOrganization> referralOrganizations)
+        {
+            ReferralOrganizationSelectList = new SelectList(referralOrganizations, "OrgName", "OrgName",
+                ReferralOrganization);
         }
 
         public string FirstName { get; set; }
@@ -70,7 +77,9 @@ namespace Tals.ProBono.Web.Models
         public DateTime? RegistrationDate { get; set; }
         public string UserName { get; set; }
         public string FullName { get; set; }
-
+        public string ReferralOrganization { get; set; }
+        
+        public IEnumerable<SelectListItem> ReferralOrganizationSelectList { get; private set; }
         public IEnumerable<SelectListItem> CountySelectList { get; private set; }
     }
 }

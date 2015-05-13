@@ -31,8 +31,8 @@
                 <%:Html.ActionLink("Edit", "Edit", new {id = item.Id}) %>
             </td>
             <td><%:item.CategoryName %></td>
-            <td><%:item.ShortDescription %></td>
-            <td><%:item.LongDescription %></td>
+            <td><%:item.ShortDescription ?? "Nothing Entered." %></td>
+            <td><%:item.LongDescription ?? "Nothing entered." %></td>
             <td><%:item.SortOrder %></td>
         </tr>
 

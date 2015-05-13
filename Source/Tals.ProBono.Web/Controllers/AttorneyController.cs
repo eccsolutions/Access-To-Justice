@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 using System.Web.Security;
@@ -34,8 +33,7 @@ namespace Tals.ProBono.Web.Controllers
             _auditor = auditor;
         }
 
-        public ViewResult List(string category, int page = 1)
-        {
+        public ViewResult List(string category, int page = 1) {
             var pageIndex = page - 1;
             var questionsToShow = ((category == null)
                                       ? _unitOfWork.QuestionRepository.Get().Active().NotTaken()
@@ -43,7 +41,7 @@ namespace Tals.ProBono.Web.Controllers
                                       .OrderBy(x => x.CreatedDate);
 
             var model = questionsToShow.ToPagedList(pageIndex, PageSize);
-
+            
             ViewBag.Category = category;
 
             return View(model);
@@ -66,10 +64,6 @@ namespace Tals.ProBono.Web.Controllers
             var question = _unitOfWork.QuestionRepository.Get().WithId(id);
             var posts = _unitOfWork.PostRepository.Get().WithQuestionId(id);
             var model = DetailsViewModel.CreateViewModel(question, posts);
-
-            if (question.IsTaken())
-                if (!question.IsTaker(UserModel.Current.UserName))
-                    return View("AlreadyTaken");
 
             _auditor.Audit(_currentUser.UserName, id);
 
@@ -227,8 +221,11 @@ namespace Tals.ProBono.Web.Controllers
             return View("List", model);
         }
 
-        public ActionResult Subscribe(int id, string returnUrl)
-        {
+        public ActionResult Subscribe(int id, string returnUrl) {
+            if (_unitOfWork.SubscriptionRepository.Get().SubscriptionsExceededFor(UserModel.Current.UserName)) {
+                return View("SubscriptionLimitReached");
+            }
+
             var category = _unitOfWork.CategoryRepository.Get().WithId(id);
             var model = SubscribeViewModel.CreateViewModel(category, returnUrl);
             model.ReturnUrl = Request.UrlReferrer == null ? null : Request.UrlReferrer.PathAndQuery;
@@ -238,7 +235,15 @@ namespace Tals.ProBono.Web.Controllers
 
         [HttpPost]
         public ActionResult Subscribe(Subscription subscription, string returnUrl) {
+            if (_unitOfWork.SubscriptionRepository.Get().SubscriptionsExceededFor(UserModel.Current.UserName))
+            {
+                return View("SubscriptionLimitReached");
+            }
+
             var category = _unitOfWork.CategoryRepository.Get().WithId(subscription.CategoryId);
+
+            subscription.Subscribed = DateTime.Now;
+
             category.Subscriptions.Add(subscription);
             _unitOfWork.Save();
 
@@ -261,7 +266,7 @@ namespace Tals.ProBono.Web.Controllers
         public ActionResult Unsubscribe(int id, string returnUrl) {
             //var category = _unitOfWork.CategoryRepository.Get().WithId(id);
             //var subscription = category.GetSubscriptionFor(_currentUser.UserName);
-            var subscription = _unitOfWork.SubscriptionRepository.Get().For(id, _currentUser.UserName);
+            var subscription = _unitOfWork.SubscriptionRepository.Get().WithCategoryFor(id, _currentUser.UserName);
             var model = UnsubscribeViewModel.CreateViewModel(subscription, returnUrl);
 
             return View(model);

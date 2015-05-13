@@ -31,6 +31,7 @@ namespace Tals.ProBono.Domain.Entities
         public DbSet<Question> Questions { get; set; }
         public DbSet<Post> Posts { get; set; }
         public DbSet<Category> Categories { get; set; }
+        public DbSet<ReferralOrganization> ReferralOrganizations { get; set; }
         public DbSet<County> Counties { get; set; }
         public DbSet<WorkEntry> WorkEntries { get; set; }
         public DbSet<Subscription> Subscriptions { get; set; }

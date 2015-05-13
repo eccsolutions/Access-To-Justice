@@ -38,15 +38,15 @@ namespace Tals.ProBono.Web.Controllers
 
         public ActionResult Step1()
         {
-            return RenderStep(new AgeQuestion(), 1);
+            return RenderStep(new StartSignupQuestion(), 1);
         }
 
         [HttpPost]
-        public ActionResult Step1(AgeQuestion ageQuestion)
+        public ActionResult Step1(StartSignupQuestion signupQuestion)
         {
-            return ExecuteStep(ageQuestion, 1);
+            return ExecuteStep(signupQuestion, 1);
         }
-
+        
         public ActionResult Step2()
         {
             ViewData["Counties"] = new SelectList(UnitOfWork.CountyRepository.Get().OrderBy(x => x.CountyName), "Id", "CountyName");
@@ -62,24 +62,37 @@ namespace Tals.ProBono.Web.Controllers
 
         public ActionResult Step3()
         {
-            return RenderStep(new UserAgreementQuestion(), 3);
-        }
-
-        public ActionResult AcceptUseAgreement(bool accepted)
-        {
-            return ExecuteStep(new UserAgreementQuestion() { Answer = accepted }, 3);
-        }
-        
-        public ActionResult Step4()
-        {
-            return RenderStep(new IncarceratedQuestion(), 4);
+            ViewData["Categories"] = new SelectList(UnitOfWork.CategoryRepository.Get(), "Id", "CategoryName");
+            return RenderStep(new CategoryQuestion(), 3);
         }
 
         [HttpPost]
-        public ActionResult Step4(IncarceratedQuestion incarceratedQuestion)
+        public ActionResult Step3(CategoryQuestion categoryQuestion)
         {
-            return ExecuteStep(incarceratedQuestion, 4);
+            return ExecuteStep(categoryQuestion, 3);
+        }     
+        
+        public ActionResult Step4()
+        {
+            return RenderStep(new AgeQuestion(), 4);
         }
+
+        [HttpPost]
+        public ActionResult Step4(AgeQuestion ageQuestion)
+        {
+            return ExecuteStep(ageQuestion, 4);
+        }
+
+        //public ActionResult Step4()
+        //{
+        //    return RenderStep(new IncarceratedQuestion(), 4);
+        //}
+
+        //[HttpPost]
+        //public ActionResult Step4(IncarceratedQuestion incarceratedQuestion)
+        //{
+        //    return ExecuteStep(incarceratedQuestion, 4);
+        //}
 
         public ActionResult Step5()
         {
@@ -111,14 +124,25 @@ namespace Tals.ProBono.Web.Controllers
 
         public ActionResult Step7()
         {
-            return RenderStep(new InvestmentQuestion(), 7);
+            return RenderStep(new UserAgreementQuestion(), 7);
         }
 
-        [HttpPost]
-        public ActionResult Step7([Bind(Prefix = "Answer")]InvestmentQuestion investmentQuestion)
+        public ActionResult AcceptUseAgreement(bool accepted)
         {
-            return ExecuteStep(investmentQuestion, 7);
+            return ExecuteStep(new UserAgreementQuestion() { Answer = accepted }, 7);
         }
+        
+
+        //public ActionResult Step7()
+        //{
+        //    return RenderStep(new InvestmentQuestion(), 7);
+        //}
+
+        //[HttpPost]
+        //public ActionResult Step7([Bind(Prefix = "Answer")]InvestmentQuestion investmentQuestion)
+        //{
+        //    return ExecuteStep(investmentQuestion, 7);
+        //}
 
         public ActionResult Step8()
         {

@@ -55,7 +55,7 @@ namespace Tals.ProBono.Domain.Services
         {
             var text = BuildMessage(assembler);
             var message = new MailMessage(ConfigSettings.SiteEmail, email, GetSubject(text), text) { IsBodyHtml = true };
-            //message.Bcc.Add(ConfigSettings.SiteEmail);
+            message.Bcc.Add(ConfigSettings.SiteEmail);
             return message;
         }
 
@@ -94,6 +94,14 @@ namespace Tals.ProBono.Domain.Services
 
     public abstract class EmailAssembler : IEmailAssembler
     {
+        protected EmailAssembler() {
+            Properties = new Dictionary<string, string> {
+                {"SiteName", ConfigSettings.SiteName},
+                {"SiteEmail", ConfigSettings.SiteEmail},
+                {"SiteUrl", ConfigSettings.SiteUrl}
+            };
+        }
+
         public string TemplatePath { get; protected set; }
         public Dictionary<string, string> Properties { get; set; }
 
@@ -113,16 +121,19 @@ namespace Tals.ProBono.Domain.Services
 
             return filePath;
         }
+
+        protected void AddProperty(string name, string value) {
+            if (Properties.ContainsKey(name)) Properties[name] = value;
+            else {
+                Properties.Add(name, value);
+            }
+        }
     }
 
     public class ClientRegistrationEmail : EmailAssembler
     {
-        public ClientRegistrationEmail(string userName)
-        {
-            Properties = new Dictionary<string, string>
-                             {
-                                 {"UserName", userName}
-                             };
+        public ClientRegistrationEmail(string userName) {
+            AddProperty("UserName", userName);
             TemplatePath = GetTemplatePath("ClientRegistration");
         }
     }
@@ -131,12 +142,8 @@ namespace Tals.ProBono.Domain.Services
     {
         public LawyerRegistrationEmail(string userName, string password)
         {
-            Properties = new Dictionary<string, string>
-                             {
-                                 {"UserName", userName},
-                                 {"Password", password}
-                             };
-
+            AddProperty("UserName", userName);
+            AddProperty("Password", password);
             TemplatePath = GetTemplatePath("LawyerRegistration");
         }
     }
@@ -145,6 +152,8 @@ namespace Tals.ProBono.Domain.Services
     {
         public SubscribeEmail(string categoryName, string unsubscribeUrl)
         {
+            AddProperty("CategoryName", categoryName);
+            AddProperty("UnsubscribeUrl", unsubscribeUrl);
             Properties = new Dictionary<string, string>
                              {
                                  {"CategoryName", categoryName},
@@ -158,14 +167,12 @@ namespace Tals.ProBono.Domain.Services
     public class SubscriptionEmail : EmailAssembler
     {
         public SubscriptionEmail(string categoryName, string courtDate, string subject, string body, string questionUrl, string unsubscribeUrl) {
-            Properties = new Dictionary<string, string> {
-                {"CategoryName", categoryName},
-                {"CourtDate", courtDate},
-                {"Subject", subject},
-                {"Body", body},
-                {"QuestionUrl", questionUrl},
-                {"UnsubscribeUrl", unsubscribeUrl}
-            };
+            AddProperty("CategoryName", categoryName);
+            AddProperty("CourtDate", courtDate);
+            AddProperty("Subject", subject);
+            AddProperty("Body", body);
+            AddProperty("QuestionUrl", questionUrl);
+            AddProperty("UnsubscribeUrl", unsubscribeUrl);
 
             TemplatePath = GetTemplatePath("Subscription");
         }
@@ -173,13 +180,13 @@ namespace Tals.ProBono.Domain.Services
 
     public class ClientReplyEmail : EmailAssembler {
         public ClientReplyEmail(string categoryName, string courtDate, string subject, string body, string questionUrl) {
-            Properties = new Dictionary<string, string> {
-                {"CategoryName", categoryName},
-                {"CourtDate", courtDate},
-                {"Subject", subject},
-                {"Body", body},
-                {"QuestionUrl", questionUrl},
-            };
+            AddProperty("CategoryName", categoryName);
+            AddProperty("CourtDate", courtDate);
+            AddProperty("Subject", subject);
+            AddProperty("Body", body);
+            AddProperty("QuestionUrl", questionUrl);
+            AddProperty("SiteName", ConfigSettings.SiteName);
+            AddProperty("SiteEmail", ConfigSettings.SiteEmail);
 
             TemplatePath = GetTemplatePath("ClientReply");
         }
@@ -189,7 +196,6 @@ namespace Tals.ProBono.Domain.Services
     {
         public StandardEmail(EmailTemplate template)
         {
-            Properties = new Dictionary<string, string>();
             TemplatePath = GetTemplatePath(Enum.GetName(typeof (EmailTemplate), template));
         }
 

@@ -141,8 +141,22 @@ namespace Tals.ProBono.Web.Controllers
             var model = questionsToShow.ToPagedList(pageIndex, PageSize);
 
             ViewBag.UserName = userName;
-
             return View("QuestionHistory", model);
+        }
+
+        public ActionResult YearToDateHours(string userName)
+        {
+            //<%: Model.YearToDateHours == null ? 0 : Model.YearToDateHours.Value %>
+            //if _unitOfWork.WorkEntryRepository.Get().YearToDateHours == null ? 0
+            //var yearToDateLoggedHours = _unitOfWork.WorkEntryRepository.Get().YearToDateFor(userName);
+
+            var entries = _unitOfWork.WorkEntryRepository.Get().YearToDateFor(UserModel.Current.UserName);
+            double model = entries.Any()
+                                      ? entries.Sum(x => x.Hours)
+                                      : 0;
+            //double model = _unitOfWork.WorkEntryRepository.Get().YearToDateFor(userName).Sum(w => w.Hours);
+
+            return View(model);
         }
     }
 }

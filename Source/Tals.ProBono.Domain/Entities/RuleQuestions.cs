@@ -3,6 +3,7 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web.Mvc;
+using Tals.ProBono.Domain.Services;
 
 namespace Tals.ProBono.Domain.Entities
 {
@@ -17,7 +18,7 @@ namespace Tals.ProBono.Domain.Entities
     {
         public string Question
         {
-            get { return "How old are you?"; }
+            get { return "How old are you? (You must be at least 14 years old)."; }
         }
 
         [Required]
@@ -27,7 +28,28 @@ namespace Tals.ProBono.Domain.Entities
 
         public bool IsValid
         {
-            get { return Answer > 12; }
+            get { return Answer > 13; }
+        }
+
+        public override string ToString()
+        {
+            return Answer.ToString();
+        }
+    }
+
+    public class OpposingPartyQuestion : IRuleQuestion<string>
+    {
+        public string Question
+        {
+            get { return "Please enter the name of the opposing party."; }
+        }
+
+        [DisplayName("Opposing Party Name")]
+        public string Answer { get; set; }
+
+        public bool IsValid
+        {
+            get { return true; }
         }
 
         public override string ToString()
@@ -40,10 +62,31 @@ namespace Tals.ProBono.Domain.Entities
     {
         public string Question
         {
-            get { return "In which county do you live?"; }
+            get { return "This website is only for " + ConfigSettings.StateName + " residents.  What " + ConfigSettings.StateName + " county do you live in?"; }
         }
 
         [UIHint("CountyEditor")]
+        public int Answer { get; set; }
+
+        public bool IsValid
+        {
+            get { return true; }
+        }
+
+        public override string ToString()
+        {
+            return Answer.ToString();
+        }
+    }
+
+    public class CategoryQuestion : IRuleQuestion<int>
+    {
+        public string Question
+        {
+            get { return "What type of legal issue do you have?"; }
+        }
+
+        [UIHint("CategoryEditor")]
         public int Answer { get; set; }
 
         public bool IsValid
@@ -78,19 +121,22 @@ namespace Tals.ProBono.Domain.Entities
         }
     }
 
-    public class IncarceratedQuestion : IRuleQuestion<bool>
+    public class StartSignupQuestion : IRuleQuestion<bool>
     {
         public string Question
         {
-            get { return "Are you currently in a jail or prison?"; }
-        }
+            get
+            {
+                return "New User Signup"; 
+            }
+        }           
 
-        [UIHint("BoolEditor")]
+        [UIHint("UserSignupEditor")]
         public bool Answer { get; set; }
 
         public bool IsValid
         {
-            get { return !Answer; }
+            get { return true; }
         }
 
         public override string ToString()
@@ -99,6 +145,27 @@ namespace Tals.ProBono.Domain.Entities
         }
     }
 
+    //public class IncarceratedQuestion : IRuleQuestion<bool>
+    //{
+    //    public string Question
+    //    {
+    //        get { return "Are you currently in a jail or prison?"; }
+    //    }
+
+    //    [UIHint("BoolEditor")]
+    //    public bool Answer { get; set; }
+
+    //    public bool IsValid
+    //    {
+    //        get { return !Answer; }
+    //    }
+
+    //    public override string ToString()
+    //    {
+    //        return Answer.ToString();
+    //    }
+    //}
+
     public class HouseHoldSizeQuestion : IRuleQuestion<int>
     {
         public string Question
@@ -106,7 +173,7 @@ namespace Tals.ProBono.Domain.Entities
             get
             {
                 return
-                    "List the number of people that live in your household which either you support or that help support you.";
+                    "List the number of people that live in your household. Include yourself as one of the people. Include anyone else in your household who you support or who helps support you.";
             }
         }
 
@@ -157,7 +224,7 @@ namespace Tals.ProBono.Domain.Entities
             get
             {
                 return
-                    "Please enter the income and how often that income is received (if any) for each person in the household.";
+                    "Income is money you get from things like jobs and government benefits (like MFIP or unemployment). Specify the income for you and for each person in your household.";
             }
         }
 
@@ -195,30 +262,30 @@ namespace Tals.ProBono.Domain.Entities
         }
     }
 
-    public class InvestmentQuestion : IRuleQuestion<List<double>>
-    {
-        public InvestmentQuestion()
-        {
-            Answer = new List<double> {0, 0, 0};
-        }
-        public string Question
-        {
-            get { return "Please answer the following question in regards to assets"; }
-        }
+    //public class InvestmentQuestion : IRuleQuestion<List<double>>
+    //{
+    //    public InvestmentQuestion()
+    //    {
+    //        Answer = new List<double> {0, 0, 0};
+    //    }
+    //    public string Question
+    //    {
+    //        get { return "Please answer the following question in regards to assets"; }
+    //    }
 
-        [UIHint("InvestmentEditor")]
-        public List<double> Answer { get; set; }
+    //    [UIHint("InvestmentEditor")]
+    //    public List<double> Answer { get; set; }
 
-        public bool IsValid
-        {
-            get { return Answer.Sum(a => a) < 5000.01; }
-        }
+    //    public bool IsValid
+    //    {
+    //        get { return Answer.Sum(a => a) < 5000.01; }
+    //    }
 
-        public override string ToString()
-        {
-            return Answer.Sum(a => a).ToString();
-        }
-    }
+    //    public override string ToString()
+    //    {
+    //        return Answer.Sum(a => a).ToString();
+    //    }
+    //}
 
     public class MeetsRules : IRuleQuestion<bool>
     {

@@ -2,7 +2,7 @@
 <%@ Import Namespace="Tals.ProBono.Domain.Services" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-	Profile (<%:ViewData["UserName"]%>)
+    Profile (<%:ViewData["UserName"]%>)
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
@@ -16,5 +16,6 @@
     <div id="profile">
         <% Html.RenderAction("DisplayAccountInfo", new { userName = ViewData["UserName"]}); %>
         <% Html.RenderAction("DisplayAttorneyProfile", new {userName = ViewData["UserName"]});%>
-    </div>
+        <% Html.RenderAction("YearToDateHours", new {userName = ViewData["UserName"]}); %>
+        </div>
 </asp:Content>

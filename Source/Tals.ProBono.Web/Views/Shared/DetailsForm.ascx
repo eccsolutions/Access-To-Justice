@@ -26,6 +26,12 @@
             <td valign="top">
                 <div class="display-subject">Subject: <%: Model.Question.Subject %></div>
                 <br />
+                <div>Client County of Residence:  <%: Model.Question.County.CountyName %></div>
+                <br />
+                <div>Client County of Venue:  <%: Model.Question.CaseCounty == null ? "No County Selected" : Model.Question.CaseCounty.CountyName %></div>
+                <br />
+                <div>Adverse Party:  <%: Model.Question.OpposingParty %></div>
+                <br />
                 <%: Html.Parse(Model.Question.Body) %>
             </td>
         </tr>

@@ -10,12 +10,8 @@ namespace Tals.ProBono.Domain.Filters
     {
         public static bool ReachedLimit(this IQueryable<Question> qry, string userName)
         {
-            bool result = false;
             var date = DateTime.Now.AddYears(-1);
-            result = qry.WithCreatedBy(userName).Since(date).Count() > 2;
-            result = result || qry.WithCreatedBy(userName).Since(DateTime.Now.AddHours(-24)).Any();
-
-            return result;
+            return qry.WithCreatedBy(userName).Since(date).Count() > 10000;
         }
 
         public static IQueryable<Question> Since(this IQueryable<Question> qry, DateTime since)

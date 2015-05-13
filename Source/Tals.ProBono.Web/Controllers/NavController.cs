@@ -40,17 +40,10 @@ namespace Tals.ProBono.Web.Controllers
                                                            };
             var navLinks = new List<NavLink>
                                {
-<<<<<<< HEAD
                                    makeLink("Queue", "List", null, _unitOfWork.QuestionRepository.Get().Active().NotTaken().Count()),
                                    makeLink("Taken", "MyTaken", null, _unitOfWork.QuestionRepository.Get().Active().WithTakenBy(UserModel.Current.UserName).Count()),
                                    makeLink("Urgent", "Urgent", null, _unitOfWork.QuestionRepository.Get().Active().NotTaken().Urgent().Count()),
-                                   makeLink("Drafts (Coming Soon...)", "Drafts", null, 0)
-=======
-                                   makeLink("Queue", "List", null, _questionRepository.Questions.Active().NotTaken().Count()),
-                                   makeLink("Taken", "MyTaken", null, _questionRepository.Questions.Active().WithTakenBy(UserModel.Current.UserName).Count()),
-                                   makeLink("Urgent", "Urgent", null, _questionRepository.Questions.Active().NotTaken().Urgent().Count()),
                                    //makeLink("Drafts (Coming Soon...)", "Drafts", null, 0)
->>>>>>> origin/tn
                                };
 
             return View("Menu", navLinks);

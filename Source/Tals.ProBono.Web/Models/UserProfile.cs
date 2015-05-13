@@ -26,6 +26,7 @@ namespace Tals.ProBono.Web.Models
         DateTime? RegistrationDate { get; set; }
         string UserName { get; }
         string FullName { get; }
+        string ReferralOrganization { get; set; }
     }
 
     public class UserProfile : ProfileBase, IUserProfile {
@@ -53,7 +54,7 @@ namespace Tals.ProBono.Web.Models
         }
 
         [Required]
-        [DisplayName("BPR Number")]
+        [DisplayName("Attorney ID Number")]
         public string DisciplinaryBoardNumber
         {
             get { return base["DisciplinaryBoardNumber"] as string; }
@@ -136,6 +137,12 @@ namespace Tals.ProBono.Web.Models
         public string FullName
         {
             get { return this.FirstName + " " + (this.MiddleInitial == null ? "" : this.MiddleInitial + " ") + this.LastName; }
+        }
+
+        public string ReferralOrganization
+        {
+            get { return base["ReferralOrganization"] as string; }
+            set { base["ReferralOrganization"] = value; }
         }
 
         public static UserProfile GetUserProfile()

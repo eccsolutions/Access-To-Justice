@@ -1,8 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Guest.Master" Inherits="System.Web.Mvc.ViewPage<QuestionAndAnswerModel>" %>
 
+<%@ Import Namespace="Tals.ProBono.Domain.Services" %>
 <%@ Import Namespace="ViewRes" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-    Online Tennessee Justice - Set security question
+    <%=ConfigSettings.SiteName %> - Set security question
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <h2>Select a security question and provide an answer</h2>

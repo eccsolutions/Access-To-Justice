@@ -6,7 +6,7 @@
     <span class="ImageLink">Accepted</span>
 <%} else if(Model.CreatedBy != Model.Question.CreatedBy && !Model.Question.IsClosed()) {%>
     <%: Html.RoleActionLink("Accept as Answer", "AcceptAnswer", "Client", UserRoles.BasicUser, new { questionId = Model.QuestionId, postId = Model.Id }, new {@class="ImageLink"}) %>
-    <%: Html.RoleActionLink("Mark as Answer", "MarkAsAnswer", "Attorney", UserRoles.AdministratorsAndAttorny, new { questionId = Model.QuestionId, postId = Model.Id }, new { @class = "ImageLink" })%>
+    <%: Html.RoleActionLink("Close this Question", "MarkAsAnswer", "Attorney", UserRoles.AdministratorsAndAttorny, new { questionId = Model.QuestionId, postId = Model.Id }, new { @class = "ImageLink" })%>
 <%} %>
 
 <% if(!Model.Question.IsClosed()) {%>

@@ -8,7 +8,7 @@
         <div class="profile-field, clear">
             <%: String.Format("{0:g}", Model.RegistrationDate) %></div>
         <label>
-            BPR Number:</label>
+            Attorney ID Number:</label>
         <div class="profile-field, clear">
             <%: Model.DisciplinaryBoardNumber %></div>
         <fieldset class="clear">
@@ -33,5 +33,9 @@
                 County:</label>
             <div class="profile-field, clear">
                 <%:Model.County %></div>
+            <label>
+                Referral Organization:</label>
+            <div class="profile-field, clear">
+                <%:Model.ReferralOrganization %></div>
         </fieldset>
     </fieldset>

@@ -36,7 +36,12 @@
         <div id="questionMenu" class="verticalMenu">
             <% Html.RenderAction("QuestionMenu", "Nav"); %>
         </div>
-    </asp:ContentPlaceHolder>
+        <br />
+        <br />
+        <div>
+            [Add Content Here]
+        </div>
+        </asp:ContentPlaceHolder>
 </asp:Content>
 <asp:Content runat="server" ID="Main" ContentPlaceHolderID="MainContent">
     <asp:ContentPlaceHolder runat="server" ID="MainContent" />
