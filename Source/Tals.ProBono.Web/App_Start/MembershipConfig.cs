@@ -12,7 +12,8 @@ namespace Tals.ProBono.Web
 #if DEBUG
             var db = new DatabaseInitializer();
             db.MigrateDatabaseToLatestVersion();
-            SqlServices.Install("BPMQASQL\\K2CONTENTDEV", "AccessToJusticeServices", SqlFeatures.All);
+            // Doesn't work on Azure databases (no access to system database)...not sure it is even needed.
+            //SqlServices.Install("(local)\\SQLEXPRESS", "AccessToJustice2", SqlFeatures.All);
 
             if (!Roles.RoleExists(UserRoles.Administrators))
             {
