@@ -30,9 +30,11 @@ namespace Tals.ProBono.Web.Infrastructure
     {
         public override void Load()
         {
+            String appPath = System.Web.Hosting.HostingEnvironment.MapPath("/");
+
             Bind<IFormsAuthenticationService>().To<FormsAuthenticationService>();
             Bind<IMembershipService>().To<AccountMembershipService>();
-            Bind<IEmailService>().To<EmailService>();
+            Bind<IEmailService>().To<EmailService>().WithConstructorArgument("appPath", appPath);
             Bind<IEligibilityService>().To<EligibilityService>();
             Bind<ISecurityService>().To<SecurityService>();
             Bind<IRoles>().To<RolesWrapper>();

@@ -10,7 +10,7 @@ namespace Tals.ProBono.Domain.Services
 {
     public interface IEmailAssembler
     {
-        string TemplatePath { get; }
+        string TemplateName { get; }
         Dictionary<string, string> Properties { get; set; }
     }
 
@@ -22,6 +22,12 @@ namespace Tals.ProBono.Domain.Services
 
     public class EmailService : IEmailService
     {
+        private static String _appPath;
+
+        public EmailService( String appPath )
+        {
+            _appPath = appPath;
+        }
         //private readonly IUnitOfWork _unitOfWork;
 
         //public EmailService(IUnitOfWork unitOfWork)
@@ -81,7 +87,7 @@ namespace Tals.ProBono.Domain.Services
 
         private static string BuildMessage(IEmailAssembler assembler)
         {
-            var path = assembler.TemplatePath;
+            var path = _appPath + "Content\\EmailTemplates\\" + assembler.TemplateName + ".htm";
             TextReader tr = new StreamReader(path);
 
             var text = tr.ReadToEnd();
@@ -102,25 +108,8 @@ namespace Tals.ProBono.Domain.Services
             };
         }
 
-        public string TemplatePath { get; protected set; }
+        public string TemplateName { get; protected set; }
         public Dictionary<string, string> Properties { get; set; }
-
-        protected string GetTemplatePath(string templateName)
-        {
-            var path = ConfigSettings.TemplatePath;
-
-            if(!Directory.Exists(path))
-                throw new ArgumentException("The email template path has not been set correctly in the configuration file.");
-
-            path = path.EndsWith("\\") ? path : path + "\\";
-            var filePath = path + templateName + ".htm";
-
-            if(!File.Exists(filePath))
-                throw new ArgumentException(string.Format("The email template {0} is missing from the template path.",
-                                                          templateName));
-
-            return filePath;
-        }
 
         protected void AddProperty(string name, string value) {
             if (Properties.ContainsKey(name)) Properties[name] = value;
@@ -134,7 +123,7 @@ namespace Tals.ProBono.Domain.Services
     {
         public ClientRegistrationEmail(string userName) {
             AddProperty("UserName", userName);
-            TemplatePath = GetTemplatePath("ClientRegistration");
+            TemplateName="ClientRegistration";
         }
     }
 
@@ -144,7 +133,7 @@ namespace Tals.ProBono.Domain.Services
         {
             AddProperty("UserName", userName);
             AddProperty("Password", password);
-            TemplatePath = GetTemplatePath("LawyerRegistration");
+            TemplateName="LawyerRegistration";
         }
     }
 
@@ -160,7 +149,7 @@ namespace Tals.ProBono.Domain.Services
                                  {"UnsubscribeUrl", unsubscribeUrl}
                              };
 
-            TemplatePath = GetTemplatePath("Subscribed");
+            TemplateName="Subscribed";
         }
     }
 
@@ -174,7 +163,7 @@ namespace Tals.ProBono.Domain.Services
             AddProperty("QuestionUrl", questionUrl);
             AddProperty("UnsubscribeUrl", unsubscribeUrl);
 
-            TemplatePath = GetTemplatePath("Subscription");
+            TemplateName="Subscription";
         }
     }
 
@@ -188,7 +177,7 @@ namespace Tals.ProBono.Domain.Services
             AddProperty("SiteName", ConfigSettings.SiteName);
             AddProperty("SiteEmail", ConfigSettings.SiteEmail);
 
-            TemplatePath = GetTemplatePath("ClientReply");
+            TemplateName="ClientReply";
         }
     }
 
@@ -196,7 +185,7 @@ namespace Tals.ProBono.Domain.Services
     {
         public StandardEmail(EmailTemplate template)
         {
-            TemplatePath = GetTemplatePath(Enum.GetName(typeof (EmailTemplate), template));
+            TemplateName = Enum.GetName(typeof(EmailTemplate), template);
         }
 
         public enum EmailTemplate
