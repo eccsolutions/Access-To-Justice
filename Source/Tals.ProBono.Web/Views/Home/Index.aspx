@@ -12,12 +12,11 @@
     </p>
     <h2>How it works</h2>
     <ol>
-        <li>Click the "New User" button below to find out if you can get help. You will be asked questions about yourself, your income, and your legal problem. All of your answers are confidential or secret. Only the lawyer who answers your question will see your name.</li>
-        <li>If you qualify for help, pick out a username and password to use on this website. This keeps your information confidential and saves your question.</li>
-        <li>Log in with your username and password.</li>
-        <li>Type in your question. If you have a court date coming up, we can't promise you will get an answer before it.</li>
-        <li>You will get an e-mail when a lawyer answered your question.</li>
-        <li>Log back into this website and read the lawyer’s advice. If it isn't clear, you can ask more questions.</li>
+        <li>See if you meet our rules for who we can help. Click on "Rules" at the bottom of this page. We will ask about your family, your income and your legal problem. We keep all of your answers secret. The lawyer who answers you will only know your name.</li>
+        <li>If you meet our rules, you will need to log in to the website. If you create a password, you should keep it a secret. Don't give it to anyone else. Write it down and keep it in a safe place. You will need it to see the answer to your question.</li>
+        <li>Sign in and ask your question.</li>
+        <li>If you have a court date, we can't promise you will have an answer before your court date.</li>
+        <li>We will e-mail you when a lawyer answers. Come back to this web site and sign in to read the answer. If the answer isn't clear, you can ask follow-up questions.</li>
     </ol>
     <p>
         <%: Html.ImageLink("bubble.png", "New User", "SignUp", "Account") %><br/>

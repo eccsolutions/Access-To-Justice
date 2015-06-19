@@ -74,7 +74,60 @@
                 <asp:ContentPlaceHolder ID="QuickLinksContent" runat="server">
                     <h2 class="quicklinksheader">Other Places to Get Help</h2>
                     <ul>
-                        <li><a href="http://www.google.com" target="_blank">Add Help Links Here</a></li>
+                         <li><a href="http://www.safetyweb.org/">
+                        ABC for Health
+                        </a></li>
+                        <li><a href="http://www.arcw.org/">
+                        AIDS Resource Center of Wisconsin
+                        </a></li>
+                        <li><a href="http://cpcmadison.org/internationals/immigration-counseling/">
+                        Community Immigration Law Center
+                        </a></li>
+                        <li><a href="http://www.ccmke.org/Catholic-Charities.htm">
+                        Legal Services for Immigrants - Milwaukee
+                        </a></li>
+                        <li><a href="http://www.catholiccharitieslax.org/index.php">
+                        Legal Services for Immigrants - La Crosse
+                        </a></li>
+                        <li><a href="http://www.safetyweb.org/">
+                        Center Against Sexual & Domestic Abuse (CASDA) 
+                        </a></li>
+                        <li><a href="http://www.centrolegalwisconsin.org/">
+                        Centro Legal por Derechos Humanos 
+                        </a></li>
+                        <li><a href="http://www.communityjusticeinc.org/">
+                        Community Justice, Inc.
+                        </a></li>
+                        <li><a href="http://www.disabilityrightswi.org/">
+                        Disability Rights Wisconsin
+                        </a></li>
+                        <li><a href="http://www.kidsmatterinc.org/">
+                        Kids Matter 
+                        </a></li>
+                        <li><a href="http://www.legalaction.org/">
+                        Legal Action of Wisconsin
+                        </a></li>
+                        <li><a href="http://www.legalaiddoorcounty.org/index.html">
+                        Legal Aid Society of Door County 
+                        </a></li>
+                        <li><a href="http://www.lasmilwaukee.com/">
+                        Legal Aid Society of Milwaukee
+                        </a></li>
+                        <li><a href="http://milwaukee.gov/MJC">
+                        Milwaukee Justice Center
+                        </a></li>
+                        <li><a href="http://www.findmilwaukeelawyers.org/">
+                        Milwaukee Lawyer Referral Service
+                        </a></li>
+                        <li><a href="http://www.wisbar.org/lris">
+                        State Bar Lawyer Referral Service
+                        </a></li>
+                        <li><a href="http://www.judicare.org/">
+                        Wisconsin Judicare
+                        </a></li>
+                        <li><a href="http://wispd.org/">
+                        Wisconsin State Public Defenders
+                        </a></li>
                     </ul>
                 </asp:ContentPlaceHolder>
             </div>
@@ -87,36 +140,10 @@
                 <br />
                 <br />
                 <div class="HelpMessage" style="clear: both">
-                    If you have problems navigating the site, or are experiencing problems with the site, you may contact us at <a href="mailto:<%=ConfigSettings.SiteEmail %>"><%=ConfigSettings.SiteEmail %></a>. This email address is for technical questions or problems only. Legal questions will not be answered.
+                    If you have problems navigating the site, or are experiencing problems with the site, you may contact us at <a href="mailto:<%=ConfigSettings.SiteEmail %>"><%=ConfigSettings.SiteEmail %></a>. This email address is for technical questions or website problems only. Do not sent legal questions to this address. They will not be answered.
                 </div>
             </div>
         </div>
-<%-- 
-        <div id="footer">
-            <div id="SponsorContainer">
-                <p>
-                    This site made possible through the generous donations of:
-                </p>
-               <% if (Roles.IsUserInRole(UserRoles.Attorney))
-                   { %>
-                <div class="sponsor">
-                    <a href="http://www.bakerdonelson.com" target="_blank">
-                        <img src="<%: Url.Image("baker_logo.png") %>" alt="Bakerdonelson.com" /></a>
-                </div>
-                <% } %>			
-                <div class="sponsor">
-                    <a href="http://www.microsoft.com/" target="_blank">
-                        <img src="<%: Url.Image("microsoft.png") %>" alt="Microsoft.com" />
-                    </a>
-                </div>
-                <div class="sponsor">
-                    <a href="http://www.dell.com/" target="_blank">
-                        <img src="<%: Url.Image("dell.png") %>" alt="dell.com" />
-                    </a>
-                </div>	
-            </div>
-        </div>
---%>
     </div>
 </body>
 </html>
