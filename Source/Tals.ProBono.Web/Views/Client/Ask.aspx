@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Client.Master" Inherits="System.Web.Mvc.ViewPage<Tals.ProBono.Domain.Entities.Question>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-	Ask Question
+    Ask Question
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
@@ -22,14 +22,8 @@
                              <%: Html.ValidationMessageFor(model => model.CategoryId) %>
                         </td>
                          <td width="70%">     
-                               Don't see your legal issue listed? Click <a href="http://www.lawhelpmn.org/resource/mlao-referrals-1?ref=m1muK" target="_blank">here</a> if your question is about:
-                               <ul>
-                                    <li>bankruptcy,</li>
-                                    <li>sealing (expunging) criminal records, or</li>
-                                    <li>being sued by a debt collector or credit card company.</li>
-                               </ul>
-                                This site can't help you with a problem you could go to jail for. 
-                                Click <a href="http://www.lawhelpmn.org/resource/criminal-law-info?ref=hliW4" target="_blank">here</a> for other places to get help with a criminal problem.
+                            <p>If you do not know which category your legal issue is in, select "Other".</p>
+                            <p>To learn more about where your legal issue may fit or to receive general information about the law, visit <a href="http://azlawhelp.org/" target="_blank">AZLawhelp.org</a></p>   
                         </td>
                     </tr>
                 </table>

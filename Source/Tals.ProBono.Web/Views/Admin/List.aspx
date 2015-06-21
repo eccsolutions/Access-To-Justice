@@ -2,7 +2,7 @@
 <%@ Import Namespace="Tals.ProBono.Domain.Services" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-    <%=ConfigSettings.AppName  %> Admin : Question List
+    <%=ConfigSettings.SiteName  %> Admin : Question List
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">

@@ -27,10 +27,10 @@ namespace Tals.ProBono.Web
             {
                 Roles.CreateRole(UserRoles.PendingApproval);
             }
-            if (Membership.GetUser("azadmin") == null)
+            if (Membership.GetUser(ConfigSettings.AdminUserName) == null)
             {
-                Membership.CreateUser("azadmin", "z1dv5$dvb");
-                Roles.AddUserToRole("azadmin", UserRoles.Administrators);
+                Membership.CreateUser(ConfigSettings.AdminUserName, "temppassword");
+                Roles.AddUserToRole(ConfigSettings.AdminUserName, UserRoles.Administrators);
             }
 #endif
         }

@@ -2,7 +2,7 @@
 <%@ Import Namespace="Tals.ProBono.Domain.Services" %>
 
 <asp:Content ID="changePasswordTitle" ContentPlaceHolderID="TitleContent" runat="server">
-   <%=ConfigSettings.AppName %> - Update Security Question
+   <%=ConfigSettings.SiteName %> - Update Security Question
 </asp:Content>
 
 <asp:Content ID="changePasswordSuccessContent" ContentPlaceHolderID="MainContent" runat="server">

@@ -6,7 +6,7 @@
     <title>
         <asp:ContentPlaceHolder ID="TitleContent" runat="server" />
     </title>
-    <meta name="description=" content="<%=ConfigSettings.AppName %>">
+    <meta name="description=" content="<%=ConfigSettings.SiteName %>">
     <link href="<%= Url.Stylesheet() %>" rel="stylesheet" type="text/css" />
     <link href="/markitup/theme.css" rel="stylesheet" type="text/css" />
     <link href="/Content/ui/jquery.ui.all.css" rel="stylesheet" type="text/css" />
@@ -74,12 +74,7 @@
                 <asp:ContentPlaceHolder ID="QuickLinksContent" runat="server">
                     <h2 class="quicklinksheader">Other Places to Get Help</h2>
                     <ul>
-                        <li><a href="http://www.mvlp.org" target="_blank">Mississippi Volunteer Lawyers Project</a></li>
-                        <li><a href="http://www.mscenterforlegalservices.org" target="_blank">Mississippi Center for Legal Services</a></li>
-                        <li><a href="http://www.nmrls.com" target="_blank">North Mississippi Rural Legal Services</a></li>
-                        <li><a href="http://www.msatjc.org" target="_blank">Mississippi Access to Justice Commission</a></li>
-                        <li><a href="http://www.ospd.ms.gov" target="_blank">Mississippi Office of the State Public Defender</a></li>
-                        <li><a href="http://www.ago.state.ms.us" target="_blank">Mississippi Attorney General's Office</a></li>
+                        <li><a href="http://www.google.com" target="_blank">Add Help Links Here</a></li>
                     </ul>
                 </asp:ContentPlaceHolder>
             </div>
@@ -96,32 +91,6 @@
                 </div>
             </div>
         </div>
-<%-- 
-        <div id="footer">
-            <div id="SponsorContainer">
-                <p>
-                    This site made possible through the generous donations of:
-                </p>
-               <% if (Roles.IsUserInRole(UserRoles.Attorney))
-                   { %>
-                <div class="sponsor">
-                    <a href="http://www.bakerdonelson.com" target="_blank">
-                        <img src="<%: Url.Image("baker_logo.png") %>" alt="Bakerdonelson.com" /></a>
-                </div>
-                <% } %>			
-                <div class="sponsor">
-                    <a href="http://www.microsoft.com/" target="_blank">
-                        <img src="<%: Url.Image("microsoft.png") %>" alt="Microsoft.com" />
-                    </a>
-                </div>
-                <div class="sponsor">
-                    <a href="http://www.dell.com/" target="_blank">
-                        <img src="<%: Url.Image("dell.png") %>" alt="dell.com" />
-                    </a>
-                </div>	
-            </div>
-        </div>
---%>
     </div>
 </body>
 </html>

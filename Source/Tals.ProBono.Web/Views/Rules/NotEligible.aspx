@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<dynamic>" %>
+<%@ Import Namespace="Tals.ProBono.Domain.Services" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
     We're sorry... You do not meet our rules.
@@ -6,24 +7,53 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
     <p>We're sorry, but you do not meet the rules to be able to use this website.</p>
-    <h2>Other places to find legal help and information</h2>
+    
+    <h1>Other places to find legal help and information</h1>
 
-    <p><strong>Legal Services Programs</strong></p>
-    <p>They give free legal advice and sometimes a lawyer to represent you in court for free. Mostly they help people whose income is low. Sometimes they help people no matter how much they make. This is mostly people who are abused or over age 60. They don’t take criminal cases, only cases that you can’t go to jail for.</p>
-    <p>Go to <a href="http://www.lawhelpmn.org/find-legal-help" target="_blank">www.lawhelpmn.org/find-legal-help</a> to find your local legal aid office and other legal help.</p>
-    <p><strong>Here are some free legal clinics around the state where you can get advice from a lawyer:</strong></p>
-    <p><a href="http://www.lawhelpmn.org/walk-in-clinics-and-other-legal-help-clinics" target="_blank">www.lawhelpmn.org/walk-in-clinics-and-other-legal-help-clinics</a></p>
-   <p><strong>You can find sliding-fee scale and private attorneys at these places:</strong></p>
-   <p><a href="http://www.lawhelpmn.org/lawyer-referral-services" target="_blank">www.lawhelpmn.org/lawyer-referral-services</a></p>
-   <p><strong>Need help with food, clothing, shelter, medicine or other services?</strong></p>
-   <p><a href="http://www.lawhelpmn.org/resource/information-and-referrals-for-other-non-legal" target="_blank">www.lawhelpmn.org/resource/information-and-referrals-for-other-non-legal</a></p>
-   <p><strong>Are you a Mississippi tenant with a question about your housing?  E-mail a housing attorney here:</strong></p>
-   <p><a href="http://www.homelinemn.org/e-mail-an-attorney/" target="_blank">www.homelinemn.org/e-mail-an-attorney/</a></p>
-   <p><strong>Other helpful information and organizations:</strong></p>
-   <ul>
-       <li><a href="http://www.lawhelpmn.org/resource/criminal-law-info?ref=JOfhh" target="_blank">Criminal Law Information and Resources</a></li>
-       <li><a href="http://www.lawhelpmn.org/resource/court-forms-review-service" target="_blank">Court Forms Review Service</a></li>
-       <li><a href="http://www.ag.state.mn.us/" target="_blank">Mississippi Attorney General's Office</a></li>
-   </ul>
-    <p>If you have problems with this website, you may contact us at <a href="mailto:edmund.gorski@gmail.com">edmund.gorski@gmail.com</a>. This email address is for technical questions or website problems only. We will not answer your legal question.</p>
+    <h2>Legal Aid Programs</h2>
+    <p>Legal aid gives free legal advice and sometimes a lawyer to represent you in court for free. To see if you qualify for legal aid click the link below.</p>
+    <div style="margin-left:25px">
+        <a href="http://azlawhelp.org/accessToJustice.cfm" target="_blank" title="Arizona's Access to Justice Online Intake System">Arizona’s Access to Justice Online Intake System</a>
+    </div>
+
+    <h2>Find a Lawyer</h2>
+    <ul>
+        <li><a href="http://www.azlawhelp.org/A2JRedirect/A2JResources-FindALawyer.htm" target="_blank" title="The State Bar's Find A Lawyer page">The State Bar's Find A Lawyer page</a></li>
+        <li><a href="http://www.azlawhelp.org/A2JRedirect/A2JResources-MCoLawyerReferral.htm" target="_blank" title="Maricopa County Lawyer Referral">Maricopa County Lawyer Referral</a></li>
+        <li><a href="http://www.azlawhelp.org/A2JRedirect/A2JResources-PCoLawyerReferral.htm" target="_blank" title="Pima County Lawyer Referral">Pima County Lawyer Referral</a></li>
+    </ul>
+
+    <h2>Reference and information:</h2>
+    
+    <h3>Statewide</h3>
+
+    <ul>
+        <li><a href="http://www.cir.org/help/" target="_blank" title="AZ 211">AZ 211</a></li>
+        <li><a href="http://www.azcourts.gov/familylaw/childsupportcalculator.aspx" target="_blank" title="AZ Child Support Calculator">AZ Child Support Calculator</a></li>
+        <li><a href="https://www.azcourts.gov/AZCourts/AZCourtsLocator.aspx" target="_blank" title="AZ Courts Locator">AZ Courts Locator</a> (Find a court)</li>
+        <li><a href="http://apps.supremecourt.az.gov/publicaccess/" target="_blank" title="AZ Courts Public Access">AZ Courts Public Access</a> (to look up any AZ case and its status)</li>
+        <li><a href="http://www.azcorrections.gov/inmate_datasearch/Index_Minh.aspx" target="_blank" title="AZ Inmate Search">AZ Inmate Search</a> (to find out where someone is in prison)</li>
+        <li><a href="http://www.azdps.gov/Services/Crime_Victims" target="_blank" title="AZ Dept of Public Safety">AZ Dept of Public Safety</a></li>
+        <li><a href="http://www.azlawhelp.org/links.cfm" target="_blank" title="AZLawHelp Links page">AZLawHelp Links page</a></li>       
+    </ul>
+
+    <h3>Central Arizona</h3>
+    
+    <ul>
+        <li><a href="http://www.superiorcourt.maricopa.gov/SuperiorCourt/Self-ServiceCenter/index.asp" target="_blank" title="Maricopa County Judicial Branch Self-Service Center Online">Maricopa County Judicial Branch Self-Service Center Online</a></li>   
+    </ul>
+
+    <h3>Southern Arizona</h3>
+
+    <ul>
+        <li><a href="http://www.sc.pima.gov/?tabid=112" target="_blank" title="Pima County Courts Self Service Center">Pima County Courts Self Service Center</a></li>   
+    </ul>
+
+    <h3>Northern Arizona</h3>
+
+    <ul>
+        <li><a href="http://navajolaw.org/" target="_blank" title="Navajo Nation Bar Association">Navajo Nation Bar Association</a> (for a listing of licensed attorneys/advocates)</li>   
+        <li><a href="http://www.navajocourts.org/" target="_blank" title="Navajo Courts website">Navajo Courts website</a> (Supreme Court cases, addresses of district courts, info on Peacemaking, Navajo Council Resolutions)</li>   
+        <li><a href="http://www2.coconino.az.gov/lawlibrary.aspx?id=261" target="_blank" title="Coconino County Law Library and Self-Help Center">Coconino County Law Library &amp; Self-Help Center</a> (to get legal information, and court forms)</li>   
+    </ul>
 </asp:Content>

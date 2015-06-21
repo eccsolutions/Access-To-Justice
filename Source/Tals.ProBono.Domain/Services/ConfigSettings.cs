@@ -10,7 +10,8 @@ namespace Tals.ProBono.Domain.Services
         private static string _siteUrl;
         private static string _siteEmail;
         private static string _stateName;
-        private static string _appName;
+        private static string _siteName;
+        private static string _adminUserName;
 
         public static string TemplatePath
         {
@@ -84,21 +85,39 @@ namespace Tals.ProBono.Domain.Services
             }
         }
 
-        public static string AppName
+        public static string SiteName
         {
             get
             {
-                if (_appName == null)
+                if (_siteName == null)
                 {
-                    if (String.IsNullOrWhiteSpace(ConfigurationManager.AppSettings["AppName"]))
+                    if (String.IsNullOrWhiteSpace(ConfigurationManager.AppSettings["SiteName"]))
                     {
-                        throw new ConfigurationErrorsException("Config setting [AppName] is not set or is invalid");
+                        throw new ConfigurationErrorsException("Config setting [SiteName] is not set or is invalid");
                     }
 
-                    _appName = ConfigurationManager.AppSettings["AppName"];
+                    _siteName = ConfigurationManager.AppSettings["SiteName"];
                 }
 
-                return _appName;
+                return _siteName;
+            }
+        }
+
+        public static string AdminUserName
+        {
+            get
+            {
+                if (_adminUserName == null)
+                {
+                    if (String.IsNullOrWhiteSpace(ConfigurationManager.AppSettings["AdminUserName"]))
+                    {
+                        throw new ConfigurationErrorsException("Config setting [AdminUserName] is not set or is invalid");
+                    }
+
+                    _adminUserName = ConfigurationManager.AppSettings["AdminUserName"];
+                }
+
+                return _adminUserName;
             }
         }
     }
