@@ -15,7 +15,7 @@ namespace Tals.ProBono.Web.Controllers
     [Authorize(Roles = UserRoles.AdministratorsAndAttorny)]
     [SecurityQuestionFilter]
     [DynamicMasterPageFilter]
-    public class AttorneyController : Controller
+    public class AttorneyController : ControllerBase
     {
         private readonly IEmailService _emailService;
         private readonly ISecurityService _security;

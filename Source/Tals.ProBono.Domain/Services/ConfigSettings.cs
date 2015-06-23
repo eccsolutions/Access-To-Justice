@@ -12,6 +12,7 @@ namespace Tals.ProBono.Domain.Services
         private static string _stateName;
         private static string _siteName;
         private static string _adminUserName;
+        private static int? _defaultResultsPerPage;
 
         public static string TemplatePath
         {
@@ -118,6 +119,27 @@ namespace Tals.ProBono.Domain.Services
                 }
 
                 return _adminUserName;
+            }
+        }
+
+        public static int DefaultResultsPerPage
+        {
+            get
+            {
+                if (_defaultResultsPerPage == null)
+                {
+                    int parsedInt;
+                    if (Int32.TryParse(ConfigurationManager.AppSettings["DefaultResultsPerPage"], out parsedInt))
+                    {
+                        _defaultResultsPerPage = parsedInt;
+                    }
+                    else
+                    {
+                        _defaultResultsPerPage = 25;
+                    }
+                }
+
+                return _defaultResultsPerPage.Value;
             }
         }
     }

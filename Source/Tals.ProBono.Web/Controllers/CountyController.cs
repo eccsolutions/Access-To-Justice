@@ -6,7 +6,7 @@ using Tals.ProBono.Domain.Services;
 namespace Tals.ProBono.Web.Controllers
 {
     [Authorize(Roles=UserRoles.Administrators)]
-    public class CountyController : Controller
+    public class CountyController : ControllerBase
     {
         private readonly IUnitOfWork _unitOfWork;
 

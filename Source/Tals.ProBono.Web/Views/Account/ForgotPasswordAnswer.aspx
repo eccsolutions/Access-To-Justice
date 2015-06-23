@@ -1,7 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Guest.master" Inherits="System.Web.Mvc.ViewPage<Tals.ProBono.Web.Controllers.ForgotPasswordModel>" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Guest.master" Inherits="System.Web.Mvc.ViewPage<Tals.ProBono.Web.Models.View.Account.ForgotPasswordModel>" %>
+<%@ Import Namespace="Tals.ProBono.Web.Enums" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-	ForgotPasswordAnswer
+    ForgotPasswordAnswer
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
@@ -12,6 +13,11 @@
         <%:Html.HiddenFor(model => model.UserName) %>
         <fieldset>
             <legend>Forgot Password</legend>
+
+            <% if (Model.Message != null && Model.Message.Type == MessageTypes.Error){ %>
+                <p class="error"><%=Model.Message.Text %></p>
+            <% } %>
+
             <div class="editor-label">
                 <%: Html.LabelFor(model => model.Question) %>
             </div>

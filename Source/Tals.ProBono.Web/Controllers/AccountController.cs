@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -11,6 +9,8 @@ using Tals.ProBono.Domain.Filters;
 using Tals.ProBono.Domain.Services;
 using Tals.ProBono.Web.Infrastructure;
 using Tals.ProBono.Web.Models;
+using Tals.ProBono.Web.Models.Shared;
+using Tals.ProBono.Web.Models.View.Account;
 using ViewRes;
 
 namespace Tals.ProBono.Web.Controllers
@@ -18,7 +18,7 @@ namespace Tals.ProBono.Web.Controllers
 
     [HandleError]
     [DynamicMasterPageFilter]
-    public class AccountController : Controller
+    public class AccountController : ControllerBase
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IEmailService _emailService;
@@ -82,7 +82,7 @@ namespace Tals.ProBono.Web.Controllers
             Session.Abandon();
 
             //if (UserModel.Current.IsInRole(UserRoles.BasicUser))
-            //    return Redirect("https://www.surveymonkey.com/s/PYGVK9M");
+            //    return Redirect("https://www.surveymonkey.com/s/onlineazjustice");
 
             return RedirectToAction("Index", "Home");
         }
@@ -293,7 +293,7 @@ namespace Tals.ProBono.Web.Controllers
 
             TempData["userName"] = userName;
 
-            return RedirectToAction("Profile", "User", userName);
+            return RedirectToAction("Profile", "User", new {userName=userName});
         }
 
         [Authorize(Roles = "Administrators")]
@@ -305,7 +305,7 @@ namespace Tals.ProBono.Web.Controllers
 
             TempData["userName"] = userName;
 
-            return RedirectToAction("Profile", "User", userName);
+            return RedirectToAction("Profile", "User", new { userName = userName });
         }
 
         [Authorize(Roles = "Administrators")]
@@ -334,7 +334,7 @@ namespace Tals.ProBono.Web.Controllers
                 return RedirectToAction("ResetPasswordSuccess", "Account", model);
             }
 
-            return RedirectToAction("Profile", "User", userName);
+            return RedirectToAction("Profile", "User", new { userName = userName });
         }
 
         public ActionResult ResetPasswordSuccess(ResetPasswordViewModel model)
@@ -428,22 +428,23 @@ namespace Tals.ProBono.Web.Controllers
 
         [HttpPost]
         public ActionResult ForgotPasswordAnswer(ForgotPasswordModel model) {
-            if(ModelState.IsValid) {
-                var password = MembershipService.ResetPassword(model.UserName, model.Answer);
-                var changePasswordModel = new ChangePasswordModel() {UserName = model.UserName, OldPassword = password};
-
-                return View("ChangePassword", changePasswordModel);
+            
+            if(ModelState.IsValid)
+            {
+                try
+                {
+                    var password = MembershipService.ResetPassword(model.UserName, model.Answer);
+                    var changePasswordModel = new ChangePasswordModel() { UserName = model.UserName, OldPassword = password };
+                    return View("ChangePassword", changePasswordModel);
+                }
+                catch (MembershipPasswordException ex)
+                {
+                    model.Message = MessageDto.CreateErrorMessage("Answer to security question is not correct");
+                    return View("ForgotPasswordAnswer", model);   
+                }
             }
 
             return View(model);
         }
-    }
-
-    public class ForgotPasswordModel {
-        [Required]
-        [DisplayName("User name")]
-        public string UserName { get; set; }
-        public string Question { get; set; }
-        public string Answer { get; set; }
     }
 }

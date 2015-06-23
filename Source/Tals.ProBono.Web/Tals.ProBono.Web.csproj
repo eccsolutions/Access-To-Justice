@@ -26,6 +26,8 @@
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <MvcProjectUpgradeChecked>true</MvcProjectUpgradeChecked>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -116,7 +118,9 @@
     <Compile Include="App_Start\MembershipConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\ControllerBase.cs" />
     <Compile Include="Controllers\ReferralOrganizationController.cs" />
+    <Compile Include="Enums\MessageTypes.cs" />
     <Compile Include="Models\CategoryListViewModel.cs" />
     <Compile Include="Controllers\CountyController.cs" />
     <Compile Include="Infrastructure\Auditor.cs" />
@@ -136,6 +140,7 @@
     <Compile Include="Infrastructure\UserModel.cs" />
     <Compile Include="Models\ProfileModels.cs" />
     <Compile Include="Models\ProfileType.cs" />
+    <Compile Include="Models\Shared\MessageDto.cs" />
     <Compile Include="Models\UsersOnlineViewModel.cs" />
     <Compile Include="Infrastructure\UrlModelBinder.cs" />
     <Compile Include="Infrastructure\RolesWrapper.cs" />
@@ -166,6 +171,8 @@
     <Compile Include="Models\ReplyViewModel.cs" />
     <Compile Include="Models\SubscribeViewModel.cs" />
     <Compile Include="Models\UnsubscribeViewModel.cs" />
+    <Compile Include="Models\View\Account\ForgotPasswordModel.cs" />
+    <Compile Include="Models\View\Shared\ViewModelBase.cs" />
     <Compile Include="Models\WorkEntryViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
@@ -625,4 +632,11 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
 </Project>

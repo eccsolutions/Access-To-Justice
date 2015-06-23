@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Linq;
 using System.Web.Mvc;
 using Tals.ProBono.Domain.Entities;
-using Tals.ProBono.Web.Models;
 
 namespace Tals.ProBono.Web.Controllers
 {
-    public class RulesController : Controller
+    public class RulesController : ControllerBase
     {
         public int CurrentStepNumber
         {

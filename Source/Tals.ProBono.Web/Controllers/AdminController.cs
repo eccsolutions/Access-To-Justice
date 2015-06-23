@@ -1,23 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using MvcPaging;
+using System.Linq;
 using System.Web.Mvc;
-using System.Web.Profile;
 using System.Web.Security;
-using Tals.ProBono.Domain.Abstract;
 using Tals.ProBono.Domain.Entities;
 using Tals.ProBono.Domain.Filters;
 using Tals.ProBono.Domain.Services;
-using System.Linq;
 using Tals.ProBono.Web.Helpers;
 using Tals.ProBono.Web.Infrastructure;
 using Tals.ProBono.Web.Models;
-using MvcPaging;
 
 namespace Tals.ProBono.Web.Controllers
 {
     [Authorize(Roles = UserRoles.Administrators)]
     [DynamicMasterPageFilter]
-    public class AdminController : Controller
+    public class AdminController : ControllerBase
     {
         private readonly IEmailService _emailService;
         private readonly IUnitOfWork _unitOfWork;
@@ -123,7 +119,7 @@ namespace Tals.ProBono.Web.Controllers
             ViewBag.Role = role;
             ViewBag.UserName = userName;
 
-            var model = users.ToUserModels().ToPagedList(pageIndex, 5);
+            var model = users.ToUserModels().ToPagedList(pageIndex, ConfigSettings.DefaultResultsPerPage);
 
             return View(model);
         }

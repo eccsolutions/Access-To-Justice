@@ -1,9 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using MvcPaging;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
-using MvcPaging;
 using Tals.ProBono.Domain.Abstract;
 using Tals.ProBono.Domain.Entities;
 using Tals.ProBono.Domain.Filters;
@@ -15,7 +13,7 @@ namespace Tals.ProBono.Web.Controllers
 {
     [AuthorizeCurrentUserFilter]
     [DynamicMasterPageFilter]
-    public class UserController : Controller
+    public class UserController : ControllerBase
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IRoles _roles;
@@ -28,10 +26,10 @@ namespace Tals.ProBono.Web.Controllers
             _currentUser = currentUser;
         }
 
-        public int PageSize { get { return 5; } }
-
         public ActionResult Profile(string userName) {
+            
             userName = userName ?? _currentUser.UserName;
+            
             ViewData["UserName"] = userName;
 
             if (_roles.IsUserInRole(userName, UserRoles.Attorney) || _roles.IsUserInRole(userName, UserRoles.PendingApproval))
@@ -138,7 +136,7 @@ namespace Tals.ProBono.Web.Controllers
                                        : _unitOfWork.QuestionRepository.Get().WithCreatedBy(userName)).OrderBy(
                                            x => x.CreatedDate);
 
-            var model = questionsToShow.ToPagedList(pageIndex, PageSize);
+            var model = questionsToShow.ToPagedList(pageIndex, ConfigSettings.DefaultResultsPerPage);
 
             ViewBag.UserName = userName;
             return View("QuestionHistory", model);

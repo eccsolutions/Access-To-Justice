@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Data.Entity;
 using System.Linq;
 using System.Web.Mvc;
 using System.Web.Security;
-using Tals.ProBono.Domain.Abstract;
 using Tals.ProBono.Domain.Entities;
 using Tals.ProBono.Domain.Filters;
 using Tals.ProBono.Domain.Services;
@@ -16,7 +14,7 @@ namespace Tals.ProBono.Web.Controllers
     [Authorize(Roles = UserRoles.BasicUser)]
     [SecurityQuestionFilter]
     [DynamicMasterPageFilter]
-    public class ClientController : Controller
+    public class ClientController : ControllerBase
     {
         private readonly IEligibilityService _eligibilityService;
         private readonly IUnitOfWork _unitOfWork;

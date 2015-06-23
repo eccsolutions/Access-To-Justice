@@ -2,7 +2,7 @@
 
 namespace Tals.ProBono.Web.Controllers
 {
-    public class ReportingController : Controller
+    public class ReportingController : ControllerBase
     {
         public ActionResult Index()
         {
