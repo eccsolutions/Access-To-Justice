@@ -15,6 +15,7 @@
         <%: Html.ActionMenuItem("Referral Organizations","List","ReferralOrganization") %>
         <%: Html.ActionMenuItem("Reporting", "Index", "Reporting") %>
         <%: Html.ActionMenuItem("Attorney View", "List", "Attorney") %>
+        <%: Html.ActionMenuItem("Forums", "Index", "Forums") %>
     </ul>
     </asp:ContentPlaceHolder>
 </asp:Content>

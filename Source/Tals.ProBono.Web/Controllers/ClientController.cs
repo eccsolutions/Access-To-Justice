@@ -69,7 +69,7 @@ namespace Tals.ProBono.Web.Controllers
             ViewData["categories"] = _unitOfWork.CategoryRepository.Get();
             ViewData["casecounties"] = _unitOfWork.CountyRepository.Get();
 
-            return View(new Question());
+            return View("Ask",new Question());
         }
 
         //

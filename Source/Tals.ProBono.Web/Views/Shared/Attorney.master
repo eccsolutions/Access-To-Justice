@@ -39,7 +39,10 @@
         <br />
         <br />
         <div>
-            [Add Content Here]
+            <p>To see the questions you chose click on <strong>Taken</strong>.</p>
+            <p>To see questions that need immediate attention click on <strong>Urgent</strong>.</p>
+            <p>To see all the questions currently waiting to be answered click on <strong>Queue</strong>.</p>
+            <p>For information on CLE’s and upcoming events click on the advocate tab.</p>
         </div>
         </asp:ContentPlaceHolder>
 </asp:Content>

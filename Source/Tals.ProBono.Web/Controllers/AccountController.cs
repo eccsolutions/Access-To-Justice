@@ -81,9 +81,6 @@ namespace Tals.ProBono.Web.Controllers
             FormsService.SignOut();
             Session.Abandon();
 
-            //if (UserModel.Current.IsInRole(UserRoles.BasicUser))
-            //    return Redirect("https://www.surveymonkey.com/s/onlineazjustice");
-
             return RedirectToAction("Index", "Home");
         }
 

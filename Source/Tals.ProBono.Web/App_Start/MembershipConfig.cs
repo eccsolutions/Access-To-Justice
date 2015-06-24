@@ -31,26 +31,21 @@ namespace Tals.ProBono.Web
 
             if (Membership.GetUser(ConfigSettings.AdminUserName) == null)
             {
+                //Membership.CreateUser(ConfigSettings.AdminUserName, "jk3d4jb3s2");
                 Membership.CreateUser(ConfigSettings.AdminUserName, "edg123");
                 Roles.AddUserToRole(ConfigSettings.AdminUserName, UserRoles.Administrators);
             }
 
-            if (Membership.GetUser("aflores") == null)
+            if (Membership.GetUser("admin2") == null)
             {
-                Membership.CreateUser("aflores", "edg123");
-                Roles.AddUserToRole("aflores", UserRoles.Administrators);
+                Membership.CreateUser("admin2", "k4fv3sk7d4");
+                Roles.AddUserToRole("admin2", UserRoles.Administrators);
             }
 
-            if (Membership.GetUser("lslifko") == null)
+            if (Membership.GetUser("admin3") == null)
             {
-                Membership.CreateUser("lslifko", "edg123");
-                Roles.AddUserToRole("lslifko", UserRoles.Administrators);
-            }
-
-            if (Membership.GetUser("kbernhart") == null)
-            {
-                Membership.CreateUser("kbernhart", "edg123");
-                Roles.AddUserToRole("kbernhart", UserRoles.Administrators);
+                Membership.CreateUser("admin3", "bv54rf3sd4");
+                Roles.AddUserToRole("admin3", UserRoles.Administrators);
             }
         }
     }

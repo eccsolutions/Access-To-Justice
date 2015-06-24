@@ -108,6 +108,10 @@
     <Compile Include="Migrations\201504060100366_Update.Designer.cs">
       <DependentUpon>201504060100366_Update.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201506231846564_CategoryNameShortDescriptionRequired.cs" />
+    <Compile Include="Migrations\201506231846564_CategoryNameShortDescriptionRequired.Designer.cs">
+      <DependentUpon>201506231846564_CategoryNameShortDescriptionRequired.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Entities\DatabaseInitializer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -141,6 +145,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201504060100366_Update.resx">
       <DependentUpon>201504060100366_Update.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201506231846564_CategoryNameShortDescriptionRequired.resx">
+      <DependentUpon>201506231846564_CategoryNameShortDescriptionRequired.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
