@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Text;
+﻿using System.Data.Entity;
 
 namespace Tals.ProBono.Domain.Entities
 {
@@ -12,20 +8,6 @@ namespace Tals.ProBono.Domain.Entities
         {
             this.Configuration.LazyLoadingEnabled = true;
             this.Configuration.ProxyCreationEnabled = true;
-        }
-
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {
-            base.OnModelCreating(modelBuilder);
-            modelBuilder.Entity<Question>()
-                        .HasRequired(x => x.County)
-                        .WithMany(x => x.Questions)
-                        .HasForeignKey(x => x.CountyId);
-
-            modelBuilder.Entity<Question>()
-                        .HasOptional(x => x.CaseCounty)
-                        .WithMany(x => x.CaseQuestions)
-                        .HasForeignKey(x => x.CaseCountyId);
         }
 
         public DbSet<Question> Questions { get; set; }
@@ -39,5 +21,26 @@ namespace Tals.ProBono.Domain.Entities
         public DbSet<RuleAnswer> RuleAnswers { get; set; }
         public DbSet<BBCodeItem> BbCodeItems { get; set; }
         public DbSet<Audit> Audits { get; set; }
+        public DbSet<FedPovertySetting> FedPovertySettings { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<Question>()
+                        .HasRequired(x => x.County)
+                        .WithMany(x => x.Questions)
+                        .HasForeignKey(x => x.CountyId);
+
+            modelBuilder.Entity<Question>()
+                        .HasOptional(x => x.CaseCounty)
+                        .WithMany(x => x.CaseQuestions)
+                        .HasForeignKey(x => x.CaseCountyId);
+
+            modelBuilder.Entity<FedPovertySetting>().Property(x => x.YearlyRate).HasPrecision(18, 6);
+            modelBuilder.Entity<FedPovertySetting>().Property(x => x.Factor).HasPrecision(18, 6);
+            modelBuilder.Entity<FedPovertySetting>().Property(x => x.YearlyRate).HasPrecision(18, 6);
+            modelBuilder.Entity<FedPovertySetting>().Property(x => x.LegalAidLevel).HasPrecision(18, 6);
+            modelBuilder.Entity<FedPovertySetting>().Property(x => x.ModestMeansLevel).HasPrecision(18, 6);
+        }
     }
 }

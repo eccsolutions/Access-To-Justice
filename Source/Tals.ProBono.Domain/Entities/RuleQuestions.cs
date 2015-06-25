@@ -236,7 +236,9 @@ namespace Tals.ProBono.Domain.Entities
             get
             {
                 if (Answer == null) return false;
-                return Answer.Sum(i => i.AnnualIncome) <= AllowedIncome;
+                //EDG: Commented out to allow all users regardless of income.
+                //return Answer.Sum(i => i.AnnualIncome) <= AllowedIncome;
+                return true;
             }
         }
 

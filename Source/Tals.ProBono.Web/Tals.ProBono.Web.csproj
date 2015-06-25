@@ -117,6 +117,7 @@
   <ItemGroup>
     <Compile Include="App_Start\MembershipConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\FPSettingsController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\ControllerBase.cs" />
     <Compile Include="Controllers\ReferralOrganizationController.cs" />
@@ -428,6 +429,7 @@
     <Content Include="Views\Attorney\Resources.aspx" />
     <Content Include="Views\County\Edit.aspx" />
     <Content Include="Views\County\List.aspx" />
+    <Content Include="Views\FPSettings\Edit.aspx" />
     <Content Include="Views\ReferralOrganization\Edit.aspx" />
     <Content Include="Views\ReferralOrganization\List.aspx" />
     <Content Include="Views\Shared\ColorCoding.ascx" />
@@ -469,6 +471,7 @@
     <Content Include="Views\Shared\EditorTemplates\InvestmentEditor.ascx" />
     <Content Include="Views\Shared\EditorTemplates\IntegerEditor.ascx" />
     <Content Include="Views\Shared\EditorTemplates\IncomeEditor.ascx" />
+    <Content Include="Views\Shared\QuestionCreatedBy.ascx" />
     <Content Include="Views\Shared\QuestionListView.ascx" />
     <Content Include="Views\Attorney\Reply.aspx" />
     <Content Include="Views\Client\Ask.aspx" />

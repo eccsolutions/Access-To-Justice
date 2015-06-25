@@ -1,0 +1,15 @@
+﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<Tals.ProBono.Domain.Entities.Question>" %>
+<%@ Import Namespace="Tals.ProBono.Domain.Enums" %>
+<p><strong>Created By:</strong> <%: Html.DisplayUser(Model.CreatedBy) %></p>
+<p><strong>Eligibility: </strong>
+<% if (Model.ClientPovertyLevel == PovertyLevels.ModestMeans){ %>
+    Modest Means
+<% } else if(Model.ClientPovertyLevel == PovertyLevels.LegalAid) {%>
+    Legal Aid
+    <% } else if(Model.ClientPovertyLevel == PovertyLevels.AboveLevel) {%>
+    Above Level
+<%} else {%>
+    n/a
+<%} %>
+</p>
+

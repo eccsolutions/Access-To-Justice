@@ -4,7 +4,6 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
-using System.Web.Mvc;
 using System.Web.Profile;
 using System.Web.Security;
 
@@ -114,6 +113,18 @@ namespace Tals.ProBono.Web.Models
         {
             get { return base["Zip"] as string; }
             set { base["Zip"] = value; }
+        }
+
+        public int? Income
+        {
+            get { return base["Income"] as int?; }
+            set { base["Income"] = value; }
+        }
+
+        public int? HouseholdSize
+        {
+            get { return base["HouseholdSize"] as int?; }
+            set { base["HouseholdSize"] = value; }
         }
 
         public string County

@@ -1,9 +1,9 @@
-﻿using System;
+﻿using MvcPaging;
+using System;
 using System.Linq;
 using System.Web.Mvc;
 using System.Web.Routing;
 using System.Web.Security;
-using MvcPaging;
 using Tals.ProBono.Domain.Entities;
 using Tals.ProBono.Domain.Filters;
 using Tals.ProBono.Domain.Services;
@@ -22,6 +22,7 @@ namespace Tals.ProBono.Web.Controllers
         readonly IUnitOfWork _unitOfWork;
         readonly IUser _currentUser;
         readonly IAuditor _auditor;
+
         public int PageSize = 5;
 
         public AttorneyController(IEmailService emailService, ISecurityService security, IUnitOfWork unitOfWork, IUser currentUser, IAuditor auditor)

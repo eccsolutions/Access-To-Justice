@@ -120,6 +120,16 @@ namespace Tals.ProBono.Web.Controllers
                         var countyId = int.Parse(Session["County"].ToString());
                         profile.County = _unitOfWork.CountyRepository.Get().First(x => x.Id == countyId).CountyName;
                     }
+
+                    if (Session["Income"] != null)
+                    {
+                        profile.Income = Session["Income"] as int?;
+                    }
+
+                    if (Session["HouseholdSize"] != null)
+                    {
+                        profile.HouseholdSize = Session["HouseholdSize"] as int?;
+                    }
                     
                     profile.Save();
 

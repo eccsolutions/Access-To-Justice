@@ -78,6 +78,7 @@
     <Compile Include="Entities\BBCodeItem.cs" />
     <Compile Include="Entities\Category.cs" />
     <Compile Include="Entities\CaseCounty.cs" />
+    <Compile Include="Entities\FedPovertySetting.cs" />
     <Compile Include="Entities\ReferralOrganization.cs" />
     <Compile Include="Entities\County.cs">
       <SubType>Code</SubType>
@@ -92,6 +93,7 @@
     <Compile Include="Entities\Subscription.cs" />
     <Compile Include="Entities\UnitOfWork.cs" />
     <Compile Include="Entities\WorkEntry.cs" />
+    <Compile Include="Enums\PovertyLevels.cs" />
     <Compile Include="Filters\CategoryFilters.cs" />
     <Compile Include="Filters\CountyFilters.cs" />
     <Compile Include="Filters\PostFilters.cs" />
@@ -108,9 +110,9 @@
     <Compile Include="Migrations\201504060100366_Update.Designer.cs">
       <DependentUpon>201504060100366_Update.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201506231846564_CategoryNameShortDescriptionRequired.cs" />
-    <Compile Include="Migrations\201506231846564_CategoryNameShortDescriptionRequired.Designer.cs">
-      <DependentUpon>201506231846564_CategoryNameShortDescriptionRequired.cs</DependentUpon>
+    <Compile Include="Migrations\201506250116367_AZUpdates.cs" />
+    <Compile Include="Migrations\201506250116367_AZUpdates.Designer.cs">
+      <DependentUpon>201506250116367_AZUpdates.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Entities\DatabaseInitializer.cs" />
@@ -146,8 +148,8 @@
     <EmbeddedResource Include="Migrations\201504060100366_Update.resx">
       <DependentUpon>201504060100366_Update.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201506231846564_CategoryNameShortDescriptionRequired.resx">
-      <DependentUpon>201506231846564_CategoryNameShortDescriptionRequired.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201506250116367_AZUpdates.resx">
+      <DependentUpon>201506250116367_AZUpdates.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

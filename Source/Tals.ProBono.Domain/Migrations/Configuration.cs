@@ -15,6 +15,8 @@ namespace Tals.ProBono.Domain.Migrations
         protected override void Seed(AdviceContext context)
         {
             addCounties(context);
+            addFedPovertySettings(context);
+            context.SaveChanges();
         }
 
         private void addCounties(AdviceContext context)
@@ -39,6 +41,23 @@ namespace Tals.ProBono.Domain.Migrations
             context.Counties.AddOrUpdate(c => c.CountyName, new County() { CountyName = "Santa Cruz County" });
             context.Counties.AddOrUpdate(c => c.CountyName, new County() { CountyName = "Yavapai County" });
             context.Counties.AddOrUpdate(c => c.CountyName, new County() { CountyName = "Yuma County" });
+        }
+
+        private void addFedPovertySettings(AdviceContext context)
+        {
+            if (context.FedPovertySettings.Any())
+            {
+                return;
+            }
+
+            context.FedPovertySettings.Add(new FedPovertySetting()
+            {
+                Id = 1,
+                YearlyRate = 14588,
+                Factor = 5075,
+                LegalAidLevel = 2.6M,
+                ModestMeansLevel = 2.0M
+            });
         }
     }
 }

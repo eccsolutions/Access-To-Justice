@@ -18,7 +18,7 @@
         </tr>
         <tr>
             <td class="display-user">
-                <p><%: Html.DisplayUser(Model.Question.CreatedBy) %></p>
+                <%Html.RenderPartial("QuestionCreatedBy", Model.Question); %>
                 <% if(Roles.IsUserInRole(UserRoles.Administrators)) {%>
                 <p>Taken By: <%: Model.Question.TakenBy %></p>
                 <%} %>

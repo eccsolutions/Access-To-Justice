@@ -3,6 +3,7 @@ using System.Linq;
 using System.Web.Mvc;
 using System.Web.Security;
 using Tals.ProBono.Domain.Entities;
+using Tals.ProBono.Domain.Enums;
 using Tals.ProBono.Domain.Filters;
 using Tals.ProBono.Domain.Services;
 using Tals.ProBono.Web.Helpers;
@@ -21,6 +22,42 @@ namespace Tals.ProBono.Web.Controllers
         private readonly IEmailService _emailService;
         readonly IAuditor _auditor;
         readonly IUser _currentUser;
+
+        private PovertyLevels getUserPovertyLevel(UserProfile userProfile)
+        {
+            var povertySettings = _unitOfWork.FedPovertySettingRepository.Get().FirstOrDefault();
+            if (povertySettings == null)
+            {
+                return PovertyLevels.AboveLevel;
+            }
+
+            if (userProfile.Income == null || userProfile.Income<=0)
+            {
+                return PovertyLevels.AboveLevel;
+            }
+
+            if (userProfile.HouseholdSize == null || userProfile.HouseholdSize < 1)
+            {
+                return PovertyLevels.AboveLevel;
+            }
+
+            var numDependents = userProfile.HouseholdSize - 1;
+
+            var rate = (userProfile.Income / (povertySettings.YearlyRate + (numDependents * povertySettings.Factor))) * 1;
+
+            if (rate <= povertySettings.ModestMeansLevel)
+            {
+                return PovertyLevels.ModestMeans;
+            }
+
+            if (rate <= povertySettings.LegalAidLevel)
+            {
+                return PovertyLevels.LegalAid;
+            }
+
+            return PovertyLevels.AboveLevel;
+        }
+
 
         public ClientController(IEligibilityService eligibilityService, IUnitOfWork unitOfWork, IEmailService emailService, IAuditor auditor, IUser currentUser)
         {
@@ -85,6 +122,8 @@ namespace Tals.ProBono.Web.Controllers
                     question.CreatedBy = UserModel.Current.UserName;
                     question.CreatedDate = DateTime.Now;
                     question.CountyId = _unitOfWork.CountyRepository.Get().WithCounty(UserModel.Current.UserProfile.County).First().Id;
+
+                    question.ClientPovertyLevel = getUserPovertyLevel(UserModel.Current.UserProfile);
 
                     _unitOfWork.QuestionRepository.Insert(question);
                     _unitOfWork.Save();

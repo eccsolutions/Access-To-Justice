@@ -7,13 +7,13 @@ namespace Tals.ProBono.Domain.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class CategoryNameShortDescriptionRequired : IMigrationMetadata
+    public sealed partial class AZUpdates : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(CategoryNameShortDescriptionRequired));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(AZUpdates));
         
         string IMigrationMetadata.Id
         {
-            get { return "201506231846564_CategoryNameShortDescriptionRequired"; }
+            get { return "201506250116367_AZUpdates"; }
         }
         
         string IMigrationMetadata.Source
