@@ -53,10 +53,10 @@ namespace Tals.ProBono.Domain.Migrations
             context.FedPovertySettings.Add(new FedPovertySetting()
             {
                 Id = 1,
-                YearlyRate = 14588,
-                Factor = 5075,
-                LegalAidLevel = 2.6M,
-                ModestMeansLevel = 2.0M
+                YearlyIncome = 11770,
+                DependentsModifier = 4160,
+                LegalAidLevel = 1.5M,
+                ModestMeansLevel = 2.5M
             });
         }
     }

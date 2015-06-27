@@ -1,4 +1,7 @@
 ﻿<%@ Master Language="C#" MasterPageFile="Site.Master" Inherits="System.Web.Mvc.ViewMasterPage" %>
+<%@ Import Namespace="Tals.ProBono.Web.Constants" %>
+<%@ Import Namespace="Tals.ProBono.Web.Models.Shared" %>
+<%@ Import Namespace="Tals.ProBono.Web.Enums" %>
 <asp:Content runat="server" ID="Title" ContentPlaceHolderID="TitleContent">
     <asp:ContentPlaceHolder ID="TitleContent" runat="server" />
 </asp:Content>
@@ -9,14 +12,18 @@
     <asp:ContentPlaceHolder runat="server" ID="TabMenuContent">
     <ul id="tabmenu">
         <%: Html.ActionMenuItem("Questions", "List", "Admin") %>
-        <%: Html.ActionMenuItem("Accounts", "AccountList", "Admin") %>
+        <%: Html.ActionMenuItem("Users", "AccountList", "Admin") %>
+        <%: Html.ActionMenuItem("Reporting", "Index", "Reporting") %>
+        <%: Html.ActionMenuItem("Attorney View", "List", "Attorney") %>
+        <%: Html.ActionMenuItem("Forums", "Index", "Forums") %>
+        <%: Html.ActionMenuItem("Manage Settings", "Index", "Settings") %>
+
+
+<!--
         <%: Html.ActionMenuItem("Categories", "List", "Category") %>
         <%: Html.ActionMenuItem("Counties", "List", "County") %>
         <%: Html.ActionMenuItem("Referral Organizations","List","ReferralOrganization") %>
-        <%: Html.ActionMenuItem("Reporting", "Index", "Reporting") %>
-        <%: Html.ActionMenuItem("Poverty Settings", "Edit", "FPSettings") %>
-        <%: Html.ActionMenuItem("Attorney View", "List", "Attorney") %>
-        <%: Html.ActionMenuItem("Forums", "Index", "Forums") %>
+-->
     </ul>
     </asp:ContentPlaceHolder>
 </asp:Content>
@@ -31,5 +38,34 @@
     </asp:ContentPlaceHolder>
 </asp:Content>
 <asp:Content runat="server" ID="Main" ContentPlaceHolderID="MainContent">
+    <% 
+       if (ViewData[ApplicationConstants.LAST_MESSAGE_KEY] != null)
+       {
+           var message = ViewData[ApplicationConstants.LAST_MESSAGE_KEY] as MessageDto;
+
+           if (message != null)
+           {
+               var messageDisplay = String.Empty;
+               
+               switch (message.Type)
+               {
+                    case MessageTypes.Success:
+                       messageDisplay = "<div class='message-display' style='color: green;'><i class='fa fa-check-circle fa-2x'></i> " + message.Text + "</div>";
+                       break;
+                    case MessageTypes.Error:
+                       messageDisplay = "<div class='message-display' style='color: red;'><i class='fa fa-exclamation-circle fa-2x'></i> " + message.Text + "</div>";
+                       break;
+                    case MessageTypes.Warning:
+                       messageDisplay = "<div class='message-display' style='color: orange;'><i class='fa fa-exclamation-triangle fa-2x'></i> " + message.Text + "</div>";
+                       break;
+                   default:
+                       messageDisplay = "<div class='message-display' style='color: blue;'><i class='fa fa-question-circle fa-2x'></i> " + message.Text + "</div>";
+                       break;
+               }
+               
+               %><%=messageDisplay%><%
+           }
+       }
+    %>
     <asp:ContentPlaceHolder runat="server" ID="MainContent" />
 </asp:Content>

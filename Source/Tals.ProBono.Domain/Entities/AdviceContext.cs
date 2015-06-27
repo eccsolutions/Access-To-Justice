@@ -36,9 +36,8 @@ namespace Tals.ProBono.Domain.Entities
                         .WithMany(x => x.CaseQuestions)
                         .HasForeignKey(x => x.CaseCountyId);
 
-            modelBuilder.Entity<FedPovertySetting>().Property(x => x.YearlyRate).HasPrecision(18, 6);
-            modelBuilder.Entity<FedPovertySetting>().Property(x => x.Factor).HasPrecision(18, 6);
-            modelBuilder.Entity<FedPovertySetting>().Property(x => x.YearlyRate).HasPrecision(18, 6);
+            modelBuilder.Entity<FedPovertySetting>().Property(x => x.YearlyIncome).HasPrecision(18, 6);
+            modelBuilder.Entity<FedPovertySetting>().Property(x => x.DependentsModifier).HasPrecision(18, 6);
             modelBuilder.Entity<FedPovertySetting>().Property(x => x.LegalAidLevel).HasPrecision(18, 6);
             modelBuilder.Entity<FedPovertySetting>().Property(x => x.ModestMeansLevel).HasPrecision(18, 6);
         }

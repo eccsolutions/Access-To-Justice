@@ -5,7 +5,7 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-
+    <%: Html.ActionLink("Manage Settings", "Index", "Settings") %> &gt; Federal Poverty Settings
     <h2>Edit Federal Poverty Settings</h2>
 
     <% using (Html.BeginForm()) {%>
@@ -15,27 +15,19 @@
             <legend>Fields</legend>
             
             <div class="editor-label">
-                <%: Html.LabelFor(model => model.YearlyRate) %>
+                <%: Html.LabelFor(model => model.YearlyIncome) %>
             </div>
             <div class="editor-field">
-                <%: Html.TextBoxFor(model => model.YearlyRate, "{0:###########0.######}") %>
-                <%: Html.ValidationMessageFor(model => model.YearlyRate) %>
+                <%: Html.TextBoxFor(model => model.YearlyIncome, "{0:###########0.######}") %>
+                <%: Html.ValidationMessageFor(model => model.YearlyIncome) %>
             </div>
             
             <div class="editor-label">
-                <%: Html.LabelFor(model => model.Factor) %>
+                <%: Html.LabelFor(model => model.DependentsModifier) %>
             </div>
             <div class="editor-field">
-                <%: Html.TextBoxFor(model => model.Factor, "{0:###########0.######}") %>
-                <%: Html.ValidationMessageFor(model => model.Factor) %>
-            </div>
-            
-            <div class="editor-label">
-                <%: Html.LabelFor(model => model.ModestMeansLevel) %>
-            </div>
-            <div class="editor-field">
-                <%: Html.TextBoxFor(model => model.ModestMeansLevel, "{0:###########0.0#####}") %>
-                <%: Html.ValidationMessageFor(model => model.ModestMeansLevel) %>
+                <%: Html.TextBoxFor(model => model.DependentsModifier, "{0:###########0.######}") %>
+                <%: Html.ValidationMessageFor(model => model.DependentsModifier) %>
             </div>
 
             <div class="editor-label">
@@ -46,7 +38,18 @@
                 <%: Html.ValidationMessageFor(model => model.LegalAidLevel) %>
             </div>
             
-            <p><input type="submit" value="Save" /></p>
+            <div class="editor-label">
+                <%: Html.LabelFor(model => model.ModestMeansLevel) %>
+            </div>
+            <div class="editor-field">
+                <%: Html.TextBoxFor(model => model.ModestMeansLevel, "{0:###########0.0#####}") %>
+                <%: Html.ValidationMessageFor(model => model.ModestMeansLevel) %>
+            </div>
+
+            <div class="button-container">
+                <input type="submit" value="Save Settings"/>
+                <% Html.ActionLink("Cancel", "Index", "Settings"); %>
+            </div>            
         </fieldset>
 
     <% } %>

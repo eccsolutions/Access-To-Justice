@@ -1,12 +1,12 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Admin.Master" Inherits="System.Web.Mvc.ViewPage<Tals.ProBono.Domain.Entities.ReferralOrganization>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-	Edit
+    <%:ViewBag.PageTitle%>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-
-    <h2>Edit</h2>
+    <%: Html.ActionLink("Manage Settings", "Index", "Settings") %> &gt; <%:Html.ActionLink("Referral Organizations","List", "ReferralOrganization") %> &gt; <%:ViewBag.PageTitle%>
+    <h2><%:ViewBag.PageTitle%></h2>
 
     <% using (Html.BeginForm()) {%>
         <%: Html.ValidationSummary(true) %>

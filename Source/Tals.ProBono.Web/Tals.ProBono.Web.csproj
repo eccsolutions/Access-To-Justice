@@ -116,8 +116,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\MembershipConfig.cs" />
+    <Compile Include="Constants\ApplicationConstants.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\FPSettingsController.cs" />
+    <Compile Include="Controllers\SettingsController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\ControllerBase.cs" />
     <Compile Include="Controllers\ReferralOrganizationController.cs" />
@@ -203,6 +205,9 @@
     <Content Include="Content\EmailTemplates\Subscribed.htm" />
     <Content Include="Content\EmailTemplates\LawyerRegistration.htm" />
     <Content Include="Content\EmailTemplates\LawyerReply.htm" />
+    <Content Include="Content\font-awesome\font-awesome.css" />
+    <Content Include="Content\font-awesome\font-awesome.min.css" />
+    <Content Include="Content\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\Images\atdbuttontr.gif" />
     <Content Include="Content\Images\bbcode_images\bold.png" />
     <Content Include="Content\Images\bbcode_images\clean.png" />
@@ -352,6 +357,11 @@
     <Content Include="Content\Images\user_anonymous_64.png" />
     <Content Include="Content\Images\warning.bmp" />
     <Content Include="packages.config" />
+    <Content Include="Content\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\fonts\FontAwesome.otf" />
     <None Include="Properties\PublishProfiles\Local - Production.pubxml" />
     <None Include="Properties\PublishProfiles\Production.pubxml" />
     <None Include="Referenced Components\Telerik.Web.Mvc.dll" />
@@ -429,6 +439,7 @@
     <Content Include="Views\Attorney\Resources.aspx" />
     <Content Include="Views\County\Edit.aspx" />
     <Content Include="Views\County\List.aspx" />
+    <Content Include="Views\Settings\Index.aspx" />
     <Content Include="Views\FPSettings\Edit.aspx" />
     <Content Include="Views\ReferralOrganization\Edit.aspx" />
     <Content Include="Views\ReferralOrganization\List.aspx" />

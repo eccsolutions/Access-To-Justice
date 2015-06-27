@@ -4,7 +4,7 @@
     <table class="categorygridview">
         <tr>
             <th></th>
-            <th>Eligibility</th>
+            <th class="CenteredText">Eligibility</th>
             <th>Category</th>
             <th>Subject</th>
             <th>Last Updated</th>
@@ -26,13 +26,15 @@
                 </td>
                 <td class="gridcolumn CenteredText">
                     <% if (item.ClientPovertyLevel == PovertyLevels.ModestMeans){ %>
-                        Modest Means
+                        <div style="white-space: nowrap">Modest<br/>Means</div>
                     <% } else if(item.ClientPovertyLevel == PovertyLevels.LegalAid) {%>
-                        Legal Aid
+                        <div class="popupEnabled" style="white-space: nowrap">Legal<br/>Aid <i class="fa fa-book"></i>
+                            <div class="popup" style="white-space: nowrap">CLE Eligible</div>
+                        </div>
                      <% } else if(item.ClientPovertyLevel == PovertyLevels.AboveLevel) {%>
-                        Above Level
+                        <div style="white-space: nowrap">Above<br/>Level</div>
                     <%} else {%>
-                        n/a
+                        --
                     <%} %>             
                 </td>
                 <td class="gridcolumn" id="categorycolumn">

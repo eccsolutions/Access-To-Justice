@@ -23,7 +23,19 @@ namespace Tals.ProBono.Web.Controllers
 
         public ActionResult Edit(int id = 0)
         {
-            ReferralOrganization model = id == 0 ? new ReferralOrganization() : _unitOfWork.ReferralOrganizationRepository.Get().FirstOrDefault(c => c.Id == id);
+            ReferralOrganization model;
+
+            if (id <= 0)
+            {
+                model = new ReferralOrganization();
+                ViewBag.PageTitle = "Add New Organization";
+            }
+            else
+            {
+                model = _unitOfWork.ReferralOrganizationRepository.Get().FirstOrDefault(c => c.Id == id);
+                ViewBag.PageTitle = "Edit " + model.OrgName;
+            }
+            
             return View(model);
         }
 

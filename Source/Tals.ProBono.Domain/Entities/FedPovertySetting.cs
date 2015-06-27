@@ -10,12 +10,12 @@ namespace Tals.ProBono.Domain.Entities
         public int Id { get; set; }
 
         [Required]
-        [DisplayName("Yearly Rate")]
-        public decimal YearlyRate { get; set; }
+        [DisplayName("Yearly Income")]
+        public decimal YearlyIncome { get; set; }
 
         [Required]
-        [DisplayName("Factor")]
-        public decimal Factor { get; set; }
+        [DisplayName("Dependents Modifier")]
+        public decimal DependentsModifier { get; set; }
 
         [Required]
         [DisplayName("Legal Aid Threshold")]

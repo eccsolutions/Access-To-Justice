@@ -396,7 +396,6 @@ div#title
 .display-user
 {
     width: 20%;
-    font-size: 8pt;
 }
 
 #LoginForm
@@ -518,7 +517,7 @@ div#title
 
 .Current
 {
-    background-color: Green;
+    background-color: #4EAD1F;
     color: White;
     border: 1px solid #000000;
     font-weight:bold;
@@ -533,7 +532,7 @@ div#title
 
 .Overdue
 {
-    background-color: Yellow;
+    background-color: #FFFF66;
     color: Black;
     border: 1px solid #000000;
     font-weight:bold;
@@ -541,7 +540,7 @@ div#title
 
 .Urgent
 {
-    background-color: Maroon;
+    background-color: #F20D33;
     color: White;
     border: 1px solid #000000;
     font-weight:bold;
@@ -549,7 +548,7 @@ div#title
 
 .Closed
 {
-    background-color: #808080;
+    background-color: #CCCCCC;
     color: #fff;
     border: 1px solid #000000;
     font-weight: bold;
@@ -832,3 +831,8 @@ DIV.pager A.selected { background-color: #353535; color: White; }
 
 DIV.Message { background: gray; color:White; padding: 1em; margin-top:1em; margin-bottom:1em; font-weight: bold; }
 DIV.UsersOnline { background: gray; color:White; padding: 1em; margin-top:1em; margin-bottom:1em; font-weight: bold; }
+
+.message-display {
+    font-size: 1.2em;
+    font-weight: bold;
+}

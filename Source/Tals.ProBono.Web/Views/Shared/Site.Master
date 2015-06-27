@@ -11,6 +11,7 @@
     <link href="/markitup/theme.css" rel="stylesheet" type="text/css" />
     <link href="/Content/ui/jquery.ui.all.css" rel="stylesheet" type="text/css" />
     <link href="/Content/atd.css" rel="Stylesheet" type="text/css" />
+    <link href="/Content/font-awesome/font-awesome.min.css" rel="stylesheet" type="text/css" />
     <script src="/Scripts/MicrosoftAjax.js" type="text/javascript"></script>
     <script src="/Scripts/MicrosoftMvcAjax.js" type="text/javascript"></script>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.js"></script>

@@ -5,6 +5,7 @@ namespace Tals.ProBono.Domain.Enums
     {
         AboveLevel = 1,
         LegalAid = 2,
-        ModestMeans = 3
+        ModestMeans = 3,
+        Other = 4
     }
 }

@@ -5,7 +5,7 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-
+    <%: Html.ActionLink("Manage Settings", "Index", "Settings") %> &gt; <%:Html.ActionLink("Categories","List", "Category") %> &gt; Edit <%=Model.CategoryName %>
     <h2>Edit Category: <%=Model.CategoryName %></h2>
 
     <% using (Html.BeginForm()) {%>

@@ -3,9 +3,9 @@
 <p><strong>Created By:</strong> <%: Html.DisplayUser(Model.CreatedBy) %></p>
 <p><strong>Eligibility: </strong>
 <% if (Model.ClientPovertyLevel == PovertyLevels.ModestMeans){ %>
-    Modest Means
+    Modest Means 
 <% } else if(Model.ClientPovertyLevel == PovertyLevels.LegalAid) {%>
-    Legal Aid
+    Legal Aid <i class="fa fa-book"></i>
     <% } else if(Model.ClientPovertyLevel == PovertyLevels.AboveLevel) {%>
     Above Level
 <%} else {%>

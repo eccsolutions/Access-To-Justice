@@ -2,7 +2,7 @@ namespace Tals.ProBono.Domain.Migrations
 {
     using System.Data.Entity.Migrations;
     
-    public partial class AZUpdates : DbMigration
+    public partial class PovertyGuidelineAndQuestionUpdates : DbMigration
     {
         public override void Up()
         {
@@ -13,8 +13,8 @@ namespace Tals.ProBono.Domain.Migrations
                 c => new
                     {
                         Id = c.Int(nullable: false),
-                        YearlyRate = c.Decimal(nullable: false, precision: 18, scale: 6),
-                        Factor = c.Decimal(nullable: false, precision: 18, scale: 6),
+                        YearlyIncome = c.Decimal(nullable: false, precision: 18, scale: 6),
+                        DependentsModifier = c.Decimal(nullable: false, precision: 18, scale: 6),
                         LegalAidLevel = c.Decimal(nullable: false, precision: 18, scale: 6),
                         ModestMeansLevel = c.Decimal(nullable: false, precision: 18, scale: 6),
                     })

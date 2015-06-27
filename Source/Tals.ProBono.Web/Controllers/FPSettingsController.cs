@@ -3,6 +3,7 @@ using System.Web.Mvc;
 using Tals.ProBono.Domain.Entities;
 using Tals.ProBono.Domain.Services;
 using Tals.ProBono.Web.Infrastructure;
+using Tals.ProBono.Web.Models.Shared;
 
 namespace Tals.ProBono.Web.Controllers
 {
@@ -20,21 +21,33 @@ namespace Tals.ProBono.Web.Controllers
         public ActionResult Edit()
         {
             var model = _unitOfWork.FedPovertySettingRepository.Get().FirstOrDefault();
-            return View(model);
+
+            this.GetTempMessage();
+
+            return View("Edit",model);
         }
 
         [HttpPost]
         public ActionResult Edit(FedPovertySetting settings)
         {
-            if(ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
-                _unitOfWork.FedPovertySettingRepository.Update(settings); 
-
-                _unitOfWork.Save();
-                return RedirectToAction("Edit");
+                return View("Edit", settings);
             }
 
-            return View(settings);
+            if (settings.ModestMeansLevel <= settings.LegalAidLevel)
+            {
+                ModelState.AddModelError("ModestMeansLevel","Modest Means Threshold must be greater than Legal Aid Threshold");
+                return View("Edit", settings);
+            }
+
+            _unitOfWork.FedPovertySettingRepository.Update(settings);
+
+            _unitOfWork.Save();
+
+            this.SetTempMessage(MessageDto.CreateSuccessMessage("Settings updated successfully"));
+
+            return RedirectToAction("Edit");
         }
     }
 }

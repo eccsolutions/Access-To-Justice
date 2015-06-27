@@ -28,31 +28,31 @@ namespace Tals.ProBono.Web.Controllers
             var povertySettings = _unitOfWork.FedPovertySettingRepository.Get().FirstOrDefault();
             if (povertySettings == null)
             {
-                return PovertyLevels.AboveLevel;
+                return PovertyLevels.Other;
             }
 
             if (userProfile.Income == null || userProfile.Income<=0)
             {
-                return PovertyLevels.AboveLevel;
+                return PovertyLevels.Other;
             }
 
             if (userProfile.HouseholdSize == null || userProfile.HouseholdSize < 1)
             {
-                return PovertyLevels.AboveLevel;
+                return PovertyLevels.Other;
             }
 
             var numDependents = userProfile.HouseholdSize - 1;
 
-            var rate = (userProfile.Income / (povertySettings.YearlyRate + (numDependents * povertySettings.Factor))) * 1;
-
-            if (rate <= povertySettings.ModestMeansLevel)
-            {
-                return PovertyLevels.ModestMeans;
-            }
+            var rate = userProfile.Income / (povertySettings.YearlyIncome + (numDependents * povertySettings.DependentsModifier));
 
             if (rate <= povertySettings.LegalAidLevel)
             {
                 return PovertyLevels.LegalAid;
+            }
+
+            if (rate <= povertySettings.ModestMeansLevel)
+            {
+                return PovertyLevels.ModestMeans;
             }
 
             return PovertyLevels.AboveLevel;

@@ -20,7 +20,7 @@
             <td class="display-user">
                 <%Html.RenderPartial("QuestionCreatedBy", Model.Question); %>
                 <% if(Roles.IsUserInRole(UserRoles.Administrators)) {%>
-                <p>Taken By: <%: Model.Question.TakenBy %></p>
+                <p><strong>Taken By:</strong> <%: Model.Question.TakenBy %></p>
                 <%} %>
             </td>
             <td valign="top">
