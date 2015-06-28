@@ -42,7 +42,7 @@ namespace Tals.ProBono.Web.Controllers
         }
 
         [Authorize(Roles = UserRoles.Administrators)]
-        [HttpPost]
+        [HttpPost, ValidateInput(false)]
         public ActionResult Edit(Page page)
         {
             if (ModelState.IsValid)
@@ -50,7 +50,11 @@ namespace Tals.ProBono.Web.Controllers
                 page.LastModifiedUserName = UserModel.Current.UserName;
                 page.LastModifiedDate = DateTimeOffset.UtcNow;
 
-                this.SetTempMessage(MessageDto.CreateSuccessMessage("Page edited successfully"));
+                _unitOfWork.PageRepository.Update(page);
+
+                _unitOfWork.Save();
+
+                this.SetTempMessage(MessageDto.CreateSuccessMessage("Page updated successfully"));
 
                 return RedirectToAction("Edit",new{id=page.Id});
             }

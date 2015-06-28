@@ -7,5 +7,5 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <h2><%:Model.Title %></h2>
 
-    <%:Model.Content %>
+    <%=Model.Content %>
 </asp:Content>
