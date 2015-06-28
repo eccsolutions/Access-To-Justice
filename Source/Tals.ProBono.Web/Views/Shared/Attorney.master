@@ -1,5 +1,6 @@
 <%@ Master Language="C#" MasterPageFile="Site.Master" Inherits="System.Web.Mvc.ViewMasterPage" %>
 <%@ Import Namespace="Tals.ProBono.Domain.Services" %>
+<%@ Import Namespace="Tals.ProBono.Domain.Constants" %>
 <asp:Content runat="server" ID="Title" ContentPlaceHolderID="TitleContent">
     <asp:ContentPlaceHolder ID="TitleContent" runat="server" />
 </asp:Content>
@@ -26,7 +27,7 @@
         <%: Html.RoleActionMenuLink("FAQ", "AttorneyFAQ", "Account", UserRoles.Attorney) %>
         <%: Html.RoleActionMenuLink("Home", "ApprovalNeeded", "Home", UserRoles.PendingApproval) %>
         <%: Html.RoleActionMenuLink("Admin View", "List", "Admin", UserRoles.Administrators) %>
-        <%: Html.RoleActionMenuLink("Training/Resource Materials", "Resources", "Attorney", UserRoles.AdministratorsAndAttorny) %>
+        <%: Html.RoleActionMenuLink("Advocate", "Index", "Pages", UserRoles.AdministratorsAndAttorny, new {id=ApplicationConstants.PAGE_ID_ADVOCATE}) %>
         <%: Html.RoleActionMenuLink("Forums", "Index", "Forums", UserRoles.AdministratorsAndAttorny) %>
     </ul>
     </asp:ContentPlaceHolder>

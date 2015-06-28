@@ -1,3 +1,4 @@
+using System;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -24,5 +25,9 @@ namespace Tals.ProBono.Domain.Entities
         [Required]
         [DisplayName("Modest Means Threshold")]
         public decimal ModestMeansLevel { get; set; }
+
+        public DateTimeOffset? LastModifiedDate { get; set; }
+
+        public string LastModifiedByUserName { get; set; }
     }
 }

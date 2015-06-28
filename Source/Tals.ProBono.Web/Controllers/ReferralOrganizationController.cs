@@ -53,6 +53,8 @@ namespace Tals.ProBono.Web.Controllers
                 return RedirectToAction("List");
             }
 
+            ViewBag.PageTitle = "Edit " + referralOrganization.OrgName;
+
             return View(referralOrganization);
         }
     }

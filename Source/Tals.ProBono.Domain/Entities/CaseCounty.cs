@@ -7,6 +7,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System.ComponentModel.DataAnnotations;
+
 namespace Tals.ProBono.Domain.Entities
 {
     using System;
@@ -21,6 +23,8 @@ namespace Tals.ProBono.Domain.Entities
         //}
 
         public int Id { get; set; }
+
+        [StringLength(300)]
         public string CountyName { get; set; }
 
         public virtual ICollection<Question> Questions { get; set; }

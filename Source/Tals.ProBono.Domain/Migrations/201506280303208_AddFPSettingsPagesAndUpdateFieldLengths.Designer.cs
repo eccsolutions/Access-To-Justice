@@ -7,13 +7,13 @@ namespace Tals.ProBono.Domain.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class PovertyGuidelineAndQuestionUpdates : IMigrationMetadata
+    public sealed partial class AddFPSettingsPagesAndUpdateFieldLengths : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(PovertyGuidelineAndQuestionUpdates));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(AddFPSettingsPagesAndUpdateFieldLengths));
         
         string IMigrationMetadata.Id
         {
-            get { return "201506262058103_PovertyGuidelineAndQuestionUpdates"; }
+            get { return "201506280303208_AddFPSettingsPagesAndUpdateFieldLengths"; }
         }
         
         string IMigrationMetadata.Source

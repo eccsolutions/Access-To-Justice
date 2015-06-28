@@ -1,5 +1,4 @@
-﻿using System.Web.Management;
-using System.Web.Security;
+﻿using System.Web.Security;
 using Tals.ProBono.Domain.Services;
 
 namespace Tals.ProBono.Web
@@ -31,8 +30,7 @@ namespace Tals.ProBono.Web
 
             if (Membership.GetUser(ConfigSettings.AdminUserName) == null)
             {
-                //Membership.CreateUser(ConfigSettings.AdminUserName, "jk3d4jb3s2");
-                Membership.CreateUser(ConfigSettings.AdminUserName, "edg123");
+                Membership.CreateUser(ConfigSettings.AdminUserName, "jk3d4jb3s2");
                 Roles.AddUserToRole(ConfigSettings.AdminUserName, UserRoles.Administrators);
             }
 

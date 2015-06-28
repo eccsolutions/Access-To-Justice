@@ -73,11 +73,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\IRoles.cs" />
+    <Compile Include="Constants\ApplicationConstants.cs" />
     <Compile Include="Entities\AdviceContext.cs" />
     <Compile Include="Entities\Audit.cs" />
     <Compile Include="Entities\BBCodeItem.cs" />
     <Compile Include="Entities\Category.cs" />
     <Compile Include="Entities\CaseCounty.cs" />
+    <Compile Include="Entities\Page.cs" />
     <Compile Include="Entities\FedPovertySetting.cs" />
     <Compile Include="Entities\ReferralOrganization.cs" />
     <Compile Include="Entities\County.cs">
@@ -110,9 +112,9 @@
     <Compile Include="Migrations\201504060100366_Update.Designer.cs">
       <DependentUpon>201504060100366_Update.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201506262058103_PovertyGuidelineAndQuestionUpdates.cs" />
-    <Compile Include="Migrations\201506262058103_PovertyGuidelineAndQuestionUpdates.Designer.cs">
-      <DependentUpon>201506262058103_PovertyGuidelineAndQuestionUpdates.cs</DependentUpon>
+    <Compile Include="Migrations\201506280303208_AddFPSettingsPagesAndUpdateFieldLengths.cs" />
+    <Compile Include="Migrations\201506280303208_AddFPSettingsPagesAndUpdateFieldLengths.Designer.cs">
+      <DependentUpon>201506280303208_AddFPSettingsPagesAndUpdateFieldLengths.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Entities\DatabaseInitializer.cs" />
@@ -148,8 +150,8 @@
     <EmbeddedResource Include="Migrations\201504060100366_Update.resx">
       <DependentUpon>201504060100366_Update.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201506262058103_PovertyGuidelineAndQuestionUpdates.resx">
-      <DependentUpon>201506262058103_PovertyGuidelineAndQuestionUpdates.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201506280303208_AddFPSettingsPagesAndUpdateFieldLengths.resx">
+      <DependentUpon>201506280303208_AddFPSettingsPagesAndUpdateFieldLengths.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

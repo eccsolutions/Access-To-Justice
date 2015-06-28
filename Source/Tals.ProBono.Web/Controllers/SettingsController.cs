@@ -10,6 +10,8 @@ namespace Tals.ProBono.Web.Controllers
     {
         public ActionResult Index()
         {
+            this.SetViewMessage(this.GetTempMessage());
+
             return View("Index");
         }
     }

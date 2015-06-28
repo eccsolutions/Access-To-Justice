@@ -25,6 +25,8 @@ namespace Tals.ProBono.Domain.Entities
 
         GenericRepository<FedPovertySetting> FedPovertySettingRepository { get; }
 
+        GenericRepository<Page> PageRepository { get; }
+
         void Save();
     }
 }

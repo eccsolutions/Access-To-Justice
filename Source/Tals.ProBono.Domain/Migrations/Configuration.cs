@@ -1,4 +1,6 @@
+using System;
 using System.Linq;
+using Tals.ProBono.Domain.Constants;
 using Tals.ProBono.Domain.Entities;
 
 namespace Tals.ProBono.Domain.Migrations
@@ -16,6 +18,8 @@ namespace Tals.ProBono.Domain.Migrations
         {
             addCounties(context);
             addFedPovertySettings(context);
+            addPages(context);
+
             context.SaveChanges();
         }
 
@@ -57,6 +61,24 @@ namespace Tals.ProBono.Domain.Migrations
                 DependentsModifier = 4160,
                 LegalAidLevel = 1.5M,
                 ModestMeansLevel = 2.5M
+            });
+        }
+
+        private void addPages(AdviceContext context)
+        {
+
+            if (context.Pages.Any())
+            {
+                return;
+            }
+
+            context.Pages.Add(new Page()
+            {
+                Id = ApplicationConstants.PAGE_ID_ADVOCATE,
+                Title = "Attorney Advocate",
+                Content = "Content Here",
+                CreatedByUserName = "admin1",
+                CreatedDate = DateTimeOffset.UtcNow
             });
         }
     }

@@ -1,12 +1,11 @@
-﻿using System;
+﻿using Ninject;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Mvc.Html;
 using System.Web.Security;
-using Ninject;
-using Tals.ProBono.Domain.Abstract;
 using Tals.ProBono.Domain.Entities;
 using Tals.ProBono.Domain.Services;
 using Tals.ProBono.Web.Infrastructure;
@@ -93,7 +92,7 @@ namespace Tals.ProBono.Web.Helpers
             return MvcHtmlString.Create(link.ToString());
         }
 
-        public static MvcHtmlString ActionMenuItem(this HtmlHelper htmlHelper, String linkText, String actionName, String controllerName)
+        public static MvcHtmlString ActionMenuItem(this HtmlHelper htmlHelper, String linkText, String actionName, String controllerName, object routeValues=null)
         {
             var li = new TagBuilder("li");
 
@@ -104,7 +103,7 @@ namespace Tals.ProBono.Web.Helpers
 
             var span = new TagBuilder("span");
             span.SetInnerText(linkText);
-            var atag = htmlHelper.ActionLink(linkText, actionName, controllerName).ToString();
+            var atag = htmlHelper.ActionLink(linkText, actionName, controllerName,routeValues,null).ToString();
             atag = atag.Replace(string.Format(">{0}<", linkText), string.Format(">{0}<", span.ToString()));
 
             li.InnerHtml = atag;
@@ -141,12 +140,12 @@ namespace Tals.ProBono.Web.Helpers
             return MvcHtmlString.Create(value);
         }
 
-        public static MvcHtmlString RoleActionMenuLink(this HtmlHelper helper, String linkText, String actionName, String controllerName, String roleName)
+        public static MvcHtmlString RoleActionMenuLink(this HtmlHelper helper, String linkText, String actionName, String controllerName, String roleName, object routeValues=null)
         {
             string[] roles = roleName.Split(',');
 
             return roles.Where(Roles.IsUserInRole).Count() > 0 ?
-                helper.ActionMenuItem(linkText, actionName, controllerName) :
+                helper.ActionMenuItem(linkText, actionName, controllerName, routeValues) :
                 MvcHtmlString.Empty;
         }
 

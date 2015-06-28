@@ -28,10 +28,18 @@ namespace Tals.ProBono.Web.Controllers
 
         public ActionResult Edit(int id = 0)
         {
-            if(id == 0)
-                return View(new Category());
+            Category model;
 
-            var model = _unitOfWork.CategoryRepository.Get().FirstOrDefault(c => c.Id == id);
+            if (id <= 0)
+            {
+                model = new Category();
+                ViewBag.PageTitle = "Add New Category";
+            }
+            else
+            {
+                model = _unitOfWork.CategoryRepository.Get().FirstOrDefault(c => c.Id == id);
+                ViewBag.PageTitle = "Edit " + model.CategoryName;
+            }
 
             return View(model);
         }
@@ -51,6 +59,8 @@ namespace Tals.ProBono.Web.Controllers
                 _unitOfWork.Save();
                 return RedirectToAction("List");
             }
+
+            ViewBag.PageTitle = "Edit " + category.CategoryName;
 
             return View(category);
         }

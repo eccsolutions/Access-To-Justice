@@ -22,6 +22,7 @@ namespace Tals.ProBono.Domain.Entities
         public DbSet<BBCodeItem> BbCodeItems { get; set; }
         public DbSet<Audit> Audits { get; set; }
         public DbSet<FedPovertySetting> FedPovertySettings { get; set; }
+        public DbSet<Page> Pages { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

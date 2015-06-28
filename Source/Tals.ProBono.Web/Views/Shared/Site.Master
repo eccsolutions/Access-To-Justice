@@ -33,7 +33,7 @@
     <script type="text/javascript">
         $(function () {
             AtD.rpc_css = 'http://www.polishmywriting.com/dev/atd-jquery/server/proxycss.php?data=';
-            $('textarea').addProofreader();
+            $('textarea:not(.cleditor)').addProofreader();
         });
     </script>
     <script>
@@ -93,5 +93,7 @@
             </div>
         </div>
     </div>
+
+    <asp:ContentPlaceHolder ID="Scripts" runat="server" />
 </body>
 </html>

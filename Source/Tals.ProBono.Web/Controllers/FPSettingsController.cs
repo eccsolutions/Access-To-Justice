@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Web.Mvc;
 using Tals.ProBono.Domain.Entities;
 using Tals.ProBono.Domain.Services;
@@ -22,7 +23,7 @@ namespace Tals.ProBono.Web.Controllers
         {
             var model = _unitOfWork.FedPovertySettingRepository.Get().FirstOrDefault();
 
-            this.GetTempMessage();
+            this.SetViewMessage(this.GetTempMessage());
 
             return View("Edit",model);
         }
@@ -40,6 +41,9 @@ namespace Tals.ProBono.Web.Controllers
                 ModelState.AddModelError("ModestMeansLevel","Modest Means Threshold must be greater than Legal Aid Threshold");
                 return View("Edit", settings);
             }
+
+            settings.LastModifiedByUserName = UserModel.Current.UserName;
+            settings.LastModifiedDate = DateTimeOffset.UtcNow;
 
             _unitOfWork.FedPovertySettingRepository.Update(settings);
 

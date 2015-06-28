@@ -29,13 +29,16 @@ namespace Tals.ProBono.Domain.Entities
         public int Id { get; set; }
 
         [Required]
+        [StringLength(300)]
         [DisplayName("Category Name")]
         public string CategoryName { get; set; }
         
         [Required]
+        [StringLength(500)]
         [DisplayName("Short Description")]
         public string ShortDescription { get; set; }
 
+        [StringLength(1000)]
         [DisplayName("Long Description")]
         public string LongDescription { get; set; }
 
