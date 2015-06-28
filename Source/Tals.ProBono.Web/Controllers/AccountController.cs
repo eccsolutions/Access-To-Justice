@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
+using Tals.ProBono.Domain.Constants;
 using Tals.ProBono.Domain.Entities;
 using Tals.ProBono.Domain.Filters;
 using Tals.ProBono.Domain.Services;
@@ -23,6 +24,11 @@ namespace Tals.ProBono.Web.Controllers
         private readonly IUnitOfWork _unitOfWork;
         private readonly IEmailService _emailService;
         readonly IUser _currentUser;
+
+        private bool profileAnswersAreValid()
+        {
+            return (Session[ApplicationConstants.SIGN_UP_COUNTY_KEY] != null && Session[ApplicationConstants.SIGN_UP_INCOME_KEY] != null && Session[ApplicationConstants.SIGN_UP_HOUSEHOLD_SIZE_KEY] != null);
+        }
 
         public AccountController(IUnitOfWork unitOfWork, IFormsAuthenticationService formsService, IMembershipService membershipService, IEmailService emailService, IUser currentUser)
         {
@@ -90,10 +96,18 @@ namespace Tals.ProBono.Web.Controllers
 
         public ActionResult SignUp()
         {
-            if (!_unitOfWork.RuleAnswerRepository.Get().IsUserEligible(Session.SessionID)) return RedirectToAction("Index", "Rules");
+            if (!_unitOfWork.RuleAnswerRepository.Get().IsUserEligible(Session.SessionID) || !profileAnswersAreValid())
+            {
+                this.SetTempMessage(MessageDto.CreateWarningMessage("Your session has expired, please try signing up again"));
+                return RedirectToAction("Index", "Rules");
+            }
+
             ViewData["PasswordLength"] = MembershipService.MinPasswordLength;
 
-            var model = new SignUpClientModel();
+            var model = new SignUpClientModel()
+            {
+                SecurityQuestions = new SelectList(QuestionSelectListItems, "Text", "Value")
+            };
 
             return View(model);
         }
@@ -101,12 +115,17 @@ namespace Tals.ProBono.Web.Controllers
         [HttpPost]
         public ActionResult SignUp(SignUpClientModel model, string returnUrl)
         {
-            if (!_unitOfWork.RuleAnswerRepository.Get().IsUserEligible(Session.SessionID)) return RedirectToAction("Index", "Rules");
+            if (!_unitOfWork.RuleAnswerRepository.Get().IsUserEligible(Session.SessionID) || !profileAnswersAreValid())
+            {
+                this.SetTempMessage(MessageDto.CreateWarningMessage("Your session has expired, please try signing up again"));
+
+                return RedirectToAction("Index", "Rules");
+            }
 
             if (ModelState.IsValid)
             {
                 // Attempt to register the user
-                MembershipCreateStatus createStatus = MembershipService.CreateUser(model.UserName, model.Password, model.Email);
+                MembershipCreateStatus createStatus = MembershipService.CreateUser(model.UserName, model.Password, model.Email, model.SecurityQuestion, model.SecurityQuestionAnswer);
 
                 if (createStatus == MembershipCreateStatus.Success)
                 {
@@ -115,21 +134,12 @@ namespace Tals.ProBono.Web.Controllers
                     profile.MiddleInitial = model.MiddleInitial;
                     profile.LastName = model.LastName;
                     profile.RegistrationDate = DateTime.Now;
-                    if(Session["County"] != null)
-                    {
-                        var countyId = int.Parse(Session["County"].ToString());
-                        profile.County = _unitOfWork.CountyRepository.Get().First(x => x.Id == countyId).CountyName;
-                    }
+      
+                    var countyId = int.Parse(Session[ApplicationConstants.SIGN_UP_COUNTY_KEY].ToString());
+                    profile.County = _unitOfWork.CountyRepository.Get().First(x => x.Id == countyId).CountyName;
 
-                    if (Session["Income"] != null)
-                    {
-                        profile.Income = Session["Income"] as int?;
-                    }
-
-                    if (Session["HouseholdSize"] != null)
-                    {
-                        profile.HouseholdSize = Session["HouseholdSize"] as int?;
-                    }
+                    profile.Income = Session[ApplicationConstants.SIGN_UP_INCOME_KEY] as int?;
+                    profile.HouseholdSize = Session[ApplicationConstants.SIGN_UP_HOUSEHOLD_SIZE_KEY] as int?;
                     
                     profile.Save();
 
@@ -155,6 +165,8 @@ namespace Tals.ProBono.Web.Controllers
 
             // If we got this far, something failed, redisplay form
             ViewData["PasswordLength"] = MembershipService.MinPasswordLength;
+
+            model.SecurityQuestions = new SelectList(QuestionSelectListItems, "Text", "Value");
             return View(model);
         }
 
@@ -191,7 +203,8 @@ namespace Tals.ProBono.Web.Controllers
                 var model = new AttorneySignUpModel
                 {
                     Counties = new SelectList(_unitOfWork.CountyRepository.Get().ToList(), "Id", "CountyName"),
-                    ReferralOrganizations = new SelectList(_unitOfWork.ReferralOrganizationRepository.Get().ToList(),"Id","OrgName")
+                    ReferralOrganizations = new SelectList(_unitOfWork.ReferralOrganizationRepository.Get().ToList(),"Id","OrgName"),
+                    SecurityQuestions = new SelectList(QuestionSelectListItems, "Text", "Value")
                 };
 
                 return View(model);
@@ -206,7 +219,7 @@ namespace Tals.ProBono.Web.Controllers
             if (ModelState.IsValid)
             {
                 // Attempt to register the user
-                MembershipCreateStatus createStatus = MembershipService.CreateAttorney(model.UserName, model.Password, model.Email);
+                MembershipCreateStatus createStatus = MembershipService.CreateAttorney(model.UserName, model.Password, model.Email, model.SecurityQuestion, model.SecurityQuestionAnswer);
 
                 if (createStatus == MembershipCreateStatus.Success)
                 {
@@ -245,6 +258,8 @@ namespace Tals.ProBono.Web.Controllers
             ViewData["PasswordLength"] = MembershipService.MinPasswordLength;
             model.Counties = new SelectList(_unitOfWork.CountyRepository.Get().ToList(), "Id", "CountyName");
             model.ReferralOrganizations = new SelectList(_unitOfWork.ReferralOrganizationRepository.Get().ToList(), "Id", "OrgName");
+            model.SecurityQuestions = new SelectList(QuestionSelectListItems, "Text", "Value");
+
 
             return View(model);
         }
@@ -425,33 +440,39 @@ namespace Tals.ProBono.Web.Controllers
 
         [HttpPost]
         public ActionResult ForgotPassword(ForgotPasswordModel model) {
+            
             if (!ModelState.IsValid) return View(model);
 
             var question = MembershipService.GetUserQuestion(model.UserName);
-            model.Question = question;
-            
-            return View("ForgotPasswordAnswer", model);
+
+            var questionModel = new ForgotPasswordQuestionModel()
+            {
+                Question = question,
+                UserName = model.UserName
+            };
+
+            return View("ForgotPasswordAnswer", questionModel);
         }
 
         [HttpPost]
-        public ActionResult ForgotPasswordAnswer(ForgotPasswordModel model) {
-            
+        public ActionResult ForgotPasswordAnswer(ForgotPasswordQuestionModel questionModel)
+        {
             if(ModelState.IsValid)
             {
                 try
                 {
-                    var password = MembershipService.ResetPassword(model.UserName, model.Answer);
-                    var changePasswordModel = new ChangePasswordModel() { UserName = model.UserName, OldPassword = password };
+                    var password = MembershipService.ResetPassword(questionModel.UserName, questionModel.Answer);
+                    var changePasswordModel = new ChangePasswordModel() { UserName = questionModel.UserName, OldPassword = password };
                     return View("ChangePassword", changePasswordModel);
                 }
                 catch (MembershipPasswordException ex)
                 {
-                    model.Message = MessageDto.CreateErrorMessage("Answer to security question is not correct");
-                    return View("ForgotPasswordAnswer", model);   
+                    this.SetViewMessage(MessageDto.CreateErrorMessage("Answer to security question is not correct"));
+                    return View("ForgotPasswordAnswer", questionModel);   
                 }
             }
 
-            return View(model);
+            return View(questionModel);
         }
     }
 }

@@ -175,6 +175,7 @@
     <Compile Include="Models\SubscribeViewModel.cs" />
     <Compile Include="Models\UnsubscribeViewModel.cs" />
     <Compile Include="Models\View\Account\ForgotPasswordModel.cs" />
+    <Compile Include="Models\View\Account\ForgotPasswordQuestionModel.cs" />
     <Compile Include="Models\View\Shared\ViewModelBase.cs" />
     <Compile Include="Models\WorkEntryViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

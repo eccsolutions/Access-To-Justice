@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Web.Mvc;
+using Tals.ProBono.Domain.Constants;
 using Tals.ProBono.Domain.Entities;
 
 namespace Tals.ProBono.Web.Controllers
@@ -35,6 +36,7 @@ namespace Tals.ProBono.Web.Controllers
 
         public ActionResult Step1()
         {
+            this.SetViewMessage(this.GetTempMessage());
             return RenderStep(new StartSignupQuestion(), 1);
         }
 
@@ -53,7 +55,7 @@ namespace Tals.ProBono.Web.Controllers
         [HttpPost]
         public ActionResult Step2(CountyQuestion countyQuestion)
         {
-            Session["County"] = countyQuestion.ToString();
+            Session[ApplicationConstants.SIGN_UP_COUNTY_KEY] = countyQuestion.ToString();
             return ExecuteStep(countyQuestion, 2);
         }
 
@@ -106,7 +108,7 @@ namespace Tals.ProBono.Web.Controllers
         {
             if (houseHoldSize == null) CurrentStepNumber = 5;
             var value = houseHoldSize ?? 0;
-            Session["HouseholdSize"] = value;
+            Session[ApplicationConstants.SIGN_UP_HOUSEHOLD_SIZE_KEY] = value;
             var question = new IncomeQuestion(value);
             ViewData["Frequencies"] = question.Frequencies;
 
@@ -126,7 +128,7 @@ namespace Tals.ProBono.Web.Controllers
             int parsedInt;
             if (Int32.TryParse(answer.Answer, out parsedInt))
             {
-                Session["Income"] = parsedInt;
+                Session[ApplicationConstants.SIGN_UP_INCOME_KEY] = parsedInt;
             }
 
             if (!ModelState.IsValid) return View("CheckRule", incomeQuestion);

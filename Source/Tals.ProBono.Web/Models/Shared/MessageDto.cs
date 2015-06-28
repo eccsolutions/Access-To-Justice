@@ -24,5 +24,10 @@ namespace Tals.ProBono.Web.Models.Shared
         {
             return new MessageDto(message, MessageTypes.Error);
         }
+
+        public static MessageDto CreateWarningMessage(string message)
+        {
+            return new MessageDto(message, MessageTypes.Warning);
+        }
     }
 }

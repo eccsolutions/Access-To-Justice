@@ -135,6 +135,7 @@
     <Content Include="Scripts\GetElement.sql" />
     <Content Include="Scripts\GetProfileElement.sql" />
     <Content Include="Scripts\LegalAdvice.edmx.sql" />
+    <Content Include="Scripts\ResetAdminSecurityQuestions.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />

@@ -13,6 +13,7 @@ namespace Tals.ProBono.Domain.Services
         private static string _siteName;
         private static string _adminUserName;
         private static int? _defaultResultsPerPage;
+        private static int? _attorneyTimeoutInMinutes;
 
         public static string TemplatePath
         {
@@ -140,6 +141,27 @@ namespace Tals.ProBono.Domain.Services
                 }
 
                 return _defaultResultsPerPage.Value;
+            }
+        }
+
+        public static int AttorneyTimeoutInMinutes
+        {
+            get
+            {
+                if (_attorneyTimeoutInMinutes == null)
+                {
+                    int parsedInt;
+                    if (Int32.TryParse(ConfigurationManager.AppSettings["AttorneyTimeoutInMinutes"], out parsedInt))
+                    {
+                        _attorneyTimeoutInMinutes = parsedInt;
+                    }
+                    else
+                    {
+                        _attorneyTimeoutInMinutes = 30;
+                    }
+                }
+
+                return _attorneyTimeoutInMinutes.Value;
             }
         }
     }

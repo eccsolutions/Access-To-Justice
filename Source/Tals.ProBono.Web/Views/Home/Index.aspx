@@ -1,7 +1,6 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Views/Shared/Guest.Master" Inherits="System.Web.Mvc.ViewPage" %>
 
 <%@ Import Namespace="Tals.ProBono.Domain.Services" %>
-<%@ Import Namespace="Tals.ProBono.Web.Helpers" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
     <%=ConfigSettings.SiteName %> – Free Legal Advice & Counsel
 </asp:Content>
@@ -19,18 +18,10 @@
         <li>You will get an e-mail when a lawyer answered your question.</li>
         <li>Log back into this website and read the lawyer’s advice. If it isn't clear, you can ask more questions.</li>
     </ol>
-    <p>
-        <%: Html.ImageLink("bubble.png", "New User", "SignUp", "Account") %><br/>
-        <%: Html.ActionLink("New User", "SignUp", "Account", null, new {@class="ImageLinkText"}) %>
-    </p>
-    <p>
-        Have you been here before? Click the sign in button to see your answer or ask a new question.
-    </p>
-    <p>
-        <%: Html.ImageLink("bubble.png", "Sign in", "SignIn", "Account") %><br/>
-        <%: Html.ActionLink("Sign in", "SignIn", "Account", null, new {@class="ImageLinkText"}) %>
-    </p>
-    <p>
-        
-    </p>
+
+    <p>If you are a new user, please register:</p>
+    <p><a href="<%=Url.Action("SignUp","Account") %>" class="ImageLinkText"><i class="fa fa-user-plus fa-2x"></i> Register as a New User</a></p>
+    
+    <p><br/>Have you been here before? Sign in to see your answers or ask a new question:</p>
+    <p><a href="<%=Url.Action("SignIn","Account") %>" class="ImageLinkText"><i class="fa fa-lock fa-2x"></i> Existing Users Sign In</a></p>
 </asp:Content>

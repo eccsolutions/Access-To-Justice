@@ -1,5 +1,8 @@
 ﻿<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
 <%@ Import Namespace="Tals.ProBono.Domain.Services" %>
+<%@ Import Namespace="Tals.ProBono.Domain.Constants" %>
+<%@ Import Namespace="Tals.ProBono.Web.Enums" %>
+<%@ Import Namespace="Tals.ProBono.Web.Models.Shared" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -83,8 +86,40 @@
                 <% if(TempData["message"] != null) { %>
                     <div class="Message"><%: TempData["message"] %></div>
                 <% } %>
+
+                <%
+                     
+                   if (ViewData[ApplicationConstants.LAST_MESSAGE_KEY] != null)
+                   {
+                       var message = ViewData[ApplicationConstants.LAST_MESSAGE_KEY] as MessageDto;
+
+                       if (message != null)
+                       {
+                           var messageDisplay = String.Empty;
+               
+                           switch (message.Type)
+                           {
+                                case MessageTypes.Success:
+                                   messageDisplay = "<div class='message-display' style='color: green;'><i class='fa fa-check-circle fa-2x'></i> " + message.Text + "</div>";
+                                   break;
+                                case MessageTypes.Error:
+                                   messageDisplay = "<div class='message-display' style='color: red;'><i class='fa fa-exclamation-circle fa-2x'></i> " + message.Text + "</div>";
+                                   break;
+                                case MessageTypes.Warning:
+                                   messageDisplay = "<div class='message-display' style='color: orange;'><i class='fa fa-exclamation-triangle fa-2x'></i> " + message.Text + "</div>";
+                                   break;
+                               default:
+                                   messageDisplay = "<div class='message-display' style='color: blue;'><i class='fa fa-question-circle fa-2x'></i> " + message.Text + "</div>";
+                                   break;
+                           }
+               
+                           %><%=messageDisplay%><%
+                       }
+                    }
+                %>
+
+
                 <asp:ContentPlaceHolder ID="MainContent" runat="server" />
-                <br />
                 <br />
                 <br />
                 <div class="HelpMessage" style="clear: both">
