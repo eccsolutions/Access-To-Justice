@@ -246,6 +246,9 @@ namespace Tals.ProBono.Web.Controllers
 
                     _emailService.SendEmailTo(model.Email, new LawyerRegistrationEmail(model.UserName, model.Password));
 
+                    //EDG: Send e-mail to admin to approve new attorney
+                    _emailService.SendEmailTo(ConfigSettings.SiteEmail, new LawyerRegistrationNotificationEmail(model.UserName, model.FirstName, model.LastName, model.Organization, model.Email, model.Phone, model.DisciplinaryBoardNumber));
+
                     return RedirectToAction("Index", "Home");
                 }
                 else

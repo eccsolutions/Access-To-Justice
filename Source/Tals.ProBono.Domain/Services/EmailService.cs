@@ -148,6 +148,22 @@ namespace Tals.ProBono.Domain.Services
         }
     }
 
+    public class LawyerRegistrationNotificationEmail : EmailAssembler
+    {
+        public LawyerRegistrationNotificationEmail(string userName, string firstName, string lastName, string firmName, string email, string phone, string attorneyNumber)
+        {
+            AddProperty("UserName", userName);
+            AddProperty("FirstName", firstName);
+            AddProperty("LastName", lastName);
+            AddProperty("AttorneyNumber", attorneyNumber);
+            AddProperty("FirmName", firmName);
+            AddProperty("Email", email);
+            AddProperty("Phone", phone);
+            AddProperty("ApprovalUrl", ConfigSettings.SiteUrl + "Admin/ConfirmApproval?UserName="+userName);
+            TemplatePath = GetTemplatePath("LawyerRegistrationNotification");
+        }
+    }
+
     public class SubscribeEmail : EmailAssembler
     {
         public SubscribeEmail(string categoryName, string unsubscribeUrl)

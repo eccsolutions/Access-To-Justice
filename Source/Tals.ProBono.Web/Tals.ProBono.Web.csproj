@@ -201,6 +201,7 @@
     <Content Include="Content\EmailTemplates\AcceptedAnswer.htm" />
     <Content Include="Content\EmailTemplates\AccountApproved.htm" />
     <Content Include="Content\EmailTemplates\ClientReply.htm" />
+    <Content Include="Content\EmailTemplates\LawyerRegistrationNotification.htm" />
     <Content Include="Content\EmailTemplates\Subscription.htm" />
     <Content Include="Content\EmailTemplates\QuestionAssigned.htm" />
     <Content Include="Content\EmailTemplates\Subscribed.htm" />
