@@ -98,6 +98,11 @@ namespace Tals.ProBono.Web.Controllers
         {
             if (!_unitOfWork.RuleAnswerRepository.Get().IsUserEligible(Session.SessionID) || !profileAnswersAreValid())
             {
+                return RedirectToAction("Index", "Rules");
+            }
+
+            if (!profileAnswersAreValid())
+            {
                 this.SetTempMessage(MessageDto.CreateWarningMessage("Your session has expired, please try signing up again"));
                 return RedirectToAction("Index", "Rules");
             }
@@ -115,10 +120,14 @@ namespace Tals.ProBono.Web.Controllers
         [HttpPost]
         public ActionResult SignUp(SignUpClientModel model, string returnUrl)
         {
-            if (!_unitOfWork.RuleAnswerRepository.Get().IsUserEligible(Session.SessionID) || !profileAnswersAreValid())
+            if (!_unitOfWork.RuleAnswerRepository.Get().IsUserEligible(Session.SessionID))
+            {
+                return RedirectToAction("Index", "Rules");
+            }
+
+            if (!profileAnswersAreValid())
             {
                 this.SetTempMessage(MessageDto.CreateWarningMessage("Your session has expired, please try signing up again"));
-
                 return RedirectToAction("Index", "Rules");
             }
 

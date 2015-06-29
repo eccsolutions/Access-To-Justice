@@ -6,8 +6,6 @@
     Modest Means 
 <% } else if(Model.ClientPovertyLevel == PovertyLevels.LegalAid) {%>
     Legal Aid <i class="fa fa-book"></i>
-    <% } else if(Model.ClientPovertyLevel == PovertyLevels.AboveLevel) {%>
-    Above Level
 <%} else {%>
     n/a
 <%} %>

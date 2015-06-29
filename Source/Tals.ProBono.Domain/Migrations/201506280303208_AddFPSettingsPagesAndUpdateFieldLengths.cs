@@ -6,6 +6,7 @@ namespace Tals.ProBono.Domain.Migrations
     {
         public override void Up()
         {
+            Sql("DELETE FROM dbo.Categories WHERE CategoryName IS NULL AND ShortDescription IS NULL");
             Sql("UPDATE dbo.Categories SET ShortDescription = CategoryName WHERE ShortDescription IS NULL");
             
             CreateTable(

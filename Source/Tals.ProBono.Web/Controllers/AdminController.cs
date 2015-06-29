@@ -40,7 +40,7 @@ namespace Tals.ProBono.Web.Controllers
             ViewBag.Status = status;
             ViewBag.Taken = taken;
 
-            var model = questions.ToPagedList(pageIndex, 5);
+            var model = questions.ToPagedList(pageIndex, ConfigSettings.DefaultResultsPerPage);
 
             return View(model);
         }

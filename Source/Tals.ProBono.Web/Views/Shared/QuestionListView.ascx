@@ -31,8 +31,6 @@
                         <div class="popupEnabled" style="white-space: nowrap">Legal<br/>Aid <i class="fa fa-book"></i>
                             <div class="popup" style="white-space: nowrap">CLE Eligible</div>
                         </div>
-                     <% } else if(item.ClientPovertyLevel == PovertyLevels.AboveLevel) {%>
-                        <div style="white-space: nowrap">Above<br/>Level</div>
                     <%} else {%>
                         --
                     <%} %>             

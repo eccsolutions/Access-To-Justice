@@ -77,9 +77,13 @@
             <div id="quicklinks">
                 <asp:ContentPlaceHolder ID="QuickLinksContent" runat="server">
                     <h2 class="quicklinksheader">Other Places to Get Help</h2>
-                    <ul>
-                        <li><a href="http://www.google.com" target="_blank">Add Help Links Here</a></li>
-                    </ul>
+                    <h3>Legal Aid Programs</h3>
+                    <a style="margin-left:0" href="http://azlawhelp.org/accessToJustice.cfm" target="_blank" title="Arizona's Access to Justice Online Intake System">Arizona’s Access to Justice Online Intake System</a>
+
+                    <h3>Find a Lawyer</h3>
+                    <a style="margin-left: 0;" href="http://www.azlawhelp.org/A2JRedirect/A2JResources-FindALawyer.htm" target="_blank" title="The State Bar's Find A Lawyer page">The State Bar's Find A Lawyer page</a>
+                    <p/><a style="margin-left:0" href="http://www.azlawhelp.org/A2JRedirect/A2JResources-MCoLawyerReferral.htm" target="_blank" title="Maricopa County Lawyer Referral">Maricopa County Lawyer Referral</a>
+                    <p/><a style="margin-left:0" href="http://www.azlawhelp.org/A2JRedirect/A2JResources-PCoLawyerReferral.htm" target="_blank" title="Pima County Lawyer Referral">Pima County Lawyer Referral</a>
                 </asp:ContentPlaceHolder>
             </div>
             <div id="content">
