@@ -1,7 +1,4 @@
 ﻿<%@ Master Language="C#" MasterPageFile="Site.Master" Inherits="System.Web.Mvc.ViewMasterPage" %>
-<%@ Import Namespace="Tals.ProBono.Web.Models.Shared" %>
-<%@ Import Namespace="Tals.ProBono.Web.Enums" %>
-<%@ Import Namespace="Tals.ProBono.Domain.Constants" %>
 <asp:Content runat="server" ID="Title" ContentPlaceHolderID="TitleContent">
     <asp:ContentPlaceHolder ID="TitleContent" runat="server" />
 </asp:Content>
@@ -16,7 +13,7 @@
         <%: Html.ActionMenuItem("Users", "AccountList", "Admin") %>
         <!--<%: Html.ActionMenuItem("Reporting", "Index", "Reporting") %>-->
         <%: Html.ActionMenuItem("Attorney View", "List", "Attorney") %>
-        <%: Html.ActionMenuItem("Forums", "Index", "Forums") %>
+        <%: Html.ActionMenuItem("Forums", "Index", "Forums", null, new {target="_blank"}) %>
         <%: Html.ActionMenuItem("Manage Settings", "Index", "Settings") %>
     </ul>
     </asp:ContentPlaceHolder>

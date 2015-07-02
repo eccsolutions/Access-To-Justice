@@ -84,7 +84,7 @@
                 <%: Html.LabelFor(m => m.SecurityQuestionAnswer) %>
             </div>
             <div class="editor-field">
-                <%: Html.PasswordFor(model => model.SecurityQuestionAnswer) %>
+                <%: Html.TextBoxFor(model => model.SecurityQuestionAnswer) %>
                 <%: Html.ValidationMessageFor(model => model.SecurityQuestionAnswer) %>
             </div>
 

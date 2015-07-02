@@ -8,7 +8,7 @@
         <div class="profile-field, clear">
             <%: String.Format("{0:g}", Model.RegistrationDate) %></div>
         <label>
-            Attorney ID Number:</label>
+            Attorney Bar Number:</label>
         <div class="profile-field, clear">
             <%: Model.DisciplinaryBoardNumber %></div>
         <fieldset class="clear">

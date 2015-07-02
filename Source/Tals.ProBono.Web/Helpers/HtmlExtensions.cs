@@ -92,7 +92,7 @@ namespace Tals.ProBono.Web.Helpers
             return MvcHtmlString.Create(link.ToString());
         }
 
-        public static MvcHtmlString ActionMenuItem(this HtmlHelper htmlHelper, String linkText, String actionName, String controllerName, object routeValues=null)
+        public static MvcHtmlString ActionMenuItem(this HtmlHelper htmlHelper, String linkText, String actionName, String controllerName, object routeValues=null, object htmlAttributes=null)
         {
             var li = new TagBuilder("li");
 
@@ -103,7 +103,7 @@ namespace Tals.ProBono.Web.Helpers
 
             var span = new TagBuilder("span");
             span.SetInnerText(linkText);
-            var atag = htmlHelper.ActionLink(linkText, actionName, controllerName,routeValues,null).ToString();
+            var atag = htmlHelper.ActionLink(linkText, actionName, controllerName, routeValues, htmlAttributes).ToString();
             atag = atag.Replace(string.Format(">{0}<", linkText), string.Format(">{0}<", span.ToString()));
 
             li.InnerHtml = atag;

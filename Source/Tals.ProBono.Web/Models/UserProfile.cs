@@ -53,7 +53,7 @@ namespace Tals.ProBono.Web.Models
         }
 
         [Required]
-        [DisplayName("Attorney ID Number")]
+        [DisplayName("Attorney Bar Number")]
         public string DisciplinaryBoardNumber
         {
             get { return base["DisciplinaryBoardNumber"] as string; }

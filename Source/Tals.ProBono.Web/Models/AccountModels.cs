@@ -129,7 +129,7 @@ namespace Tals.ProBono.Web.Models
         public string Email { get; set; }
 
         [Required]
-        [DisplayName("Attorney ID Number")]
+        [DisplayName("Attorney Bar Number")]
         public string DisciplinaryBoardNumber { get; set; }
 
         [Required]

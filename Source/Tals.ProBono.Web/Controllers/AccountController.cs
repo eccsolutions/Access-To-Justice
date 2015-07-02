@@ -133,42 +133,50 @@ namespace Tals.ProBono.Web.Controllers
 
             if (ModelState.IsValid)
             {
-                // Attempt to register the user
-                MembershipCreateStatus createStatus = MembershipService.CreateUser(model.UserName, model.Password, model.Email, model.SecurityQuestion, model.SecurityQuestionAnswer);
-
-                if (createStatus == MembershipCreateStatus.Success)
+                //EDG: Check if  e-mail is unique
+                if (!String.IsNullOrWhiteSpace(model.Email) && Membership.FindUsersByEmail(model.Email).Count > 0)
                 {
-                    var profile = UserProfile.GetUserProfile(model.UserName);
-                    profile.FirstName = model.FirstName;
-                    profile.MiddleInitial = model.MiddleInitial;
-                    profile.LastName = model.LastName;
-                    profile.RegistrationDate = DateTime.Now;
-      
-                    var countyId = int.Parse(Session[ApplicationConstants.SIGN_UP_COUNTY_KEY].ToString());
-                    profile.County = _unitOfWork.CountyRepository.Get().First(x => x.Id == countyId).CountyName;
-
-                    profile.Income = Session[ApplicationConstants.SIGN_UP_INCOME_KEY] as int?;
-                    profile.HouseholdSize = Session[ApplicationConstants.SIGN_UP_HOUSEHOLD_SIZE_KEY] as int?;
-                    
-                    profile.Save();
-
-                    Roles.AddUserToRole(model.UserName, UserRoles.BasicUser);
-                    FormsService.SignIn(model.UserName, false /* createPersistentCookie */);
-
-                    _emailService.SendEmailTo(model.Email, new ClientRegistrationEmail(model.UserName));
-
-                    if (!String.IsNullOrEmpty(returnUrl))
-                    {
-                        return Redirect(returnUrl);
-                    }
-                    else
-                    {
-                        return RedirectToAction("Index", "Home");
-                    }
+                    ModelState.AddModelError("Email", "E-mail is already in use by another user");
                 }
                 else
                 {
-                    ModelState.AddModelError("", AccountValidation.ErrorCodeToString(createStatus));
+                    // Attempt to register the user
+                    MembershipCreateStatus createStatus = MembershipService.CreateUser(model.UserName, model.Password, model.Email, model.SecurityQuestion, model.SecurityQuestionAnswer);
+
+                    if (createStatus == MembershipCreateStatus.Success)
+                    {
+                        var profile = UserProfile.GetUserProfile(model.UserName);
+                        profile.FirstName = model.FirstName;
+                        profile.MiddleInitial = model.MiddleInitial;
+                        profile.LastName = model.LastName;
+                        profile.RegistrationDate = DateTime.Now;
+
+                        var countyId = int.Parse(Session[ApplicationConstants.SIGN_UP_COUNTY_KEY].ToString());
+                        profile.County = _unitOfWork.CountyRepository.Get().First(x => x.Id == countyId).CountyName;
+
+                        profile.Income = Session[ApplicationConstants.SIGN_UP_INCOME_KEY] as int?;
+                        profile.HouseholdSize = Session[ApplicationConstants.SIGN_UP_HOUSEHOLD_SIZE_KEY] as int?;
+
+                        profile.Save();
+
+                        Roles.AddUserToRole(model.UserName, UserRoles.BasicUser);
+                        FormsService.SignIn(model.UserName, false /* createPersistentCookie */);
+
+                        _emailService.SendEmailTo(model.Email, new ClientRegistrationEmail(model.UserName));
+
+                        if (!String.IsNullOrEmpty(returnUrl))
+                        {
+                            return Redirect(returnUrl);
+                        }
+                        else
+                        {
+                            return RedirectToAction("Index", "Home");
+                        }
+                    }
+                    else
+                    {
+                        ModelState.AddModelError("", AccountValidation.ErrorCodeToString(createStatus));
+                    }
                 }
             }
 
@@ -227,42 +235,50 @@ namespace Tals.ProBono.Web.Controllers
         {
             if (ModelState.IsValid)
             {
-                // Attempt to register the user
-                MembershipCreateStatus createStatus = MembershipService.CreateAttorney(model.UserName, model.Password, model.Email, model.SecurityQuestion, model.SecurityQuestionAnswer);
-
-                if (createStatus == MembershipCreateStatus.Success)
+                //EDG: Check if attorney e-mail is unique
+                if (Membership.FindUsersByEmail(model.Email).Count > 0)
                 {
-                    var profile = UserProfile.GetUserProfile(model.UserName);
-                    profile.FirstName = model.FirstName;
-                    profile.MiddleInitial = model.MiddleInitial;
-                    profile.LastName = model.LastName;
-                    profile.AddressLine1 = model.AddressLine1;
-                    profile.AddressLine2 = model.AddressLine2;
-                    profile.City = model.City;
-                    profile.County = _unitOfWork.CountyRepository.Get().First(x => x.Id == model.County).CountyName;
-                    profile.DisciplinaryBoardNumber = model.DisciplinaryBoardNumber;
-                    profile.LawFirm = model.Organization;
-                    profile.Phone = model.Phone;
-                    profile.State = model.State;
-                    profile.Zip = model.Zip;
-                    profile.RegistrationDate = DateTime.Now;
-                    profile.ReferralOrganization = _unitOfWork.ReferralOrganizationRepository.Get().OrgNameWithId(model.ReferralOrganization.GetValueOrDefault());
-
-                    profile.Save();
-
-                    Roles.AddUserToRole(model.UserName, UserRoles.PendingApproval);
-                    FormsService.SignIn(model.UserName, false /* createPersistentCookie */);
-
-                    _emailService.SendEmailTo(model.Email, new LawyerRegistrationEmail(model.UserName, model.Password));
-
-                    //EDG: Send e-mail to admin to approve new attorney
-                    _emailService.SendEmailTo(ConfigSettings.SiteEmail, new LawyerRegistrationNotificationEmail(model.UserName, model.FirstName, model.LastName, model.Organization, model.Email, model.Phone, model.DisciplinaryBoardNumber));
-
-                    return RedirectToAction("Index", "Home");
+                    ModelState.AddModelError("Email", "E-mail is already in use by another user");
                 }
                 else
                 {
-                    ModelState.AddModelError("", AccountValidation.ErrorCodeToString(createStatus));
+                    // Attempt to register the user
+                    MembershipCreateStatus createStatus = MembershipService.CreateAttorney(model.UserName, model.Password, model.Email, model.SecurityQuestion, model.SecurityQuestionAnswer);
+
+                    if (createStatus == MembershipCreateStatus.Success)
+                    {
+                        var profile = UserProfile.GetUserProfile(model.UserName);
+                        profile.FirstName = model.FirstName;
+                        profile.MiddleInitial = model.MiddleInitial;
+                        profile.LastName = model.LastName;
+                        profile.AddressLine1 = model.AddressLine1;
+                        profile.AddressLine2 = model.AddressLine2;
+                        profile.City = model.City;
+                        profile.County = _unitOfWork.CountyRepository.Get().First(x => x.Id == model.County).CountyName;
+                        profile.DisciplinaryBoardNumber = model.DisciplinaryBoardNumber;
+                        profile.LawFirm = model.Organization;
+                        profile.Phone = model.Phone;
+                        profile.State = model.State;
+                        profile.Zip = model.Zip;
+                        profile.RegistrationDate = DateTime.Now;
+                        profile.ReferralOrganization = _unitOfWork.ReferralOrganizationRepository.Get().OrgNameWithId(model.ReferralOrganization.GetValueOrDefault());
+
+                        profile.Save();
+
+                        Roles.AddUserToRole(model.UserName, UserRoles.PendingApproval);
+                        FormsService.SignIn(model.UserName, false /* createPersistentCookie */);
+
+                        _emailService.SendEmailTo(model.Email, new LawyerRegistrationEmail(model.UserName));
+
+                        //EDG: Send e-mail to admin to approve new attorney
+                        _emailService.SendEmailTo(ConfigSettings.SiteEmail, new LawyerRegistrationNotificationEmail(model.UserName, model.FirstName, model.LastName, model.Organization, model.Email, model.Phone, model.DisciplinaryBoardNumber));
+
+                        return RedirectToAction("Index", "Home");
+                    }
+                    else
+                    {
+                        ModelState.AddModelError("", AccountValidation.ErrorCodeToString(createStatus));
+                    }    
                 }
             }
 
@@ -271,7 +287,6 @@ namespace Tals.ProBono.Web.Controllers
             model.Counties = new SelectList(_unitOfWork.CountyRepository.Get().ToList(), "Id", "CountyName");
             model.ReferralOrganizations = new SelectList(_unitOfWork.ReferralOrganizationRepository.Get().ToList(), "Id", "OrgName");
             model.SecurityQuestions = new SelectList(QuestionSelectListItems, "Text", "Value");
-
 
             return View(model);
         }

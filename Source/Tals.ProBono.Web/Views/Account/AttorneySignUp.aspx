@@ -54,7 +54,7 @@
 
             <label class="editor-label">Security Question Answer</label>
             <div class="editor-field">
-                <%: Html.PasswordFor(model => model.SecurityQuestionAnswer) %>
+                <%: Html.TextBoxFor(model => model.SecurityQuestionAnswer) %>
                 <%: Html.ValidationMessageFor(model => model.SecurityQuestionAnswer) %>
             </div>
 
@@ -79,8 +79,7 @@
                 <%: Html.TextBoxFor(m => m.LastName) %>
                 <%: Html.ValidationMessageFor(m => m.LastName) %>
             </div>
-            <label class="editor-label">
-                Attorney ID Number</label>
+            <label class="editor-label"><%: Html.LabelFor(m => m.DisciplinaryBoardNumber) %></label>
             <div class="editor-field">
                 <%: Html.TextBoxFor(m => m.DisciplinaryBoardNumber) %>
                 <%: Html.ValidationMessageFor(m => m.DisciplinaryBoardNumber) %>

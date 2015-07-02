@@ -140,10 +140,9 @@ namespace Tals.ProBono.Domain.Services
 
     public class LawyerRegistrationEmail : EmailAssembler
     {
-        public LawyerRegistrationEmail(string userName, string password)
+        public LawyerRegistrationEmail(string userName)
         {
             AddProperty("UserName", userName);
-            AddProperty("Password", password);
             TemplatePath = GetTemplatePath("LawyerRegistration");
         }
     }
