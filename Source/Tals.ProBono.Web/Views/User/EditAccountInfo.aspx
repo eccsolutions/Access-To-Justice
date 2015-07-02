@@ -16,11 +16,14 @@
             <label>
                 Last Login Date:</label>
             <div class="profile-field, clear">
-                <%: String.Format("{0:g}", Model.LastLoginDate) %></div>
+                <%: String.Format("{0:g}", Model.LastLoginDate) %>
+                <%: Html.HiddenFor(m => m.LastLoginDate) %>
+            </div>
             <label>
                 Email Address:</label>
             <div class="editor-field">
                 <%: Html.TextBoxFor(m => m.Email) %>
+                <%: Html.ValidationMessageFor(m => m.Email) %>
             </div>
             <%: Html.HiddenFor(m => m.UserName) %>
             <p>

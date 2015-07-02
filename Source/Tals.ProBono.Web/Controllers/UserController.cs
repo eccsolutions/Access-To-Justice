@@ -1,4 +1,5 @@
 ﻿using MvcPaging;
+using System;
 using System.Linq;
 using System.Web.Mvc;
 using System.Web.Security;
@@ -8,6 +9,7 @@ using Tals.ProBono.Domain.Filters;
 using Tals.ProBono.Domain.Services;
 using Tals.ProBono.Web.Infrastructure;
 using Tals.ProBono.Web.Models;
+using Tals.ProBono.Web.Models.Shared;
 
 namespace Tals.ProBono.Web.Controllers
 {
@@ -29,8 +31,10 @@ namespace Tals.ProBono.Web.Controllers
         public ActionResult Profile(string userName) {
             
             userName = userName ?? _currentUser.UserName;
-            
+
             ViewData["UserName"] = userName;
+
+            this.SetViewMessage(this.GetTempMessage());
 
             if (_roles.IsUserInRole(userName, UserRoles.Attorney) || _roles.IsUserInRole(userName, UserRoles.PendingApproval))
                 return View("AttorneyProfile");
@@ -51,34 +55,144 @@ namespace Tals.ProBono.Web.Controllers
             return View(model);
         }
 
-        public ActionResult EditAccountInfo(string userName) {
-            var model = new AccountInfoViewModel();
-            var user = Membership.GetUser(userName);
+        public ActionResult EditAccountInfo(string userName)
+        {
+            //EDG: Check to only allow admins to edit any user.  Everyone else can only edit themselves
+            var isAdmin = _currentUser.IsInRole(UserRoles.Administrators);
+            var isAttorney = _currentUser.IsInRole(UserRoles.Attorney);
+            MembershipUser userToView;
 
-            if (user != null)
+            if (String.IsNullOrWhiteSpace(userName))
             {
-                model.Email = user.Email;
-                model.LastLoginDate = user.LastLoginDate;
-                model.UserName = user.UserName;
+                if (isAdmin)
+                {
+                    return RedirectToAction("AccountList", "Admin");
+                }
+
+                if (isAttorney)
+                {
+                    return RedirectToAction("List","Attorney");
+                }
+
+                return RedirectToAction("Questions","Client");
             }
+
+            if (isAdmin)
+            {
+                userToView = Membership.GetUser(userName);
+
+                if (userToView == null)
+                {
+                    this.SetTempMessage(MessageDto.CreateErrorMessage("User with username [" + userName + "] does not exist."));
+                    return RedirectToAction("AccountList", "Admin");
+                }
+            }
+            else
+            {
+                if (!String.Equals(userName, _currentUser.UserName, StringComparison.CurrentCultureIgnoreCase))
+                {
+                    if (isAttorney)
+                    {
+                        return RedirectToAction("List", "Attorney");
+                    }
+
+                    return RedirectToAction("Questions", "Client");
+                }
+
+                userToView = Membership.GetUser(_currentUser.UserName);
+
+                if (userToView == null)
+                {
+                    if (isAttorney)
+                    {
+                        return RedirectToAction("List", "Attorney");
+                    }
+
+                    return RedirectToAction("Questions", "Client");
+                }
+            }
+
+            var model = new AccountInfoViewModel()
+            {
+                Email = userToView.Email,
+                LastLoginDate = userToView.LastLoginDate,
+                UserName = userToView.UserName
+            };
 
             return View("EditAccountInfo", model);
         }
 
         [HttpPost]
-        public ActionResult EditAccountInfo(AccountInfoViewModel model) {
-            if (ModelState.IsValid) {
-                var user = Membership.GetUser(model.UserName);
-
-                if (user != null) {
-                    user.Email = model.Email;
-                    Membership.UpdateUser(user);
-                }
-
-                return RedirectToAction("Profile", new { userName = model.UserName });
+        public ActionResult EditAccountInfo(AccountInfoViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View("EditAccountInfo", model);
             }
 
-            return View("EditAccountInfo", model);
+            //EDG: Check to only allow admins to edit any user.  Everyone else can only edit themselves
+            var isAdmin = _currentUser.IsInRole(UserRoles.Administrators);
+            var isAttorney = _currentUser.IsInRole(UserRoles.Attorney);
+
+            MembershipUser userToEdit;
+
+            if (isAdmin)
+            {
+                userToEdit = Membership.GetUser(model.UserName);
+
+                if (userToEdit == null)
+                {
+                    this.SetTempMessage(MessageDto.CreateErrorMessage("User with username [" + model.UserName + "] does not exist."));
+                    return RedirectToAction("AccountList", "Admin");
+                }
+            }
+            else
+            {
+                if (!String.Equals(model.UserName, _currentUser.UserName, StringComparison.CurrentCultureIgnoreCase))
+                {
+                    if (isAttorney)
+                    {
+                        return RedirectToAction("List", "Attorney");
+                    }
+
+                    return RedirectToAction("Questions", "Client");
+                }
+
+                userToEdit = Membership.GetUser(_currentUser.UserName);
+
+                if (userToEdit == null)
+                {
+                    if (isAttorney)
+                    {
+                        return RedirectToAction("List", "Attorney");
+                    }
+
+                    return RedirectToAction("Questions", "Client");
+                }
+            }
+
+            var userToEditRoles = Roles.GetRolesForUser(userToEdit.UserName);
+
+            if (userToEditRoles.Contains(UserRoles.Attorney) && String.IsNullOrWhiteSpace(model.Email))
+            {
+                ModelState.AddModelError("Email", "E-mail is required");
+                return View("EditAccountInfo", model);
+            }
+
+            if (!String.IsNullOrWhiteSpace(model.Email)
+                && !String.Equals(model.Email, userToEdit.Email, StringComparison.CurrentCultureIgnoreCase) 
+                && Membership.FindUsersByEmail(model.Email).Count > 0)
+            {
+                ModelState.AddModelError("Email","E-mail is already in use by another user");
+                return View("EditAccountInfo", model);
+            }
+
+            userToEdit.Email = model.Email;
+            Membership.UpdateUser(userToEdit);
+
+            this.SetTempMessage(MessageDto.CreateSuccessMessage("Profile updated successfully"));
+
+            return RedirectToAction("Profile", new { userName = model.UserName });
         }
 
         public ActionResult DisplayClientProfile(string userName) {

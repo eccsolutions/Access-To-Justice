@@ -121,6 +121,8 @@ namespace Tals.ProBono.Web.Controllers
 
             var model = users.ToUserModels().ToPagedList(pageIndex, ConfigSettings.DefaultResultsPerPage);
 
+            this.SetViewMessage(this.GetTempMessage());
+
             return View(model);
         }
 
