@@ -35,7 +35,7 @@
                 </table>
             </div>
             <div class="editor-label">
-                <span>What is your question about?</span>
+                <span>What is your question about?  Try to keep your question to one sentence here. You tell us all the details in the box below.</span>
             </div>
             <div class="editor-field">
                 <%: Html.TextBoxFor(model => model.Subject) %>
@@ -52,7 +52,7 @@
 
             <div class="editor-label">
                 <span>What is the name of the person or organization causing your legal problem?</span>
-                <span>If you don't know, just leave it blank.</span>
+                <span>It could be your landlord, a credit card company, your spouse or someone else. If you don't know, just leave it blank.</span>
             </div>
 
             <div class="editor-field">

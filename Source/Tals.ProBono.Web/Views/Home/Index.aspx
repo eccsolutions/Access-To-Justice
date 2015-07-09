@@ -8,11 +8,11 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <h2>Welcome to the <%=ConfigSettings.SiteName %>!</h2>
     <p>
-        Volunteer lawyers may answer your legal questions for free. To use this website, you must first qualify for help.
+        This free service allows eligible Wisconsin residents to post legal questions for our volunteer lawyers. Lawyers who have signed up to participate in this program select the questions that they want to answer. To use this website, you must first qualify for help.
     </p>
     <h2>How it works</h2>
     <ol>
-        <li>See if you meet our rules for who we can help. Click on "Rules" at the bottom of this page. We will ask about your family, your income and your legal problem. We keep all of your answers secret. The lawyer who answers you will only know your name.</li>
+        <li>See if you meet our rules for who we can help. Click on "New User" below. We will ask about your family, your income and your legal problem. We keep all of your answers secret. The lawyer who answers you will only know your name and your question.</li>
         <li>If you meet our rules, you will need to log in to the website. If you create a password, you should keep it a secret. Don't give it to anyone else. Write it down and keep it in a safe place. You will need it to see the answer to your question.</li>
         <li>Sign in and ask your question.</li>
         <li>If you have a court date, we can't promise you will have an answer before your court date.</li>
