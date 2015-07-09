@@ -26,17 +26,17 @@
         <li><a href="#Q9">Navigating the Website and Selecting Questions to Answer</a></li>
         <li><a href="#10">Selecting Questions You Want to Answer</a></li>
         <li><a href="#Q11">How Do I Subscribe to a Category</a></li>
-        <li><a href="#Q12">Entering Hours for CLE Credit</a></li>
+        <li><a href="#Q12">Entering Hours</a></li>
         <li><a href="#Q13">How do I contact the administrator with a question?</a></li>
 
     </ul>
 
     <h3><a id="Q1">How does this service work?</a></h3>
     <p>
-        Wisconsin Legal Advice Online is based on the walk-in clinic or lawyer hotline model where clients request brief advice and counsel about a specific civil legal issue from a volunteer lawyer. Lawyers provide information and basic legal advice without any expectation of long-term representation.
+        Wisconsin Legal Advice Online is based on the walk-in clinic or lawyer hotline model where clients request brief advice and counsel about a specific civil legal issue from a volunteer lawyer. Lawyers provide information and basic legal advice on a pro bono basis without any expectation of long-term representation. This is the type of limited legal assistance authorized by SCR 20:1.2(c) and 6.5.
     </p>
     <p>
-        Users who meet eligibility (see Eligibility below) sign the <a href="/Account/AttorneyUseAgreement">use agreement</a> , create a username and password, post a request for legal advice information and provide facts about their case that will help the lawyer answer the question. Users will be asked to select a category (such as “housing” or “debt”) that best describes their question. The lawyer may ask for additional information before responding to the user’s request, but the user will have a choice to respond to that request or not. Users will provide their name, but no other identifying information will be shared with the volunteer lawyer. Users are informed that there is no guarantee that a question will be answered. If a question is not answered within 30 days, the user will receive an email from the website administrator instructing them to seek assistance elsewhere. The user will also be provided with a list of additional resources.
+        Wisconsin residents who meet eligibility requirements (see Eligibility below) sign the Client User Agreement , create a username and password, post a request for legal advice or information and provide facts about their case that will help the lawyer answer the question. Users will be asked to select a category (such as “housing” or “debt”) that best describes their question. The lawyer may ask for additional information before responding to the user’s request, but the user will have a choice to respond to that request or not. Users will provide their name and information about their question. Users are informed that there is no guarantee that a question will be answered. If a question is not answered within 30 days, the user will receive an email from the website administrator instructing them to seek assistance elsewhere. The user will also be provided with a list of additional resources.
     </p>
     <p>
         Lawyers who would like to participate must create a username and password, provide contact information and their State Bar member number, <a href="/Account/AttorneyUseAgreement">sign the lawyer use agreement</a> and request approval from the website administrator. Before the lawyer’s account is activated, the website administrator checks to ensure the lawyer is licensed in Wisconsin and is in good standing. Once a lawyer has been approved by the website administrator, the lawyer receives an email notification and can begin answering user questions.
@@ -53,13 +53,11 @@
         Eligibility for use of this service is limited to the following:
         <ul>
             <li>The user must have household income less than 250% of the federal poverty level;</li>
-            <li>The user may not have liquid assets exceeding $5,000 in value (this includes checking and savings account balances, as well as the value of any stocks or bonds);</li>
-            <li>The user may not be incarcerated;</li>
             <li>The user may not request assistance with criminal law matters.</li>
         </ul>
     </p>
     <p>
-        Users must provide their name, county and zip code in order to request advice.
+        Users must provide their name and county in order to request advice.
     </p>
     <p>
         Users agree to post no more than 3 legal questions per year.
@@ -77,12 +75,15 @@
 
     <h3><a id="Q5">What type of relationship exists between the client and lawyer?</a></h3>
     <p>
-        When a user submits a question and receives an answer from a lawyer, there will be a lawyer/client relationship formed between that client and the lawyer who responds. That relationship, however, will be limited in scope and duration as described in the use agreements for both users and lawyers. The representation will be limited to providing an answer to the legal question and will not involve any continuing representation of the client beyond the act of providing such an answer. The lawyer will provide short-term, limited legal services to a client (the eligible user of this site) without expectation by either the lawyer or the client that the lawyer will provide continuing representation in the matter. Both the eligible users and lawyers must consent to the limited nature of this relationship both as to scope and duration as indicated when they accept the terms of the use agreement. Eligible users and lawyers who do not accept the terms of the use agreement will not be allowed access to the site.
+        When a user submits a question and receives an answer from a lawyer, there will be a lawyer/client relationship formed between that client and the lawyer who responds. That relationship, however, will be limited in scope and duration as described in the use agreements for both users and lawyers. The representation will be limited to providing an answer to the legal question and will not involve any continuing representation of the client beyond the act of providing such an answer. The lawyer will provide short-term, limited legal services to a client (the eligible user of this site) without expectation by either the lawyer or the client that the lawyer will provide continuing representation in the matter. The assistance is provided on a pro bono basis without fee or expectation of a fee. Both the eligible users and lawyers must consent to the limited nature of this relationship both as to scope and duration as indicated when they accept the terms of the use agreement. Eligible users and lawyers who do not accept the terms of the use agreement will not be allowed access to the site.
     </p>
 
     <h3><a id="Q6">How do lawyers check for conflicts of interest?</a></h3>
     <p>
-        Your participation in Wisconsin Legal Advice Online is governed by the Wisconsin Rules of Professional Conduct, including SCR 20:1.2(c) and 6.5 Under Rule 6.5, because of the pro bono publico nature of the limited scope representation provided through this service and because of the involvement of the Wisconsin Access to Justice Commission as the sponsor, the general rules fon conflicts of interest do not apply to a lawyer's participation in this project. Instead, the only conflicts of interest that would preclude a lawyer from answering a question for an eligible user of OnlineTNJustice are conflicts of interest that the lawyer actually knows of at the time that they receive or answer a client’s question. This means that the possibility exists, and the clients agree that they understand, that a lawyer who answers a question, or another lawyer with whom they practice in a firm, may actually be representing other parties with an interest in the question. The client’s name will be provided to the lawyer so that the lawyer can make sure not to answer the question if the lawyer knows that (s)he would have a conflict of interest. If, based on the information the client provides, whether user name or any details of the question, the lawyer actually knows of a conflict of interest, the question will be referred to another volunteer lawyer.
+        Your participation in Wisconsin Legal Advice Online is governed by the Wisconsin Rules of Professional Conduct, including SCR 20:1.2(c) and 6.5. Under Rule 6.5, because of the short term limited legal services offered through this website and because of the involvement of the Wisconsin Access to Justice Commission as the primary sponsor, some rules on conflicts of interest do not apply to a lawyer's participation in this project. Instead, the only conflicts of interest that would preclude a lawyer from answering a question for an eligible user of this website are conflicts of interest that the lawyer actually knows of at the time that they receive or answer a client’s question. This means that the possibility exists, and the clients agree that they understand, that a lawyer who answers a question, or another lawyer with whom they practice in a firm, may actually be representing other parties with an interest in the question (the lawyer may simply be unaware of the conflict at the time the brief legal assistance is provided). The client’s name will be provided to the lawyer so that the lawyer can make sure not to answer the question if the lawyer knows that (s)he would have a conflict of interest. If, based on the information the client provides, whether user name or any details of the question, the lawyer actually knows of a conflict of interest, the question will be referred to another volunteer lawyer.
+    </p>
+    <p>
+        You should enter the name of the users you assist into your firm’s conflict database. They are your client, so you would not be able to handle a matter adverse to them in the future. However, under Rule 6.5, your conflict is imputed to other lawyers in your firm (only you would have a conflict, not the other lawyers in your firm).
     </p>
 
     <h3><a id="Q7">What about professional liability insurance coverage?</a></h3>
@@ -92,10 +93,9 @@
 
     <h3><a id="Q8">Is there a confidentiality issue with client information/lawyer advice being housed on the internet?</a></h3>
     <p>
-        This site is designed to protect client privacy. The program is administered through a secure website that encrypts your communications and limits access to registered users. Confidentiality will be maintained since only the website administrator has access to content between a client and a lawyer. Information available to the website administrator and the lawyer responding to a client request shall remain confidential, subject to the limitations of the Privacy/Confidentiality Policy. However, client requests for legal advice and the response of the lawyers participating in Wisconsin Legal Advice Online may be maintained in a database for review in order to measure the effectiveness of the project. Steps will be taken to maintain the security of this database and it will only be utilized by the administrator but an absolute guarantee of security is not possible when using the internet and internet based systems.
-For each visitor to the Webpage the web server automatically recognizes only the consumer domain name. This is the information that is collected for statistical purposes.
-Aggregate information is collected on the pages consumers access or visit on this website.
-The information collected is used to improve the content of the Web page and is not shared with other organizations for commercial purposes. Information may be disclosed when legally required at the request of government authorities conducting an investigation, to verify or enforce compliance with the policies governing our website and applicable laws or to protect against misuses or unauthorized use of our website.
+        This site is designed to protect client privacy. The program is administered through a secure website that encrypts your communications and limits access to registered users. Confidentiality will be maintained since only the website administrator has access to content between a client and a lawyer. Information available to the website administrator and the lawyer responding to a client request shall remain confidential, subject to the limitations of the Privacy/Confidentiality Policy. However, client requests for legal advice and the response of the lawyers participating in Wisconsin Legal Advice Online may be maintained in a secure database for review in order to measure the effectiveness of the project. Steps will be taken to maintain the security of this database and it will only be utilized by the administrator but an absolute guarantee of security is not possible when using the internet and internet based systems. For each visitor to the Webpage the web server automatically recognizes only the user’s domain name. This is the information that is collected for statistical purposes. Aggregate information is collected on the pages user’s access or visit on this website. The information collected is used to improve the content of the Web page and is not shared with other organizations for commercial purposes. Information may be disclosed when legally required at the request of government authorities conducting an investigation, to verify or enforce compliance with the policies governing our website and applicable laws or to protect against misuses or unauthorized use of our website.
+    </p>
+
 
 
         <h3><a id="Q9">Navigating the Website and Selecting Questions to Answer</a></h3>
@@ -134,9 +134,9 @@ The information collected is used to improve the content of the Web page and is 
             To subscribe to a Category (for example, immigration), click on the “Practice Areas” tab at the top of the screen. Scroll down to the Category you are interested in and click on the “Subscribe” button. You will be asked if you are sure that you want to subscribe to the category. You will then enter your email address and click “Subscribe.” You can unsubscribe at any time.
         </p>
 
-        <h3><a id="Q12">Entering Hours for CLE Credit</a></h3>
+        <h3><a id="Q12">Entering Hours</a></h3>
         <p>
-            Each time you attempt to log out of the website, you will be prompted to enter the time you have spent researching and answering questions. You may log your time in 15-minute increments. We do this to help us measure the impact that your donation of time is having in Wisconsin. You may view your hours at any time by clicking on “My Profile” at the top of the page.
+            Each time you attempt to log out of the website, you will be prompted to enter the time you have spent researching and answering questions. You may log your time in 15-minute increments. We do this to help us measure one aspect of the impact that your donation of time is having in Wisconsin. You may view your hours at any time by clicking on “My Profile” at the top of the page.
         </p>
 
         <h3><a id="Q13">How do I contact the administrator with a question?</a></h3>
