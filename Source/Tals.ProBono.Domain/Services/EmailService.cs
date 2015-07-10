@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.IO;
 using System.Linq;
 using System.Net.Mail;
@@ -24,6 +25,10 @@ namespace Tals.ProBono.Domain.Services
     {
         private static String _appPath;
 
+        private static int _defaultPort = 25;
+        private static string _defaultHost = "localhost";
+        private static SmtpClient _smtpClient;
+
         public EmailService( String appPath )
         {
             _appPath = appPath;
@@ -47,10 +52,9 @@ namespace Tals.ProBono.Domain.Services
         private static void SendEmail(string email, IEmailAssembler assembler)
         {
             try {
-                using (var smtpClient = new SmtpClient())
                 using (var mailMessage = BuildMailMessage(email, assembler))
                 {
-                    smtpClient.Send(mailMessage);
+                    getSmtpClient().Send(mailMessage);
                 }
             }
             catch {
@@ -96,6 +100,46 @@ namespace Tals.ProBono.Domain.Services
 
             return ReplaceVariables(text, assembler.Properties);
         }
+
+        private static SmtpClient getSmtpClient()
+        {
+            if (_smtpClient == null)
+            {
+                if (ConfigurationManager.ConnectionStrings["SmtpClient"] == null)
+                {
+                    throw new ConfigurationErrorsException(string.Format("SmtpClient Connection String is not set or is invalid"));
+                }
+
+                var connectionString = ConfigurationManager.ConnectionStrings["SmtpClient"].ConnectionString;
+
+                var keyValuePairs = connectionString.Split(';')
+                                                    .Where(kvp => kvp.Contains('='))
+                                                    .Select(kvp => kvp.Split(new char[] { '=' }, 2))
+                                                    .ToDictionary(kvp => kvp[0].Trim(),
+                                                                  kvp => kvp[1].Trim(),
+                                                                  StringComparer.InvariantCultureIgnoreCase);
+                String host = _defaultHost;
+                int port = _defaultPort;
+
+                if (keyValuePairs.ContainsKey("host"))
+                {
+                    host = keyValuePairs["host"];
+                }
+                if (keyValuePairs.ContainsKey("port"))
+                {
+                    port = Convert.ToInt32( keyValuePairs["port"] );
+                }
+
+                _smtpClient = new SmtpClient(host, port);
+
+                if (keyValuePairs.ContainsKey("user") && keyValuePairs.ContainsKey("password"))
+                {
+                    _smtpClient.Credentials = new System.Net.NetworkCredential(keyValuePairs["user"], keyValuePairs["password"] );
+                }
+            }
+            return _smtpClient;
+        }
+
     }
 
     public abstract class EmailAssembler : IEmailAssembler
@@ -196,4 +240,5 @@ namespace Tals.ProBono.Domain.Services
             QuestionAssigned
         }
     }
+
 }

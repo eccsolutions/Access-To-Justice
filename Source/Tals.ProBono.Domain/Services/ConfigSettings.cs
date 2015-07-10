@@ -42,7 +42,8 @@ namespace Tals.ProBono.Domain.Services
             get { return _adminUserName ?? (_adminUserName = GetConfigSetting("AdminUserName")); }
         }
 
-        private static string GetConfigSetting(string settingName) {
+        private static string GetConfigSetting(string settingName)
+        {
             if (String.IsNullOrWhiteSpace(ConfigurationManager.AppSettings[settingName]))
             {
                 throw new ConfigurationErrorsException(string.Format("Config setting [{0}] is not set or is invalid", settingName));
