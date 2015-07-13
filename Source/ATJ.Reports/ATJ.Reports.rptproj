@@ -10,6 +10,18 @@
       <Name>AccessToJusticeServices.rds</Name>
       <FullPath>AccessToJusticeServices.rds</FullPath>
     </ProjectItem>
+    <ProjectItem>
+      <Name>QA AccessToJustice.rds</Name>
+      <FullPath>QA AccessToJustice.rds</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>QA AccessToJusticeServices.rds</Name>
+      <FullPath>QA AccessToJusticeServices.rds</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>DataSource1.rds</Name>
+      <FullPath>DataSource1.rds</FullPath>
+    </ProjectItem>
   </DataSources>
   <DataSets>
     <ProjectItem>
@@ -41,9 +53,12 @@
       <Options>
         <OutputPath>bin\Debug</OutputPath>
         <TargetServerVersion>SSRS2008R2</TargetServerVersion>
+        <TargetServerURL>http://mlsa-mojo-mssql/ReportServer</TargetServerURL>
         <TargetFolder>ATJ.Reports</TargetFolder>
         <TargetDataSourceFolder>Data Sources</TargetDataSourceFolder>
+        <OverwriteDataSources>true</OverwriteDataSources>
         <TargetDatasetFolder>Datasets</TargetDatasetFolder>
+        <OverwriteDatasets>true</OverwriteDatasets>
         <TargetReportPartFolder>Report Parts</TargetReportPartFolder>
       </Options>
     </Configuration>

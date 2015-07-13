@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RptDataSource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="QA AccessToJusticeServices">
+  <ConnectionProperties>
+    <Extension>SQL</Extension>
+    <ConnectString>Data Source=MLSA-MOJO-MsSql;Initial Catalog="QA AccessToJusticeServices"</ConnectString>
+    <IntegratedSecurity>true</IntegratedSecurity>
+  </ConnectionProperties>
+  <DataSourceID>fd0f01c4-7099-4ee5-8b19-e07cf3fe7f4e</DataSourceID>
+</RptDataSource>

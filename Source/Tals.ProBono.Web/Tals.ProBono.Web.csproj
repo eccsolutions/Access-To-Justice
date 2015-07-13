@@ -345,6 +345,9 @@
     <Content Include="packages.config" />
     <None Include="Properties\PublishProfiles\Local - Production.pubxml" />
     <None Include="Properties\PublishProfiles\Production.pubxml" />
+    <None Include="Properties\PublishProfiles\QA.pubxml" />
+    <None Include="Properties\PublishProfiles\tim local.pubxml" />
+    <None Include="Properties\PublishProfiles\Tim.pubxml" />
     <None Include="Referenced Components\Telerik.Web.Mvc.dll" />
     <Content Include="markitup\bbcode-set-parsed.js" />
     <Content Include="markitup\colorpicker.js" />

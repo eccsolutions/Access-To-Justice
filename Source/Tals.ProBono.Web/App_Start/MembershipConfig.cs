@@ -12,7 +12,7 @@ namespace Tals.ProBono.Web
 #if DEBUG
             var db = new DatabaseInitializer();
             db.MigrateDatabaseToLatestVersion();
-            SqlServices.Install("BPMQASQL\\K2CONTENTDEV", "AccessToJusticeServices", SqlFeatures.All);
+            SqlServices.Install("MLSA-MOJO-MsSQl", "AccessToJusticeServicesQA", SqlFeatures.All);
 
             if (!Roles.RoleExists(UserRoles.Administrators))
             {
