@@ -11,12 +11,12 @@
     <p id="WarningMessage">
         Hours should be recorded based on actual time spent researching and answering questions.
     </p>
-    <fieldset style="border-color: #800000; border-style: solid; border-width: medium">
+    <!--<fieldset style="border-color: #800000; border-style: solid; border-width: medium">
     <legend><img src="<%: Url.Image("important.png") %>" alt="Important!" /></legend>
-        <!--<p style="font-weight:bold;color:#800000">
+        <p style="font-weight:bold;color:#800000">
             Please take a moment to complete our short survey. Your feedback is important to us. <a href="https://www.surveymonkey.com/s/P2NCNYN" target="_blank">Click Here!</a>
-        </p>-->
-    </fieldset>
+        </p>
+    </fieldset>-->
     <% using (Html.BeginForm())
        {%>
     <%:Html.ValidationSummary("Please correct the errors shown below:")%>
