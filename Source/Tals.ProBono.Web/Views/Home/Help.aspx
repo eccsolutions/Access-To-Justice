@@ -43,12 +43,16 @@
         </a></li>
         <li><a href="http://www.judicare.org/">Wisconsin Judicare
         </a></li>
+        <li><a href="http://law.marquette.edu/mvlc/">Marquette Volunteer Legal Clinic
+        </a></li>
+        <li><a href="http://law.wisc.edu/clinics/">UW Law School Clinics
+        </a></li>
     </ul>
 
     <h3>You can find helpful legal information at these places:</h3>
     <ul>
         <li><a href="http://www.wisbar.org/forPublic/INeedInformation/Pages/Common-Legal-Questions.aspx">Common legal questions - from the State Bar of Wisconsin</a></li>
-        <li><a href="http://www.tennlegalaid.com/Library">State Law Library</a></li>
+        <li><a href="http://wilawlibrary.gov/">State Law Library</a></li>
         <li><a href="http://www.wicourts.gov/services/public/selfhelp/index.htm">Wisconsin Court System Self-Help Center</a></li>
     </ul>
     <h3>Need help with food, clothing, shelter, medicine or other services?</h3>

@@ -7,6 +7,6 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
     <p>We're sorry, but you do not meet the rules to be able to use this website.</p>
-    <h2>Other places to find legal help and information</h2>
+    <h2><a href="/Home/Help">Other places to find legal help and information</a></h2>
     <p>If you have problems with this website, you may contact us at <a href="mailto:<%=ConfigSettings.SiteEmail%>"><%=ConfigSettings.SiteEmail%></a>. This email address is for technical questions or website problems only. We will not answer your legal question.</p>
 </asp:Content>

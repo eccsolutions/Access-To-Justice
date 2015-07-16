@@ -128,6 +128,10 @@
                         <li><a href="http://wispd.org/">
                         Wisconsin State Public Defenders
                         </a></li>
+                        <li><a href="http://law.marquette.edu/mvlc/">Marquette Volunteer Legal Clinic
+                        </a></li>
+                        <li><a href="http://law.wisc.edu/clinics/">UW Law School Clinics
+                        </a></li>
                     </ul>
                 </asp:ContentPlaceHolder>
             </div>
