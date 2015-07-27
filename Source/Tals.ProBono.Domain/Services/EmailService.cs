@@ -16,8 +16,8 @@ namespace Tals.ProBono.Domain.Services
 
     public interface IEmailService
     {
-        void SendEmailTo(string emailAddress, IEmailAssembler assembler);
-        void SendEmailFor(Category category, IEmailAssembler assembler);
+        void SendEmailTo(string emailAddress, IEmailAssembler assembler, bool bccSiteEmail);
+        void SendEmailFor(Category category, IEmailAssembler assembler, bool bccSiteEmail);
     }
 
     public class EmailService : IEmailService
@@ -29,20 +29,20 @@ namespace Tals.ProBono.Domain.Services
         //    _unitOfWork = unitOfWork;
         //}
 
-        public void SendEmailTo(string emailAddress, IEmailAssembler assembler)
+        public void SendEmailTo(string emailAddress, IEmailAssembler assembler, bool bccSiteEmail)
         {
             if (!string.IsNullOrEmpty(emailAddress))
             {
-                SendEmail(emailAddress, assembler);
+                SendEmail(emailAddress, assembler, bccSiteEmail);
                 //_unitOfWork.Save();
             }
         }
 
-        private static void SendEmail(string email, IEmailAssembler assembler)
+        private static void SendEmail(string email, IEmailAssembler assembler, bool bccSiteEmail)
         {
             try {
                 using (var smtpClient = new SmtpClient())
-                using (var mailMessage = BuildMailMessage(email, assembler))
+                using (var mailMessage = BuildMailMessage(email, assembler, bccSiteEmail))
                 {
                     smtpClient.Send(mailMessage);
                 }
@@ -51,20 +51,23 @@ namespace Tals.ProBono.Domain.Services
             }
         }
 
-        private static MailMessage BuildMailMessage(string email, IEmailAssembler assembler)
+        private static MailMessage BuildMailMessage(string email, IEmailAssembler assembler, bool bccSiteEmail)
         {
             var text = BuildMessage(assembler);
             var message = new MailMessage(ConfigSettings.SiteEmail, email, GetSubject(text), text) { IsBodyHtml = true };
-            message.Bcc.Add(ConfigSettings.SiteEmail);
+            if (bccSiteEmail)
+            {
+                message.Bcc.Add(ConfigSettings.SiteEmail);    
+            }
             return message;
         }
 
-        public void SendEmailFor(Category category, IEmailAssembler assembler)
+        public void SendEmailFor(Category category, IEmailAssembler assembler, bool bccSiteEmail)
         {
             var subscribers = category.Subscriptions.Select(s => s.Email).ToList();
 
             foreach(var subscriber in subscribers)
-                SendEmail(subscriber, assembler);
+                SendEmail(subscriber, assembler, bccSiteEmail);
 
             //_unitOfWork.Save();
         }

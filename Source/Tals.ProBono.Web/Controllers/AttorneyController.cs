@@ -150,7 +150,7 @@ namespace Tals.ProBono.Web.Controllers
                     var user = Membership.GetUser(question.CreatedBy);
                     if (user != null)
                         _emailService.SendEmailTo(user.Email,
-                                                  new StandardEmail(StandardEmail.EmailTemplate.LawyerReply));
+                                                  new StandardEmail(StandardEmail.EmailTemplate.LawyerReply), true);
 
                     return RedirectToAction("Details", new { id, r = url.Url });
                 }
@@ -251,7 +251,7 @@ namespace Tals.ProBono.Web.Controllers
             Message = "You have successfully subscribed to " + subscription.Category.ShortDescription;
 
             _emailService.SendEmailTo(UserModel.Current.Email, new SubscribeEmail(subscription.Category.ShortDescription,
-                ConfigSettings.SiteUrl.TrimEnd('/') + Url.Action("Unsubscribe", new {id = subscription.CategoryId})));
+                ConfigSettings.SiteUrl.TrimEnd('/') + Url.Action("Unsubscribe", new {id = subscription.CategoryId})),false);
 
             if (returnUrl == string.Empty) returnUrl = null;
 

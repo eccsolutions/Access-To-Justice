@@ -84,6 +84,12 @@
                     <a style="margin-left: 0;" href="http://www.azlawhelp.org/A2JRedirect/A2JResources-FindALawyer.htm" target="_blank" title="The State Bar's Find A Lawyer page">The State Bar's Find A Lawyer page</a>
                     <p/><a style="margin-left:0" href="http://www.azlawhelp.org/A2JRedirect/A2JResources-MCoLawyerReferral.htm" target="_blank" title="Maricopa County Lawyer Referral">Maricopa County Lawyer Referral</a>
                     <p/><a style="margin-left:0" href="http://www.azlawhelp.org/A2JRedirect/A2JResources-PCoLawyerReferral.htm" target="_blank" title="Pima County Lawyer Referral">Pima County Lawyer Referral</a>
+
+                    <h3>Other Information</h3>
+                    <a style="margin-left: 0;" href="http://www.azlawhelp.org" target="_blank" title="Legal LEARN">Legal LEARN</a>                        
+                    <p/><a style="margin-left: 0;" href="http://www.azcadv.org" target="_blank" title="National Domestic Violence Hotline ">National Domestic Violence Hotline</a> (800-799-7233)
+                    <p/><a style="margin-left: 0;" href="http://www.azb.uscourts.gov" target="_blank" title="Bankruptcy Hotline ">Bankruptcy Hotline</a>
+                    <p/><a style="margin-left: 0;" href="http://legalaidaz.com" target="_blank" title="Legal Aid of Arizona">Legal Aid of Arizona</a>
                 </asp:ContentPlaceHolder>
             </div>
             <div id="content">

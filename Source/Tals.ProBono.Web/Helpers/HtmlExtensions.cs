@@ -140,12 +140,12 @@ namespace Tals.ProBono.Web.Helpers
             return MvcHtmlString.Create(value);
         }
 
-        public static MvcHtmlString RoleActionMenuLink(this HtmlHelper helper, String linkText, String actionName, String controllerName, String roleName, object routeValues=null)
+        public static MvcHtmlString RoleActionMenuLink(this HtmlHelper helper, String linkText, String actionName, String controllerName, String roleName, object routeValues=null, object htmlAttributes=null)
         {
             string[] roles = roleName.Split(',');
 
             return roles.Where(Roles.IsUserInRole).Count() > 0 ?
-                helper.ActionMenuItem(linkText, actionName, controllerName, routeValues) :
+                helper.ActionMenuItem(linkText, actionName, controllerName, routeValues, htmlAttributes) :
                 MvcHtmlString.Empty;
         }
 

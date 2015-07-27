@@ -75,7 +75,7 @@ namespace Tals.ProBono.Web.Controllers
             var user = Membership.GetUser(username);
 
             if (user != null)
-                _emailService.SendEmailTo(user.Email, new StandardEmail(StandardEmail.EmailTemplate.AccountApproved));
+                _emailService.SendEmailTo(user.Email, new StandardEmail(StandardEmail.EmailTemplate.AccountApproved),false);
 
             return RedirectToAction("AccountList");
         }
@@ -155,7 +155,7 @@ namespace Tals.ProBono.Web.Controllers
 
                 if (user != null)
                     _emailService.SendEmailTo(user.Email,
-                                              new StandardEmail(StandardEmail.EmailTemplate.QuestionAssigned));
+                                              new StandardEmail(StandardEmail.EmailTemplate.QuestionAssigned),true);
             }
 
             return RedirectToAction("Details", "Attorney", new { id = editViewModel.QuestionId });

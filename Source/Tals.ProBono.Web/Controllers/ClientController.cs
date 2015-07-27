@@ -135,7 +135,7 @@ namespace Tals.ProBono.Web.Controllers
                     var category = _unitOfWork.CategoryRepository.Get().WithId(question.CategoryId.GetValueOrDefault());
 
                     _emailService.SendEmailFor(category, new SubscriptionEmail(category.ShortDescription, question.CourtDateAsShortString,
-                                                                      question.Subject, question.Body, detailsUrl, unsubscribeUrl));
+                                                                      question.Subject, question.Body, detailsUrl, unsubscribeUrl),true);
 
                     _auditor.Audit(_currentUser.UserName, question.Id);
 
@@ -205,7 +205,7 @@ namespace Tals.ProBono.Web.Controllers
                             _emailService.SendEmailTo(user.Email,
                                                       new ClientReplyEmail(question.Category.CategoryName,
                                                                            question.CourtDateAsShortString,
-                                                                           question.Subject, question.Body, detailsUrl));
+                                                                           question.Subject, question.Body, detailsUrl),false);
                         }
                     }
 

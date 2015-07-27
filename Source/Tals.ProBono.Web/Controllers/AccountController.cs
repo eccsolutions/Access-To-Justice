@@ -162,7 +162,7 @@ namespace Tals.ProBono.Web.Controllers
                         Roles.AddUserToRole(model.UserName, UserRoles.BasicUser);
                         FormsService.SignIn(model.UserName, false /* createPersistentCookie */);
 
-                        _emailService.SendEmailTo(model.Email, new ClientRegistrationEmail(model.UserName));
+                        _emailService.SendEmailTo(model.Email, new ClientRegistrationEmail(model.UserName),true);
 
                         if (!String.IsNullOrEmpty(returnUrl))
                         {
@@ -268,10 +268,10 @@ namespace Tals.ProBono.Web.Controllers
                         Roles.AddUserToRole(model.UserName, UserRoles.PendingApproval);
                         FormsService.SignIn(model.UserName, false /* createPersistentCookie */);
 
-                        _emailService.SendEmailTo(model.Email, new LawyerRegistrationEmail(model.UserName));
+                        _emailService.SendEmailTo(model.Email, new LawyerRegistrationEmail(model.UserName), false);
 
                         //EDG: Send e-mail to admin to approve new attorney
-                        _emailService.SendEmailTo(ConfigSettings.SiteEmail, new LawyerRegistrationNotificationEmail(model.UserName, model.FirstName, model.LastName, model.Organization, model.Email, model.Phone, model.DisciplinaryBoardNumber));
+                        _emailService.SendEmailTo(ConfigSettings.SiteEmail, new LawyerRegistrationNotificationEmail(model.UserName, model.FirstName, model.LastName, model.Organization, model.Email, model.Phone, model.DisciplinaryBoardNumber), false);
 
                         return RedirectToAction("Index", "Home");
                     }

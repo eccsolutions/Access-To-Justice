@@ -28,7 +28,7 @@
         <%: Html.RoleActionMenuLink("Home", "ApprovalNeeded", "Home", UserRoles.PendingApproval) %>
         <%: Html.RoleActionMenuLink("Admin View", "List", "Admin", UserRoles.Administrators) %>
         <%: Html.RoleActionMenuLink("Advocate", "Index", "Pages", UserRoles.AdministratorsAndAttorny, new {id=ApplicationConstants.PAGE_ID_ADVOCATE}) %>
-        <%: Html.RoleActionMenuLink("Forums", "Index", "Forums", UserRoles.AdministratorsAndAttorny) %>
+        <%: Html.RoleActionMenuLink("Forums", "Index", "Forums", UserRoles.AdministratorsAndAttorny, null, new {target="_blank"}) %>
     </ul>
     </asp:ContentPlaceHolder>
 </asp:Content>
