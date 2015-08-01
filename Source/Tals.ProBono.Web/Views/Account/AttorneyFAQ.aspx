@@ -47,7 +47,7 @@
         <p>Eligibility for use of the Online Arizona Justice system is limited to the following:</p>
         <ul>
             <li>The user must be an Arizona resident or have an issue in Arizona;</li>
-            <li>The user must be at least 14 years of age; and</li>
+            <li>The user must be at least <%=ConfigSettings.MinimumAgeRequirement %> years of age; and</li>
             <li>The user must provide their name and county in order to request advice.</li>
         </ul>
     

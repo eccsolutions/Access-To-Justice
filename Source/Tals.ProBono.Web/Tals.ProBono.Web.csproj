@@ -367,6 +367,8 @@
     <Content Include="Content\fonts\fontawesome-webfont.woff" />
     <Content Include="Content\fonts\fontawesome-webfont.woff2" />
     <Content Include="Content\fonts\FontAwesome.otf" />
+    <Content Include="Mail.config" />
+    <Content Include="MachineKey.config" />
     <None Include="Properties\PublishProfiles\Local - Production.pubxml" />
     <None Include="Properties\PublishProfiles\Production.pubxml" />
     <None Include="Referenced Components\Telerik.Web.Mvc.dll" />

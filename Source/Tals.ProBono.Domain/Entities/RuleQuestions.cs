@@ -18,7 +18,7 @@ namespace Tals.ProBono.Domain.Entities
     {
         public string Question
         {
-            get { return "How old are you? (You must be at least 14 years old)."; }
+            get { return "How old are you? (You must be at least "+ConfigSettings.MinimumAgeRequirement+" years old)."; }
         }
 
         [Required]
@@ -28,7 +28,7 @@ namespace Tals.ProBono.Domain.Entities
 
         public bool IsValid
         {
-            get { return Answer > 13; }
+            get { return Answer >= ConfigSettings.MinimumAgeRequirement; }
         }
 
         public override string ToString()

@@ -172,12 +172,6 @@ namespace Tals.ProBono.Domain.Services
         {
             AddProperty("CategoryName", categoryName);
             AddProperty("UnsubscribeUrl", unsubscribeUrl);
-            Properties = new Dictionary<string, string>
-                             {
-                                 {"CategoryName", categoryName},
-                                 {"UnsubscribeUrl", unsubscribeUrl}
-                             };
-
             TemplatePath = GetTemplatePath("Subscribed");
         }
     }
@@ -203,8 +197,6 @@ namespace Tals.ProBono.Domain.Services
             AddProperty("Subject", subject);
             AddProperty("Body", body);
             AddProperty("QuestionUrl", questionUrl);
-            AddProperty("SiteName", ConfigSettings.SiteName);
-            AddProperty("SiteEmail", ConfigSettings.SiteEmail);
 
             TemplatePath = GetTemplatePath("ClientReply");
         }

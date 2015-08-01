@@ -14,6 +14,7 @@ namespace Tals.ProBono.Domain.Services
         private static string _adminUserName;
         private static int? _defaultResultsPerPage;
         private static int? _attorneyTimeoutInMinutes;
+        private static int? _minimumAgeRequirement;
 
         public static string TemplatePath
         {
@@ -162,6 +163,27 @@ namespace Tals.ProBono.Domain.Services
                 }
 
                 return _attorneyTimeoutInMinutes.Value;
+            }
+        }
+
+        public static int MinimumAgeRequirement
+        {
+            get
+            {
+                if (_minimumAgeRequirement == null)
+                {
+                    int parsedInt;
+                    if (Int32.TryParse(ConfigurationManager.AppSettings["MinimumAgeRequirement"], out parsedInt))
+                    {
+                        _minimumAgeRequirement = parsedInt;
+                    }
+                    else
+                    {
+                        _minimumAgeRequirement = 18;
+                    }
+                }
+
+                return _minimumAgeRequirement.Value;
             }
         }
     }

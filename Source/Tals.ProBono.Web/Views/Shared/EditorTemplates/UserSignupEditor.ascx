@@ -1,8 +1,9 @@
 ﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<dynamic>" %>
+<%@ Import Namespace="Tals.ProBono.Domain.Services" %>
 <p class="bold">We will ask questions to make sure:</p>
 <ul>
-    <li>You live or have a problem in Arizona</li>
-    <li>You are 14 years old or older</li>
+    <li>You live or have a problem in <%=ConfigSettings.StateName %></li>
+    <li>You are <%=ConfigSettings.MinimumAgeRequirement %> years old or older</li>
     <li>You don't already have a lawyer helping you with this problem</li>
 </ul>
     <p>We can only help you if all of the above are true. You must agree to tell the truth. We will keep your answers a secret.</p>
