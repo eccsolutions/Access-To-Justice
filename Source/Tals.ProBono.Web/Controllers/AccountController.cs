@@ -1,16 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
+using Tals.ProBono.Domain.Constants;
 using Tals.ProBono.Domain.Entities;
 using Tals.ProBono.Domain.Filters;
 using Tals.ProBono.Domain.Services;
 using Tals.ProBono.Web.Infrastructure;
 using Tals.ProBono.Web.Models;
+using Tals.ProBono.Web.Models.Shared;
+using Tals.ProBono.Web.Models.View.Account;
 using ViewRes;
 
 namespace Tals.ProBono.Web.Controllers
@@ -18,11 +19,16 @@ namespace Tals.ProBono.Web.Controllers
 
     [HandleError]
     [DynamicMasterPageFilter]
-    public class AccountController : Controller
+    public class AccountController : ControllerBase
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IEmailService _emailService;
         readonly IUser _currentUser;
+
+        private bool profileAnswersAreValid()
+        {
+            return (Session[ApplicationConstants.SIGN_UP_COUNTY_KEY] != null && Session[ApplicationConstants.SIGN_UP_INCOME_KEY] != null && Session[ApplicationConstants.SIGN_UP_HOUSEHOLD_SIZE_KEY] != null);
+        }
 
         public AccountController(IUnitOfWork unitOfWork, IFormsAuthenticationService formsService, IMembershipService membershipService, IEmailService emailService, IUser currentUser)
         {
@@ -81,9 +87,6 @@ namespace Tals.ProBono.Web.Controllers
             FormsService.SignOut();
             Session.Abandon();
 
-            //if (UserModel.Current.IsInRole(UserRoles.BasicUser))
-            //    return Redirect("https://www.surveymonkey.com/s/PYGVK9M");
-
             return RedirectToAction("Index", "Home");
         }
 
@@ -93,10 +96,23 @@ namespace Tals.ProBono.Web.Controllers
 
         public ActionResult SignUp()
         {
-            if (!_unitOfWork.RuleAnswerRepository.Get().IsUserEligible(Session.SessionID)) return RedirectToAction("Index", "Rules");
+            if (!_unitOfWork.RuleAnswerRepository.Get().IsUserEligible(Session.SessionID) || !profileAnswersAreValid())
+            {
+                return RedirectToAction("Index", "Rules");
+            }
+
+            if (!profileAnswersAreValid())
+            {
+                this.SetTempMessage(MessageDto.CreateWarningMessage("Your session has expired, please try signing up again"));
+                return RedirectToAction("Index", "Rules");
+            }
+
             ViewData["PasswordLength"] = MembershipService.MinPasswordLength;
 
-            var model = new SignUpClientModel();
+            var model = new SignUpClientModel()
+            {
+                SecurityQuestions = new SelectList(QuestionSelectListItems, "Text", "Value")
+            };
 
             return View(model);
         }
@@ -104,50 +120,70 @@ namespace Tals.ProBono.Web.Controllers
         [HttpPost]
         public ActionResult SignUp(SignUpClientModel model, string returnUrl)
         {
-            if (!_unitOfWork.RuleAnswerRepository.Get().IsUserEligible(Session.SessionID)) return RedirectToAction("Index", "Rules");
+            if (!_unitOfWork.RuleAnswerRepository.Get().IsUserEligible(Session.SessionID))
+            {
+                return RedirectToAction("Index", "Rules");
+            }
+
+            if (!profileAnswersAreValid())
+            {
+                this.SetTempMessage(MessageDto.CreateWarningMessage("Your session has expired, please try signing up again"));
+                return RedirectToAction("Index", "Rules");
+            }
 
             if (ModelState.IsValid)
             {
-                // Attempt to register the user
-                MembershipCreateStatus createStatus = MembershipService.CreateUser(model.UserName, model.Password, model.Email);
-
-                if (createStatus == MembershipCreateStatus.Success)
+                //EDG: Check if  e-mail is unique
+                if (!String.IsNullOrWhiteSpace(model.Email) && Membership.FindUsersByEmail(model.Email).Count > 0)
                 {
-                    var profile = UserProfile.GetUserProfile(model.UserName);
-                    profile.FirstName = model.FirstName;
-                    profile.MiddleInitial = model.MiddleInitial;
-                    profile.LastName = model.LastName;
-                    profile.RegistrationDate = DateTime.Now;
-                    if(Session["County"] != null)
-                    {
-                        var countyId = int.Parse(Session["County"].ToString());
-                        profile.County = _unitOfWork.CountyRepository.Get().First(x => x.Id == countyId).CountyName;
-                    }
-                    
-                    profile.Save();
-
-                    Roles.AddUserToRole(model.UserName, UserRoles.BasicUser);
-                    FormsService.SignIn(model.UserName, false /* createPersistentCookie */);
-
-                    _emailService.SendEmailTo(model.Email, new ClientRegistrationEmail(model.UserName));
-
-                    if (!String.IsNullOrEmpty(returnUrl))
-                    {
-                        return Redirect(returnUrl);
-                    }
-                    else
-                    {
-                        return RedirectToAction("Index", "Home");
-                    }
+                    ModelState.AddModelError("Email", "E-mail is already in use by another user");
                 }
                 else
                 {
-                    ModelState.AddModelError("", AccountValidation.ErrorCodeToString(createStatus));
+                    // Attempt to register the user
+                    MembershipCreateStatus createStatus = MembershipService.CreateUser(model.UserName, model.Password, model.Email, model.SecurityQuestion, model.SecurityQuestionAnswer);
+
+                    if (createStatus == MembershipCreateStatus.Success)
+                    {
+                        var profile = UserProfile.GetUserProfile(model.UserName);
+                        profile.FirstName = model.FirstName;
+                        profile.MiddleInitial = model.MiddleInitial;
+                        profile.LastName = model.LastName;
+                        profile.RegistrationDate = DateTime.Now;
+
+                        var countyId = int.Parse(Session[ApplicationConstants.SIGN_UP_COUNTY_KEY].ToString());
+                        profile.County = _unitOfWork.CountyRepository.Get().First(x => x.Id == countyId).CountyName;
+
+                        profile.Income = Session[ApplicationConstants.SIGN_UP_INCOME_KEY] as int?;
+                        profile.HouseholdSize = Session[ApplicationConstants.SIGN_UP_HOUSEHOLD_SIZE_KEY] as int?;
+
+                        profile.Save();
+
+                        Roles.AddUserToRole(model.UserName, UserRoles.BasicUser);
+                        FormsService.SignIn(model.UserName, false /* createPersistentCookie */);
+
+                        _emailService.SendEmailTo(model.Email, new ClientRegistrationEmail(model.UserName),true);
+
+                        if (!String.IsNullOrEmpty(returnUrl))
+                        {
+                            return Redirect(returnUrl);
+                        }
+                        else
+                        {
+                            return RedirectToAction("Index", "Home");
+                        }
+                    }
+                    else
+                    {
+                        ModelState.AddModelError("", AccountValidation.ErrorCodeToString(createStatus));
+                    }
                 }
             }
 
             // If we got this far, something failed, redisplay form
             ViewData["PasswordLength"] = MembershipService.MinPasswordLength;
+
+            model.SecurityQuestions = new SelectList(QuestionSelectListItems, "Text", "Value");
             return View(model);
         }
 
@@ -184,7 +220,8 @@ namespace Tals.ProBono.Web.Controllers
                 var model = new AttorneySignUpModel
                 {
                     Counties = new SelectList(_unitOfWork.CountyRepository.Get().ToList(), "Id", "CountyName"),
-                    ReferralOrganizations = new SelectList(_unitOfWork.ReferralOrganizationRepository.Get().ToList(),"Id","OrgName")
+                    ReferralOrganizations = new SelectList(_unitOfWork.ReferralOrganizationRepository.Get().ToList(),"Id","OrgName"),
+                    SecurityQuestions = new SelectList(QuestionSelectListItems, "Text", "Value")
                 };
 
                 return View(model);
@@ -198,39 +235,50 @@ namespace Tals.ProBono.Web.Controllers
         {
             if (ModelState.IsValid)
             {
-                // Attempt to register the user
-                MembershipCreateStatus createStatus = MembershipService.CreateAttorney(model.UserName, model.Password, model.Email);
-
-                if (createStatus == MembershipCreateStatus.Success)
+                //EDG: Check if attorney e-mail is unique
+                if (Membership.FindUsersByEmail(model.Email).Count > 0)
                 {
-                    var profile = UserProfile.GetUserProfile(model.UserName);
-                    profile.FirstName = model.FirstName;
-                    profile.MiddleInitial = model.MiddleInitial;
-                    profile.LastName = model.LastName;
-                    profile.AddressLine1 = model.AddressLine1;
-                    profile.AddressLine2 = model.AddressLine2;
-                    profile.City = model.City;
-                    profile.County = _unitOfWork.CountyRepository.Get().First(x => x.Id == model.County).CountyName;
-                    profile.DisciplinaryBoardNumber = model.DisciplinaryBoardNumber;
-                    profile.LawFirm = model.Organization;
-                    profile.Phone = model.Phone;
-                    profile.State = model.State;
-                    profile.Zip = model.Zip;
-                    profile.RegistrationDate = DateTime.Now;
-                    profile.ReferralOrganization = _unitOfWork.ReferralOrganizationRepository.Get().OrgNameWithId(model.ReferralOrganization.GetValueOrDefault());
-
-                    profile.Save();
-
-                    Roles.AddUserToRole(model.UserName, UserRoles.PendingApproval);
-                    FormsService.SignIn(model.UserName, false /* createPersistentCookie */);
-
-                    _emailService.SendEmailTo(model.Email, new LawyerRegistrationEmail(model.UserName, model.Password));
-
-                    return RedirectToAction("Index", "Home");
+                    ModelState.AddModelError("Email", "E-mail is already in use by another user");
                 }
                 else
                 {
-                    ModelState.AddModelError("", AccountValidation.ErrorCodeToString(createStatus));
+                    // Attempt to register the user
+                    MembershipCreateStatus createStatus = MembershipService.CreateAttorney(model.UserName, model.Password, model.Email, model.SecurityQuestion, model.SecurityQuestionAnswer);
+
+                    if (createStatus == MembershipCreateStatus.Success)
+                    {
+                        var profile = UserProfile.GetUserProfile(model.UserName);
+                        profile.FirstName = model.FirstName;
+                        profile.MiddleInitial = model.MiddleInitial;
+                        profile.LastName = model.LastName;
+                        profile.AddressLine1 = model.AddressLine1;
+                        profile.AddressLine2 = model.AddressLine2;
+                        profile.City = model.City;
+                        profile.County = _unitOfWork.CountyRepository.Get().First(x => x.Id == model.County).CountyName;
+                        profile.DisciplinaryBoardNumber = model.DisciplinaryBoardNumber;
+                        profile.LawFirm = model.Organization;
+                        profile.Phone = model.Phone;
+                        profile.State = model.State;
+                        profile.Zip = model.Zip;
+                        profile.RegistrationDate = DateTime.Now;
+                        profile.ReferralOrganization = _unitOfWork.ReferralOrganizationRepository.Get().OrgNameWithId(model.ReferralOrganization.GetValueOrDefault());
+
+                        profile.Save();
+
+                        Roles.AddUserToRole(model.UserName, UserRoles.PendingApproval);
+                        FormsService.SignIn(model.UserName, false /* createPersistentCookie */);
+
+                        _emailService.SendEmailTo(model.Email, new LawyerRegistrationEmail(model.UserName), false);
+
+                        //EDG: Send e-mail to admin to approve new attorney
+                        _emailService.SendEmailTo(ConfigSettings.SiteEmail, new LawyerRegistrationNotificationEmail(model.UserName, model.FirstName, model.LastName, model.Organization, model.Email, model.Phone, model.DisciplinaryBoardNumber), false);
+
+                        return RedirectToAction("Index", "Home");
+                    }
+                    else
+                    {
+                        ModelState.AddModelError("", AccountValidation.ErrorCodeToString(createStatus));
+                    }    
                 }
             }
 
@@ -238,6 +286,7 @@ namespace Tals.ProBono.Web.Controllers
             ViewData["PasswordLength"] = MembershipService.MinPasswordLength;
             model.Counties = new SelectList(_unitOfWork.CountyRepository.Get().ToList(), "Id", "CountyName");
             model.ReferralOrganizations = new SelectList(_unitOfWork.ReferralOrganizationRepository.Get().ToList(), "Id", "OrgName");
+            model.SecurityQuestions = new SelectList(QuestionSelectListItems, "Text", "Value");
 
             return View(model);
         }
@@ -293,7 +342,7 @@ namespace Tals.ProBono.Web.Controllers
 
             TempData["userName"] = userName;
 
-            return RedirectToAction("Profile", "User", userName);
+            return RedirectToAction("Profile", "User", new {userName=userName});
         }
 
         [Authorize(Roles = "Administrators")]
@@ -305,7 +354,7 @@ namespace Tals.ProBono.Web.Controllers
 
             TempData["userName"] = userName;
 
-            return RedirectToAction("Profile", "User", userName);
+            return RedirectToAction("Profile", "User", new { userName = userName });
         }
 
         [Authorize(Roles = "Administrators")]
@@ -334,7 +383,7 @@ namespace Tals.ProBono.Web.Controllers
                 return RedirectToAction("ResetPasswordSuccess", "Account", model);
             }
 
-            return RedirectToAction("Profile", "User", userName);
+            return RedirectToAction("Profile", "User", new { userName = userName });
         }
 
         public ActionResult ResetPasswordSuccess(ResetPasswordViewModel model)
@@ -418,32 +467,39 @@ namespace Tals.ProBono.Web.Controllers
 
         [HttpPost]
         public ActionResult ForgotPassword(ForgotPasswordModel model) {
+            
             if (!ModelState.IsValid) return View(model);
 
             var question = MembershipService.GetUserQuestion(model.UserName);
-            model.Question = question;
-            
-            return View("ForgotPasswordAnswer", model);
+
+            var questionModel = new ForgotPasswordQuestionModel()
+            {
+                Question = question,
+                UserName = model.UserName
+            };
+
+            return View("ForgotPasswordAnswer", questionModel);
         }
 
         [HttpPost]
-        public ActionResult ForgotPasswordAnswer(ForgotPasswordModel model) {
-            if(ModelState.IsValid) {
-                var password = MembershipService.ResetPassword(model.UserName, model.Answer);
-                var changePasswordModel = new ChangePasswordModel() {UserName = model.UserName, OldPassword = password};
-
-                return View("ChangePassword", changePasswordModel);
+        public ActionResult ForgotPasswordAnswer(ForgotPasswordQuestionModel questionModel)
+        {
+            if(ModelState.IsValid)
+            {
+                try
+                {
+                    var password = MembershipService.ResetPassword(questionModel.UserName, questionModel.Answer);
+                    var changePasswordModel = new ChangePasswordModel() { UserName = questionModel.UserName, OldPassword = password };
+                    return View("ChangePassword", changePasswordModel);
+                }
+                catch (MembershipPasswordException ex)
+                {
+                    this.SetViewMessage(MessageDto.CreateErrorMessage("Answer to security question is not correct"));
+                    return View("ForgotPasswordAnswer", questionModel);   
+                }
             }
 
-            return View(model);
+            return View(questionModel);
         }
-    }
-
-    public class ForgotPasswordModel {
-        [Required]
-        [DisplayName("User name")]
-        public string UserName { get; set; }
-        public string Question { get; set; }
-        public string Answer { get; set; }
     }
 }

@@ -1,7 +1,7 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Guest.master" Inherits="System.Web.Mvc.ViewPage<Tals.ProBono.Web.Controllers.ForgotPasswordModel>" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Guest.master" Inherits="System.Web.Mvc.ViewPage<Tals.ProBono.Web.Models.View.Account.ForgotPasswordModel>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-	ForgotPassword
+    ForgotPassword
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">

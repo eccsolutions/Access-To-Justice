@@ -8,27 +8,53 @@
             </th>
         </tr>
         <tr>
-            <th>
+            <th style="width:50%">
                 Category
             </th>
-            <th>
+            <th style="width:20%">
                 Recent
             </th>
-            <th>
+            <th style="width:20%">
                 Urgency
             </th>
-            <th>Subscription</th>
+            <th style="width:10%">Subscription</th>
         </tr>
-<% foreach(var item in Model.Categories) { %>
+<%
+    for(var i = 0; i < Model.Categories.Count(); i++)
+    {
+        var item = Model.Categories.ElementAt(i);
+        var bgColor = i % 2 == 0 ? "#FFFFFF" : "#EEEEEE";
+%>
 
-        <tr>
-            <td>
-                <%: Html.ActionLink(item.Category.ShortDescription, "List", new { category = item.Category.CategoryName })%><br /><br />
+        <tr style="background-color: <%=bgColor%>">
+            <td valign="top">
+                <%: Html.ActionLink(item.Category.ShortDescription, "List", new { category = item.Category.CategoryName })%><br />
                 <%:item.Category.LongDescription %>
             </td>
             <td valign="top">
-                <% if (item.LastQuestion != null) { %>
-                    <%: Html.ActionLink(item.LastQuestion.Subject, "Details", new { id = item.LastQuestion.Id })%><br />
+                <% if (item.LastQuestion != null)
+                   {
+                       var linkText = item.LastQuestion.Subject;
+                       if (String.IsNullOrWhiteSpace(linkText))
+                       {
+                           if (!String.IsNullOrWhiteSpace(item.LastQuestion.Body))
+                           {
+                               if (item.LastQuestion.Body.Length > 50)
+                               {
+                                   linkText = item.LastQuestion.Body.Substring(0, 50) + "...";
+                               }
+                               else
+                               {
+                                   linkText = item.LastQuestion.Body;
+                               }
+                           }
+                           else
+                           {
+                               linkText = "Question #" + item.LastQuestion.Id;
+                           }
+                       }
+                %>
+                    <%: Html.ActionLink(linkText, "Details", new { id = item.LastQuestion.Id })%><br />
                     by <%: item.LastQuestion.CreatedBy%><br />
                     <%: Html.DisplayTimeElapsed(item.LastQuestion.CreatedDate)%>
                 <% } else { %>

@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 using System.Web.Security;
-using Tals.ProBono.Domain.Abstract;
 using Tals.ProBono.Domain.Entities;
 using Tals.ProBono.Domain.Filters;
 using Tals.ProBono.Web.Infrastructure;
@@ -13,7 +11,7 @@ using Tals.ProBono.Web.Models;
 
 namespace Tals.ProBono.Web.Controllers
 {
-    public class NavController : Controller
+    public class NavController : ControllerBase
     {
         private readonly IUnitOfWork _unitOfWork;
         public NavController(IUnitOfWork unitOfWork)

@@ -1,9 +1,9 @@
-﻿using System;
+﻿using MvcPaging;
+using System;
 using System.Linq;
 using System.Web.Mvc;
 using System.Web.Routing;
 using System.Web.Security;
-using MvcPaging;
 using Tals.ProBono.Domain.Entities;
 using Tals.ProBono.Domain.Filters;
 using Tals.ProBono.Domain.Services;
@@ -15,14 +15,15 @@ namespace Tals.ProBono.Web.Controllers
     [Authorize(Roles = UserRoles.AdministratorsAndAttorny)]
     [SecurityQuestionFilter]
     [DynamicMasterPageFilter]
-    public class AttorneyController : Controller
+    public class AttorneyController : ControllerBase
     {
         private readonly IEmailService _emailService;
         private readonly ISecurityService _security;
         readonly IUnitOfWork _unitOfWork;
         readonly IUser _currentUser;
         readonly IAuditor _auditor;
-        public int PageSize = 5;
+
+        public int PageSize = ConfigSettings.DefaultResultsPerPage;
 
         public AttorneyController(IEmailService emailService, ISecurityService security, IUnitOfWork unitOfWork, IUser currentUser, IAuditor auditor)
         {
@@ -149,7 +150,7 @@ namespace Tals.ProBono.Web.Controllers
                     var user = Membership.GetUser(question.CreatedBy);
                     if (user != null)
                         _emailService.SendEmailTo(user.Email,
-                                                  new StandardEmail(StandardEmail.EmailTemplate.LawyerReply));
+                                                  new StandardEmail(StandardEmail.EmailTemplate.LawyerReply), true);
 
                     return RedirectToAction("Details", new { id, r = url.Url });
                 }
@@ -250,7 +251,7 @@ namespace Tals.ProBono.Web.Controllers
             Message = "You have successfully subscribed to " + subscription.Category.ShortDescription;
 
             _emailService.SendEmailTo(UserModel.Current.Email, new SubscribeEmail(subscription.Category.ShortDescription,
-                ConfigSettings.SiteUrl.TrimEnd('/') + Url.Action("Unsubscribe", new {id = subscription.CategoryId})));
+                ConfigSettings.SiteUrl.TrimEnd('/') + Url.Action("Unsubscribe", new {id = subscription.CategoryId})),false);
 
             if (returnUrl == string.Empty) returnUrl = null;
 

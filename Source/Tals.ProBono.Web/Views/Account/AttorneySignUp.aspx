@@ -45,6 +45,19 @@
                 <%: Html.PasswordFor(m => m.ConfirmPassword) %>
                 <%: Html.ValidationMessageFor(m => m.ConfirmPassword) %>
             </div>
+
+            <label class="editor-label">Security Question</label>
+            <div class="editor-field">
+                <%: Html.DropDownListFor(model => model.SecurityQuestion, Model.SecurityQuestions, "Select a question") %>
+                <%: Html.ValidationMessageFor(model => model.SecurityQuestion) %>
+            </div>
+
+            <label class="editor-label">Security Question Answer</label>
+            <div class="editor-field">
+                <%: Html.TextBoxFor(model => model.SecurityQuestionAnswer) %>
+                <%: Html.ValidationMessageFor(model => model.SecurityQuestionAnswer) %>
+            </div>
+
         </fieldset>
         <fieldset>
             <legend>Profile Information</legend>
@@ -66,8 +79,7 @@
                 <%: Html.TextBoxFor(m => m.LastName) %>
                 <%: Html.ValidationMessageFor(m => m.LastName) %>
             </div>
-            <label class="editor-label">
-                Attorney ID Number</label>
+            <label class="editor-label"><%: Html.LabelFor(m => m.DisciplinaryBoardNumber) %></label>
             <div class="editor-field">
                 <%: Html.TextBoxFor(m => m.DisciplinaryBoardNumber) %>
                 <%: Html.ValidationMessageFor(m => m.DisciplinaryBoardNumber) %>

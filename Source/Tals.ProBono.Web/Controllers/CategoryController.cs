@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Linq;
 using System.Web.Mvc;
-using Tals.ProBono.Domain.Abstract;
 using Tals.ProBono.Domain.Entities;
 using Tals.ProBono.Domain.Services;
 using Tals.ProBono.Web.Infrastructure;
@@ -12,7 +8,7 @@ namespace Tals.ProBono.Web.Controllers
 {
     [Authorize(Roles=UserRoles.Administrators)]
     [DynamicMasterPageFilter]
-    public class CategoryController : Controller
+    public class CategoryController : ControllerBase
     {
         private readonly IUnitOfWork _unitOfWork;
 
@@ -32,10 +28,18 @@ namespace Tals.ProBono.Web.Controllers
 
         public ActionResult Edit(int id = 0)
         {
-            if(id == 0)
-                return View(new Category());
+            Category model;
 
-            var model = _unitOfWork.CategoryRepository.Get().FirstOrDefault(c => c.Id == id);
+            if (id <= 0)
+            {
+                model = new Category();
+                ViewBag.PageTitle = "Add New Category";
+            }
+            else
+            {
+                model = _unitOfWork.CategoryRepository.Get().FirstOrDefault(c => c.Id == id);
+                ViewBag.PageTitle = "Edit " + model.CategoryName;
+            }
 
             return View(model);
         }
@@ -55,6 +59,8 @@ namespace Tals.ProBono.Web.Controllers
                 _unitOfWork.Save();
                 return RedirectToAction("List");
             }
+
+            ViewBag.PageTitle = "Edit " + category.CategoryName;
 
             return View(category);
         }

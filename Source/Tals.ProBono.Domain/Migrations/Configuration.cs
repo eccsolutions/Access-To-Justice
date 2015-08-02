@@ -1,4 +1,6 @@
+using System;
 using System.Linq;
+using Tals.ProBono.Domain.Constants;
 using Tals.ProBono.Domain.Entities;
 
 namespace Tals.ProBono.Domain.Migrations
@@ -9,12 +11,16 @@ namespace Tals.ProBono.Domain.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationsEnabled = false;
         }
 
         protected override void Seed(AdviceContext context)
         {
             addCounties(context);
+            addFedPovertySettings(context);
+            addPages(context);
+
+            context.SaveChanges();
         }
 
         private void addCounties(AdviceContext context)
@@ -39,6 +45,41 @@ namespace Tals.ProBono.Domain.Migrations
             context.Counties.AddOrUpdate(c => c.CountyName, new County() { CountyName = "Santa Cruz County" });
             context.Counties.AddOrUpdate(c => c.CountyName, new County() { CountyName = "Yavapai County" });
             context.Counties.AddOrUpdate(c => c.CountyName, new County() { CountyName = "Yuma County" });
+        }
+
+        private void addFedPovertySettings(AdviceContext context)
+        {
+            if (context.FedPovertySettings.Any())
+            {
+                return;
+            }
+
+            context.FedPovertySettings.Add(new FedPovertySetting()
+            {
+                Id = 1,
+                YearlyIncome = 11770,
+                DependentsModifier = 4160,
+                LegalAidLevel = 1.5M,
+                ModestMeansLevel = 2.5M
+            });
+        }
+
+        private void addPages(AdviceContext context)
+        {
+
+            if (context.Pages.Any())
+            {
+                return;
+            }
+
+            context.Pages.Add(new Page()
+            {
+                Id = ApplicationConstants.PAGE_ID_ADVOCATE,
+                Title = "Attorney Advocate",
+                Content = "Content Here",
+                CreatedByUserName = "admin1",
+                CreatedDate = DateTimeOffset.UtcNow
+            });
         }
     }
 }

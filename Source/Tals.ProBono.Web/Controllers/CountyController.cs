@@ -6,7 +6,7 @@ using Tals.ProBono.Domain.Services;
 namespace Tals.ProBono.Web.Controllers
 {
     [Authorize(Roles=UserRoles.Administrators)]
-    public class CountyController : Controller
+    public class CountyController : ControllerBase
     {
         private readonly IUnitOfWork _unitOfWork;
 
@@ -23,7 +23,19 @@ namespace Tals.ProBono.Web.Controllers
 
         public ActionResult Edit(int id = 0)
         {
-            var model = id == 0 ? new County() : _unitOfWork.CountyRepository.Get().FirstOrDefault(c => c.Id == id);
+            County model;
+
+            if (id <= 0)
+            {
+                model = new County();
+                ViewBag.PageTitle = "Add New County";
+            }
+            else
+            {
+                model = _unitOfWork.CountyRepository.Get().FirstOrDefault(c => c.Id == id);
+                ViewBag.PageTitle = "Edit " + model.CountyName;
+            }
+
             return View(model);
         }
 
@@ -44,6 +56,8 @@ namespace Tals.ProBono.Web.Controllers
                 _unitOfWork.Save();
                 return RedirectToAction("List");
             }
+
+            ViewBag.PageTitle = "Edit " + county.CountyName;
 
             return View(county);
         }

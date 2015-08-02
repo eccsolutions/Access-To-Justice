@@ -18,7 +18,7 @@ namespace Tals.ProBono.Domain.Entities
     {
         public string Question
         {
-            get { return "How old are you? (You must be at least 14 years old)."; }
+            get { return "How old are you? (You must be at least "+ConfigSettings.MinimumAgeRequirement+" years old)."; }
         }
 
         [Required]
@@ -28,7 +28,7 @@ namespace Tals.ProBono.Domain.Entities
 
         public bool IsValid
         {
-            get { return Answer > 13; }
+            get { return Answer >= ConfigSettings.MinimumAgeRequirement; }
         }
 
         public override string ToString()
@@ -62,7 +62,7 @@ namespace Tals.ProBono.Domain.Entities
     {
         public string Question
         {
-            get { return "This website is only for " + ConfigSettings.StateName + " residents.  What " + ConfigSettings.StateName + " county do you live in?"; }
+            get { return "This website is only for " + ConfigSettings.StateName + " residents.  What " + ConfigSettings.StateName + " county do you live in? (If you do not live in " + ConfigSettings.StateName + " but have a legal problem here please choose that county.)"; }
         }
 
         [UIHint("CountyEditor")]
@@ -224,7 +224,7 @@ namespace Tals.ProBono.Domain.Entities
             get
             {
                 return
-                    "Income is money you get from things like jobs and government benefits (like MFIP or unemployment). Specify the income for you and for each person in your household.";
+                    "Income is money you get from things like jobs and government benefits (like unemployment). Specify the income for you and for each person in your household.";
             }
         }
 
@@ -236,7 +236,9 @@ namespace Tals.ProBono.Domain.Entities
             get
             {
                 if (Answer == null) return false;
-                return Answer.Sum(i => i.AnnualIncome) <= AllowedIncome;
+                //EDG: Commented out to allow all users regardless of income.
+                //return Answer.Sum(i => i.AnnualIncome) <= AllowedIncome;
+                return true;
             }
         }
 

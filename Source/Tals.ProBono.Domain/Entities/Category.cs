@@ -7,6 +7,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using Tals.ProBono.Domain.Filters;
@@ -25,9 +27,22 @@ namespace Tals.ProBono.Domain.Entities
         //}
     
         public int Id { get; set; }
+
+        [Required]
+        [StringLength(300)]
+        [DisplayName("Category Name")]
         public string CategoryName { get; set; }
+        
+        [Required]
+        [StringLength(500)]
+        [DisplayName("Short Description")]
         public string ShortDescription { get; set; }
+
+        [StringLength(1000)]
+        [DisplayName("Long Description")]
         public string LongDescription { get; set; }
+
+        [DisplayName("Sort Order")]
         public Nullable<int> SortOrder { get; set; }
     
         public virtual ICollection<Question> Questions { get; set; }

@@ -3,17 +3,18 @@
     <asp:ContentPlaceHolder ID="TitleContent" runat="server" />
 </asp:Content>
 <asp:Content runat="server" ID="Head" ContentPlaceHolderID="HeadContent">
+    <link href="/Content/jquery-cleditor/jquery.cleditor.css" rel="stylesheet" type="text/css"/>
     <asp:ContentPlaceHolder ID="HeadContent" runat="server" />
 </asp:Content>
 <asp:Content runat="server" ID="TabMenu" ContentPlaceHolderID="TabMenuContent">
     <asp:ContentPlaceHolder runat="server" ID="TabMenuContent">
     <ul id="tabmenu">
         <%: Html.ActionMenuItem("Questions", "List", "Admin") %>
-        <%: Html.ActionMenuItem("Accounts", "AccountList", "Admin") %>
-        <%: Html.ActionMenuItem("Categories", "List", "Category") %>
-        <%: Html.ActionMenuItem("Counties", "List", "County") %>
-        <%: Html.ActionMenuItem("Referral Organizations","List","ReferralOrganization") %>
+        <%: Html.ActionMenuItem("Users", "AccountList", "Admin") %>
+        <!--<%: Html.ActionMenuItem("Reporting", "Index", "Reporting") %>-->
         <%: Html.ActionMenuItem("Attorney View", "List", "Attorney") %>
+        <%: Html.ActionMenuItem("Forums", "Index", "Forums", null, new {target="_blank"}) %>
+        <%: Html.ActionMenuItem("Manage Settings", "Index", "Settings") %>
     </ul>
     </asp:ContentPlaceHolder>
 </asp:Content>
@@ -29,4 +30,9 @@
 </asp:Content>
 <asp:Content runat="server" ID="Main" ContentPlaceHolderID="MainContent">
     <asp:ContentPlaceHolder runat="server" ID="MainContent" />
+</asp:Content>
+
+<asp:Content runat="server" ID="AdminScripts" ContentPlaceHolderID="Scripts">
+    <script src="/Scripts/jquery-cleditor/jquery.cleditor.min.js" type="text/javascript"></script> 
+    <asp:ContentPlaceHolder runat="server" ID="Scripts" />
 </asp:Content>

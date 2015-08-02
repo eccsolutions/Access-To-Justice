@@ -1,10 +1,9 @@
 ﻿using System;
-using System.Data.Entity;
 using System.Linq;
 using System.Web.Mvc;
 using System.Web.Security;
-using Tals.ProBono.Domain.Abstract;
 using Tals.ProBono.Domain.Entities;
+using Tals.ProBono.Domain.Enums;
 using Tals.ProBono.Domain.Filters;
 using Tals.ProBono.Domain.Services;
 using Tals.ProBono.Web.Helpers;
@@ -16,13 +15,49 @@ namespace Tals.ProBono.Web.Controllers
     [Authorize(Roles = UserRoles.BasicUser)]
     [SecurityQuestionFilter]
     [DynamicMasterPageFilter]
-    public class ClientController : Controller
+    public class ClientController : ControllerBase
     {
         private readonly IEligibilityService _eligibilityService;
         private readonly IUnitOfWork _unitOfWork;
         private readonly IEmailService _emailService;
         readonly IAuditor _auditor;
         readonly IUser _currentUser;
+
+        private PovertyLevels getUserPovertyLevel(UserProfile userProfile)
+        {
+            var povertySettings = _unitOfWork.FedPovertySettingRepository.Get().FirstOrDefault();
+            if (povertySettings == null)
+            {
+                return PovertyLevels.Other;
+            }
+
+            if (userProfile.Income == null || userProfile.Income<=0)
+            {
+                return PovertyLevels.Other;
+            }
+
+            if (userProfile.HouseholdSize == null || userProfile.HouseholdSize < 1)
+            {
+                return PovertyLevels.Other;
+            }
+
+            var numDependents = userProfile.HouseholdSize - 1;
+
+            var rate = userProfile.Income / (povertySettings.YearlyIncome + (numDependents * povertySettings.DependentsModifier));
+
+            if (rate <= povertySettings.LegalAidLevel)
+            {
+                return PovertyLevels.LegalAid;
+            }
+
+            if (rate <= povertySettings.ModestMeansLevel)
+            {
+                return PovertyLevels.ModestMeans;
+            }
+
+            return PovertyLevels.AboveLevel;
+        }
+
 
         public ClientController(IEligibilityService eligibilityService, IUnitOfWork unitOfWork, IEmailService emailService, IAuditor auditor, IUser currentUser)
         {
@@ -71,7 +106,7 @@ namespace Tals.ProBono.Web.Controllers
             ViewData["categories"] = _unitOfWork.CategoryRepository.Get();
             ViewData["casecounties"] = _unitOfWork.CountyRepository.Get();
 
-            return View(new Question());
+            return View("Ask",new Question());
         }
 
         //
@@ -88,6 +123,8 @@ namespace Tals.ProBono.Web.Controllers
                     question.CreatedDate = DateTime.Now;
                     question.CountyId = _unitOfWork.CountyRepository.Get().WithCounty(UserModel.Current.UserProfile.County).First().Id;
 
+                    question.ClientPovertyLevel = getUserPovertyLevel(UserModel.Current.UserProfile);
+
                     _unitOfWork.QuestionRepository.Insert(question);
                     _unitOfWork.Save();
 
@@ -98,7 +135,7 @@ namespace Tals.ProBono.Web.Controllers
                     var category = _unitOfWork.CategoryRepository.Get().WithId(question.CategoryId.GetValueOrDefault());
 
                     _emailService.SendEmailFor(category, new SubscriptionEmail(category.ShortDescription, question.CourtDateAsShortString,
-                                                                      question.Subject, question.Body, detailsUrl, unsubscribeUrl));
+                                                                      question.Subject, question.Body, detailsUrl, unsubscribeUrl),true);
 
                     _auditor.Audit(_currentUser.UserName, question.Id);
 
@@ -168,7 +205,7 @@ namespace Tals.ProBono.Web.Controllers
                             _emailService.SendEmailTo(user.Email,
                                                       new ClientReplyEmail(question.Category.CategoryName,
                                                                            question.CourtDateAsShortString,
-                                                                           question.Subject, question.Body, detailsUrl));
+                                                                           question.Subject, question.Body, detailsUrl),false);
                         }
                     }
 

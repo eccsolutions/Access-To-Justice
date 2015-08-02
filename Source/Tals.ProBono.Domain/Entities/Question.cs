@@ -10,6 +10,7 @@
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.ServiceModel;
+using Tals.ProBono.Domain.Enums;
 
 namespace Tals.ProBono.Domain.Entities
 {
@@ -38,6 +39,8 @@ namespace Tals.ProBono.Domain.Entities
         public string ClosedBy { get; private set; }
         public string PersonOrOrganization { get; set; }
         public Nullable<int> CaseCountyId { get; set; }
+
+        public PovertyLevels? ClientPovertyLevel { get; set; }
 
         public string ReferralOrganization { get; set; }
 

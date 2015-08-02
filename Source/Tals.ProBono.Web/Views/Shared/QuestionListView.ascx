@@ -1,8 +1,10 @@
 ﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<MvcPaging.IPagedList<Tals.ProBono.Domain.Entities.Question>>" %>
-    <fieldset>
+<%@ Import Namespace="Tals.ProBono.Domain.Enums" %>
+<fieldset>
     <table class="categorygridview">
         <tr>
             <th></th>
+            <th class="CenteredText">Eligibility</th>
             <th>Category</th>
             <th>Subject</th>
             <th>Last Updated</th>
@@ -21,6 +23,17 @@
             <% using(Html.BeginRowForCoding(item)) { %>
                 <td class="actions">
                     <% Html.RenderAction("ListActionButtons", "Nav", new {Question = item}); %>
+                </td>
+                <td class="gridcolumn CenteredText">
+                    <% if (item.ClientPovertyLevel == PovertyLevels.ModestMeans){ %>
+                        <div style="white-space: nowrap">Modest<br/>Means</div>
+                    <% } else if(item.ClientPovertyLevel == PovertyLevels.LegalAid) {%>
+                        <div class="popupEnabled" style="white-space: nowrap">Legal<br/>Aid <i class="fa fa-book"></i>
+                            <div class="popup" style="white-space: nowrap">CLE Eligible</div>
+                        </div>
+                    <%} else {%>
+                        --
+                    <%} %>             
                 </td>
                 <td class="gridcolumn" id="categorycolumn">
                     <%: item.Category.ShortDescription%>

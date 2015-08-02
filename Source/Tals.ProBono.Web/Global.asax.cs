@@ -3,7 +3,6 @@ using System.Globalization;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
-using Tals.ProBono.Domain.Entities;
 using Tals.ProBono.Web.Infrastructure;
 using Tals.ProBono.Web.Models;
 
@@ -90,13 +89,20 @@ namespace Tals.ProBono.Web
             );
 
             routes.MapRoute(
+                "FPSettings", // Route name
+                "FPSettings/{action}", // URL with parameters
+                new { controller = "FPSettings"}
+            );
+
+            routes.MapRoute(
                 "Default", // Route name
                 "{controller}/{action}/{id}", // URL with parameters
                 new { controller = "Home", action = "Index", id = UrlParameter.Optional } // Parameter defaults
             );
         }
 
-        protected void Application_Start() {
+        protected void Application_Start()
+        {
             AreaRegistration.RegisterAllAreas();
             RegisterRoutes(RouteTable.Routes);
             ControllerBuilder.Current.SetControllerFactory(new NinjectControllerFactory());

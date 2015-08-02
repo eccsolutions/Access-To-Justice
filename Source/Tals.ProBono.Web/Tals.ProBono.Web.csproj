@@ -8,7 +8,7 @@
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{9C11EF05-C397-441B-8B6D-60D20BA9DF67}</ProjectGuid>
-    <ProjectTypeGuids>{e53f8fea-eae0-44a6-8774-ffd645390401};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Tals.ProBono.Web</RootNamespace>
@@ -26,6 +26,8 @@
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <MvcProjectUpgradeChecked>true</MvcProjectUpgradeChecked>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -115,8 +117,13 @@
   <ItemGroup>
     <Compile Include="App_Start\MembershipConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\FPSettingsController.cs" />
+    <Compile Include="Controllers\PagesController.cs" />
+    <Compile Include="Controllers\SettingsController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\ControllerBase.cs" />
     <Compile Include="Controllers\ReferralOrganizationController.cs" />
+    <Compile Include="Enums\MessageTypes.cs" />
     <Compile Include="Models\CategoryListViewModel.cs" />
     <Compile Include="Controllers\CountyController.cs" />
     <Compile Include="Infrastructure\Auditor.cs" />
@@ -136,6 +143,7 @@
     <Compile Include="Infrastructure\UserModel.cs" />
     <Compile Include="Models\ProfileModels.cs" />
     <Compile Include="Models\ProfileType.cs" />
+    <Compile Include="Models\Shared\MessageDto.cs" />
     <Compile Include="Models\UsersOnlineViewModel.cs" />
     <Compile Include="Infrastructure\UrlModelBinder.cs" />
     <Compile Include="Infrastructure\RolesWrapper.cs" />
@@ -151,6 +159,7 @@
     <Compile Include="Models\DetailsViewModel.cs" />
     <Compile Include="Models\ResetPasswordViewModel.cs" />
     <Compile Include="Models\ReturnUrl.cs" />
+    <Compile Include="Controllers\ReportingController.cs" />
     <Compile Include="Models\AttorneyProfileViewModel.cs" />
     <Compile Include="Models\EditViewModel.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -165,13 +174,11 @@
     <Compile Include="Models\ReplyViewModel.cs" />
     <Compile Include="Models\SubscribeViewModel.cs" />
     <Compile Include="Models\UnsubscribeViewModel.cs" />
+    <Compile Include="Models\View\Account\ForgotPasswordModel.cs" />
+    <Compile Include="Models\View\Account\ForgotPasswordQuestionModel.cs" />
+    <Compile Include="Models\View\Shared\ViewModelBase.cs" />
     <Compile Include="Models\WorkEntryViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-      <DependentUpon>Settings.settings</DependentUpon>
-    </Compile>
     <Compile Include="Resources\Views\Home\Index.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -189,11 +196,15 @@
     <Content Include="Content\EmailTemplates\AcceptedAnswer.htm" />
     <Content Include="Content\EmailTemplates\AccountApproved.htm" />
     <Content Include="Content\EmailTemplates\ClientReply.htm" />
+    <Content Include="Content\EmailTemplates\LawyerRegistrationNotification.htm" />
     <Content Include="Content\EmailTemplates\Subscription.htm" />
     <Content Include="Content\EmailTemplates\QuestionAssigned.htm" />
     <Content Include="Content\EmailTemplates\Subscribed.htm" />
     <Content Include="Content\EmailTemplates\LawyerRegistration.htm" />
     <Content Include="Content\EmailTemplates\LawyerReply.htm" />
+    <Content Include="Content\font-awesome\font-awesome.css" />
+    <Content Include="Content\font-awesome\font-awesome.min.css" />
+    <Content Include="Content\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\Images\atdbuttontr.gif" />
     <Content Include="Content\Images\bbcode_images\bold.png" />
     <Content Include="Content\Images\bbcode_images\clean.png" />
@@ -254,6 +265,9 @@
     <Content Include="Content\Images\logo.jpg" />
     <Content Include="Content\Images\TJC_colorlogo.png" />
     <Content Include="Content\Images\writing.gif" />
+    <Content Include="Content\jquery-cleditor\images\buttons.gif" />
+    <Content Include="Content\jquery-cleditor\images\toolbar.gif" />
+    <Content Include="Content\jquery-cleditor\jquery.cleditor.css" />
     <Content Include="Content\MVCControls\Grid\ellipsis-xbl.xml" />
     <Content Include="Content\MVCControls\Grid\paging_bg.gif" />
     <Content Include="Content\MVCControls\Grid\paging_bg.png" />
@@ -343,8 +357,15 @@
     <Content Include="Content\Images\user_anonymous_64.png" />
     <Content Include="Content\Images\warning.bmp" />
     <Content Include="packages.config" />
-    <None Include="Properties\PublishProfiles\Local - Production.pubxml" />
-    <None Include="Properties\PublishProfiles\Production.pubxml" />
+    <Content Include="Content\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\fonts\FontAwesome.otf" />
+    <Content Include="Mail.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="MachineKey.config" />
     <None Include="Referenced Components\Telerik.Web.Mvc.dll" />
     <Content Include="markitup\bbcode-set-parsed.js" />
     <Content Include="markitup\colorpicker.js" />
@@ -356,6 +377,8 @@
     <Content Include="Scripts\GoogleAnalytics.js" />
     <Content Include="Scripts\jquery-1.4.2.js" />
     <Content Include="Scripts\jquery-1.4.2.min.js" />
+    <Content Include="Scripts\jquery-cleditor\jquery.cleditor.js" />
+    <Content Include="Scripts\jquery-cleditor\jquery.cleditor.min.js" />
     <Content Include="Scripts\jquery.atd.js" />
     <Content Include="Scripts\jquery.atd.textarea.js" />
     <Content Include="Scripts\MVCControls\Grid\grid.jqueryui.js" />
@@ -420,6 +443,10 @@
     <Content Include="Views\Attorney\Resources.aspx" />
     <Content Include="Views\County\Edit.aspx" />
     <Content Include="Views\County\List.aspx" />
+    <Content Include="Views\Pages\Index.aspx" />
+    <Content Include="Views\Pages\Edit.aspx" />
+    <Content Include="Views\Settings\Index.aspx" />
+    <Content Include="Views\FPSettings\Edit.aspx" />
     <Content Include="Views\ReferralOrganization\Edit.aspx" />
     <Content Include="Views\ReferralOrganization\List.aspx" />
     <Content Include="Views\Shared\ColorCoding.ascx" />
@@ -461,6 +488,7 @@
     <Content Include="Views\Shared\EditorTemplates\InvestmentEditor.ascx" />
     <Content Include="Views\Shared\EditorTemplates\IntegerEditor.ascx" />
     <Content Include="Views\Shared\EditorTemplates\IncomeEditor.ascx" />
+    <Content Include="Views\Shared\QuestionCreatedBy.ascx" />
     <Content Include="Views\Shared\QuestionListView.ascx" />
     <Content Include="Views\Attorney\Reply.aspx" />
     <Content Include="Views\Client\Ask.aspx" />
@@ -559,12 +587,6 @@
     <WebReferences Include="Web References\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\Tals.ProBono.Domain\Tals.ProBono.Domain.csproj">
       <Project>{71DB39A1-D146-46ED-8EAF-FCAB04BA3202}</Project>
       <Name>Tals.ProBono.Domain</Name>
@@ -610,11 +632,11 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>False</UseIIS>
+          <UseIIS>True</UseIIS>
           <AutoAssignPort>False</AutoAssignPort>
           <DevelopmentServerPort>34574</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://onlinejustice.localhost</IISUrl>
+          <IISUrl>http://onlinejustice.local</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
@@ -624,4 +646,11 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
 </Project>

@@ -1,23 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using MvcPaging;
+using System.Linq;
 using System.Web.Mvc;
-using System.Web.Profile;
 using System.Web.Security;
-using Tals.ProBono.Domain.Abstract;
 using Tals.ProBono.Domain.Entities;
 using Tals.ProBono.Domain.Filters;
 using Tals.ProBono.Domain.Services;
-using System.Linq;
 using Tals.ProBono.Web.Helpers;
 using Tals.ProBono.Web.Infrastructure;
 using Tals.ProBono.Web.Models;
-using MvcPaging;
 
 namespace Tals.ProBono.Web.Controllers
 {
     [Authorize(Roles = UserRoles.Administrators)]
     [DynamicMasterPageFilter]
-    public class AdminController : Controller
+    public class AdminController : ControllerBase
     {
         private readonly IEmailService _emailService;
         private readonly IUnitOfWork _unitOfWork;
@@ -44,7 +40,7 @@ namespace Tals.ProBono.Web.Controllers
             ViewBag.Status = status;
             ViewBag.Taken = taken;
 
-            var model = questions.ToPagedList(pageIndex, 5);
+            var model = questions.ToPagedList(pageIndex, ConfigSettings.DefaultResultsPerPage);
 
             return View(model);
         }
@@ -79,7 +75,7 @@ namespace Tals.ProBono.Web.Controllers
             var user = Membership.GetUser(username);
 
             if (user != null)
-                _emailService.SendEmailTo(user.Email, new StandardEmail(StandardEmail.EmailTemplate.AccountApproved));
+                _emailService.SendEmailTo(user.Email, new StandardEmail(StandardEmail.EmailTemplate.AccountApproved),false);
 
             return RedirectToAction("AccountList");
         }
@@ -123,7 +119,9 @@ namespace Tals.ProBono.Web.Controllers
             ViewBag.Role = role;
             ViewBag.UserName = userName;
 
-            var model = users.ToUserModels().ToPagedList(pageIndex, 5);
+            var model = users.ToUserModels().ToPagedList(pageIndex, ConfigSettings.DefaultResultsPerPage);
+
+            this.SetViewMessage(this.GetTempMessage());
 
             return View(model);
         }
@@ -157,7 +155,7 @@ namespace Tals.ProBono.Web.Controllers
 
                 if (user != null)
                     _emailService.SendEmailTo(user.Email,
-                                              new StandardEmail(StandardEmail.EmailTemplate.QuestionAssigned));
+                                              new StandardEmail(StandardEmail.EmailTemplate.QuestionAssigned),true);
             }
 
             return RedirectToAction("Details", "Attorney", new { id = editViewModel.QuestionId });

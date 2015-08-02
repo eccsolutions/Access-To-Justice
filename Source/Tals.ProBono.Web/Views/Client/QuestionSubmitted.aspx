@@ -16,7 +16,7 @@
         we'll send you an email. If you don't have an email address, you will have to sign
         into your account to check for questions.</p>
     <p>You may have questions about the lawyer's answer. You can ask follow-up questions about the answer.</p>
-    <p>Please take a moment to complete our short survey. Your feedback is important to us. <a href="https://www.surveymonkey.com/s/PYGVK9M" target="_blank">Click Here!</a></p>
+    <p>Please take a moment to complete our <a href="https://www.surveymonkey.com/s/OAJUser" target="_blank">short survey</a>. Your feedback is important to us.</p>
     <div>
         <%: Html.ActionLink("Back to List", "Questions") %>
     </div>

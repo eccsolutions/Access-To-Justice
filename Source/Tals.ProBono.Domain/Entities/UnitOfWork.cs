@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace Tals.ProBono.Domain.Entities
 {
@@ -20,6 +17,8 @@ namespace Tals.ProBono.Domain.Entities
         private GenericRepository<Category> _categoryRepository;
         private GenericRepository<Subscription> _subscriptionRepository;
         private GenericRepository<WorkEntry> _workEntryRepository;
+        private GenericRepository<FedPovertySetting> _fedPovertySettingRepository;
+        private GenericRepository<Page> _pageRepository;
 
         public GenericRepository<Question> QuestionRepository
         {
@@ -69,6 +68,16 @@ namespace Tals.ProBono.Domain.Entities
         public GenericRepository<WorkEntry> WorkEntryRepository
         {
             get { return _workEntryRepository ?? (_workEntryRepository = new GenericRepository<WorkEntry>(_context)); }
+        }
+
+        public GenericRepository<FedPovertySetting> FedPovertySettingRepository
+        {
+            get { return _fedPovertySettingRepository ?? (_fedPovertySettingRepository = new GenericRepository<FedPovertySetting>(_context)); }
+        }
+
+        public GenericRepository<Page> PageRepository
+        {
+            get { return _pageRepository ?? (_pageRepository = new GenericRepository<Page>(_context)); }
         }
 
         public void Save()

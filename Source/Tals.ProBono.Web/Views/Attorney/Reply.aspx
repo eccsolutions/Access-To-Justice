@@ -1,7 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Attorney.Master" Inherits="System.Web.Mvc.ViewPage<Tals.ProBono.Web.Models.ReplyViewModel>" %>
+<%@ Import Namespace="Tals.ProBono.Domain.Enums" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-	Reply
+    Reply
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
@@ -44,7 +45,7 @@
             </tr>
             <tr>
                 <td class="display-user">
-                    Created By: <%: Model.OriginalQuestion.CreatedBy %>
+                    <%Html.RenderPartial("QuestionCreatedBy",Model.OriginalQuestion); %>
                 </td>
                 <td>
                 <div class="display-subject">Subject: <%: Model.OriginalQuestion.Subject %></div>

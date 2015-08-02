@@ -1,9 +1,14 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Globalization;
+using System.Linq;
+using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
+using Tals.ProBono.Domain.Constants;
+using Tals.ProBono.Domain.Services;
 using Tals.ProBono.Web.Helpers;
 
 namespace Tals.ProBono.Web.Models
@@ -92,6 +97,16 @@ namespace Tals.ProBono.Web.Models
         [DisplayName("County")]
         public int County { get; set; }
 
+        [Required]
+        [DisplayName("Security Question")]
+        public string SecurityQuestion { get; set; }
+
+        [Required]
+        [DisplayName("Security Question Answer")]
+        public string SecurityQuestionAnswer { get; set; }
+
+        public SelectList SecurityQuestions { get; set; }
+
         public SelectList Counties { get; set; }
     }
 
@@ -114,7 +129,7 @@ namespace Tals.ProBono.Web.Models
         public string Email { get; set; }
 
         [Required]
-        [DisplayName("Attorney ID Number")]
+        [DisplayName("Attorney Bar Number")]
         public string DisciplinaryBoardNumber { get; set; }
 
         [Required]
@@ -178,11 +193,17 @@ namespace Tals.ProBono.Web.Models
         int MinPasswordLength { get; }
 
         bool ValidateUser(string userName, string password);
-        MembershipCreateStatus CreateUser(string userName, string password, string email);
+
         bool ChangePassword(string userName, string oldPassword, string newPassword);
-        MembershipCreateStatus CreateAttorney(string userName, string password, string email);
+
+        MembershipCreateStatus CreateAttorney(string userName, string password, string email, string securityQuestion, string securityAnswer);
+
+        MembershipCreateStatus CreateUser(string userName, string password, string email, string securityQuestion, string securityAnswer);
+
         string GetUserQuestion(string userName);
+
         bool ChangeQuestionAndAnswer(string userName, string password, string question, string answer);
+
         string ResetPassword(string userName, string answer);
     }
 
@@ -216,26 +237,26 @@ namespace Tals.ProBono.Web.Models
             return _provider.ValidateUser(userName, password);
         }
 
-        public MembershipCreateStatus CreateAttorney(string userName, string password, string email)
+        public MembershipCreateStatus CreateAttorney(string userName, string password, string email, string securityQuestion, string securityAnswer)
         {
             if (String.IsNullOrEmpty(userName)) throw new ArgumentException("Value cannot be null or empty.", "userName");
             if (String.IsNullOrEmpty(password)) throw new ArgumentException("Value cannot be null or empty.", "password");
             if (String.IsNullOrEmpty(email)) throw new ArgumentException("Value cannot be null or empty.", "email");
 
             MembershipCreateStatus status;
-            _provider.CreateUser(userName, password, email, null, null, true, null, out status);
+            _provider.CreateUser(userName, password, email, securityQuestion, securityAnswer, true, null, out status);
 
             return status;
         }
 
-        public MembershipCreateStatus CreateUser(string userName, string password, string email)
+        public MembershipCreateStatus CreateUser(string userName, string password, string email, string securityQuestion, string securityAnswer)
         {
             if (String.IsNullOrEmpty(userName)) throw new ArgumentException("Value cannot be null or empty.", "userName");
             if (String.IsNullOrEmpty(password)) throw new ArgumentException("Value cannot be null or empty.", "password");
             //if (String.IsNullOrEmpty(email)) throw new ArgumentException("Value cannot be null or empty.", "email");
 
             MembershipCreateStatus status;
-            _provider.CreateUser(userName, password, email, null, null, true, null, out status);
+            _provider.CreateUser(userName, password, email, securityQuestion, securityAnswer, true, null, out status);
 
             return status;
         }
@@ -319,7 +340,19 @@ namespace Tals.ProBono.Web.Models
         {
             if (String.IsNullOrEmpty(userName)) throw new ArgumentException("Value cannot be null or empty.", "userName");
 
-            FormsAuthentication.SetAuthCookie(userName, createPersistentCookie);
+            //EDG: If the user is an admin or attorney we will extend their auth timeout.
+            var roles = Roles.GetRolesForUser(userName);
+
+            if (roles.Contains(UserRoles.Administrators) || roles.Contains(UserRoles.Attorney))
+            {
+                var authTicket = new FormsAuthenticationTicket(ApplicationConstants.FORMS_TICKET_VERSION, userName, DateTime.Now, DateTime.Now.AddMinutes(ConfigSettings.AttorneyTimeoutInMinutes), createPersistentCookie, String.Empty, FormsAuthentication.FormsCookiePath);
+                var encryptedAuthTicket = FormsAuthentication.Encrypt(authTicket);
+                HttpContext.Current.Response.Cookies.Add(new HttpCookie(FormsAuthentication.FormsCookieName, encryptedAuthTicket));
+            }
+            else
+            {
+                FormsAuthentication.SetAuthCookie(userName, createPersistentCookie);
+            }
         }
 
         public void SignOut()

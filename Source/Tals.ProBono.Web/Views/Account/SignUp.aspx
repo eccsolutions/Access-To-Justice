@@ -69,10 +69,27 @@
                 <%: Html.PasswordFor(m => m.ConfirmPassword) %>
                 <%: Html.ValidationMessageFor(m => m.ConfirmPassword) %>
             </div>
-            <%: Html.Hidden("returnUrl", Request.QueryString["ReturnUrl"]) %>
             <p class="bold">
                 Write down your username and password.  Keep them in a safe place so no one else can use them.  Don't give them to anyone else.  You will need your username and password to log back in and read the lawyer's answer to your question.
-            </p>
+            </p>            
+            <div class="editor-label">
+                <%: Html.LabelFor(m => m.SecurityQuestion) %>
+            </div>
+            <div class="editor-field">
+                <%: Html.DropDownListFor(model => model.SecurityQuestion, Model.SecurityQuestions, "Select a question") %>
+                <%: Html.ValidationMessageFor(model => model.SecurityQuestion) %>
+            </div>
+
+             <div class="editor-label">
+                <%: Html.LabelFor(m => m.SecurityQuestionAnswer) %>
+            </div>
+            <div class="editor-field">
+                <%: Html.TextBoxFor(model => model.SecurityQuestionAnswer) %>
+                <%: Html.ValidationMessageFor(model => model.SecurityQuestionAnswer) %>
+            </div>
+
+
+            <%: Html.Hidden("returnUrl", Request.QueryString["ReturnUrl"]) %>
             <p>
                 <input type="submit" value="Sign Up" class="ImageLink" />
             </p>

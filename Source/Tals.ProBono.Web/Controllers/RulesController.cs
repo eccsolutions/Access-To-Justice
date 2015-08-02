@@ -1,14 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
+using Tals.ProBono.Domain.Constants;
 using Tals.ProBono.Domain.Entities;
-using Tals.ProBono.Web.Models;
 
 namespace Tals.ProBono.Web.Controllers
 {
-    public class RulesController : Controller
+    public class RulesController : ControllerBase
     {
         public int CurrentStepNumber
         {
@@ -38,6 +36,7 @@ namespace Tals.ProBono.Web.Controllers
 
         public ActionResult Step1()
         {
+            this.SetViewMessage(this.GetTempMessage());
             return RenderStep(new StartSignupQuestion(), 1);
         }
 
@@ -56,7 +55,7 @@ namespace Tals.ProBono.Web.Controllers
         [HttpPost]
         public ActionResult Step2(CountyQuestion countyQuestion)
         {
-            Session["County"] = countyQuestion.ToString();
+            Session[ApplicationConstants.SIGN_UP_COUNTY_KEY] = countyQuestion.ToString();
             return ExecuteStep(countyQuestion, 2);
         }
 
@@ -109,6 +108,7 @@ namespace Tals.ProBono.Web.Controllers
         {
             if (houseHoldSize == null) CurrentStepNumber = 5;
             var value = houseHoldSize ?? 0;
+            Session[ApplicationConstants.SIGN_UP_HOUSEHOLD_SIZE_KEY] = value;
             var question = new IncomeQuestion(value);
             ViewData["Frequencies"] = question.Frequencies;
 
@@ -119,7 +119,28 @@ namespace Tals.ProBono.Web.Controllers
         public ActionResult Step6([Bind(Prefix = "Answer")]IncomeQuestion incomeQuestion)
         {
             ViewData["Frequencies"] = incomeQuestion.Frequencies;
-            return ExecuteStep(incomeQuestion, 6);
+
+            if (CurrentStepNumber != 6)
+                return RedirectToAction("Step" + CurrentStepNumber);
+
+            var answer = RecordAnswer(incomeQuestion);
+
+            int parsedInt;
+            if (Int32.TryParse(answer.Answer, out parsedInt))
+            {
+                Session[ApplicationConstants.SIGN_UP_INCOME_KEY] = parsedInt;
+            }
+
+            if (!ModelState.IsValid) return View("CheckRule", incomeQuestion);
+
+            if (IsValid(incomeQuestion))
+            {
+                CurrentStepNumber++;
+                return RedirectToAction("Step" + CurrentStepNumber);
+            }
+
+            CurrentStepNumber = 1;
+            return View("NotEligible");
         }
 
         public ActionResult Step7()
@@ -187,7 +208,7 @@ namespace Tals.ProBono.Web.Controllers
             return question.IsValid;
         }
 
-        private void RecordAnswer<T>(IRuleQuestion<T> question)
+        private RuleAnswer RecordAnswer<T>(IRuleQuestion<T> question)
         {
             var answer = new RuleAnswer()
             {
@@ -201,6 +222,8 @@ namespace Tals.ProBono.Web.Controllers
             //UnitOfWork.AddToRuleAnswers(answer);
             UnitOfWork.RuleAnswerRepository.Insert(answer);
             UnitOfWork.Save();
+
+            return answer;
         }
     }
 }

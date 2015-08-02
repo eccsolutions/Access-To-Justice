@@ -1,5 +1,4 @@
-﻿using System.Web.Management;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using Tals.ProBono.Domain.Services;
 using Tals.ProBono.Web.Infrastructure;
 
@@ -7,7 +6,7 @@ namespace Tals.ProBono.Web.Controllers
 {
     [HandleError]
     [DynamicMasterPageFilter]
-    public class HomeController : Controller
+    public class HomeController : ControllerBase
     {
         public ActionResult Index()
         {

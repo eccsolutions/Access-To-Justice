@@ -1,5 +1,8 @@
 ﻿<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
 <%@ Import Namespace="Tals.ProBono.Domain.Services" %>
+<%@ Import Namespace="Tals.ProBono.Domain.Constants" %>
+<%@ Import Namespace="Tals.ProBono.Web.Enums" %>
+<%@ Import Namespace="Tals.ProBono.Web.Models.Shared" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -11,9 +14,10 @@
     <link href="/markitup/theme.css" rel="stylesheet" type="text/css" />
     <link href="/Content/ui/jquery.ui.all.css" rel="stylesheet" type="text/css" />
     <link href="/Content/atd.css" rel="Stylesheet" type="text/css" />
+    <link href="/Content/font-awesome/font-awesome.min.css" rel="stylesheet" type="text/css" />
     <script src="/Scripts/MicrosoftAjax.js" type="text/javascript"></script>
     <script src="/Scripts/MicrosoftMvcAjax.js" type="text/javascript"></script>
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.js"></script>
     <script src="/markitup/jquery.markitup.pack.js" type="text/javascript"></script>
     <script src="/markitup/bbcode-set-parsed.js" type="text/javascript"></script>
     <script src="/Scripts/ui/jquery.ui.core.js" type="text/javascript"></script>
@@ -31,8 +35,8 @@
     <script src="/Scripts/csshttprequest.js" type="text/javascript"></script>
     <script type="text/javascript">
         $(function () {
-            AtD.rpc_css = 'http://www.polishmywriting.com/dev/atd-jquery/server/proxycss.php?data=';
-            $('textarea').addProofreader();
+            AtD.rpc_css = 'https://www.polishmywriting.com/dev/atd-jquery/server/proxycss.php?data=';
+            $('textarea:not(.cleditor)').addProofreader();
         });
     </script>
     <script>
@@ -53,7 +57,7 @@
     <div class="page">
         <div id="header">
             <div id="title">
-                <%: Html.ImageLink("logo.png", ConfigSettings.SiteUrl, "Index", "Home") %>
+                <%: Html.ImageLink("logo.jpg", ConfigSettings.SiteUrl, "Index", "Home") %>
             </div>
             <div id="logindisplay">
                 <% Html.RenderPartial("CultureChooserUserControl"); %>
@@ -73,17 +77,59 @@
             <div id="quicklinks">
                 <asp:ContentPlaceHolder ID="QuickLinksContent" runat="server">
                     <h2 class="quicklinksheader">Other Places to Get Help</h2>
-                    <ul>
-                        <li><a href="http://www.google.com" target="_blank">Add Help Links Here</a></li>
-                    </ul>
+                    <h3>Legal Aid Programs</h3>
+                    <a style="margin-left:0" href="http://azlawhelp.org/accessToJustice.cfm" target="_blank" title="Arizona's Access to Justice Online Intake System">Arizona’s Access to Justice Online Intake System</a>
+
+                    <h3>Find a Lawyer</h3>
+                    <a style="margin-left: 0;" href="http://www.azlawhelp.org/A2JRedirect/A2JResources-FindALawyer.htm" target="_blank" title="The State Bar's Find A Lawyer page">The State Bar's Find A Lawyer page</a>
+                    <p/><a style="margin-left:0" href="http://www.azlawhelp.org/A2JRedirect/A2JResources-MCoLawyerReferral.htm" target="_blank" title="Maricopa County Lawyer Referral">Maricopa County Lawyer Referral</a>
+                    <p/><a style="margin-left:0" href="http://www.azlawhelp.org/A2JRedirect/A2JResources-PCoLawyerReferral.htm" target="_blank" title="Pima County Lawyer Referral">Pima County Lawyer Referral</a>
+
+                    <h3>Other Information</h3>
+                    <a style="margin-left: 0;" href="http://www.azlawhelp.org" target="_blank" title="Legal LEARN">Legal LEARN</a>                        
+                    <p/><a style="margin-left: 0;" href="http://www.azcadv.org" target="_blank" title="National Domestic Violence Hotline ">National Domestic Violence Hotline</a> (800-799-7233)
+                    <p/><a style="margin-left: 0;" href="http://www.azb.uscourts.gov" target="_blank" title="Bankruptcy Hotline ">Bankruptcy Hotline</a>
+                    <p/><a style="margin-left: 0;" href="http://legalaidaz.com" target="_blank" title="Legal Aid of Arizona">Legal Aid of Arizona</a>
                 </asp:ContentPlaceHolder>
             </div>
             <div id="content">
                 <% if(TempData["message"] != null) { %>
                     <div class="Message"><%: TempData["message"] %></div>
                 <% } %>
+
+                <%
+                     
+                   if (ViewData[ApplicationConstants.LAST_MESSAGE_KEY] != null)
+                   {
+                       var message = ViewData[ApplicationConstants.LAST_MESSAGE_KEY] as MessageDto;
+
+                       if (message != null)
+                       {
+                           var messageDisplay = String.Empty;
+               
+                           switch (message.Type)
+                           {
+                                case MessageTypes.Success:
+                                   messageDisplay = "<div class='message-display' style='color: green;'><i class='fa fa-check-circle fa-2x'></i> " + message.Text + "</div>";
+                                   break;
+                                case MessageTypes.Error:
+                                   messageDisplay = "<div class='message-display' style='color: red;'><i class='fa fa-exclamation-circle fa-2x'></i> " + message.Text + "</div>";
+                                   break;
+                                case MessageTypes.Warning:
+                                   messageDisplay = "<div class='message-display' style='color: orange;'><i class='fa fa-exclamation-triangle fa-2x'></i> " + message.Text + "</div>";
+                                   break;
+                               default:
+                                   messageDisplay = "<div class='message-display' style='color: blue;'><i class='fa fa-question-circle fa-2x'></i> " + message.Text + "</div>";
+                                   break;
+                           }
+               
+                           %><%=messageDisplay%><%
+                       }
+                    }
+                %>
+
+
                 <asp:ContentPlaceHolder ID="MainContent" runat="server" />
-                <br />
                 <br />
                 <br />
                 <div class="HelpMessage" style="clear: both">
@@ -91,32 +137,8 @@
                 </div>
             </div>
         </div>
-<%-- 
-        <div id="footer">
-            <div id="SponsorContainer">
-                <p>
-                    This site made possible through the generous donations of:
-                </p>
-               <% if (Roles.IsUserInRole(UserRoles.Attorney))
-                   { %>
-                <div class="sponsor">
-                    <a href="http://www.bakerdonelson.com" target="_blank">
-                        <img src="<%: Url.Image("baker_logo.png") %>" alt="Bakerdonelson.com" /></a>
-                </div>
-                <% } %>			
-                <div class="sponsor">
-                    <a href="http://www.microsoft.com/" target="_blank">
-                        <img src="<%: Url.Image("microsoft.png") %>" alt="Microsoft.com" />
-                    </a>
-                </div>
-                <div class="sponsor">
-                    <a href="http://www.dell.com/" target="_blank">
-                        <img src="<%: Url.Image("dell.png") %>" alt="dell.com" />
-                    </a>
-                </div>	
-            </div>
-        </div>
---%>
     </div>
+
+    <asp:ContentPlaceHolder ID="Scripts" runat="server" />
 </body>
 </html>

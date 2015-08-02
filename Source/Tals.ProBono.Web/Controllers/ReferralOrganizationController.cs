@@ -1,16 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Linq;
 using System.Web.Mvc;
-using Tals.ProBono.Domain.Abstract;
 using Tals.ProBono.Domain.Entities;
 using Tals.ProBono.Domain.Services;
 
 namespace Tals.ProBono.Web.Controllers
 {
     [Authorize(Roles = UserRoles.Administrators)]
-    public class ReferralOrganizationController : Controller
+    public class ReferralOrganizationController : ControllerBase
     {
         private readonly IUnitOfWork _unitOfWork;
 
@@ -27,7 +23,19 @@ namespace Tals.ProBono.Web.Controllers
 
         public ActionResult Edit(int id = 0)
         {
-            ReferralOrganization model = id == 0 ? new ReferralOrganization() : _unitOfWork.ReferralOrganizationRepository.Get().FirstOrDefault(c => c.Id == id);
+            ReferralOrganization model;
+
+            if (id <= 0)
+            {
+                model = new ReferralOrganization();
+                ViewBag.PageTitle = "Add New Organization";
+            }
+            else
+            {
+                model = _unitOfWork.ReferralOrganizationRepository.Get().FirstOrDefault(c => c.Id == id);
+                ViewBag.PageTitle = "Edit " + model.OrgName;
+            }
+            
             return View(model);
         }
 
@@ -44,6 +52,8 @@ namespace Tals.ProBono.Web.Controllers
                 _unitOfWork.Save();
                 return RedirectToAction("List");
             }
+
+            ViewBag.PageTitle = "Edit " + referralOrganization.OrgName;
 
             return View(referralOrganization);
         }
