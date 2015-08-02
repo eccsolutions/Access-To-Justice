@@ -9,8 +9,6 @@
 
     <h2>Manage Application Settings</h2>
 
-    <p><%=Html.ActionLink("Federal Poverty Settings", "Edit", "FPSettings") %></p>
-
     <p><%=Html.ActionLink("Categories", "List", "Category") %></p>
 
     <p><%=Html.ActionLink("Counties", "List", "County") %></p>
