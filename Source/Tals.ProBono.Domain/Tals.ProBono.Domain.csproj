@@ -131,6 +131,7 @@
   <ItemGroup>
     <Content Include="Scripts\AddAuditing.sql" />
     <Content Include="Scripts\AddCountySeedData.sql" />
+    <Content Include="Scripts\CreateMembershipSchemaOnAzure.sql" />
     <Content Include="Scripts\GenerateStaticData.sql" />
     <Content Include="Scripts\GetElement.sql" />
     <Content Include="Scripts\GetProfileElement.sql" />
