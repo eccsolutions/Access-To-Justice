@@ -14,65 +14,50 @@
     #Next { display: none;}
 </style>
 <div id="UserAgreement">
-    <h2>User Agreement</h2>
+    <h2>Client User Agreement</h2>
 
-<p class="bold">If you use this website, it means you understand and agree that:</p>
-<ul>
-    <li>A lawyer is helping you for free.</li>
-    <li>The lawyer only helps you with the question you type into this website. The lawyer won’t help you after that or do anything else for you.</li>
-    <li>This means:<ul>
-        <li>The lawyer won’t write letters, make calls, or file papers for you.</li>
-        <li>The lawyer won’t go to meetings or court for you.</li>
-        <li>You can’t contact the lawyer outside of this website unless the lawyer gives you permission.</li>
-        <li>If the lawyer asks you to send documents, and gives you contact information for you to be able to do that, you agree not to use that information to contact the lawyer for other help unless the lawyer gives you permission to do that.</li>
-        </ul>
-    </li>
-    <li>The lawyer has a <%=ConfigSettings.StateName%> law license.</li>
-    <li>The lawyer only tells you <%=ConfigSettings.StateName%> law. Laws may be different in other states.</li>
-    <li>All volunteer lawyers using the system can see what you ask in your question.</li>
-    <li>Only the lawyer who helps you can see your name, county, and the other side’s name in the case. If you have an open legal case, the lawyer who helps you can see what county you entered for that case.</li>
-    <li>The people who run this website do not provide the legal advice.</li>
-    <li>The people who run this website are not responsible for the advice the volunteer lawyer gives you through this website.</li>
-</ul>
+    <p>By using this website to submit a legal question, it means that you understand and agree that:</p>
+    <ol>
+	    <li>You do not already have a lawyer helping you with this problem.</li>		<li>You have answered the eligibility questions truthfully</li>				<li>You must tell the truth about your problem.</li>
+	    <li>You may not ask more than 3 questions per calendar year through this website.</li>
+	    <li>If a lawyer agrees to answer your question through this website, you will become a client of that lawyer for the limited purpose listed in this Client User Agreement.</li>
+	    <li>Any lawyer answering your question through this website is helping you for free.</li>
+	    <li>The sponsors of this website do not provide the legal advice and are not responsible for the advice any volunteer lawyer gives you through this website.</li>
+	    <li>If a lawyer agrees to answer your question through this website, the lawyer will use his or her best judgment, but the lawyer is not promising any particular outcome.</li>
+	    <li>If a lawyer agrees to answer your question through this website, the lawyer will only provide the following services to you:
+		    <ol>
+			    <li>Review the information and question that you provide; </li>
+			    <li>Respond to your legal question based on applicable law in Wisconsin; and</li>
+			    <li>Suggest additional resources that you can consult for further assistance or information</li>
+		    </ol>
+	    </li>
+	    <li>The legal advice that lawyers provide through this website is limited. The lawyer has not made any independent investigation of the facts and is relying entirely on your disclosure of the facts to the lawyer through this website.</li>
+	    <li>After the lawyer provides an answer to your question, the lawyer won’t help you after that or do anything else for you. This means:
+		    <ol>
+			    <li>The lawyer won’t help investigate the facts of your situation for you.</li>
+			    <li>The lawyer won’t write letters, make calls, or file papers for you.</li>
+			    <li>The lawyer won’t go to meetings or to court for you.</li>
+			    <li>You can’t contact the lawyer outside of this website for any reason unless the lawyer gives you permission to do that.</li>
+		    </ol>
+	    </li>
+    </ol>
+
+    <h3>Conflicts</h3>
     <p>
-       Lawyers can only help one side in a case. For example, a lawyer can help either the renter or the landlord. The lawyer can’t help both of them with the same case. If you use this website, it means you understand and agree that:
+    This website is a short-term limited legal services program that allows you to post legal questions for Wisconsin lawyers who sign up and volunteer their time to provide answers. There is no expectation of any ongoing relationship between you and the volunteer lawyer. If you are aware of any potential conflict of interest while the lawyer is helping you, you must tell the lawyer about the potential conflict at that time. If the lawyer learns of a conflict while assisting you, the lawyer will tell you and your question will be reassigned to another willing lawyer who volunteers through this website. Because this website is a short-term limited legal services program, another lawyer in the lawyer's firm or another volunteer in this program may represent someone with interests opposed to yours. 
     </p>
-<ul>
-    <li>The lawyer or the lawyer’s company could be helping the other person in your case and not know that when they answer your question.</li>
-    <li>If the lawyer or lawyer’s company is helping the other person in your case and they answer your question, they are not breaking the law because they did not know it was the same case. If you use this website, it means you will not blame the lawyer or the lawyer’s company for not knowing it was the same case.</li>
-    <li>If the lawyer finds out they are helping both sides on the same case before they answer your question, they can’t answer your question. They have to give your question to another lawyer on the website who is not already working on the case.</li>
-</ul>
-    <p>Your questions are secret.</p>
-<ul>
-    <li>Only the people who run the website, you, and the volunteer lawyers can see the question and the facts you type into the website.</li>
-    <li>Only the people who run the website and the lawyer who agrees to answer your question can see your name.</li>
-    <li>This website keeps your information to help make the website better.</li>
-    <li>We won’t sell your information. We won’t share it unless a judge says we have to. We can’t promise no one will break into the website and see your information.</li>
-</ul>
-<p>This is the information the website keeps:</p>
-    <ul>
-        <li>what type of legal problem you had (housing, family law, debt, immigration, etc.),</li>
-        <li>your question</li>
-        <li>the name of the lawyer who answered your question,</li>
-        <li>what the lawyer told you on the website,</li>
-        <li>your responses to what the lawyer told you,</li>
-        <li>what county you live in,</li>
-        <li>the other party’s name in your case (if you entered this information)</li>
-        <li>the county your case is in (if you entered this information)</li>
-        <li>what you clicked on in the website (where you went on this website), and</li>
-        <li>how you found our website (from a Google search, from LawHelpMN.org, or from another organization)</li>
-    </ul>
-    <p></p>
-    <ul>
-        <li>If you communicate with the lawyer outside of the website, the people running this website can’t see what the lawyer tells you and won’t keep records of this.</li>
-        <li>The people running this website are not responsible for the advice the lawyer tells you outside of the website.</li>
-    </ul>
-<p>To use this website, you must also agree to the next two statements:</p>
-    <ul>
-        <li>I do not already have a lawyer helping me with this problem.</li>
-        <li>I will tell the truth about my legal problem.</li>
-    </ul>
-<p class="bold">If you don’t agree, then you can't use this website.</p>
+
+    <h3>Confidentiality</h3>
+    <p>
+    By using this website, you are agreeing that the website administrator may review the information you provide to ensure that: (1) your question qualifies for this service; (2) your question is categorized properly for the volunteers; and (3) the website is operating properly. The lawyer and the administrator of this website will keep your information confidential. Only you, the website administrator, and approved volunteers can see the information that you type into the website. For more information about the information our website collects, please see our Privacy Policy. 
+    </p>
+
+    <h3>Complete agreement</h3>
+    <p>
+    This agreement accurately states the full agreement for limited legal services between you and any volunteer lawyer who agrees to assist you. By clicking Agree below, you confirm that there are no other agreements or representations that have been made to you regarding the scope of the legal services that will be provided to you. You understand and agree to the scope of the legal representation and services described in this agreement, including the limitations on those services.  
+    </p>
+
+    <h3>If you don’t agree, then you can't use this website.</h3>
 </div>
 <br />
 <div>
