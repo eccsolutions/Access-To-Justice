@@ -10,6 +10,7 @@
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.ServiceModel;
+using System.Web.Mvc;
 
 namespace Tals.ProBono.Domain.Entities
 {
@@ -26,6 +27,7 @@ namespace Tals.ProBono.Domain.Entities
     
         public int Id { get; set; }
         public string Subject { get; set; }
+        [AllowHtml]
         public string Body { get; set; }
         public string CreatedBy { get; set; }
         public string TakenBy { get; private set; }

@@ -7,6 +7,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System.Web.Mvc;
+
 namespace Tals.ProBono.Domain.Entities
 {
     using System;
@@ -17,6 +19,7 @@ namespace Tals.ProBono.Domain.Entities
         public int Id { get; set; }
         public int QuestionId { get; set; }
         public string Subject { get; set; }
+        [AllowHtml]
         public string Body { get; set; }
         public string CreatedBy { get; set; }
         public System.DateTime CreatedDate { get; set; }
