@@ -80,6 +80,13 @@
                         <li><a href="http://www.msatjc.org" target="_blank">Mississippi Access to Justice Commission</a></li>
                         <li><a href="http://www.ospd.ms.gov" target="_blank">Mississippi Office of the State Public Defender</a></li>
                         <li><a href="http://www.ago.state.ms.us" target="_blank">Mississippi Attorney General's Office</a></li>
+                        <li><a href="http://www.splcenter.org" target="_blank">Southern Poverty Law Center</a></li>
+                        <li><a href="http://www.missionfirst.org/legalaid">Mission First Legal Aid Office</a></li>
+                        <li><a href="http://www.mscenterforjustice.org">Mississippi Center for Justice</a></li>
+                        <li><a href="http://www.catholiccharitiesjackson.org">Catholic Charities</a></li>
+                        <li><a href="http://www.yourmira.org">Mississippi Immigrant Rights Alliance</a></li>
+                        <li><a href="http://www.drms.ms">Disability Rights Mississippi</a></li>
+                        <li><a href="http://www.msworkers.org">Mississippi Workers' Center for Human Rights</a></li>
                     </ul>
                 </asp:ContentPlaceHolder>
             </div>
