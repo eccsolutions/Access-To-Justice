@@ -175,6 +175,7 @@ namespace Tals.ProBono.Domain.Entities
         [Required(ErrorMessage = "Question is required")]
         [StringLength(8000, ErrorMessage = "Question may not be longer than 8000 characters")]
         [DisplayName("Type your question here:")]
+        [AllowHtml]
         public string Body { get; set; }
 
         [HiddenInput(DisplayValue = false)]
