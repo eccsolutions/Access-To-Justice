@@ -53,7 +53,7 @@
     <div class="page">
         <div id="header">
             <div id="title">
-                <%: Html.ImageLink("logo.png", "mnlegaladvice.org", "Index", "Home") %>
+                <%: Html.ImageLink("logo.png", "mslegalhelp.org", "Index", "Home") %>
             </div>
             <div id="logindisplay">
                 <% Html.RenderPartial("CultureChooserUserControl"); %>
