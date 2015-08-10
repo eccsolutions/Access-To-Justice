@@ -6,7 +6,7 @@
     <%=ConfigSettings.SiteName %> – Free Legal Advice & Counsel
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <h2>Welcome to the <%=ConfigSettings.SiteName %>!</h2>
+    <h2>Welcome to <%=ConfigSettings.SiteName %>!</h2>
     <p>
         This free service allows eligible Wisconsin residents to post legal questions for our volunteer lawyers. Lawyers who have signed up to participate in this program select the questions that they want to answer. To use this website, you must first qualify for help.
     </p>

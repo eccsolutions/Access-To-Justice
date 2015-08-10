@@ -49,7 +49,7 @@
 
     <h3>Confidentiality</h3>
     <p>
-    By using this website, you are agreeing that the website administrator may review the information you provide to ensure that: (1) your question qualifies for this service; (2) your question is categorized properly for the volunteers; and (3) the website is operating properly. The lawyer and the administrator of this website will keep your information confidential. Only you, the website administrator, and approved volunteers can see the information that you type into the website. For more information about the information our website collects, please see our Privacy Policy. 
+    By using this website, you are agreeing that the website administrator may review the information you provide to ensure that: (1) your question qualifies for this service; (2) your question is categorized properly for the volunteers; and (3) the website is operating properly. The lawyer and the administrator of this website will keep your information confidential. Only you, the website administrator, and approved volunteers can see the information that you type into the website. For more information about the information our website collects, please see our <a href="/Home/PrivacyPolicy">Privacy Policy</a>. 
     </p>
 
     <h3>Complete agreement</h3>

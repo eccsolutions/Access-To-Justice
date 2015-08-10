@@ -12,6 +12,7 @@ namespace Tals.ProBono.Domain.Services
         private static string _stateName;
         private static string _siteName;
         private static string _adminUserName;
+        private static string _googleAnalyticsTrackingId;
 
         public static string TemplatePath
         {
@@ -38,8 +39,14 @@ namespace Tals.ProBono.Domain.Services
             get { return _siteName ?? (_siteName = GetConfigSetting("SiteName")); }
         }
 
-        public static string AdminUserName {
+        public static string AdminUserName
+        {
             get { return _adminUserName ?? (_adminUserName = GetConfigSetting("AdminUserName")); }
+        }
+
+        public static string GoogleAnalyticsTrackingId
+        {
+            get { return _googleAnalyticsTrackingId ?? (_googleAnalyticsTrackingId = GetConfigSetting("GoogleAnalyticsTrackingId")); }
         }
 
         private static string GetConfigSetting(string settingName)

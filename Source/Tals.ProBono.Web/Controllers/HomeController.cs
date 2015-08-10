@@ -34,6 +34,11 @@ namespace Tals.ProBono.Web.Controllers
             return View();
         }
 
+        public ActionResult PrivacyPolicy()
+        {
+            return View();
+        }
+
         public ActionResult ApprovalNeeded()
         {
             return View();

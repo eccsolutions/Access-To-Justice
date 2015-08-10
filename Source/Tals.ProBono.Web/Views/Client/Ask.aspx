@@ -22,14 +22,7 @@
                              <%: Html.ValidationMessageFor(model => model.CategoryId) %>
                         </td>
                          <td width="70%">     
-                               Don't see your legal issue listed? Click <a href="http://www.lawhelpmn.org/resource/mlao-referrals-1?ref=m1muK" target="_blank">here</a> if your question is about:
-                               <ul>
-                                    <li>bankruptcy,</li>
-                                    <li>sealing (expunging) criminal records, or</li>
-                                    <li>being sued by a debt collector or credit card company.</li>
-                               </ul>
-                                This site can't help you with a problem you could go to jail for. 
-                                Click <a href="http://www.lawhelpmn.org/resource/criminal-law-info?ref=hliW4" target="_blank">here</a> for other places to get help with a criminal problem.
+                               Don't see your legal issue listed? This site can't help you with a problem you could go to jail for. To get help with a criminal problem, contact the <a href="http://wispd.org/index.php/client-or-prospective-client">Wisconsin State Public Defender</a> or the <a href="http://www.wisbar.org/forpublic/ineedalawyer/pages/lris.aspx">Lawyer Referral & Information Service</a>. For questions about pardons and expungement, visit <a href="http://wilawlibrary.gov/topics/justice/crimlaw/pardons.php">this page</a> at the Wisconsin State Law Library.
                         </td>
                     </tr>
                 </table>
