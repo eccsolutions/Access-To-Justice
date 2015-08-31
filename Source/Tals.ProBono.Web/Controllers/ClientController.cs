@@ -68,7 +68,7 @@ namespace Tals.ProBono.Web.Controllers
             //    return RedirectToAction("Index", "Rules");
 #endif
 
-            ViewData["categories"] = _unitOfWork.CategoryRepository.Get();
+            ViewData["categories"] = _unitOfWork.CategoryRepository.Get().OrderBy(w => w.SortOrder);
             ViewData["casecounties"] = _unitOfWork.CountyRepository.Get();
 
             return View(new Question());
