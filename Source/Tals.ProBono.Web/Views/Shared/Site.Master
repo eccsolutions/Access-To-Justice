@@ -80,20 +80,14 @@
                         <li><a href="http://www.arcw.org/">
                         AIDS Resource Center of Wisconsin
                         </a></li>
-                        <li><a href="http://cpcmadison.org/internationals/immigration-counseling/">
-                        Community Immigration Law Center
-                        </a></li>
-                        <li><a href="http://www.ccmke.org/Catholic-Charities.htm">
-                        Legal Services for Immigrants - Milwaukee
-                        </a></li>
-                        <li><a href="http://www.catholiccharitieslax.org/index.php">
-                        Legal Services for Immigrants - La Crosse
-                        </a></li>
                         <li><a href="http://www.safetyweb.org/">
                         Center Against Sexual & Domestic Abuse (CASDA) 
                         </a></li>
                         <li><a href="http://www.centrolegalwisconsin.org/">
                         Centro Legal por Derechos Humanos 
+                        </a></li>
+                        <li><a href="http://cpcmadison.org/internationals/immigration-counseling/">
+                        Community Immigration Law Center
                         </a></li>
                         <li><a href="http://www.communityjusticeinc.org/">
                         Community Justice, Inc.
@@ -113,6 +107,14 @@
                         <li><a href="http://www.lasmilwaukee.com/">
                         Legal Aid Society of Milwaukee
                         </a></li>
+                        <li><a href="http://www.catholiccharitieslax.org/index.php">
+                        Legal Services for Immigrants - La Crosse
+                        </a></li>
+                        <li><a href="http://www.ccmke.org/Catholic-Charities.htm">
+                        Legal Services for Immigrants - Milwaukee
+                        </a></li>
+                        <li><a href="http://law.marquette.edu/mvlc/">Marquette Volunteer Legal Clinic
+                        </a></li>
                         <li><a href="http://milwaukee.gov/MJC">
                         Milwaukee Justice Center
                         </a></li>
@@ -122,15 +124,13 @@
                         <li><a href="http://www.wisbar.org/lris">
                         State Bar Lawyer Referral Service
                         </a></li>
+                        <li><a href="http://law.wisc.edu/clinics/">UW Law School Clinics
+                        </a></li>
                         <li><a href="http://www.judicare.org/">
                         Wisconsin Judicare
                         </a></li>
                         <li><a href="http://wispd.org/">
                         Wisconsin State Public Defenders
-                        </a></li>
-                        <li><a href="http://law.marquette.edu/mvlc/">Marquette Volunteer Legal Clinic
-                        </a></li>
-                        <li><a href="http://law.wisc.edu/clinics/">UW Law School Clinics
                         </a></li>
                     </ul>
                 </asp:ContentPlaceHolder>

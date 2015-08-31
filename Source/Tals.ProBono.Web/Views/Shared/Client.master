@@ -7,7 +7,7 @@
     <asp:ContentPlaceHolder ID="HeadContent" runat="server" />
     <script type="text/javascript">
         var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', 'UA-24167933-1']);
+        _gaq.push(['_setAccount', '<%=ConfigSettings.GoogleAnalyticsTrackingId %>']);
         _gaq.push(['_trackPageview']);
 
         (function () {

@@ -13,7 +13,6 @@
         <%: Html.ActionLink("Back to Attorney Sign Up", "AttorneySignUp", "Account", null, new { @class = "ImageLink" })%>
     </p>
     <% } %>
-    <h3><a href="www.youtube.com/watch?v=Z4uesStFQUw">Watch an instruction video for attorneys</a></h3>
     <ul>
         <li><a href="#Q1">How does this service work?</a></li>
         <li><a href="#Q2">Who is eligible to use Wisconsin Legal Advice Online?</a></li>
@@ -136,7 +135,7 @@
 
         <h3><a id="Q12">Entering Hours</a></h3>
         <p>
-            Each time you attempt to log out of the website, you will be prompted to enter the time you have spent researching and answering questions. You may log your time in 15-minute increments. We do this to help us measure one aspect of the impact that your donation of time is having in Wisconsin. You may view your hours at any time by clicking on “My Profile” at the top of the page.
+            Each time you attempt to log out of the website, you will be prompted to enter the time you have spent researching and answering questions. You may log your time in 15-minute increments. We do this to help us measure one aspect of the impact that your donation of time is having in Wisconsin. You may view your hours at any time by clicking on “My Profile” at the top of the page.  Your volunteer hours with WLAO count towards eligibility for the <a href="http://wisatj.org/probonosociety">Wisconsin Pro Bono Honor Society</a>.
         </p>
 
         <h3><a id="Q13">How do I contact the administrator with a question?</a></h3>

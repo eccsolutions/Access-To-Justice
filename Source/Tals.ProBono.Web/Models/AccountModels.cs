@@ -117,7 +117,6 @@ namespace Tals.ProBono.Web.Models
         [DisplayName("Attorney ID Number")]
         public string DisciplinaryBoardNumber { get; set; }
 
-        [Required]
         [DisplayName("Firm/Organization")]
         public string Organization { get; set; }
 

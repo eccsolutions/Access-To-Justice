@@ -7,14 +7,14 @@
     <h2 class="ConfirmationHeading">
         Log Hours</h2>
     <img src="<%: Url.Image("warning.bmp") %>" alt="Warning!" />
-    Before logging out, you must log the hours spent answering questions for CLE credit.
+    Before logging out, please tell us how much time you spent answering questions. If the answer is zero for a session, that’s ok.
     <p id="WarningMessage">
         Hours should be recorded based on actual time spent researching and answering questions.
     </p>
     <fieldset style="border-color: #800000; border-style: solid; border-width: medium">
     <legend><img src="<%: Url.Image("important.png") %>" alt="Important!" /></legend>
         <p style="font-weight:bold;color:#800000">
-            Please take a moment to complete our short survey. Your feedback is important to us. <a href="https://www.surveymonkey.com/s/P2NCNYN" target="_blank">Click Here!</a>
+            Please take a moment to complete our short survey. Your feedback is important to us. <a href="http://goo.gl/forms/PXD3aE02hw" target="_blank">Click Here!</a>
         </p>
     </fieldset>
     <% using (Html.BeginForm())

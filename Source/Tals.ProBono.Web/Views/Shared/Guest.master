@@ -8,7 +8,7 @@
     <asp:ContentPlaceHolder ID="HeadContent" runat="server" />
     <script type="text/javascript">
         var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', 'UA-24167933-1']);
+        _gaq.push(['_setAccount', '<%=ConfigSettings.GoogleAnalyticsTrackingId %>']);
         _gaq.push(['_trackPageview']);
 
         (function () {
@@ -24,6 +24,7 @@
             <%: Html.ActionMenuItem("Home", "Index", "Home")%>
             <%: Html.ActionMenuItem("About", "About", "Home")%>
             <%: Html.ActionMenuItem("Help", "Help",  "Home")%>
+            <%: Html.ActionMenuItem("Lawyer Signup", "AttorneySignUp",  "Account")%>
         </ul>
     </asp:ContentPlaceHolder>
 </asp:Content>
