@@ -46,6 +46,11 @@
         ga('create', '<%=ConfigSettings.GoogleAnalyticsTrackingId %>', 'auto');
         ga('send', 'pageview');
     </script>
+    <script type="text/javascript"> //<![CDATA[ 
+        var tlJsHost = ((window.location.protocol == "https:") ? "https://secure.comodo.com/" : "http://www.trustlogo.com/");
+        document.write(unescape("%3Cscript src='" + tlJsHost + "trustlogo/javascript/trustlogo.js' type='text/javascript'%3E%3C/script%3E"));
+        //]]>
+    </script>
     <asp:ContentPlaceHolder ID="HeadContent" runat="server" />
     <%--<meta name="google-translate-customization" content="aa3530a07dbe7217-6312bf287a7c7783-gc8936b4c01e4c8f0-1b" />--%>
 </head>
@@ -146,7 +151,10 @@
                 <div class="HelpMessage" style="clear: both">
                     <p>If you have problems navigating the site, or are experiencing problems with the site, you may contact us at <a href="mailto:<%=ConfigSettings.SiteEmail %>"><%=ConfigSettings.SiteEmail %></a>. This email address is for technical questions or website problems only. Do not sent legal questions to this address. They will not be answered.</p>
                     <div style="text-align:center">
-                        <img alt="Comodo SSL" src="/Content/Images/comodo_secure_113x59_white.png" />
+                        <!--<img alt="Comodo SSL" src="/Content/Images/comodo_secure_113x59_white.png" />-->
+                        <script language="JavaScript" type="text/javascript">
+                            TrustLogo("https://www.wilegaladvice.org/Content/Images/comodo_secure_113x59_white.png", "CL1", "none");
+                        </script>
                     </div>
                 </div>
             </div>
