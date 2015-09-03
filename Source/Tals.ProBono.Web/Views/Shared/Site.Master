@@ -144,7 +144,10 @@
                 <br />
                 <br />
                 <div class="HelpMessage" style="clear: both">
-                    If you have problems navigating the site, or are experiencing problems with the site, you may contact us at <a href="mailto:<%=ConfigSettings.SiteEmail %>"><%=ConfigSettings.SiteEmail %></a>. This email address is for technical questions or website problems only. Do not sent legal questions to this address. They will not be answered.
+                    <p>If you have problems navigating the site, or are experiencing problems with the site, you may contact us at <a href="mailto:<%=ConfigSettings.SiteEmail %>"><%=ConfigSettings.SiteEmail %></a>. This email address is for technical questions or website problems only. Do not sent legal questions to this address. They will not be answered.</p>
+                    <div style="text-align:center">
+                        <img alt="Comodo SSL" src="/Content/Images/comodo_secure_113x59_white.png" />
+                    </div>
                 </div>
             </div>
         </div>
