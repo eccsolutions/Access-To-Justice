@@ -10,6 +10,7 @@ namespace Tals.ProBono.Web.Models
             Reply = new Post {Subject = "Re: " + question.Subject};
         }
 
+        public DetailsCreatedByModel CreatedBy { get; set; }
         public Question OriginalQuestion { get; private set; }
         public Post Reply { get; set; }
     }

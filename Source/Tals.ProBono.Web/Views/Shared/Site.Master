@@ -139,6 +139,7 @@
         </div>
     </div>
 
+    <script type="text/javascript" src="/Scripts/Views/Shared/OnlineJustice.js"></script>
     <asp:ContentPlaceHolder ID="Scripts" runat="server" />
 </body>
 </html>

@@ -23,14 +23,25 @@
             </div>
             <%: Html.HiddenFor(model => model.QuestionId) %>
 
-            <p>
-                <input type="submit" value="Save" class="ImageLink" />
-            </p>
+            <div style="padding:5px">
+                <input type="submit" value="Save" class="ImageLink"/>&nbsp;&nbsp;&nbsp;
+                <%if(!String.IsNullOrWhiteSpace(Model.AssignedTo))
+                  { %>
+                    <input type="button" value="Return Question to Queue" class="ImageLink" onclick="OnlineJustice.Admin.EditQuestion.returnQuestionToQueue()"/>
+                <% } %>
+            </div>
         </fieldset>
 
     <% } %>
 
-    <%
-       Html.RenderPartial("DetailsForm", Model.Details);%>
+    <% using (Html.BeginForm("ReturnQuestionToQueue","Admin",FormMethod.Post,new {id="frm-returnQuestionToQueue"})){%>
+           <%:Html.HiddenFor(model => model.QuestionId)%>
+    <%}%>
 
+    <%Html.RenderPartial("DetailsForm", Model.Details);%>
+
+</asp:Content>
+
+<asp:Content ID="Scripts" ContentPlaceHolderID="Scripts" runat="server">
+    <script type="text/javascript" src="/Scripts/Views/Admin/Admin.EditQuestion.js"></script>
 </asp:Content>

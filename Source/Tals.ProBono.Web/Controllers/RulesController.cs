@@ -73,13 +73,14 @@ namespace Tals.ProBono.Web.Controllers
         
         public ActionResult Step4()
         {
-            return RenderStep(new AgeQuestion(), 4);
+            return RenderStep(new BirthDateQuestion(), 4);
         }
 
         [HttpPost]
-        public ActionResult Step4(AgeQuestion ageQuestion)
+        public ActionResult Step4(BirthDateQuestion birthDayQuestion)
         {
-            return ExecuteStep(ageQuestion, 4);
+            Session[ApplicationConstants.SIGN_UP_BIRTHDAY_KEY] = birthDayQuestion.Answer.GetValueOrDefault();
+            return ExecuteStep(birthDayQuestion, 4);
         }
 
         //public ActionResult Step4()

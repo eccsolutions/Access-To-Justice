@@ -42,7 +42,7 @@
         <br />
         <div>
             <p>To see the questions you chose click on <strong>Taken</strong>.</p>
-            <p>To see questions that need immediate attention click on <strong>Urgent</strong>.</p>
+            <p>To see questions that need immediate attention click on <strong>Longest Wait</strong>.</p>
             <p>To see all the questions currently waiting to be answered click on <strong>Queue</strong>.</p>
             <p>For information on CLE’s and upcoming events click on the advocate tab.</p>
         </div>
@@ -50,4 +50,8 @@
 </asp:Content>
 <asp:Content runat="server" ID="Main" ContentPlaceHolderID="MainContent">
     <asp:ContentPlaceHolder runat="server" ID="MainContent" />
+</asp:Content>
+
+<asp:Content runat="server" ID="Scripts" ContentPlaceHolderID="Scripts">
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server" />
 </asp:Content>

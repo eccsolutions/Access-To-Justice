@@ -1,0 +1,3 @@
+﻿var OnlineJustice = {};
+
+OnlineJustice.Admin = {};

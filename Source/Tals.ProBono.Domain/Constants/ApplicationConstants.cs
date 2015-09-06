@@ -14,5 +14,7 @@ namespace Tals.ProBono.Domain.Constants
         public static string SIGN_UP_INCOME_KEY = "SIGNUP_INCOME";
 
         public static string SIGN_UP_HOUSEHOLD_SIZE_KEY = "SIGNUP_HOUSEHOLD";
+
+        public static string SIGN_UP_BIRTHDAY_KEY = "SIGNUP_BIRTHDAY";
     }
 }

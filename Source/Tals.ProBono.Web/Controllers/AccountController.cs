@@ -157,6 +157,8 @@ namespace Tals.ProBono.Web.Controllers
                         profile.Income = Session[ApplicationConstants.SIGN_UP_INCOME_KEY] as int?;
                         profile.HouseholdSize = Session[ApplicationConstants.SIGN_UP_HOUSEHOLD_SIZE_KEY] as int?;
 
+                        profile.DateOfBirth = Session[ApplicationConstants.SIGN_UP_BIRTHDAY_KEY] as DateTime?;
+
                         profile.Save();
 
                         Roles.AddUserToRole(model.UserName, UserRoles.BasicUser);

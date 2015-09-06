@@ -51,13 +51,14 @@ namespace Tals.ProBono.Web.Helpers
         {
             if (Roles.IsUserInRole(UserRoles.BasicUser))
             {
-                if (Roles.IsUserInRole(userName, UserRoles.Attorney)) return MvcHtmlString.Create("Volunteer Lawyer");
+                if (Roles.IsUserInRole(userName, UserRoles.Attorney))
+                {
+                    return MvcHtmlString.Create(UserProfile.GetUserProfile(userName).FullName);
+                }
                 if (Roles.IsUserInRole(userName, UserRoles.Administrators)) return MvcHtmlString.Create("Moderator");
             }
 
-            var profile = UserProfile.GetUserProfile(userName);
-
-            return helper.ActionLink(profile.FullName + " (" + userName + ")", "Profile", "User", new { userName }, null);
+            return helper.ActionLink(UserProfile.GetUserProfile(userName).FullName + " (" + userName + ")", "Profile", "User", new { userName }, null);
         }
 
         public static string KPI(this HtmlHelper helper, QuestionStatus status)

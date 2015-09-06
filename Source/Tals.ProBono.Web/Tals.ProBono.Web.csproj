@@ -141,6 +141,7 @@
     <Compile Include="Helpers\StringExtensions.cs" />
     <Compile Include="Infrastructure\CultureHelper.cs" />
     <Compile Include="Infrastructure\UserModel.cs" />
+    <Compile Include="Models\DetailsCreatedByModel.cs" />
     <Compile Include="Models\ProfileModels.cs" />
     <Compile Include="Models\ProfileType.cs" />
     <Compile Include="Models\Shared\MessageDto.cs" />
@@ -427,6 +428,8 @@
     <Content Include="Scripts\ui\jquery.ui.tabs.js" />
     <Content Include="Scripts\ui\jquery.ui.tooltip.js" />
     <Content Include="Scripts\ui\jquery.ui.widget.js" />
+    <Content Include="Scripts\Views\Admin\Admin.EditQuestion.js" />
+    <Content Include="Scripts\Views\Shared\OnlineJustice.js" />
     <Content Include="Views\Account\AttorneyFAQ.aspx" />
     <Content Include="Views\Account\AttorneyUseAgreement.aspx" />
     <Content Include="Views\Account\AttorneySignUp.aspx" />
@@ -478,6 +481,7 @@
     <Content Include="Views\Shared\CultureChooserUserControl.ascx" />
     <Content Include="Views\Shared\EditorTemplates\CategoryEditor.ascx" />
     <Content Include="Views\Shared\EditorTemplates\CountyEditor.ascx" />
+    <Content Include="Views\Shared\EditorTemplates\BirthDateEditor.ascx" />
     <Content Include="Views\Shared\EditorTemplates\UserAgreementEditor.ascx" />
     <Content Include="Views\Shared\EditorTemplates\UserSignupEditor.ascx" />
     <Content Include="Views\Shared\MarkAsAnswer.aspx" />

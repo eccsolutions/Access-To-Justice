@@ -575,14 +575,13 @@ div#title
     position: relative;
 }
 
-.ImageLinkText {
+.imageLinkText {
     font-family: Verdana, sans-serif;
     font-size: 11pt;
     font-weight: bold;
 }
 
-.ImageLinkText:link, .ImageLinkText:visited {
-    text-decoration: none;
+.imageLinkText i {
     color: #000;
 }
 

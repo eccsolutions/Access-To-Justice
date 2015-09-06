@@ -70,7 +70,7 @@
             <li>You consent to the limited nature of the attorney/client relationship both as to scope and duration,</li>
             <li>You are licensed to practice law in Arizona and you will respond to the question based on Arizona and/or federal law,</li>
             <li>You agree you have and will maintain professional malpractice insurance, </li>
-            <li>If you accept a case from the <%=ConfigSettings.SiteName %> for additional representation you will notify Arizona Foundation for Legal Services &amp; Education by sending an e-mail to <a href="mailto:info@azflse.org">info@azflse.org</a></li>
+            <li>If you accept a case from the <%=ConfigSettings.SiteName %> for additional representation you will notify Arizona Foundation for Legal Services &amp; Education by sending an e-mail to <a href="<%=ConfigSettings.SiteEmail %>"><%=ConfigSettings.SiteEmail %></a></li>
             <li>If you accept a &quot;Legal Aid&quot; case you will first instruct the user to apply online at Arizona&#39;s Access to Justice Online Intake system,</li>
             <li>If you accept a case from the <%=ConfigSettings.SiteName %> you will only charge a maximum rate of $75 per hour to &quot;Modest Means&quot; and &quot;Legal Aid&quot; clients, and</li>
             <li>The information that you will provide is true and correct.</li>

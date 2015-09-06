@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -14,7 +15,7 @@ namespace Tals.ProBono.Domain.Entities
         bool IsValid { get; }
     }
 
-    public class AgeQuestion : IRuleQuestion<int>
+    /*public class AgeQuestion : IRuleQuestion<int>
     {
         public string Question
         {
@@ -29,6 +30,37 @@ namespace Tals.ProBono.Domain.Entities
         public bool IsValid
         {
             get { return Answer >= ConfigSettings.MinimumAgeRequirement; }
+        }
+
+        public override string ToString()
+        {
+            return Answer.ToString();
+        }
+    }*/
+
+    public class BirthDateQuestion : IRuleQuestion<DateTime?>
+    {
+        public string Question
+        {
+            get { return "When where you born? (You must be at least " + ConfigSettings.MinimumAgeRequirement + " years old). "; }
+        }
+
+        [Required]
+        [DisplayName("Date of Birth")]
+        [UIHint("BirthDateEditor")]
+        public DateTime? Answer { get; set; }
+
+        public bool IsValid
+        {
+            get
+            {
+                if (Answer == null)
+                {
+                    return false;
+                }
+
+                return new DateTime(Answer.Value.Year, Answer.Value.Month, Answer.Value.Day, 0, 0, 0).AddYears(ConfigSettings.MinimumAgeRequirement) <= DateTime.Now;
+            }
         }
 
         public override string ToString()
@@ -168,6 +200,12 @@ namespace Tals.ProBono.Domain.Entities
 
     public class HouseHoldSizeQuestion : IRuleQuestion<int>
     {
+
+        public HouseHoldSizeQuestion()
+        {
+            this.Answer = 1;
+        }
+        
         public string Question
         {
             get

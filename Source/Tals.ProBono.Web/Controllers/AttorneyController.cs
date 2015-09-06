@@ -1,9 +1,9 @@
-﻿using MvcPaging;
-using System;
+﻿using System;
 using System.Linq;
 using System.Web.Mvc;
 using System.Web.Routing;
 using System.Web.Security;
+using MvcPaging;
 using Tals.ProBono.Domain.Entities;
 using Tals.ProBono.Domain.Filters;
 using Tals.ProBono.Domain.Services;
@@ -64,9 +64,12 @@ namespace Tals.ProBono.Web.Controllers
         {
             var question = _unitOfWork.QuestionRepository.Get().WithId(id);
             var posts = _unitOfWork.PostRepository.Get().WithQuestionId(id);
+
             var model = DetailsViewModel.CreateViewModel(question, posts);
 
             _auditor.Audit(_currentUser.UserName, id);
+
+            this.SetViewMessage(this.GetTempMessage());
 
             return View(model);
         }
@@ -118,7 +121,10 @@ namespace Tals.ProBono.Web.Controllers
                 return RedirectToAction("Details", new {id = id});
             }
 
-            return View(new ReplyViewModel(question));
+            var model = new ReplyViewModel(question);
+            model.CreatedBy = new DetailsCreatedByModel(UserProfile.GetUserProfile(question.CreatedBy), question.ClientPovertyLevel);
+
+            return View(model);
         }
 
         //
@@ -206,7 +212,7 @@ namespace Tals.ProBono.Web.Controllers
 
             var model = questions.ToPagedList(pageIndex, PageSize);
 
-            ViewBag.Category = "Urgent";
+            ViewBag.Category = "Longest Wait";
 
             return View("List", model);
         }

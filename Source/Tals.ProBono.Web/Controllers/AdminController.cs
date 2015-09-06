@@ -1,13 +1,14 @@
-﻿using MvcPaging;
-using System.Linq;
+﻿using System.Linq;
 using System.Web.Mvc;
 using System.Web.Security;
+using MvcPaging;
 using Tals.ProBono.Domain.Entities;
 using Tals.ProBono.Domain.Filters;
 using Tals.ProBono.Domain.Services;
 using Tals.ProBono.Web.Helpers;
 using Tals.ProBono.Web.Infrastructure;
 using Tals.ProBono.Web.Models;
+using Tals.ProBono.Web.Models.Shared;
 
 namespace Tals.ProBono.Web.Controllers
 {
@@ -158,7 +159,23 @@ namespace Tals.ProBono.Web.Controllers
                                               new StandardEmail(StandardEmail.EmailTemplate.QuestionAssigned),true);
             }
 
+            this.SetTempMessage(MessageDto.CreateSuccessMessage("Question saved sucessfully"));
+
             return RedirectToAction("Details", "Attorney", new { id = editViewModel.QuestionId });
+        }
+
+        [HttpPost]
+        public ActionResult ReturnQuestionToQueue(int QuestionId)
+        {
+            var question = _unitOfWork.QuestionRepository.Get().WithId(QuestionId);
+
+            question.Assign(null);
+
+            _unitOfWork.Save();
+
+            this.SetTempMessage(MessageDto.CreateSuccessMessage("Question returned to queue successfully"));
+
+            return RedirectToAction("Details", "Attorney", new { id = QuestionId });
         }
 
         [HttpPost]

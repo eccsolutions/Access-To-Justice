@@ -20,8 +20,8 @@
     </ol>
 
     <p>If you are a new user, please register:</p>
-    <p><a href="<%=Url.Action("SignUp","Account") %>" class="ImageLinkText"><i class="fa fa-user-plus fa-2x"></i> Register as a New User</a></p>
+    <p><a href="<%=Url.Action("SignUp","Account") %>" class="imageLinkText"><i class="fa fa-user-plus fa-2x"></i> Register as a New User</a></p>
     
     <p><br/>Have you been here before? Sign in to see your answers or ask a new question:</p>
-    <p><a href="<%=Url.Action("SignIn","Account") %>" class="ImageLinkText"><i class="fa fa-lock fa-2x"></i> Existing Users Sign In</a></p>
+    <p><a href="<%=Url.Action("SignIn","Account") %>" class="imageLinkText"><i class="fa fa-lock fa-2x"></i> Existing Users Sign In</a></p>
 </asp:Content>
