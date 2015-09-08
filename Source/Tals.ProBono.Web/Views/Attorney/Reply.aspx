@@ -5,10 +5,15 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-
-    <h2>Reply</h2>
         <% using (Html.BeginForm()) {%>
         <%: Html.ValidationSummary("Please correct the errors shown below:") %>
+        
+    <div class="isa_info">
+        The Online TN Justice website <strong>will time out after 20 minutes of non-use</strong> for security reasons.
+        To prevent losing your response, Online TN Justice Administration recommends <strong>typing your answer
+        in Microsoft Word, NotePad, or a similar program</strong> in order to ensure your response is not lost
+        if the system times out.
+    </div>
         <fieldset>
             <legend>Reply</legend>
             
