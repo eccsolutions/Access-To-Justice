@@ -145,6 +145,7 @@
     <Compile Include="Models\ProfileModels.cs" />
     <Compile Include="Models\ProfileType.cs" />
     <Compile Include="Models\Shared\MessageDto.cs" />
+    <Compile Include="Models\TakeViewModel.cs" />
     <Compile Include="Models\UsersOnlineViewModel.cs" />
     <Compile Include="Infrastructure\UrlModelBinder.cs" />
     <Compile Include="Infrastructure\RolesWrapper.cs" />
@@ -449,6 +450,7 @@
     <Content Include="Views\Category\Edit.aspx" />
     <Content Include="Views\Category\List.aspx" />
     <Content Include="Views\Attorney\Resources.aspx" />
+    <Content Include="Views\Client\OtherPlacesToFindHelp.aspx" />
     <Content Include="Views\County\Edit.aspx" />
     <Content Include="Views\County\List.aspx" />
     <Content Include="Views\Pages\Index.aspx" />
@@ -479,6 +481,7 @@
     <Content Include="Views\Nav\PostActionsButtons.ascx" />
     <Content Include="Views\Nav\QuestionActionButtons.ascx" />
     <Content Include="Views\Shared\CultureChooserUserControl.ascx" />
+    <Content Include="Views\Shared\OtherPlacesToFindHelpPartial.ascx" />
     <Content Include="Views\Shared\EditorTemplates\CategoryEditor.ascx" />
     <Content Include="Views\Shared\EditorTemplates\CountyEditor.ascx" />
     <Content Include="Views\Shared\EditorTemplates\BirthDateEditor.ascx" />

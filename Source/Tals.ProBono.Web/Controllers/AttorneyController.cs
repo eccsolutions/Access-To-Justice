@@ -91,7 +91,13 @@ namespace Tals.ProBono.Web.Controllers
                 return RedirectToAction("Details", new {id = id});
             }
 
-            return View(question);
+            var model = new TakeViewModel()
+            {
+                Question = question,
+                CreatedBy = new DetailsCreatedByModel(UserProfile.GetUserProfile(question.CreatedBy), question.ClientPovertyLevel)
+            };
+
+            return View(model);
         }
 
         [HttpPost]

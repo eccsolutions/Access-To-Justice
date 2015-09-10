@@ -243,5 +243,10 @@ namespace Tals.ProBono.Web.Controllers
 
             return RedirectToAction("Details", new { id = question.Id });
         }
+
+        public ActionResult OtherPlacesToFindHelp()
+        {
+            return View("OtherPlacesToFindHelp");
+        }
     }
 }
