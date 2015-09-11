@@ -28,7 +28,7 @@
 
         <tr style="background-color: <%=bgColor%>">
             <td valign="top">
-                <%: Html.ActionLink(item.Category.ShortDescription, "List", new { category = item.Category.CategoryName })%><br />
+                <%: Html.ActionLink(item.Category.ShortDescription, "List", new { category = item.Category.CategoryName.Trim() })%><br />
                 <%:item.Category.LongDescription %>
             </td>
             <td valign="top">

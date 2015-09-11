@@ -18,8 +18,9 @@
     <p>You may have questions about the lawyer's answer. You can ask follow-up questions about the answer.</p>
     <p>Please take a moment to complete our <a href="https://www.surveymonkey.com/s/OAJUser" target="_blank">short survey</a>. Your feedback is important to us.</p>
     
-    <p><%: Html.ActionLink("View My Questions", "Questions",null,new{style="font-size:larger"}) %></p>
+    <ul>
+        <li><%: Html.ActionLink("View My Questions", "Questions",null,new{style="font-size:larger"}) %></li>
+        <li><%: Html.ActionLink("Other Places to Find Help","OtherPlacesToFindHelp",null,new{style="font-size:larger"}) %></li>
+    </ul>
 
-    <p><%: Html.ActionLink("Other Places to Find Help","OtherPlacesToFindHelp",null,new{style="font-size:larger"}) %></p>
-   
 </asp:Content>

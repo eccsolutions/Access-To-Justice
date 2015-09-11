@@ -216,6 +216,8 @@ namespace Tals.ProBono.Domain.Entities
         }
 
         [Range(1, 999, ErrorMessage = "You must enter at least 1.")]
+        [Required(ErrorMessage="Household Size answer is required")]
+        [UIHint("HouseHoldSizeEditor")]
         public int Answer { get; set; }
 
         public bool IsValid
