@@ -661,7 +661,7 @@ div#title
 .quicklinksheader
 {
     color: #fff;
-    text-decoration: underline;
+    text-decoration: none;
     width: 100%;
 }
 
@@ -682,20 +682,20 @@ div#title
 #quicklinks a
 {
     color: #fff;
-    text-decoration: none;
+    text-decoration: underline;
     margin-left: 10px;
 }
 
 #quicklinks a:hover, a.selected
 {
     color: #fff;
-    text-decoration: none;
+    text-decoration: underline;
     font-weight: bold;
 }
 #quicklinks h3
 {
     color: #fff;
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 .popupEnabled
@@ -843,4 +843,16 @@ DIV.UsersOnline { background: gray; color:White; padding: 1em; margin-top:1em; m
 
 UL.padded-list LI {
     padding-bottom: 10px;
+}
+
+OL.padded-list LI {
+    padding-bottom: 10px;
+}
+
+UL.padded-list-sm LI {
+    padding-bottom: 5px;
+}
+
+OL.padded-list-sm LI {
+    padding-bottom: 5px;
 }

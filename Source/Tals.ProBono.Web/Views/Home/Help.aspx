@@ -5,6 +5,5 @@
     <%=ConfigSettings.SiteName %> - Other places to find legal help and information
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <h2>Other places to find legal help and information:</h2>
-    <p>If you have problems with this website, you may contact us at <a href="mailto:<%=ConfigSettings.SiteEmail %>"><%=ConfigSettings.SiteEmail %></a>. This email address is for technical questions or website problems only. We will not answer your legal question.</p>
+    <%Html.RenderPartial("OtherPlacesToFindHelpPartial"); %>
 </asp:Content>

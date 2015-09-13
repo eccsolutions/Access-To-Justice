@@ -1,7 +1,7 @@
 ﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<dynamic>" %>
 <%@ Import Namespace="Tals.ProBono.Domain.Services" %>
 <p class="bold">We will ask questions to make sure:</p>
-<ul>
+<ul class="padded-list-sm">
     <li>You have a low income</li>
     <li>You are at least <%=ConfigSettings.MinimumAgeRequirement %> years old</li>    
     <li>You live or have a problem in Washington State</li>
@@ -13,7 +13,7 @@
     
 <p><b>Please remember:</b></p>
 
-<ul>
+<ul class="padded-list-sm">
     <li>There is no guarantee that a lawyer will answer your question.  This website is one resource you can use to get help, but not a promise of help.</li>
     <li>If you have an emergency, contact the police or use the resources listed to the left of this page to find help.</li>
     <li>Your question will be up for 14 days. A lawyer could answer it right away, or after several days. Please check back to see if your question was answered.</li>

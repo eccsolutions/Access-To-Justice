@@ -18,11 +18,11 @@
 
 <p class="bold">If you use this website, it means you understand and agree that:</p>
 
-<ul>
+<ul class="padded-list-sm">
     <li>A lawyer is helping you for free.</li>
     <li>The lawyer only helps you with the question you type into this website. The lawyer won’t help you after that or do anything else for you.</li>
     <li>This means:
-        <ul>
+        <ul class="padded-list-sm">
             <li>The lawyer won&#39;t write letters, make calls, or file papers for you.</li>
             <li>The lawyer won&#39;t go to meetings or court for you.</li>
             <li>You can&#39;t contact the lawyer outside of this website unless the lawyer gives you permission.</li>
@@ -39,7 +39,7 @@
 
 <p>Lawyers can only help one side in a case. For example, a lawyer can help either the renter or the landlord. The lawyer can’t help both of them with the same case. If you use this website, it means you understand and agree that:</p>
 
-<ul>
+<ul class="padded-list-sm">
     <li>The lawyer or the lawyer&#39;s company could be helping the other person in your case and not know that when they answer your question.</li>
     <li>If the lawyer or lawyer&#39;s company is helping the other person in your case and they answer your question, they are not breaking the law because they did not know it was the same case. If you use this website, it means you will not blame the lawyer or the lawyer&#39;s company for not knowing it was the same case.</li>
     <li>If the lawyer finds out they are helping both sides on the same case before they answer your question, they can&#39;t answer your question. They have to give your question to another lawyer on the website who is not already working on the case.</li>
@@ -47,7 +47,7 @@
 
 <p>Your questions are secret.</p>
 
-<ul>
+<ul class="padded-list-sm">
     <li>Only the people who run the website, you, and the volunteer lawyers can see the question and the facts you type into the website.</li>
     <li>Only the people who run the website and the lawyer who agrees to answer your question can see your name.</li>
     <li>This website keeps your information to help make the website better.</li>
@@ -56,7 +56,7 @@
 
 <p>This is the information the website keeps:</p>
 
-<ul>
+<ul class="padded-list-sm">
     <li>what type of legal problem you had (housing, family law, debt, immigration, etc.),</li>
     <li>your question</li>
     <li>the name of the lawyer who answered your question,</li>
@@ -73,7 +73,7 @@
 
 <p>To use this website, you must also agree to the next two statements:</p>
 
-<ul>
+<ul class="padded-list-sm">
     <li>I do not already have a lawyer helping me with this problem.</li>
     <li>I will tell the truth about my legal problem.</li>
 </ul>

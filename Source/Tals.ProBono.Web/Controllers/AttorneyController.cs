@@ -1,9 +1,9 @@
-﻿using MvcPaging;
-using System;
+﻿using System;
 using System.Linq;
 using System.Web.Mvc;
 using System.Web.Routing;
 using System.Web.Security;
+using MvcPaging;
 using Tals.ProBono.Domain.Entities;
 using Tals.ProBono.Domain.Filters;
 using Tals.ProBono.Domain.Services;
@@ -88,7 +88,13 @@ namespace Tals.ProBono.Web.Controllers
                 return RedirectToAction("Details", new {id = id});
             }
 
-            return View(question);
+            var model = new TakeViewModel()
+            {
+                Question = question,
+                CreatedBy = new DetailsCreatedByModel(UserProfile.GetUserProfile(question.CreatedBy), question.ClientPovertyLevel)
+            };
+
+            return View(model);
         }
 
         [HttpPost]
@@ -118,7 +124,10 @@ namespace Tals.ProBono.Web.Controllers
                 return RedirectToAction("Details", new {id = id});
             }
 
-            return View(new ReplyViewModel(question));
+            var model = new ReplyViewModel(question);
+            model.CreatedBy = new DetailsCreatedByModel(UserProfile.GetUserProfile(question.CreatedBy), question.ClientPovertyLevel);
+
+            return View(model);
         }
 
         //
@@ -160,7 +169,10 @@ namespace Tals.ProBono.Web.Controllers
                 }
             }
 
-            return View(new ReplyViewModel(question));
+            var model = new ReplyViewModel(question);
+            model.CreatedBy = new DetailsCreatedByModel(UserProfile.GetUserProfile(question.CreatedBy), question.ClientPovertyLevel);
+
+            return View(model);
         }
 
         public ActionResult MarkAsAnswer(int questionId, int postId, ReturnUrl url)

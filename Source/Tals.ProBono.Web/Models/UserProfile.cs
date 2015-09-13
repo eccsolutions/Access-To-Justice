@@ -115,6 +115,12 @@ namespace Tals.ProBono.Web.Models
             set { base["Zip"] = value; }
         }
 
+        public DateTime? DateOfBirth
+        {
+            get { return base["DateOfBirth"] as DateTime?; }
+            set { base["DateOfBirth"] = value; }
+        }
+
         public int? Income
         {
             get { return base["Income"] as int?; }

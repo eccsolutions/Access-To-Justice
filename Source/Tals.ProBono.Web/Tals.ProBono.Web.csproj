@@ -141,9 +141,11 @@
     <Compile Include="Helpers\StringExtensions.cs" />
     <Compile Include="Infrastructure\CultureHelper.cs" />
     <Compile Include="Infrastructure\UserModel.cs" />
+    <Compile Include="Models\DetailsCreatedByModel.cs" />
     <Compile Include="Models\ProfileModels.cs" />
     <Compile Include="Models\ProfileType.cs" />
     <Compile Include="Models\Shared\MessageDto.cs" />
+    <Compile Include="Models\TakeViewModel.cs" />
     <Compile Include="Models\UsersOnlineViewModel.cs" />
     <Compile Include="Infrastructure\UrlModelBinder.cs" />
     <Compile Include="Infrastructure\RolesWrapper.cs" />
@@ -450,6 +452,7 @@
     <Content Include="Views\FPSettings\Edit.aspx" />
     <Content Include="Views\ReferralOrganization\Edit.aspx" />
     <Content Include="Views\ReferralOrganization\List.aspx" />
+    <Content Include="Views\Shared\OtherPlacesToFindHelpPartial.ascx" />
     <Content Include="Views\Shared\ColorCoding.ascx" />
     <Content Include="Views\Admin\ConfirmApproval.aspx" />
     <Content Include="Views\Admin\ConfirmDenial.aspx" />

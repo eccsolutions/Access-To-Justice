@@ -12,7 +12,7 @@
         <%: Html.ActionLink("Back to Attorney Sign Up", "AttorneySignUp", "Account", null, new { @class = "ImageLink" })%></p>
     <% } %>
 
-    <p><a href="https://www.youtube.com/watch?v=Z4uesStFQUw" target="_blank"></a>Watch an instruction video for attorneys</p>
+    <p><a href="https://www.youtube.com/watch?v=Z4uesStFQUw" target="_blank">Watch an instruction video for attorneys</a></p>
 
     <p><a href="#Q1">How does <%=ConfigSettings.SiteName %> work?</a></p>
     <p><a href="#Q2">Who is eligible to use <%=ConfigSettings.SiteName %>?</a></p>
@@ -40,7 +40,7 @@
 
     <h3><a id="Q2">Who is eligible to use <%=ConfigSettings.SiteName %>?</a></h3>
         <p>Eligibility for use of <%=ConfigSettings.SiteName %> is limited to the following:</p>
-        <ul>
+        <ul class="padded-list-sm">
             <li>The user must have household income less than 200% of the federal poverty level;</li>
             <li>The user must be over the age of <%=ConfigSettings.MinimumAgeRequirement %>;</li>
             <li>The user&#39;s legal issue must be in Washington State;</li>
@@ -78,7 +78,7 @@
         <p>When your account has been approved by the website administrator, you will receive a notification email. To get started you will go to <a href="<%=ConfigSettings.SiteUrl %>" target="_blank"><%=ConfigSettings.SiteUrl %></a> and select &quot;Sign In&quot; at the top right side of your screen. After you enter your username and password, you will automatically be directed to a page that lists all the questions that have been posted for lawyers to answer. </p>
         <p>You will notice that the questions are color-coded. This color-coding lets you know how long each question has been in the queue. Green questions are those that have been posted within the past 10 days; yellow questions are those that have been posted for more than 10 days; and red questions are those that have been in the queue for at least 25 days and will be closed if no lawyer is able to answer them. Questions that are not answered within 30 days will be closed and the client will be notified. </p>
         <p>You have three ways in which to view questions in the queue:</p>
-        <ol>
+        <ol class="padded-list-sm">
             <li>You can view a list of all the questions in the queue; this is the default view.</li>
             <li>You can view a list of questions that have been in the queue for 25 days or longer by clicking on the &quot;Urgent&quot; option on the left side of your screen.</li>
             <li>You can view questions by legal categories by clicking on the &quot;Practice Areas&quot; tab at the top of the screen. The list of Categories is as follows: benefits, debt &amp; purchases, family, health care, housing, immigration/citizenship, other, school/juvenile, seniors and work. You will notice that each question has a &quot;Category&quot; and a &quot;Subject.&quot; Clients are asked to pick the Category that best describes their question. The Categories are listed as follows: <span style="font-style: italic">benefits, debt &amp; purchases, family, health care, housing, immigration/citizenship, other, school/juvenile, seniors and work</span>.</li>
