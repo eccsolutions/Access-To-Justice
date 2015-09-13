@@ -172,7 +172,10 @@ namespace Tals.ProBono.Web.Controllers
                 }
             }
 
-            return View(new ReplyViewModel(question));
+            var model = new ReplyViewModel(question);
+            model.CreatedBy = new DetailsCreatedByModel(UserProfile.GetUserProfile(question.CreatedBy), question.ClientPovertyLevel);
+
+            return View(model);
         }
 
         public ActionResult MarkAsAnswer(int questionId, int postId, ReturnUrl url)
