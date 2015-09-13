@@ -262,7 +262,7 @@
     <Content Include="Content\Images\editing.gif" />
     <Content Include="Content\Images\important.png" />
     <Content Include="Content\Images\legalservicesstatesupport.png" />
-    <Content Include="Content\Images\logo.jpg" />
+    <Content Include="Content\Images\logo.png" />
     <Content Include="Content\Images\TJC_colorlogo.png" />
     <Content Include="Content\Images\writing.gif" />
     <Content Include="Content\jquery-cleditor\images\buttons.gif" />

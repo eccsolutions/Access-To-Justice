@@ -575,14 +575,13 @@ div#title
     position: relative;
 }
 
-.ImageLinkText {
+.imageLinkText {
     font-family: Verdana, sans-serif;
     font-size: 11pt;
     font-weight: bold;
 }
 
-.ImageLinkText:link, .ImageLinkText:visited {
-    text-decoration: none;
+.imageLinkText i {
     color: #000;
 }
 
@@ -840,4 +839,8 @@ DIV.UsersOnline { background: gray; color:White; padding: 1em; margin-top:1em; m
 
 .button-container button {
     margin-left: 5px;
+}
+
+UL.padded-list LI {
+    padding-bottom: 10px;
 }

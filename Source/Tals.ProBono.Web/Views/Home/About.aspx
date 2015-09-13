@@ -5,11 +5,7 @@
     <%=ConfigSettings.SiteName %> - About Us
 </asp:Content>
 <asp:Content ID="aboutContent" ContentPlaceHolderID="MainContent" runat="server">
-    <h2>About</h2>
+    <h2>About Washington Web Lawyer</h2>
     
-    <p>The <%=ConfigSettings.SiteName %> allows eligible users to post a legal question to a private messaging system. The questions are answered by volunteer attorneys. Online Arizona Justice system users can check the system for answers at any time. Only the website administrator and the volunteer attorney answering a user’s question can see the user’s name. All information posted is held in strict confidence.</p>
-    
-    <p>The <%=ConfigSettings.SiteName %> is administered by the Arizona Foundation for Legal Services & Education in partnership with the Volunteer Lawyers Programs of Community Legal Services, Southern Arizona Legal Aid and DNA People’s Legal Services. Special thanks to the Supreme Court of Arizona, the Arizona Department of Veterans Services, Baker, Donelson, Bearman, Caldwell & Berkowitz, Tennessee Alliance for Legal Services, DNA People’s Legal Services, Southern Arizona Legal Aid, Community Legal Services and our other Arizona partner organizations and stakeholders for their critical support of this project. These entities share the goal of increasing access to legal services to those who cannot afford it.</p>
-    
-    <p style="text-align: center;"><strong>All information posted is held in strict confidence.</strong></p>
+    <p><%=ConfigSettings.SiteName %> allows eligible users to post a legal question to a private online messaging system. The questions are answered by volunteer attorneys. <%=ConfigSettings.SiteName %> users can check the system for answers at any time. Only the website administrator and the volunteer attorney answering a <%=ConfigSettings.SiteName %> client&#39;s question can see the user&#39;s name. All information posted is held in strict confidence.</p>
 </asp:Content>

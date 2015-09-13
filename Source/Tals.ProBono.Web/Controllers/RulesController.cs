@@ -3,6 +3,7 @@ using System.Linq;
 using System.Web.Mvc;
 using Tals.ProBono.Domain.Constants;
 using Tals.ProBono.Domain.Entities;
+using Tals.ProBono.Web.Models.Shared;
 
 namespace Tals.ProBono.Web.Controllers
 {
@@ -200,6 +201,9 @@ namespace Tals.ProBono.Web.Controllers
             }
 
             CurrentStepNumber = 1;
+
+            this.SetViewMessage(MessageDto.CreateWarningMessage("We're sorry, but you do not meet the rules to be able to use this website."));
+
             return View("NotEligible");
         }
 
