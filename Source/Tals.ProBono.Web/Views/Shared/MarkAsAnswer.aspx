@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<Tals.ProBono.Domain.Entities.Post>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-	Confirm Accept Answer
+    Confirm Accept Answer
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
@@ -29,7 +29,7 @@
             </tr>
             <tr>
                 <td class="display-user">
-                    Created By: <%: Model.CreatedBy %>
+                    <p><strong>Reply By: </strong><%: Html.DisplayUser(Model.CreatedBy) %></p>
                 </td>
                 <td>
                     <div class="display-subject">Subject: <%: Model.Subject %></div>
