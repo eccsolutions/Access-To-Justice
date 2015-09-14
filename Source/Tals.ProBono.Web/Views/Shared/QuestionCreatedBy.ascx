@@ -2,7 +2,8 @@
 <%@ Import Namespace="Tals.ProBono.Domain.Enums" %>
 <%@ Import Namespace="Tals.ProBono.Domain.Services" %>
 <p><strong>Created By:</strong> <%: Html.ActionLink(Model.UserProfile.FullName +" ("+Model.UserProfile.UserName+")","Profile","User",new {Model.UserProfile.UserName},null) %></p>
-<% if (Roles.IsUserInRole(UserRoles.Administrators) || Roles.IsUserInRole(UserRoles.Attorney))
+<% /* EDG: Commented out because does not exist in this version
+if (Roles.IsUserInRole(UserRoles.Administrators) || Roles.IsUserInRole(UserRoles.Attorney))
    { %>
     <p><strong>Date of Birth: </strong>
         <%:Model.UserProfile.DateOfBirth == null ? "n/a" : Model.UserProfile.DateOfBirth.Value.ToString("MM/dd/yyyy")%>
@@ -19,5 +20,5 @@
         n/a
     <% } %>
     </p>
-<% } %>
+<% } */%>
 

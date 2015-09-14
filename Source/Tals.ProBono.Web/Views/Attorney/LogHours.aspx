@@ -14,7 +14,7 @@
     <fieldset style="border-color: #800000; border-style: solid; border-width: medium">
     <legend><img src="<%: Url.Image("important.png") %>" alt="Important!" /></legend>
         <p style="font-weight:bold;color:#800000">
-            Please take a moment to complete our short survey. Your feedback is important to us. <a href="https://www.surveymonkey.com/s/onlineazjustice" target="_blank">Click Here!</a>
+            Please take a moment to complete our short survey. Your feedback is important to us. <a href="https://www.surveymonkey.com" target="_blank">Click Here!</a>
         </p>
     </fieldset>
     <% using (Html.BeginForm())

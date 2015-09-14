@@ -141,6 +141,9 @@ namespace Tals.ProBono.Web.Controllers
             }
 
             CurrentStepNumber = 1;
+
+            this.SetViewMessage(MessageDto.CreateWarningMessage("We're sorry, but you do not meet the rules to be able to use this website."));
+
             return View("NotEligible");
         }
 

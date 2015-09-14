@@ -45,7 +45,7 @@
             </tr>
             <tr>
                 <td class="display-user">
-                    <%Html.RenderPartial("QuestionCreatedBy",Model.OriginalQuestion); %>
+                    <%Html.RenderPartial("QuestionCreatedBy",Model.CreatedBy); %>
                 </td>
                 <td>
                 <div class="display-subject">Subject: <%: Model.OriginalQuestion.Subject %></div>

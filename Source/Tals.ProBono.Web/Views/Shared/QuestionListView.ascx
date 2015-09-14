@@ -4,7 +4,7 @@
     <table class="categorygridview">
         <tr>
             <th></th>
-            <th class="CenteredText">Eligibility</th>
+            <!--<th class="CenteredText">Eligibility</th>-->
             <th>Category</th>
             <th>Subject</th>
             <th>Last Updated</th>
@@ -24,7 +24,7 @@
                 <td class="actions">
                     <% Html.RenderAction("ListActionButtons", "Nav", new {Question = item}); %>
                 </td>
-                <td class="gridcolumn CenteredText">
+                <!--<td class="gridcolumn CenteredText">
                     <% if (item.ClientPovertyLevel == PovertyLevels.ModestMeans){ %>
                         <div style="white-space: nowrap">Modest<br/>Means</div>
                     <% } else if(item.ClientPovertyLevel == PovertyLevels.LegalAid) {%>
@@ -34,7 +34,7 @@
                     <%} else {%>
                         --
                     <%} %>             
-                </td>
+                </td>-->
                 <td class="gridcolumn" id="categorycolumn">
                     <%: item.Category.ShortDescription%>
                 </td>
