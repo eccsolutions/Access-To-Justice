@@ -1,11 +1,11 @@
-﻿using Ninject;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Mvc.Html;
 using System.Web.Security;
+using Ninject;
 using Tals.ProBono.Domain.Entities;
 using Tals.ProBono.Domain.Services;
 using Tals.ProBono.Web.Infrastructure;
@@ -51,13 +51,14 @@ namespace Tals.ProBono.Web.Helpers
         {
             if (Roles.IsUserInRole(UserRoles.BasicUser))
             {
-                if (Roles.IsUserInRole(userName, UserRoles.Attorney)) return MvcHtmlString.Create("Volunteer Lawyer");
+                if (Roles.IsUserInRole(userName, UserRoles.Attorney))
+                {
+                    return MvcHtmlString.Create(UserProfile.GetUserProfile(userName).FullName);
+                }
                 if (Roles.IsUserInRole(userName, UserRoles.Administrators)) return MvcHtmlString.Create("Moderator");
             }
 
-            var profile = UserProfile.GetUserProfile(userName);
-
-            return helper.ActionLink(profile.FullName + " (" + userName + ")", "Profile", "User", new { userName }, null);
+            return helper.ActionLink(UserProfile.GetUserProfile(userName).FullName + " (" + userName + ")", "Profile", "User", new { userName }, null);
         }
 
         public static string KPI(this HtmlHelper helper, QuestionStatus status)

@@ -6,7 +6,7 @@
             <th colspan="2" class="postbanner">
                 <div class="postbannerLeft">
                     Started: <%: Model.Question.CreatedDate %>
-                    <% if (Model.Question.CourtDate != null) { %>
+                    <% if (Model.Question.CourtDate != null) { %>s
                         <br />Court Date: <%: Model.Question.CourtDate.Value.ToShortDateString() %>
                     <% } %>
                 </div>
@@ -18,7 +18,7 @@
         </tr>
         <tr>
             <td class="display-user">
-                <%Html.RenderPartial("QuestionCreatedBy", Model.Question); %>
+                <%Html.RenderPartial("QuestionCreatedBy", Model.CreatedBy); %>
                 <% if(Roles.IsUserInRole(UserRoles.Administrators)) {%>
                 <p><strong>Taken By:</strong> <%: Model.Question.TakenBy %></p>
                 <%} %>
@@ -47,7 +47,7 @@
         </tr>
         <tr>
             <td>
-                <p><%: Html.DisplayUser(item.UserName) %></p>
+                 <p><strong>Reply By: </strong><%: Html.DisplayUser(item.UserName) %></p>
             </td>
             <td valign="top">
                 <div class="display-subject">Subject: <%: item.Subject%></div><br />
