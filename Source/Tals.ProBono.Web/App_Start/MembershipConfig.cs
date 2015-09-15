@@ -37,18 +37,6 @@ namespace Tals.ProBono.Web
                 Membership.CreateUser(ConfigSettings.AdminUserName, "5ghs3fr45zxa", ConfigSettings.SiteEmail, "What is the developer's last name?", "gorski", true, null, out status);
                 Roles.AddUserToRole(ConfigSettings.AdminUserName, UserRoles.Administrators);
             }
-
-            if (Membership.GetUser("admin2") == null)
-            {
-                Membership.CreateUser("admin2", "k1vb5rdcu7", ConfigSettings.SiteEmail, "What is the developer's last name?", "gorski", true, null, out status);
-                Roles.AddUserToRole("admin2", UserRoles.Administrators);
-            }
-
-            if (Membership.GetUser("admin3") == null)
-            {
-                Membership.CreateUser("admin3", "aw381v5g9k", ConfigSettings.SiteEmail, "What is the developer's last name?", "gorski", true, null, out status);
-                Roles.AddUserToRole("admin3", UserRoles.Administrators);
-            }
         }
     }
 }
