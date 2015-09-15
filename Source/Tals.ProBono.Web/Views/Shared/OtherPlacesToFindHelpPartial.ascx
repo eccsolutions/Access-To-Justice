@@ -6,6 +6,7 @@
     <p><a href="https://nwjustice.org/get-legal-help" target="_blank">Legal Advice and Referral by Phone (Northwest Justice Project)</a></p>
 </div>
 
+<a name="access"></a>
 <h2>Access to Pro Bono and Low-Cost Attorneys:</h2>
 <ul class="padded-list">
     <li><a href="http://www.wsba.org/Resources-and-Services/Find-Legal-Help" target="_blank">Washington State Bar Association</a></li>
@@ -33,6 +34,7 @@
     <li><a href="http://www.law.washington.edu/Clinics/Clients.aspx" target="_blank">UW School of Law Client Services</a></li>
 </ul>    
 
+<a name="onlinelegal"></a>
 <h2>Online legal information and links to other legal aid organizations:</h2>
 <ul class="padded-list">
     <li><a href="http://www.washingtonlawhelp.org" target="_blank">Northwest Justice Project</a></li>

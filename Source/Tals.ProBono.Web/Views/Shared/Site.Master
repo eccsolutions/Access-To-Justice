@@ -77,20 +77,10 @@
             <div id="quicklinks">
                 <asp:ContentPlaceHolder ID="QuickLinksContent" runat="server">
                     <h2 class="quicklinksheader">Other Places to Get Help</h2>
-                    <!--<h3>Legal Aid Programs</h3>
-                    <a style="margin-left:0" href="http://azlawhelp.org/accessToJustice.cfm" target="_blank" title="Arizona's Access to Justice Online Intake System">Arizona’s Access to Justice Online Intake System</a>
+                    <a style="margin-left:0" href="https://nwjustice.org/get-legal-help" target="_blank" title="Legal Advice and Referral by Phone (Northwest Justice Project)">Legal Advice and Referral by Phone (Northwest Justice Project)</a>
 
-                    <h3>Find a Lawyer</h3>
-                    <a style="margin-left: 0;" href="http://www.azlawhelp.org/A2JRedirect/A2JResources-FindALawyer.htm" target="_blank" title="The State Bar's Find A Lawyer page">The State Bar's Find A Lawyer page</a>
-                    <p/><a style="margin-left:0" href="http://www.azlawhelp.org/A2JRedirect/A2JResources-MCoLawyerReferral.htm" target="_blank" title="Maricopa County Lawyer Referral">Maricopa County Lawyer Referral</a>
-                    <p/><a style="margin-left:0" href="http://www.azlawhelp.org/A2JRedirect/A2JResources-PCoLawyerReferral.htm" target="_blank" title="Pima County Lawyer Referral">Pima County Lawyer Referral</a>
-
-                    <h3>Other Information</h3>
-                    <a style="margin-left: 0;" href="http://www.azlawhelp.org" target="_blank" title="Legal LEARN">Legal LEARN</a>                        
-                    <p/><a style="margin-left: 0;" href="http://www.azcadv.org" target="_blank" title="National Domestic Violence Hotline ">National Domestic Violence Hotline</a> (800-799-7233)
-                    <p/><a style="margin-left: 0;" href="http://www.azb.uscourts.gov" target="_blank" title="Bankruptcy Hotline ">Bankruptcy Hotline</a>
-                    <p/><a style="margin-left: 0;" href="http://legalaidaz.com" target="_blank" title="Legal Aid of Arizona">Legal Aid of Arizona</a>
-                    -->
+                    <p/><a style="margin-left:0" href="<%=Url.Action("Help","Home") %>#access" title="Access to Pro Bono and Low-Cost Attorneys">Access to Pro Bono and Low-Cost Attorneys</a>
+                    <p/><a style="margin-left:0" href="<%=Url.Action("Help","Home") %>#onlinelegal" title="Online legal information">Online Legal Information</a>
                 </asp:ContentPlaceHolder>
             </div>
             <div id="content">
