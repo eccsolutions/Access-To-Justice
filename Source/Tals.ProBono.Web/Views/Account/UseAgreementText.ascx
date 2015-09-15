@@ -27,7 +27,7 @@
         <p>After eligibility is established, the user will create a User Name and Password.</p>
         <p>The user will post a request for legal advice information and provide facts that will help the lawyer answer the question. Users will be able to go back to their posted question one time to add information. The lawyer may ask for additional information before responding to the user&#39;s request. The user will have a choice to respond to that request or not.</p>   
         <p>Lawyers licensed in Washington will be authorized to use the system and to respond to user&#39;s requests. Lawyers may decline to respond to requests. If no lawyer responds to a request after 30 days, the request will be removed and the administrator will notify the user. If a lawyer responds to a user&#39;s request, the user will receive a written response through the website.</p>
-        <p>Users will not know the name of the lawyer who answers their questions unless the lawyer chooses to provide it when answering the question. The lawyer will be licensed to practice law in Washington and will respond based on Washington and/or federal law.</p>
+        <p>Users will see the name of the lawyer who answers their question, but not the lawyer&#39;s contact information. The lawyer will be licensed to practice law in Washington and will respond based on Washington and/or federal law.</p>
         <p>The lawyer will not take any action to help the user except to respond to the request for advice and information that is posted on the web site.</p> 
   
     <h3>Lawyer/Client Relationship</h3>
