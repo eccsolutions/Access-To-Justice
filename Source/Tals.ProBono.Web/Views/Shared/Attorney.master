@@ -39,7 +39,6 @@
         <br />
         <br />
         <div>
-            [Add Content Here]
         </div>
         </asp:ContentPlaceHolder>
 </asp:Content>

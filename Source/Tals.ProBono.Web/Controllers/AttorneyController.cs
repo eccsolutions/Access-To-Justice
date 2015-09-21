@@ -22,7 +22,7 @@ namespace Tals.ProBono.Web.Controllers
         readonly IUnitOfWork _unitOfWork;
         readonly IUser _currentUser;
         readonly IAuditor _auditor;
-        public int PageSize = 5;
+        public int PageSize = 10;
 
         public AttorneyController(IEmailService emailService, ISecurityService security, IUnitOfWork unitOfWork, IUser currentUser, IAuditor auditor)
         {

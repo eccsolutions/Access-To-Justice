@@ -7,7 +7,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <h2>Other places to find legal help and information:</h2>
-    <h3>Legal aid in Wisconsin</h3>
+    <h3>Legal aid in Wisconsin (free or reduced cost)</h3>
     <ul>
         <li><a href="http://www.safetyweb.org/">ABC for Health
         </a></li>
@@ -37,15 +37,18 @@
         </a></li>
         <li><a href="http://milwaukee.gov/MJC">Milwaukee Justice Center
         </a></li>
-        <li><a href="http://www.findmilwaukeelawyers.org/">Milwaukee Lawyer Referral Service
-        </a></li>
-        <li><a href="http://www.wisbar.org/lris">State Bar Lawyer Referral Service
-        </a></li>
         <li><a href="http://www.judicare.org/">Wisconsin Judicare
         </a></li>
         <li><a href="http://law.marquette.edu/mvlc/">Marquette Volunteer Legal Clinic
         </a></li>
         <li><a href="http://law.wisc.edu/clinics/">UW Law School Clinics
+        </a></li>
+    </ul>
+    <h3>Lawyer Referral Services (If you don't qualify for WLAO)</h3>
+    <ul>
+        <li><a href="http://www.findmilwaukeelawyers.org/">Milwaukee Lawyer Referral Service
+        </a></li>
+        <li><a href="http://www.wisbar.org/lris">State Bar Lawyer Referral Service
         </a></li>
     </ul>
 

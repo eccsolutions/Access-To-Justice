@@ -11,7 +11,7 @@
     <%: Html.ActionLink(Model.Question.Category.ShortDescription, "List", new { category = Model.Question.Category.CategoryName })%> >
     <%: Model.Question.Subject %>
 
-    <h2>Replies</h2>
+    <h2>Question and Replies</h2>
     <p>
         Here are the replies from the client. You can choose to follow up with the client by clicking the "Reply" button next to the response.
         If you have fully answered the client's question and no longer wish to receive follow up communication regarding this specific legal question,

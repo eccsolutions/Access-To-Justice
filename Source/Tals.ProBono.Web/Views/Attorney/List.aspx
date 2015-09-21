@@ -13,5 +13,8 @@
     <div class="categorybanner">
         <h2><%: ViewBag.Category ?? "All Questions in Queue" %></h2>
     </div>
+    <div>
+        <p>Click on a question for more information, including any adverse parties.</p>
+    </div>
     <% Html.RenderPartial("QuestionListView");%>
 </asp:Content>

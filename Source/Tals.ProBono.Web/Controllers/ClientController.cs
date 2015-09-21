@@ -168,7 +168,7 @@ namespace Tals.ProBono.Web.Controllers
                             _emailService.SendEmailTo(user.Email,
                                                       new ClientReplyEmail(question.Category.CategoryName,
                                                                            question.CourtDateAsShortString,
-                                                                           question.Subject, question.Body, detailsUrl));
+                                                                           question.Subject, reply.Body, detailsUrl));
                         }
                     }
 

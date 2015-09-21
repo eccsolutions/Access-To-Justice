@@ -175,6 +175,11 @@ namespace Tals.ProBono.Web.Controllers
             return View();
         }
 
+        public ActionResult ClientUserAgreement()
+        {
+            return View();
+        }
+
         public ActionResult AttorneySignUp()
         {
             if (Session["AcceptedUseAgreement"] != null && ((bool)Session["AcceptedUseAgreement"]) == true)
