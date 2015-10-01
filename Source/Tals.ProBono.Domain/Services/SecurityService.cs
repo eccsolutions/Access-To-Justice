@@ -91,6 +91,11 @@ namespace Tals.ProBono.Domain.Services
 
             return category == null || !category.Hidden;
         }
+
+        public bool IsCurrentUserAdmin()
+        {
+            return _roles.IsUserInRole(UserRoles.Administrators);
+        }
     }
 
     public interface ISecurityService
@@ -101,5 +106,6 @@ namespace Tals.ProBono.Domain.Services
         bool CanTake(Question question, string userName);
         bool CanView(Question question, string userName);
         bool ValidCategory(string categoryName);
+        bool IsCurrentUserAdmin();
     }
 }

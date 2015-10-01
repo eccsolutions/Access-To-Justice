@@ -158,10 +158,12 @@ namespace Tals.ProBono.Web.Controllers
 
                     _repositories.Questions.SaveChanges();
 
-                    var user = Membership.GetUser(question.CreatedBy);
-                    if (user != null)
-                        _emailService.SendEmailTo(user.Email,
-                                                  new StandardEmail(StandardEmail.EmailTemplate.LawyerReply));
+                    if (!_security.IsCurrentUserAdmin())
+                    {
+                        var user = Membership.GetUser(question.CreatedBy);
+                        if (user != null)
+                            _emailService.SendEmailTo(user.Email, new StandardEmail(StandardEmail.EmailTemplate.LawyerReply));
+                    }
 
                     return RedirectToAction("Details", new { id, r = url.Url });
                 }
