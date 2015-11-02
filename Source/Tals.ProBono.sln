@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5ECCD4DC-7F70-4161-91C6-4401E6B91D6F}"
 	ProjectSection(SolutionItems) = preProject
 		Local.testsettings = Local.testsettings
@@ -14,12 +16,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tals.ProBono.Domain", "Tals
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ATJ.Tests", "ATJ.Tests\ATJ.Tests.csproj", "{173FAC84-9F89-4A91-A396-E1852BE31319}"
 EndProject
-Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "ATJ.Reports", "ATJ.Reports\ATJ.Reports.rptproj", "{F073BB2A-ED26-4B77-96EB-D38B90857943}"
-EndProject
 Global
-	GlobalSection(TestCaseManagementSettings) = postSolution
-		CategoryFile = Tals.ProBono.vsmdi
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|Mixed Platforms = Debug|Mixed Platforms
@@ -95,41 +92,11 @@ Global
 		{173FAC84-9F89-4A91-A396-E1852BE31319}.Staging|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{173FAC84-9F89-4A91-A396-E1852BE31319}.Staging|Mixed Platforms.Build.0 = Release|Any CPU
 		{173FAC84-9F89-4A91-A396-E1852BE31319}.Staging|x86.ActiveCfg = Release|Any CPU
-		{F073BB2A-ED26-4B77-96EB-D38B90857943}.Debug|Any CPU.ActiveCfg = Debug
-		{F073BB2A-ED26-4B77-96EB-D38B90857943}.Debug|Any CPU.Build.0 = Debug
-		{F073BB2A-ED26-4B77-96EB-D38B90857943}.Debug|Any CPU.Deploy.0 = Debug
-		{F073BB2A-ED26-4B77-96EB-D38B90857943}.Debug|Mixed Platforms.ActiveCfg = Debug
-		{F073BB2A-ED26-4B77-96EB-D38B90857943}.Debug|Mixed Platforms.Build.0 = Debug
-		{F073BB2A-ED26-4B77-96EB-D38B90857943}.Debug|Mixed Platforms.Deploy.0 = Debug
-		{F073BB2A-ED26-4B77-96EB-D38B90857943}.Debug|x86.ActiveCfg = Debug
-		{F073BB2A-ED26-4B77-96EB-D38B90857943}.Debug|x86.Build.0 = Debug
-		{F073BB2A-ED26-4B77-96EB-D38B90857943}.Debug|x86.Deploy.0 = Debug
-		{F073BB2A-ED26-4B77-96EB-D38B90857943}.DebugLocal|Any CPU.ActiveCfg = DebugLocal
-		{F073BB2A-ED26-4B77-96EB-D38B90857943}.DebugLocal|Any CPU.Build.0 = DebugLocal
-		{F073BB2A-ED26-4B77-96EB-D38B90857943}.DebugLocal|Mixed Platforms.ActiveCfg = DebugLocal
-		{F073BB2A-ED26-4B77-96EB-D38B90857943}.DebugLocal|Mixed Platforms.Build.0 = DebugLocal
-		{F073BB2A-ED26-4B77-96EB-D38B90857943}.DebugLocal|x86.ActiveCfg = DebugLocal
-		{F073BB2A-ED26-4B77-96EB-D38B90857943}.DebugLocal|x86.Build.0 = DebugLocal
-		{F073BB2A-ED26-4B77-96EB-D38B90857943}.Release|Any CPU.ActiveCfg = Release
-		{F073BB2A-ED26-4B77-96EB-D38B90857943}.Release|Any CPU.Build.0 = Release
-		{F073BB2A-ED26-4B77-96EB-D38B90857943}.Release|Any CPU.Deploy.0 = Release
-		{F073BB2A-ED26-4B77-96EB-D38B90857943}.Release|Mixed Platforms.ActiveCfg = Release
-		{F073BB2A-ED26-4B77-96EB-D38B90857943}.Release|Mixed Platforms.Build.0 = Release
-		{F073BB2A-ED26-4B77-96EB-D38B90857943}.Release|Mixed Platforms.Deploy.0 = Release
-		{F073BB2A-ED26-4B77-96EB-D38B90857943}.Release|x86.ActiveCfg = Release
-		{F073BB2A-ED26-4B77-96EB-D38B90857943}.Release|x86.Build.0 = Release
-		{F073BB2A-ED26-4B77-96EB-D38B90857943}.Release|x86.Deploy.0 = Release
-		{F073BB2A-ED26-4B77-96EB-D38B90857943}.Staging|Any CPU.ActiveCfg = Release
-		{F073BB2A-ED26-4B77-96EB-D38B90857943}.Staging|Any CPU.Build.0 = Release
-		{F073BB2A-ED26-4B77-96EB-D38B90857943}.Staging|Any CPU.Deploy.0 = Release
-		{F073BB2A-ED26-4B77-96EB-D38B90857943}.Staging|Mixed Platforms.ActiveCfg = Release
-		{F073BB2A-ED26-4B77-96EB-D38B90857943}.Staging|Mixed Platforms.Build.0 = Release
-		{F073BB2A-ED26-4B77-96EB-D38B90857943}.Staging|Mixed Platforms.Deploy.0 = Release
-		{F073BB2A-ED26-4B77-96EB-D38B90857943}.Staging|x86.ActiveCfg = Release
-		{F073BB2A-ED26-4B77-96EB-D38B90857943}.Staging|x86.Build.0 = Release
-		{F073BB2A-ED26-4B77-96EB-D38B90857943}.Staging|x86.Deploy.0 = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = Tals.ProBono.vsmdi
 	EndGlobalSection
 EndGlobal

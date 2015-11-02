@@ -19,7 +19,7 @@ namespace Tals.ProBono.Web.Infrastructure
         protected override IController GetControllerInstance(RequestContext context, Type controllerType)
         {
             if (controllerType == null)
-                return null;
+                return base.GetControllerInstance(context, controllerType);
             return (IController)_kernel.Get(controllerType);
         }
 
