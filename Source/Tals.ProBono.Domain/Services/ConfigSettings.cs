@@ -15,6 +15,9 @@ namespace Tals.ProBono.Domain.Services
         private static int? _defaultResultsPerPage;
         private static int? _attorneyTimeoutInMinutes;
         private static int? _minimumAgeRequirement;
+        private static string _attorneySurveyUrl;
+        private static string _clientSurveyUrl;
+
 
         public static string TemplatePath
         {
@@ -184,6 +187,42 @@ namespace Tals.ProBono.Domain.Services
                 }
 
                 return _minimumAgeRequirement.Value;
+            }
+        }
+
+        public static string AttorneySurveyUrl
+        {
+            get
+            {
+                if (_attorneySurveyUrl == null)
+                {
+                    if (String.IsNullOrWhiteSpace(ConfigurationManager.AppSettings["AttorneySurveyUrl"]))
+                    {
+                        throw new ConfigurationErrorsException("Config setting [AttorneySurveyUrl] is not set or is invalid");
+                    }
+
+                    _attorneySurveyUrl = ConfigurationManager.AppSettings["AttorneySurveyUrl"];
+                }
+
+                return _attorneySurveyUrl;
+            }
+        }
+
+        public static string ClientSurveyUrl
+        {
+            get
+            {
+                if (_clientSurveyUrl == null)
+                {
+                    if (String.IsNullOrWhiteSpace(ConfigurationManager.AppSettings["ClientSurveyUrl"]))
+                    {
+                        throw new ConfigurationErrorsException("Config setting [ClientSurveyUrl] is not set or is invalid");
+                    }
+
+                    _clientSurveyUrl = ConfigurationManager.AppSettings["ClientSurveyUrl"];
+                }
+
+                return _clientSurveyUrl;
             }
         }
     }

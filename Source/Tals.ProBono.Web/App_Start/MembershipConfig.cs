@@ -1,5 +1,4 @@
-﻿using System;
-using System.Web.Management;
+﻿using System.Web.Management;
 using System.Web.Security;
 using Tals.ProBono.Domain.Services;
 

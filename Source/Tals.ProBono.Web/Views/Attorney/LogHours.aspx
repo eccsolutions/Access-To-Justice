@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Attorney.Master" Inherits="System.Web.Mvc.ViewPage<Tals.ProBono.Web.Models.WorkEntryViewModel>" %>
+<%@ Import Namespace="Tals.ProBono.Domain.Services" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
     Log Hours
@@ -14,7 +15,7 @@
     <fieldset style="border-color: #800000; border-style: solid; border-width: medium">
     <legend><img src="<%: Url.Image("important.png") %>" alt="Important!" /></legend>
         <p style="font-weight:bold;color:#800000">
-            Please take a moment to complete our short survey. Your feedback is important to us. <a href="https://www.surveymonkey.com" target="_blank">Click Here!</a>
+            Please take a moment to complete our short survey. Your feedback is important to us. <a href="<%=ConfigSettings.AttorneySurveyUrl %>" target="_blank">Click Here!</a>
         </p>
     </fieldset>
     <% using (Html.BeginForm())
