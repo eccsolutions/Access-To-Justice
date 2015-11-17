@@ -187,12 +187,6 @@ namespace Tals.ProBono.Domain.Services
         {
             AddProperty("CategoryName", categoryName);
             AddProperty("UnsubscribeUrl", unsubscribeUrl);
-            Properties = new Dictionary<string, string>
-                             {
-                                 {"CategoryName", categoryName},
-                                 {"UnsubscribeUrl", unsubscribeUrl}
-                             };
-
             TemplateName="Subscribed";
         }
     }
