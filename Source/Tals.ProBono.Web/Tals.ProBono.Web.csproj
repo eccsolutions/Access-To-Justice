@@ -195,6 +195,7 @@
     <Content Include="Content\EmailTemplates\AcceptedAnswer.htm" />
     <Content Include="Content\EmailTemplates\AccountApproved.htm" />
     <Content Include="Content\EmailTemplates\ClientReply.htm" />
+    <Content Include="Content\EmailTemplates\LawyerRegistrationAdminEmail.htm" />
     <Content Include="Content\EmailTemplates\Subscription.htm" />
     <Content Include="Content\EmailTemplates\QuestionAssigned.htm" />
     <Content Include="Content\EmailTemplates\Subscribed.htm" />
@@ -600,7 +601,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>False</AutoAssignPort>
           <DevelopmentServerPort>34574</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>

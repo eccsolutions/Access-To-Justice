@@ -141,6 +141,26 @@ namespace Tals.ProBono.Domain.Services
         }
     }
 
+    public class LawyerRegistrationAdminEmail : EmailAssembler
+    {
+        public LawyerRegistrationAdminEmail(string userName, string emailAddress, string displayName, string barNumber,
+            string county, string approvalUrl, string denialUrl)
+        {
+            Properties = new Dictionary<string, string>
+            {
+                {"UserName", userName},
+                {"EmailAddress", emailAddress},
+                {"DisplayName", displayName},
+                {"BarNumber", barNumber},
+                {"County", county},
+                {"ApprovalUrl", approvalUrl},
+                {"DenialUrl", denialUrl}
+            };
+
+            TemplatePath = GetTemplatePath("LawyerRegistrationAdminEmail");
+        }
+    }
+
     public class SubscribeEmail : EmailAssembler
     {
         public SubscribeEmail(string categoryName, string unsubscribeUrl)

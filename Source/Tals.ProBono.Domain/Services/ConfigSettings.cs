@@ -18,5 +18,7 @@ namespace Tals.ProBono.Domain.Services
         {
             get { return ConfigurationManager.AppSettings["SiteEmail"]; }
         }
+
+        public static string AdminUserName { get { return "talsadmin"; }}
     }
 }

@@ -146,6 +146,11 @@ namespace Tals.ProBono.Web.Models
 
         [DisplayName("Allow Assignments")]
         public bool AllowAssignments { get; set; }
+
+        public override string ToString()
+        {
+            return LastName + ", " + FirstName + " " + MiddleInitial;
+        }
     }
     #endregion
 

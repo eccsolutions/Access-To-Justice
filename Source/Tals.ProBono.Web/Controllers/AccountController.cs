@@ -223,6 +223,17 @@ namespace Tals.ProBono.Web.Controllers
                     FormsService.SignIn(model.UserName, false /* createPersistentCookie */);
 
                     _emailService.SendEmailTo(model.Email, new LawyerRegistrationEmail(model.UserName, model.Password));
+                    
+                    var user = Membership.GetUser(ConfigSettings.AdminUserName);
+                    if (user != null)
+                    {
+                        var approvalUrl = ConfigSettings.SiteUrl.TrimEnd('/') +
+                                          Url.Action("ConfirmApproval", "Admin", new {userName = model.UserName});
+                        var denialUrl = ConfigSettings.SiteUrl.TrimEnd('/') +
+                                      Url.Action("ConfirmDenial", "Admin", new {userName = model.UserName});
+
+                        _emailService.SendEmailTo(user.Email, new LawyerRegistrationAdminEmail(model.UserName, model.Email, model.ToString(), model.DisciplinaryBoardNumber, _repository.Counties.First(x => x.Id == model.County).CountyName, approvalUrl, denialUrl));
+                    }
 
                     return RedirectToAction("Index", "Home");
                 }
