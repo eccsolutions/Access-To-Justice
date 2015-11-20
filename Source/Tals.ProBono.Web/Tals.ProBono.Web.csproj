@@ -532,8 +532,8 @@
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate-vsdoc.js" />
-    <Content Include="Scripts\MicrosoftAjax.js" />
-    <Content Include="Scripts\MicrosoftAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftAjax-4.0.30205.js" />
+    <Content Include="Scripts\MicrosoftAjax-4.0.30205.debug.js" />
     <Content Include="Scripts\MicrosoftMvcAjax.js" />
     <Content Include="Scripts\MicrosoftMvcAjax.debug.js" />
     <Content Include="Scripts\MicrosoftMvcValidation.js" />
