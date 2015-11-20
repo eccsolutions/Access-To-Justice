@@ -12,8 +12,13 @@
         <%: Html.ActionLink("Back to Attorney Sign Up", "AttorneySignUp", "Account", null, new { @class = "ImageLink" })%></p>
     <% } %>
 
-    <p><a href="https://youtu.be/deRSZdTGmuw" target="_blank">Watch an instructional video for attorneys</a></p>
+    <h3>Training Videos</h3>
+    <ul class ="padded-list-sm">
+        <li><a href="https://youtu.be/deRSZdTGmuw" target="_blank">Watch an instructional video for attorneys</a></li>
+        <li><a href="http://www.wsba.org/Legal-Community/Volunteer-Opportunities/Public-Service-Opportunities/Training/WSBA-Pro-Bono-101" target="_blank">WSBA Pro Bono training videos</a></li>
+    </ul>
 
+    <h3>Frequently Asked Questions</h3>
     <p><a href="#Q1">How does <%=ConfigSettings.SiteName %> work?</a></p>
     <p><a href="#Q2">Who is eligible to use <%=ConfigSettings.SiteName %>?</a></p>
     <p><a href="#Q3">Will I earn CLE credit?</a></p>
