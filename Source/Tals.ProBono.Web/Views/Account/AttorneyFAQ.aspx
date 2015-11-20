@@ -12,7 +12,7 @@
         <%: Html.ActionLink("Back to Attorney Sign Up", "AttorneySignUp", "Account", null, new { @class = "ImageLink" })%></p>
     <% } %>
 
-    <p><a href="https://www.youtube.com/watch?v=Z4uesStFQUw" target="_blank">Watch an instruction video for attorneys</a></p>
+    <p><a href="https://youtu.be/deRSZdTGmuw" target="_blank">Watch an instructional video for attorneys</a></p>
 
     <p><a href="#Q1">How does <%=ConfigSettings.SiteName %> work?</a></p>
     <p><a href="#Q2">Who is eligible to use <%=ConfigSettings.SiteName %>?</a></p>

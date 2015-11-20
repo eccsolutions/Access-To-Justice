@@ -23,7 +23,7 @@
                         </td>
                          <td width="70%">     
                             <p>If you do not know which category your legal issue is in, select "Other".</p>
-                            <p>To learn more about where your legal issue may fit or to receive general information about the law, visit <a href="http://azlawhelp.org/" target="_blank">AZLawhelp.org</a></p>   
+                            <p>To learn more about where your legal issue may fit or to receive general information about the law, visit <a href="http://washingtonlawhelp.org" target="_blank">washingtonlawhelp.org</a></p>   
                         </td>
                     </tr>
                 </table>
