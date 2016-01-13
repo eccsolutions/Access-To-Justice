@@ -11,6 +11,6 @@
         <li>Only one question may be asked per day.</li>
         <li>Only three questions may be asked per year.</li>
     </ol>
-    <p>If you feel you have reached this page in error, please <a href="mailto:onlinetnjustice@tals.org">Contact Us</a> for assistance</p>
+    <p>If you feel you have reached this page in error, please <a href="mailto:techsupport@tals.org">Contact Us</a> for assistance</p>
     <p><%: Html.ActionLink("Back to list", "Questions") %></p>
 </asp:Content>
