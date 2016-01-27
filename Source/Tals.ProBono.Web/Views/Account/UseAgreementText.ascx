@@ -130,7 +130,7 @@
     <p>
         If a lawyer chooses to communicate with a client outside of the OnlineTNJustice.org website for 
         the purposes of taking the client’s case on a pro bono basis, lawyers are asked to contact 
-        help@tals.org.  We would like to keep track of the number of pro bono cases that are generated 
+        techsupport@tals.org.  We would like to keep track of the number of pro bono cases that are generated 
         from the website. Lawyers will need to report this information in order to be covered by 
         professional liability insurance maintained by TALS.
     </p>
