@@ -1,10 +1,14 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
 using MvcPaging;
 using Tals.ProBono.Domain.Abstract;
+using Tals.ProBono.Domain.Entities;
 using Tals.ProBono.Domain.Filters;
 using Tals.ProBono.Domain.Services;
 using Tals.ProBono.Web.Infrastructure;
@@ -89,6 +93,32 @@ namespace Tals.ProBono.Web.Controllers
                                                        QuestionsTaken = _questionRepository.Questions.WithCreatedBy(userName).Active().Taken().Count()
                                                    };
 
+            return View(model);
+        }
+
+        [Authorize(Roles = UserRoles.Administrators)]
+        public ActionResult EditClientProfile(string userName) {
+            var model = new EditClientProfileViewModel(UserProfile.GetUserProfile(userName));
+            model.SetCountySelectList(_questionRepository.Counties);
+
+            return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult EditClientProfile(EditClientProfileViewModel model) {
+            if (ModelState.IsValid) {
+                var profile = UserProfile.GetUserProfile(model.UserName);
+                profile.FirstName = model.FirstName;
+                profile.LastName = model.LastName;
+                profile.MiddleInitial = model.MiddleInitial;
+                profile.County = model.County;
+
+                profile.Save();
+
+                return RedirectToAction("Profile", new {userName = model.UserName});
+            }
+
+            model.SetCountySelectList(_questionRepository.Counties);
             return View(model);
         }
 

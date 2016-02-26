@@ -53,6 +53,8 @@ namespace Tals.ProBono.Web
                             new {controller = "User", action = "EditAccountInfo", userName = (string) null});
             routes.MapRoute(null, "User/EditAccountInfo/{userName}",
                             new {controller = "User", action = "EditAccountInfo"});
+            routes.MapRoute(null, "User/EditClientProfile/{userName}",
+                            new {controller = "User", action = "EditClientProfile"});
             routes.MapRoute(null, "User/{userName}",
                             new {controller = "User", action = "Profile"});
 

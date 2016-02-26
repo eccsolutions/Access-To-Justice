@@ -73,4 +73,31 @@ namespace Tals.ProBono.Web.Models
 
         public IEnumerable<SelectListItem> CountySelectList { get; private set; }
     }
+
+    public class EditClientProfileViewModel
+    {
+        public EditClientProfileViewModel() {
+            
+        }
+        public EditClientProfileViewModel(UserProfile profile)
+        {
+            UserName = profile.UserName;
+            FirstName = profile.FirstName;
+            LastName = profile.LastName;
+            MiddleInitial = profile.MiddleInitial;
+            County = profile.County;
+        }
+
+        public void SetCountySelectList(IEnumerable<County> counties)
+        {
+            CountySelectList = new SelectList(counties, "CountyName", "CountyName", County);
+        }
+
+        public string UserName { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string MiddleInitial { get; set; }
+        public string County { get; set; }
+        public IEnumerable<SelectListItem> CountySelectList { get; private set; }
+    }
 }
