@@ -65,7 +65,7 @@ namespace Tals.ProBono.Domain.Services
         {
             var text = BuildMessage(assembler);
             var message = new MailMessage(ConfigSettings.SiteEmail, email, GetSubject(text), text) { IsBodyHtml = true };
-            message.Bcc.Add(ConfigSettings.SiteEmail);
+            //message.Bcc.Add(ConfigSettings.SiteEmail);
             return message;
         }
 
