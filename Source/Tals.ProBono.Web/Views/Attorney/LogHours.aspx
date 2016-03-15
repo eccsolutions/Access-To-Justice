@@ -14,7 +14,7 @@
     <fieldset style="border-color: #800000; border-style: solid; border-width: medium">
     <legend><img src="<%: Url.Image("important.png") %>" alt="Important!" /></legend>
         <p style="font-weight:bold;color:#800000">
-            Please take a moment to complete our short survey. Your feedback is important to us. <a target="_blank" href="http://fluidsurveys.com/surveys/alalaw/volunteer-attorney-evaluation-of-al-legal-answers/">Click Here!</a>
+            Please take a moment to complete our short survey. Your feedback is important to us. <a target="_blank" href="https://www.surveymonkey.com/summary/Iu7ZxJ_2FBhl0wZPSlWPB9ZDCQ4PqtuWK16EtfsJffzAc_3D">Click Here!</a>
         </p>
     </fieldset>
     <% using (Html.BeginForm())
