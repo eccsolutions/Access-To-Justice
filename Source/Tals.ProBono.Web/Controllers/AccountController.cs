@@ -109,7 +109,7 @@ namespace Tals.ProBono.Web.Controllers
             if (ModelState.IsValid)
             {
                 // Attempt to register the user
-                MembershipCreateStatus createStatus = MembershipService.CreateUser(model.UserName, model.Password, model.Email);
+                MembershipCreateStatus createStatus = MembershipService.CreateUser(model.UserName, model.Password, model.UserName);
 
                 if (createStatus == MembershipCreateStatus.Success)
                 {
@@ -118,6 +118,7 @@ namespace Tals.ProBono.Web.Controllers
                     profile.MiddleInitial = model.MiddleInitial;
                     profile.LastName = model.LastName;
                     profile.RegistrationDate = DateTime.Now;
+
                     if(Session["County"] != null)
                     {
                         var countyId = int.Parse(Session["County"].ToString());

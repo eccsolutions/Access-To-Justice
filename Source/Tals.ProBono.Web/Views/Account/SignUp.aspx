@@ -40,13 +40,16 @@
                 <%: Html.ValidationMessageFor(m => m.LastName) %>
             </div>
             <div class="editor-label">
-                <%: Html.LabelFor(m => m.UserName) %>
+                <%: Html.LabelFor(m => m.UserName) %> (Enter a valid email address)<br/>
             </div>
             <div class="editor-field">
                 <%: Html.TextBoxFor(m => m.UserName) %>
                 <%: Html.ValidationMessageFor(m => m.UserName) %>
+                <div>
+                    (NOTE: Please add techsupport@tals.org to your safe sender's list. Visit <a href="http://safesenderslist.com/">Safe Senders List</a> for instructions.)
+                </div>
             </div>
-            <div class="editor-label">
+            <!--<div class="editor-label">
                 <%: Html.LabelFor(m => m.Email) %>
                 (Optional)<br />
                 No email address? Then you must check back to see if you got an answer.<br />
@@ -56,7 +59,7 @@
             <div class="editor-field">
                 <%: Html.TextBoxFor(m => m.Email) %>
                 <%: Html.ValidationMessageFor(m => m.Email) %>
-            </div>
+            </div>-->
             <div class="editor-label">
                 <%: Html.LabelFor(m => m.Password) %>
             </div>

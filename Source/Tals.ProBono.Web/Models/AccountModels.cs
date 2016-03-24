@@ -71,6 +71,8 @@ namespace Tals.ProBono.Web.Models
 
         [Required]
         [DisplayName("User name")]
+        [DataType(DataType.EmailAddress)]
+        [Email(ErrorMessage = "The user name must be a valid email address")]
         public string UserName
         {
             get { return _userName; }
