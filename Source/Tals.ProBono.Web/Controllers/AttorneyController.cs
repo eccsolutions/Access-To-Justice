@@ -59,15 +59,24 @@ namespace Tals.ProBono.Web.Controllers
             return View(posts);
         }
 
-        public ViewResult Details(int id)
+        public ActionResult Details(int id)
         {
             var question = _unitOfWork.QuestionRepository.Get().WithId(id);
-            var posts = _unitOfWork.PostRepository.Get().WithQuestionId(id);
-            var model = DetailsViewModel.CreateViewModel(question, posts);
 
-            _auditor.Audit(_currentUser.UserName, id);
+            if (_security.CanViewDetails(question, UserModel.Current.UserName))
+            {
+                var posts = _unitOfWork.PostRepository.Get().WithQuestionId(id);
+                var model = DetailsViewModel.CreateViewModel(question, posts);
 
-            return View(model);
+                _auditor.Audit(_currentUser.UserName, id);
+
+                return View(model);
+            }
+            else
+            {
+                TempData["message"] = _security.ErrorMessage;
+                return View( "Error" );
+            }
         }
 
         public ViewResult PracticeAreas()

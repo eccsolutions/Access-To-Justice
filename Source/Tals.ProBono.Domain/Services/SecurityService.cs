@@ -39,7 +39,7 @@ namespace Tals.ProBono.Domain.Services
 
         public bool CanMarkAsAnswer(Question question, string userName)
         {
-            if(question.IsClosed())
+            if (question.IsClosed())
             {
                 ErrorMessage = "Question is already closed";
                 return false;
@@ -49,6 +49,16 @@ namespace Tals.ProBono.Domain.Services
                 return true;
 
             ErrorMessage = "You do not have access to mark this question as answered";
+            return false;
+        }
+
+        public bool CanViewDetails(Question question, string userName)
+        {
+
+            if (!question.IsTaken() || question.IsOwner(userName) || question.IsTaker(userName) || _roles.IsUserInRole(userName, UserRoles.Administrators))
+                return true;
+
+            ErrorMessage = "You cannot view this question because it is taken by someone else.";
             return false;
         }
 
@@ -77,5 +87,6 @@ namespace Tals.ProBono.Domain.Services
         bool HasReplyAccess(Question question, string userName);
         bool CanMarkAsAnswer(Question question, string userName);
         bool CanTake(Question question, string userName);
+        bool CanViewDetails(Question question, string userName);
     }
 }
