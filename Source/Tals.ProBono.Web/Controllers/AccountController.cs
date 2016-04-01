@@ -130,7 +130,7 @@ namespace Tals.ProBono.Web.Controllers
                     Roles.AddUserToRole(model.UserName, UserRoles.BasicUser);
                     FormsService.SignIn(model.UserName, false /* createPersistentCookie */);
 
-                    _emailService.SendEmailTo(model.Email, new ClientRegistrationEmail(model.UserName));
+                    _emailService.SendEmailTo(model.UserName, new ClientRegistrationEmail(model.UserName));
 
                     if (!String.IsNullOrEmpty(returnUrl))
                     {
@@ -199,7 +199,7 @@ namespace Tals.ProBono.Web.Controllers
             if (ModelState.IsValid)
             {
                 // Attempt to register the user
-                MembershipCreateStatus createStatus = MembershipService.CreateAttorney(model.UserName, model.Password, model.Email);
+                MembershipCreateStatus createStatus = MembershipService.CreateAttorney(model.UserName, model.Password, model.UserName);
 
                 if (createStatus == MembershipCreateStatus.Success)
                 {
@@ -223,7 +223,7 @@ namespace Tals.ProBono.Web.Controllers
                     Roles.AddUserToRole(model.UserName, UserRoles.PendingApproval);
                     FormsService.SignIn(model.UserName, false /* createPersistentCookie */);
 
-                    _emailService.SendEmailTo(model.Email, new LawyerRegistrationEmail(model.UserName, model.Password));
+                    _emailService.SendEmailTo(model.UserName, new LawyerRegistrationEmail(model.UserName, model.Password));
                     
                     var user = Membership.GetUser(ConfigSettings.AdminUserName);
                     if (user != null)
@@ -233,7 +233,7 @@ namespace Tals.ProBono.Web.Controllers
                         var denialUrl = ConfigSettings.SiteUrl.TrimEnd('/') +
                                       Url.Action("ConfirmDenial", "Admin", new {userName = model.UserName});
 
-                        _emailService.SendEmailTo(user.Email, new LawyerRegistrationAdminEmail(model.UserName, model.Email, model.ToString(), model.DisciplinaryBoardNumber, _repository.Counties.First(x => x.Id == model.County).CountyName, approvalUrl, denialUrl));
+                        _emailService.SendEmailTo(user.Email, new LawyerRegistrationAdminEmail(model.UserName, model.UserName, model.ToString(), model.DisciplinaryBoardNumber, _repository.Counties.First(x => x.Id == model.County).CountyName, approvalUrl, denialUrl));
                     }
 
                     return RedirectToAction("Index", "Home");

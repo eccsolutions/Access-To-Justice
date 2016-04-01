@@ -23,17 +23,21 @@
         <fieldset>
             <legend>Account Information</legend>
             <label class="editor-label">
-                User name</label>
+                User name</label> (Enter a valid email address)
             <div class="editor-field">
                 <%: Html.TextBoxFor(m => m.UserName) %>
                 <%: Html.ValidationMessageFor(m => m.UserName) %>
+                <div>
+                    (NOTE: Please add techsupport@tals.org to your safe sender's list. Visit <a href="http://safesenderslist.com/">Safe Senders List</a> for instructions.)
+                </div>
             </div>
-            <label class="editor-label">Email address</label><br/>
+<!--            <label class="editor-label">Email address</label><br/>
             Note: Please add techsupport@tals.org to your safe senders list. <a href="http://safesenderslist.com/" target="_blank">Find instructions</a>
             <div class="editor-field">
                 <%: Html.TextBoxFor(m => m.Email) %>
                 <%: Html.ValidationMessageFor(m => m.Email) %>
             </div>
+-->
             <label class="editor-label">
                 Password</label>
             <div class="editor-field">
