@@ -100,20 +100,20 @@ namespace Tals.ProBono.Web.Models
     [PropertiesMustMatch("Password", "ConfirmPassword", ErrorMessage = "The password and confirmation password do not match.")]
     public class SignUpClientModel : SignUpModel
     {
-        [DataType(DataType.EmailAddress)]
-        [DisplayName("Email address")]
-        [Email(ErrorMessage = "The email address entered is not valid.")]
-        public string Email { get; set; }
+        //[DataType(DataType.EmailAddress)]
+        //[DisplayName("Email address")]
+        //[Email(ErrorMessage = "The email address entered is not valid.")]
+        //public string Email { get; set; }
     }
 
     [PropertiesMustMatch("Password", "ConfirmPassword", ErrorMessage = "The password and confirmation password do not match.")]
     public class AttorneySignUpModel : SignUpModel
     {
-        [Required]
-        [DataType(DataType.EmailAddress)]
-        [DisplayName("Email address")]
-        [Email(ErrorMessage = "The email address entered is not valid.")]
-        public string Email { get; set; }
+        //[Required]
+        //[DataType(DataType.EmailAddress)]
+        //[DisplayName("Email address")]
+        //[Email(ErrorMessage = "The email address entered is not valid.")]
+        //public string Email { get; set; }
 
         [Required]
         [DisplayName("BPR Number")]

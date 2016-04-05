@@ -49,17 +49,6 @@
                     (NOTE: Please add techsupport@tals.org to your safe sender's list. Visit <a href="http://safesenderslist.com/">Safe Senders List</a> for instructions.)
                 </div>
             </div>
-            <!--<div class="editor-label">
-                <%: Html.LabelFor(m => m.Email) %>
-                (Optional)<br />
-                No email address? Then you must check back to see if you got an answer.<br />
-                Please add techsupport@tals.org to your safe sender's list.<br />
-                Visit <a href="http://safesenderslist.com/">Safe Senders List</a> for instructions.
-            </div>
-            <div class="editor-field">
-                <%: Html.TextBoxFor(m => m.Email) %>
-                <%: Html.ValidationMessageFor(m => m.Email) %>
-            </div>-->
             <div class="editor-label">
                 <%: Html.LabelFor(m => m.Password) %>
             </div>
