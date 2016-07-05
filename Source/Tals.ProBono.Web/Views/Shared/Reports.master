@@ -1,0 +1,57 @@
+<%@ Master Language="C#" MasterPageFile="Site.Master" Inherits="System.Web.Mvc.ViewMasterPage" %>
+<%@ Import Namespace="Tals.ProBono.Domain.Services" %>
+<%@ Import Namespace="Tals.ProBono.Domain.Constants" %>
+<asp:Content runat="server" ID="Title" ContentPlaceHolderID="TitleContent">
+    <asp:ContentPlaceHolder ID="TitleContent" runat="server" />
+</asp:Content>
+<asp:Content runat="server" ID="Head" ContentPlaceHolderID="HeadContent">
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server" />
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-24167933-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+</asp:Content>
+<asp:Content runat="server" ID="TabMenu" ContentPlaceHolderID="TabMenuContent">
+    <asp:ContentPlaceHolder runat="server" ID="TabMenuContent">
+    <ul id="tabmenu">
+        <%: Html.RoleActionMenuLink("Home", "List", "Attorney", UserRoles.AdministratorsAndAttorny)%>
+        <%: Html.RoleActionMenuLink("Practice Areas", "PracticeAreas", "Attorney", UserRoles.AdministratorsAndAttorny)%>
+        <%: Html.RoleActionMenuLink("My Profile", "Profile", "User", UserRoles.Attorney) %>
+        <%: Html.RoleActionMenuLink("FAQ", "AttorneyFAQ", "Account", UserRoles.Attorney) %>
+        <%: Html.RoleActionMenuLink("Home", "ApprovalNeeded", "Home", UserRoles.PendingApproval) %>
+        <%: Html.RoleActionMenuLink("Admin View", "List", "Admin", UserRoles.Administrators) %>
+        <%: Html.RoleActionMenuLink("Advocate", "Index", "Pages", UserRoles.AdministratorsAndAttorny, new {id=ApplicationConstants.PAGE_ID_ADVOCATE}) %>
+        <%: Html.RoleActionMenuLink("Forums", "Index", "Forums", UserRoles.AdministratorsAndAttorny, null, new {target="_blank"}) %>
+    </ul>
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content runat="server" ID="QuickLinks" ContentPlaceHolderID="QuickLinksContent">
+    <asp:ContentPlaceHolder runat="server" ID="QuickLinksContent">
+        <h2 class="quicklinksheader">Question Center</h2>
+        <div id="questionMenu" class="verticalMenu">
+            <% Html.RenderAction("QuestionMenu", "Nav"); %>
+        </div>
+        <br />
+        <br />
+        <div>
+            <p>To see the questions you chose click on <strong>Taken</strong>.</p>
+            <p>To see questions that need immediate attention click on <strong>Longest Wait</strong>.</p>
+            <p>To see all the questions currently waiting to be answered click on <strong>Queue</strong>.</p>
+            <p>For information on CLE’s and upcoming events click on the advocate tab.</p>
+        </div>
+        </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content runat="server" ID="Main" ContentPlaceHolderID="MainContent">
+    <asp:ContentPlaceHolder runat="server" ID="MainContent" />
+</asp:Content>
+
+<asp:Content runat="server" ID="Scripts" ContentPlaceHolderID="Scripts">
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server" />
+</asp:Content>

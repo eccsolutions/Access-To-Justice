@@ -11,7 +11,7 @@
     <ul id="tabmenu">
         <%: Html.ActionMenuItem("Questions", "List", "Admin") %>
         <%: Html.ActionMenuItem("Users", "AccountList", "Admin") %>
-        <!--<%: Html.ActionMenuItem("Reporting", "Index", "Reporting") %>-->
+        <%: Html.ActionMenuItem("Reports", "Index", "Reports") %>
         <%: Html.ActionMenuItem("Attorney View", "List", "Attorney") %>
         <%: Html.ActionMenuItem("Forums", "Index", "Forums", null, new {target="_blank"}) %>
         <%: Html.ActionMenuItem("Manage Settings", "Index", "Settings") %>

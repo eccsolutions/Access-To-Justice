@@ -10,7 +10,7 @@ namespace Tals.ProBono.Web
         public static void Config()
         {
 #if DEBUG
-            SqlServices.Install("AccessToJustice", "AccessToJusticeServices", SqlFeatures.All);
+            SqlServices.Install("AccessToJustice", "AccessToJustice", SqlFeatures.All);
 #endif
 
             if (!Roles.RoleExists(UserRoles.Administrators))
