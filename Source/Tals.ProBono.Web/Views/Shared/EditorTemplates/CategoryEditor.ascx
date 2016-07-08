@@ -1,5 +1,6 @@
 ﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<int>" %>
-    <style type="text/css">
+<%@ Import Namespace="Tals.ProBono.Resources" %>
+<style type="text/css">
         .auto-style1
         {
             width: 100%;
@@ -14,8 +15,8 @@
     </div>
     <br />
         <div>  
-           <p>If you do not know which category your legal issue is in, select "Other".</p>
-           <p>To learn more about where your legal issue may fit or to receive general information about the law, visit <a href="http://washingtonlawhelp.org" target="_blank">washingtonlawhelp.org</a></p>      
+           <p><%=SignUpStep3.OtherMessage %></p>
+           <p><%=SignUpStep3.LearnMoreMessage.Replace("{{Link}}","<a href=\"http://washingtonlawhelp.org\" target=\"_blank\">washingtonlawhelp.org</a>") %></p>      
         </div>
         </td>
     </tr>

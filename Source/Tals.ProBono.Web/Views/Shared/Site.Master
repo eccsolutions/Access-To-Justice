@@ -3,6 +3,7 @@
 <%@ Import Namespace="Tals.ProBono.Domain.Constants" %>
 <%@ Import Namespace="Tals.ProBono.Web.Enums" %>
 <%@ Import Namespace="Tals.ProBono.Web.Models.Shared" %>
+<%@ Import Namespace="Tals.ProBono.Resources" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -78,11 +79,11 @@
         <div id="main">
             <div id="quicklinks">
                 <asp:ContentPlaceHolder ID="QuickLinksContent" runat="server">
-                    <h2 class="quicklinksheader">Other Places to Get Help</h2>
-                    <a style="margin-left:0" href="https://nwjustice.org/get-legal-help" target="_blank" title="Legal Advice and Referral by Phone (Northwest Justice Project)">Legal Advice and Referral by Phone (Northwest Justice Project)</a>
+                    <h2 class="quicklinksheader"><%=SiteMaster.OtherPlacesTitle %></h2>
+                    <a style="margin-left:0" href="https://nwjustice.org/get-legal-help" target="_blank" title="<%=SiteMaster.LinkName1 %>"><%=SiteMaster.LinkName1 %></a>
 
-                    <p/><a style="margin-left:0" href="<%=Url.Action("Help","Home") %>#access" title="Access to Pro Bono and Low-Cost Attorneys">Access to Pro Bono and Low-Cost Attorneys</a>
-                    <p/><a style="margin-left:0" href="<%=Url.Action("Help","Home") %>#onlinelegal" title="Online legal information">Online Legal Information</a>
+                    <p/><a style="margin-left:0" href="<%=Url.Action("Help","Home") %>#access" title="<%=SiteMaster.LinkName2 %>"><%=SiteMaster.LinkName2 %></a>
+                    <p/><a style="margin-left:0" href="<%=Url.Action("Help","Home") %>#onlinelegal" title="<%=SiteMaster.LinkName3 %>"><%=SiteMaster.LinkName3 %></a>
                 </asp:ContentPlaceHolder>
             </div>
             <div id="content">
@@ -126,7 +127,7 @@
                 <br />
                 <br />
                 <div class="HelpMessage" style="clear: both">
-                    If you have problems navigating the site, or are experiencing problems with the site, you may contact us at <a href="mailto:<%=ConfigSettings.SiteEmail %>"><%=ConfigSettings.SiteEmail %></a>. This email address is for technical questions or problems only. Legal questions will not be answered.
+                    <%=SiteMaster.HelpMessage.Replace("{{EmailLink}}", "<a href=\"mailto:"+ConfigSettings.SiteEmail+"\">"+ConfigSettings.SiteEmail+"</a>") %>
                 </div>
             </div>
         </div>

@@ -156,6 +156,12 @@
       <DependentUpon>201506280303208_AddFPSettingsPagesAndUpdateFieldLengths.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Tals.ProBono.Resources\Tals.ProBono.Resources.csproj">
+      <Project>{c5a8a351-b94d-4745-b560-c2ab9d014d4d}</Project>
+      <Name>Tals.ProBono.Resources</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

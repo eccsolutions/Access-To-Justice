@@ -117,7 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="WelcomeMessage" xml:space="preserve">
-    <value>Nuestros abogados voluntarios responder a las preguntas jurídicas de forma gratuita. Para utilizar este sitio web, usted debe cumplir con nuestras reglas acerca de quién le podemos ayudar.</value>
+  <data name="Title" xml:space="preserve">
+    <value>Acuerdo de usuario</value>
   </data>
 </root>

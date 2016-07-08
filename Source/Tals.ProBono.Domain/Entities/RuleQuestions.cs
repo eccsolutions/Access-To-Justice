@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web.Mvc;
 using Tals.ProBono.Domain.Services;
+using Tals.ProBono.Resources;
 
 namespace Tals.ProBono.Domain.Entities
 {
@@ -18,11 +19,11 @@ namespace Tals.ProBono.Domain.Entities
     {
         public string Question
         {
-            get { return "How old are you? (You must be at least "+ConfigSettings.MinimumAgeRequirement+" years old)."; }
+            get { return SignUpStep4.Title.Replace("{{MinimumAge}}", ConfigSettings.MinimumAgeRequirement.ToString()); }
         }
 
         [Required]
-        [Range(1, 999)]
+        [Range(1, 999, ErrorMessageResourceType = typeof(Messages), ErrorMessageResourceName = "AgeRangeError")]
         [DisplayName("Age")]
         public int Answer { get; set; }
 
@@ -62,7 +63,7 @@ namespace Tals.ProBono.Domain.Entities
     {
         public string Question
         {
-            get { return "This website is only for " + ConfigSettings.StateName + " residents.  What " + ConfigSettings.StateName + " county do you live in? (If you do not live in " + ConfigSettings.StateName + " but have a legal problem here please choose that county.)"; }
+            get { return SignUpStep2.Title.Replace("{{StateName}}", ConfigSettings.StateName); }
         }
 
         [UIHint("CountyEditor")]
@@ -83,7 +84,7 @@ namespace Tals.ProBono.Domain.Entities
     {
         public string Question
         {
-            get { return "What type of legal issue do you have?"; }
+            get { return SignUpStep3.Title; }
         }
 
         [UIHint("CategoryEditor")]
@@ -127,7 +128,7 @@ namespace Tals.ProBono.Domain.Entities
         {
             get
             {
-                return "New User Signup"; 
+                return SignUpStep1.Title; 
             }
         }           
 
@@ -172,12 +173,11 @@ namespace Tals.ProBono.Domain.Entities
         {
             get
             {
-                return
-                    "List the number of people that live in your household. Include yourself as one of the people. Include anyone else in your household who you support or who helps support you.";
+                return SignUpStep5.Title;
             }
         }
 
-        [Range(1, 999, ErrorMessage = "You must enter at least 1.")]
+        [Range(1, 999, ErrorMessageResourceType = typeof(Messages), ErrorMessageResourceName = "EnterAtLeastOne")]
         public int Answer { get; set; }
 
         public bool IsValid
@@ -223,8 +223,7 @@ namespace Tals.ProBono.Domain.Entities
         {
             get
             {
-                return
-                    "Income is money you get from things like jobs and government benefits (like unemployment). Specify the income for you and for each person in your household.";
+                return SignUpStep6.Title;
             }
         }
 
@@ -245,10 +244,10 @@ namespace Tals.ProBono.Domain.Entities
             {
                 var list = new Dictionary<int, string>
                        {
-                           {0, "Weekly"},
-                           {1, "Every two weeks"},
-                           {2, "Twice a month"},
-                           {3, "Monthly"}
+                           {0, SignUpStep6.Weekly},
+                           {1, SignUpStep6.EveryTwoWeeks},
+                           {2, SignUpStep6.TwiceAMonth},
+                           {3, SignUpStep6.Monthly}
                        };
 
                 return new SelectList(list, "Key", "Value");

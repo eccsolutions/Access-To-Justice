@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 
 namespace Tals.ProBono.Web.Infrastructure
 {
@@ -9,8 +10,7 @@ namespace Tals.ProBono.Web.Infrastructure
         // Include ONLY cultures you are implementing as views
         private static readonly Dictionary<String, bool> _cultures = new Dictionary<string, bool> {
             {"en-US", true},  // first culture is the DEFAULT
-            {"es-CL", true},
-            {"ar-JO", true}
+            {"es", true}
         };
 
 
@@ -58,6 +58,17 @@ namespace Tals.ProBono.Web.Infrastructure
         public static bool IsViewSeparate(string name)
         {
             return _cultures[name];
+        }
+
+        public static string GetCurrentNeutralCulture()
+        {
+            return GetNeutralCulture(Thread.CurrentThread.CurrentCulture.Name);
+        }
+        public static string GetNeutralCulture(string name)
+        {
+            if (!name.Contains("-")) return name;
+
+            return name.Split('-')[0]; // Read first part only. E.g. "en", "es"
         }
 
     }

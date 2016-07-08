@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
+using Tals.ProBono.Resources;
 using Tals.ProBono.Domain.Constants;
 using Tals.ProBono.Domain.Entities;
 using Tals.ProBono.Domain.Filters;
@@ -12,7 +13,6 @@ using Tals.ProBono.Web.Infrastructure;
 using Tals.ProBono.Web.Models;
 using Tals.ProBono.Web.Models.Shared;
 using Tals.ProBono.Web.Models.View.Account;
-using ViewRes;
 
 namespace Tals.ProBono.Web.Controllers
 {
@@ -444,17 +444,17 @@ namespace Tals.ProBono.Web.Controllers
             {
                 var questions = new List<SelectListItem>() {
                                                                new SelectListItem()
-                                                               {Text = Index.Question1, Value = Index.Question1},
+                                                               {Text = Index.SecurityQuestion1, Value = Index.SecurityQuestion1},
                                                                new SelectListItem()
-                                                               {Text = Index.Question2, Value = Index.Question2},
+                                                               {Text = Index.SecurityQuestion2, Value = Index.SecurityQuestion2},
                                                                new SelectListItem()
-                                                               {Text = Index.Question3, Value = Index.Question3},
+                                                               {Text = Index.SecurityQuestion3, Value = Index.SecurityQuestion3},
                                                                new SelectListItem()
-                                                               {Text = Index.Question4, Value = Index.Question4},
+                                                               {Text = Index.SecurityQuestion4, Value = Index.SecurityQuestion4},
                                                                new SelectListItem()
-                                                               {Text = Index.Question5, Value = Index.Question5},
+                                                               {Text = Index.SecurityQuestion5, Value = Index.SecurityQuestion5},
                                                                new SelectListItem()
-                                                               {Text = Index.Question6, Value = Index.Question6}
+                                                               {Text = Index.SecurityQuestion6, Value = Index.SecurityQuestion6}
                                                            };
                 return questions;
             }

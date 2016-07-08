@@ -124,6 +124,7 @@
     <Compile Include="Controllers\ControllerBase.cs" />
     <Compile Include="Controllers\ReferralOrganizationController.cs" />
     <Compile Include="Enums\MessageTypes.cs" />
+    <Compile Include="Infrastructure\CultureViewAttribute.cs" />
     <Compile Include="Models\CategoryListViewModel.cs" />
     <Compile Include="Controllers\CountyController.cs" />
     <Compile Include="Infrastructure\Auditor.cs" />
@@ -181,16 +182,6 @@
     <Compile Include="Models\View\Shared\ViewModelBase.cs" />
     <Compile Include="Models\WorkEntryViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Resources\Views\Home\Index.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Index.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Resources\Views\Home\Index.es.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Index.es.resx</DependentUpon>
-    </Compile>
     <Compile Include="Settings.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -584,7 +575,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Resources\Models\" />
   </ItemGroup>
   <ItemGroup>
     <WebReferences Include="Web References\" />
@@ -594,19 +584,10 @@
       <Project>{71DB39A1-D146-46ED-8EAF-FCAB04BA3202}</Project>
       <Name>Tals.ProBono.Domain</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Resources\Views\Home\Index.es.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Index.es.Designer.cs</LastGenOutput>
-      <CustomToolNamespace>ViewRes</CustomToolNamespace>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\Views\Home\Index.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Index.Designer.cs</LastGenOutput>
-      <CustomToolNamespace>ViewRes</CustomToolNamespace>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
+    <ProjectReference Include="..\Tals.ProBono.Resources\Tals.ProBono.Resources.csproj">
+      <Project>{c5a8a351-b94d-4745-b560-c2ab9d014d4d}</Project>
+      <Name>Tals.ProBono.Resources</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

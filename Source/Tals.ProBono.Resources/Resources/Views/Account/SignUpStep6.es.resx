@@ -117,28 +117,34 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="WelcomeMessage" xml:space="preserve">
-    <value>Our volunteer lawyers answer legal questions for free. To use this web site, you must meet our rules about who we can help.</value>
+  <data name="EnterForPerson" xml:space="preserve">
+    <value>Escriba el ingreso para la persona N.º {{Num}}</value>
   </data>
-  <data name="Question1">
-    <value xml:space="preserve">Name of your first pet?</value>
+  <data name="EnterOnly" xml:space="preserve">
+    <value>Ingrese únicamente números sin símbolos.  (Ejemplo:  1000)</value>
   </data>
-  <data name="Question2">
-    <value xml:space="preserve">High school mascot?</value>
+  <data name="EveryTwoWeeks" xml:space="preserve">
+    <value>Cada dos semanas</value>
   </data>
-  <data name="Question3">
-    <value xml:space="preserve">Month you were born in?</value>
+  <data name="HowOften" xml:space="preserve">
+    <value>¿Con qué frecuencia?</value>
   </data>
-  <data name="Question4">
-    <value xml:space="preserve">Favorite color?</value>
+  <data name="IncomeBeforeTaxes" xml:space="preserve">
+    <value>Ingreso antes de deducir impuestos:</value>
   </data>
-  <data name="Question5">
-    <value xml:space="preserve">City you were born in?</value>
+  <data name="Monthly" xml:space="preserve">
+    <value>Mensual</value>
   </data>
-  <data name="Question6">
-    <value xml:space="preserve">Best man/maid of honor at your wedding?</value>
+  <data name="Note" xml:space="preserve">
+    <value>NOTA</value>
   </data>
-  <data name="SecurityQuestionBlankError">
-    <value xml:space="preserve">The Security Answer cannot be blank</value>
+  <data name="Title" xml:space="preserve">
+    <value>El ingreso es el dinero que recibe de cosas como los empleos y los beneficios del gobierno (como el de desempleo).  Especifique los ingresos que obtienen usted y cada una de las personas de su hogar.</value>
+  </data>
+  <data name="TwiceAMonth" xml:space="preserve">
+    <value>Dos veces al mes</value>
+  </data>
+  <data name="Weekly" xml:space="preserve">
+    <value>Semanal</value>
   </data>
 </root>

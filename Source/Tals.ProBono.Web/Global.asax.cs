@@ -104,6 +104,7 @@ namespace Tals.ProBono.Web
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
+            GlobalFilters.Filters.Add(new CultureViewAttribute());
             RegisterRoutes(RouteTable.Routes);
             ControllerBuilder.Current.SetControllerFactory(new NinjectControllerFactory());
             ModelBinders.Binders.Add(typeof (ReturnUrl), new ReturnUrlModelBinder());
