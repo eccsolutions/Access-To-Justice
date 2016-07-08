@@ -117,14 +117,86 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AccountInformation" xml:space="preserve">
+    <value>Account Information</value>
+  </data>
+  <data name="AskNow" xml:space="preserve">
+    <value>Ask Now</value>
+  </data>
+  <data name="AskNowMessage" xml:space="preserve">
+    <value>Ask your first question by clicking the button "Ask Now."</value>
+  </data>
+  <data name="ConfirmPasswordLabel" xml:space="preserve">
+    <value>Confirm Password</value>
+  </data>
+  <data name="Congrats" xml:space="preserve">
+    <value>Congratulations! You meet our rules and can ask questions through this system.</value>
+  </data>
+  <data name="CountyLabel" xml:space="preserve">
+    <value>County</value>
+  </data>
+  <data name="EmailAddressLabel" xml:space="preserve">
+    <value>Email address</value>
+  </data>
+  <data name="EmailAddressMessage" xml:space="preserve">
+    <value>No email address? Then you must check the website to see if you got an answer to your question.</value>
+  </data>
+  <data name="Instructions" xml:space="preserve">
+    <value>Make a username and password to use this website.</value>
+  </data>
   <data name="MeetRules" xml:space="preserve">
     <value>Sign Up - See if you meet our rules</value>
   </data>
   <data name="NextQuestion" xml:space="preserve">
     <value>Next Question</value>
   </data>
+  <data name="PasswordMessage" xml:space="preserve">
+    <value>Write down your username and password. Keep them in a safe place so no one else can use them. Don't give them to anyone else. You will need your username and password to log back in and read the lawyer's answer to your question.</value>
+  </data>
+  <data name="PasswordRestriction" xml:space="preserve">
+    <value>Your password has to be at least {{PasswordLength}} letters or numbers long.</value>
+  </data>
   <data name="Rejected" xml:space="preserve">
     <value>We're sorry, but you do not meet the rules to be able to use this website.</value>
+  </data>
+  <data name="RequiredInstruction" xml:space="preserve">
+    <value>All fields are required except where otherwise specified</value>
+  </data>
+  <data name="SecurityQuestion1" xml:space="preserve">
+    <value>Name of your first pet?</value>
+  </data>
+  <data name="SecurityQuestion2" xml:space="preserve">
+    <value>High school mascot?</value>
+  </data>
+  <data name="SecurityQuestion3" xml:space="preserve">
+    <value>Month you were born in?</value>
+  </data>
+  <data name="SecurityQuestion4" xml:space="preserve">
+    <value>Favorite color?</value>
+  </data>
+  <data name="SecurityQuestion5" xml:space="preserve">
+    <value>City you were born in?</value>
+  </data>
+  <data name="SecurityQuestion6" xml:space="preserve">
+    <value>Best man/maid of honor at your wedding?</value>
+  </data>
+  <data name="SecurityQuestionAnswerLabel" xml:space="preserve">
+    <value>Security Question Answer</value>
+  </data>
+  <data name="SecurityQuestionLabel" xml:space="preserve">
+    <value>Security Question</value>
+  </data>
+  <data name="SelectAQuestion" xml:space="preserve">
+    <value>Select a question</value>
+  </data>
+  <data name="SessionExpired" xml:space="preserve">
+    <value>Your session has expired, please try signing up again</value>
+  </data>
+  <data name="SignUpButtonLabel" xml:space="preserve">
+    <value>Sign Up</value>
+  </data>
+  <data name="SignUpUserNameAndPassword" xml:space="preserve">
+    <value>Sign Up Username and Password</value>
   </data>
   <data name="StartOver" xml:space="preserve">
     <value>Start Over</value>

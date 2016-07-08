@@ -117,7 +117,133 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AgreeItem1" xml:space="preserve">
+    <value>Un abogado le ayudará de forma gratuita.</value>
+  </data>
+  <data name="AgreeItem2" xml:space="preserve">
+    <value>El abogado únicamente le ayudará con la pregunta que escriba en este sitio web. El abogado no le ayudará después de eso ni hará nada más por usted.</value>
+  </data>
+  <data name="AgreeItem3" xml:space="preserve">
+    <value>Esto significa que:</value>
+  </data>
+  <data name="AgreeItem3Sub1" xml:space="preserve">
+    <value>El abogado no escribirá cartas, realizará llamadas ni presentará papeles en su nombre.</value>
+  </data>
+  <data name="AgreeItem3Sub2" xml:space="preserve">
+    <value>El abogado no asistirá a reuniones ni al tribunal en su nombre.</value>
+  </data>
+  <data name="AgreeItem3Sub3" xml:space="preserve">
+    <value>Usted no puede comunicarse con el abogado fuera de este sitio web a menos que el abogado le dé su autorización.</value>
+  </data>
+  <data name="AgreeItem3Sub4" xml:space="preserve">
+    <value>Si el abogado le pide que envíe documentos y le proporciona información de contacto para que usted pueda hacerlo, usted acepta que no usará esa información para comunicarse con el abogado para solicitar más ayuda, a menos que el abogado le dé permiso de hacerlo.</value>
+  </data>
+  <data name="AgreeItem4" xml:space="preserve">
+    <value>El abogado cuenta con una licencia para ejercer la abogacía en {{StateName}}.</value>
+  </data>
+  <data name="AgreeItem5" xml:space="preserve">
+    <value>El abogado únicamente le informa de la ley en {{StateName}}. Las leyes pueden variar en otros estados.</value>
+  </data>
+  <data name="AgreeItem6" xml:space="preserve">
+    <value>Todos los abogados voluntarios que usen el sistema pueden ver lo que usted pregunte.</value>
+  </data>
+  <data name="AgreeItem7" xml:space="preserve">
+    <value>Solamente el abogado que le ayude puede ver su nombre, su condado y el nombre de la otra parte en el caso. Si usted tiene un caso legal abierto, el abogado que le ayude podrá ver qué condado ingresó para el caso.</value>
+  </data>
+  <data name="AgreeItem8" xml:space="preserve">
+    <value>Las personas que administran este sitio web no ofrecen la asesoría legal.</value>
+  </data>
+  <data name="AgreeItem9" xml:space="preserve">
+    <value>Las personas que administran el sitio web no son responsables de la asesoría que el abogado voluntario le proporcione a través de este sitio web.</value>
+  </data>
+  <data name="AgreeWarning" xml:space="preserve">
+    <value>Si usted no acepta, no podrá usar este sitio web.</value>
+  </data>
+  <data name="IAgree" xml:space="preserve">
+    <value>Acepto</value>
+  </data>
+  <data name="IDontAgree" xml:space="preserve">
+    <value>No acepto</value>
+  </data>
+  <data name="InfoAgreeItem1" xml:space="preserve">
+    <value>el tipo de problema legal que tuvo (de vivienda, de ley familiar, de deudas, migratorio, etc.),</value>
+  </data>
+  <data name="InfoAgreeItem10" xml:space="preserve">
+    <value>la forma en que encontró nuestro sitio web (mediante una búsqueda en Google, desde washingtonlawhelp.org o desde otra organización)</value>
+  </data>
+  <data name="InfoAgreeItem11" xml:space="preserve">
+    <value>Si usted se comunica con el abogado fuera del sitio web, los administradores de este sitio web no podrán ver lo que el abogado le diga ni guardarán un registro de ello.</value>
+  </data>
+  <data name="InfoAgreeItem12" xml:space="preserve">
+    <value>Las personas que administran este sitio web no son responsables de la asesoría que el abogado le dé fuera del sitio web.</value>
+  </data>
+  <data name="InfoAgreeItem2" xml:space="preserve">
+    <value>su pregunta</value>
+  </data>
+  <data name="InfoAgreeItem3" xml:space="preserve">
+    <value>el nombre del abogado que respondió su pregunta,</value>
+  </data>
+  <data name="InfoAgreeItem4" xml:space="preserve">
+    <value>lo que le dijo el abogado en el sitio web,</value>
+  </data>
+  <data name="InfoAgreeItem5" xml:space="preserve">
+    <value>sus respuestas a lo que le dijo el abogado,</value>
+  </data>
+  <data name="InfoAgreeItem6" xml:space="preserve">
+    <value>el condado en el que vive,</value>
+  </data>
+  <data name="InfoAgreeItem7" xml:space="preserve">
+    <value>el nombre de la otra parte de su caso (si usted ingresó esta información)</value>
+  </data>
+  <data name="InfoAgreeItem8" xml:space="preserve">
+    <value>el condado en el que se maneja su caso (si usted ingresó esta información)</value>
+  </data>
+  <data name="InfoAgreeItem9" xml:space="preserve">
+    <value>los lugares en los que hizo clic en el sitio web (los lugares que visitó en este sitio web), y</value>
+  </data>
+  <data name="InfoUnderstandAndAgree" xml:space="preserve">
+    <value>Esta es la información que guarda el sitio web:</value>
+  </data>
+  <data name="LawyerAgreeItem1" xml:space="preserve">
+    <value>Es posible que el abogado o su empresa estén ayudando a la otra parte de su caso y no lo sepan al contestar su pregunta.</value>
+  </data>
+  <data name="LawyerAgreeItem2" xml:space="preserve">
+    <value>Si el abogado o su empresa están ayudando a la otra parte del caso y contestan la pregunta de usted, no están rompiendo la ley, ya que no sabían que se trataba del mismo caso. Si usted utiliza este sitio web, significa que no culpará al abogado ni a la empresa del abogado por no saber que se trataba del mismo caso.</value>
+  </data>
+  <data name="LawyerAgreeItem3" xml:space="preserve">
+    <value>Si el abogado descubre que está ayudando a ambas partes en el mismo caso antes de contestar su pregunta, no podrá contestar su pregunta. Tendrá que enviar su pregunta a otro abogado del sitio que no esté trabajando en el caso.</value>
+  </data>
+  <data name="LawyerUnderstandAndAgree" xml:space="preserve">
+    <value>Los abogados únicamente pueden ayudar a una de las partes de un caso. Por ejemplo, un abogado puede ayudar ya sea al arrendador o al arrendatario. El abogado no puede ayudarlos a ambos en el mismo caso. Si usted utiliza este sitio web, significa que comprende y acepta que:</value>
+  </data>
+  <data name="SecretAgreeItem1" xml:space="preserve">
+    <value>Solamente las personas que administran el sitio, usted y los abogados voluntarios pueden ver la pregunta y los datos que usted ingrese al sitio web.</value>
+  </data>
+  <data name="SecretAgreeItem2" xml:space="preserve">
+    <value>Solamente las personas que administran el sitio web y el abogado que acepte contestar su pregunta pueden ver su nombre.</value>
+  </data>
+  <data name="SecretAgreeItem3" xml:space="preserve">
+    <value>Este sitio web guarda su información para ayudar a mejorar el sitio web.</value>
+  </data>
+  <data name="SecretAgreeItem4" xml:space="preserve">
+    <value>No venderemos su información. No la compartiremos, a menos que un juez nos ordene hacerlo. No podemos prometer que ninguna persona accederá indebidamente al sitio y verá su información.</value>
+  </data>
+  <data name="SecretUnderstandAndAgree" xml:space="preserve">
+    <value>Sus preguntas son secretas.</value>
+  </data>
   <data name="Title" xml:space="preserve">
     <value>Acuerdo de usuario</value>
+  </data>
+  <data name="UnderstandAndAgree" xml:space="preserve">
+    <value>Si usted utiliza este sitio web, significa que comprende y acepta que:</value>
+  </data>
+  <data name="UseAgreeItem1" xml:space="preserve">
+    <value>Aún no cuento con un abogado que me ayude con este problema.</value>
+  </data>
+  <data name="UseAgreeItem2" xml:space="preserve">
+    <value>Diré la verdad acerca de mi problema legal.</value>
+  </data>
+  <data name="UseUnderstandAndAgree" xml:space="preserve">
+    <value>Para utilizar este sitio web, también deberá aceptar las siguientes dos declaraciones:</value>
   </data>
 </root>

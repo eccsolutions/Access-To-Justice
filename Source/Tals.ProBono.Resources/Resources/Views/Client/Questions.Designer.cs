@@ -22,14 +22,14 @@ namespace Tals.ProBono.Resources {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class Messages {
+    public class Questions {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Messages() {
+        internal Questions() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace Tals.ProBono.Resources {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Tals.ProBono.Resources.Resources.Messages", typeof(Messages).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Tals.ProBono.Resources.Resources.Views.Client.Questions", typeof(Questions).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,74 +61,83 @@ namespace Tals.ProBono.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Account creation was unsuccessful. Please correct the errors and try again..
+        ///   Looks up a localized string similar to Ask Another Question.
         /// </summary>
-        public static string AccountCreationFailed {
+        public static string AskAnotherQuestion {
             get {
-                return ResourceManager.GetString("AccountCreationFailed", resourceCulture);
+                return ResourceManager.GetString("AskAnotherQuestion", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Age should be between 1 and 999.
+        ///   Looks up a localized string similar to Click on the subject to view your answers:.
         /// </summary>
-        public static string AgeRangeError {
+        public static string ClickToView {
             get {
-                return ResourceManager.GetString("AgeRangeError", resourceCulture);
+                return ResourceManager.GetString("ClickToView", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Email Address is already in use by another user.
+        ///   Looks up a localized string similar to Last Updated.
         /// </summary>
-        public static string EmailInUse {
+        public static string LastUpdatedHeader {
             get {
-                return ResourceManager.GetString("EmailInUse", resourceCulture);
+                return ResourceManager.GetString("LastUpdatedHeader", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The email address entered is not valid..
+        ///   Looks up a localized string similar to No questions have been asked.
         /// </summary>
-        public static string EmailInvalid {
+        public static string NoRecordsMessage {
             get {
-                return ResourceManager.GetString("EmailInvalid", resourceCulture);
+                return ResourceManager.GetString("NoRecordsMessage", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You must enter at least 1.
+        ///   Looks up a localized string similar to No Subject Entered.
         /// </summary>
-        public static string EnterAtLeastOne {
+        public static string NoSubjectEnteredMessage {
             get {
-                return ResourceManager.GetString("EnterAtLeastOne", resourceCulture);
+                return ResourceManager.GetString("NoSubjectEnteredMessage", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {0} is required.
+        ///   Looks up a localized string similar to Replies.
         /// </summary>
-        public static string FieldRequired {
+        public static string RepliesHeader {
             get {
-                return ResourceManager.GetString("FieldRequired", resourceCulture);
+                return ResourceManager.GetString("RepliesHeader", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The password and confirmation password do not match..
+        ///   Looks up a localized string similar to Request Date.
         /// </summary>
-        public static string PasswordNoMatch {
+        public static string RequestDateHeader {
             get {
-                return ResourceManager.GetString("PasswordNoMatch", resourceCulture);
+                return ResourceManager.GetString("RequestDateHeader", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please correct the errors below:.
+        ///   Looks up a localized string similar to Subject.
         /// </summary>
-        public static string PleaseCorrectErrorBelow {
+        public static string SubjectHeader {
             get {
-                return ResourceManager.GetString("PleaseCorrectErrorBelow", resourceCulture);
+                return ResourceManager.GetString("SubjectHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Questions.
+        /// </summary>
+        public static string Title {
+            get {
+                return ResourceManager.GetString("Title", resourceCulture);
             }
         }
     }

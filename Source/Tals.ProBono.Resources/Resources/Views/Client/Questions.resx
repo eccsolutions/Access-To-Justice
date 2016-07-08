@@ -117,91 +117,31 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AccountInformation" xml:space="preserve">
-    <value>Información de la cuenta</value>
+  <data name="AskAnotherQuestion" xml:space="preserve">
+    <value>Ask Another Question</value>
   </data>
-  <data name="AskNow" xml:space="preserve">
-    <value>Preguntar ahora</value>
+  <data name="ClickToView" xml:space="preserve">
+    <value>Click on the subject to view your answers:</value>
   </data>
-  <data name="AskNowMessage" xml:space="preserve">
-    <value>Haga su primera pregunta al hacer clic en el botón “Preguntar ahora.”</value>
+  <data name="LastUpdatedHeader" xml:space="preserve">
+    <value>Last Updated</value>
   </data>
-  <data name="ConfirmPasswordLabel" xml:space="preserve">
-    <value>Confirmar contraseña</value>
+  <data name="NoRecordsMessage" xml:space="preserve">
+    <value>No questions have been asked</value>
   </data>
-  <data name="Congrats" xml:space="preserve">
-    <value>¡Felicidades! Usted cumple nuestras reglas y puede hacer preguntas mediante este sistema.</value>
+  <data name="NoSubjectEnteredMessage" xml:space="preserve">
+    <value>No Subject Entered</value>
   </data>
-  <data name="CountyLabel" xml:space="preserve">
-    <value>Condado</value>
+  <data name="RepliesHeader" xml:space="preserve">
+    <value>Replies</value>
   </data>
-  <data name="EmailAddressMessage" xml:space="preserve">
-    <value>¿No tiene dirección de correo electrónico? Entonces deberá revisar el sitio web para saber si obtuvo una respuesta a su pregunta.</value>
+  <data name="RequestDateHeader" xml:space="preserve">
+    <value>Request Date</value>
   </data>
-  <data name="Instructions" xml:space="preserve">
-    <value>Elija un nombre de usuario y una contraseña para usar este sitio web.</value>
-  </data>
-  <data name="MeetRules" xml:space="preserve">
-    <value>Regístrese - Descubra si cumple nuestras reglas</value>
-  </data>
-  <data name="NextQuestion" xml:space="preserve">
-    <value>Siguiente pregunta</value>
-  </data>
-  <data name="PasswordMessage" xml:space="preserve">
-    <value>Anote su nombre de usuario y contraseña. Guárdelos en un lugar seguro para que nadie más pueda usarlos. No se los dé a nadie más. Necesitará su nombre de usuario y contraseña para ingresar de nuevo y leer la respuesta del abogado a su pregunta.</value>
-  </data>
-  <data name="PasswordRestriction" xml:space="preserve">
-    <value>Su contraseña debe contener al menos {{PasswordLength}} letras o números.</value>
-  </data>
-  <data name="Rejected" xml:space="preserve">
-    <value>[NEEDS TRANSLATION]</value>
-  </data>
-  <data name="RequiredInstruction" xml:space="preserve">
-    <value>Todos los campos son obligatorios a menos que se especifique lo contrario</value>
-  </data>
-  <data name="SecurityQuestion1" xml:space="preserve">
-    <value>Nombre de su primera mascota</value>
-  </data>
-  <data name="SecurityQuestion2" xml:space="preserve">
-    <value>Mascota de su escuela preparatoria</value>
-  </data>
-  <data name="SecurityQuestion3" xml:space="preserve">
-    <value>Mes en el que nació</value>
-  </data>
-  <data name="SecurityQuestion4" xml:space="preserve">
-    <value>Color favorito</value>
-  </data>
-  <data name="SecurityQuestion5" xml:space="preserve">
-    <value>Ciudad en la que nació</value>
-  </data>
-  <data name="SecurityQuestion6" xml:space="preserve">
-    <value>Padrino o madrina de su boda</value>
-  </data>
-  <data name="SecurityQuestionAnswerLabel" xml:space="preserve">
-    <value>Respuesta a la pregunta de seguridad</value>
-  </data>
-  <data name="SecurityQuestionLabel" xml:space="preserve">
-    <value>Pregunta de seguridad</value>
-  </data>
-  <data name="SelectAQuestion" xml:space="preserve">
-    <value>Seleccione una pregunta</value>
-  </data>
-  <data name="SessionExpired" xml:space="preserve">
-    <value>[NEEDS TRANSLATION]</value>
-  </data>
-  <data name="SignUpButtonLabel" xml:space="preserve">
-    <value>Registrarse</value>
-  </data>
-  <data name="SignUpUserNameAndPassword" xml:space="preserve">
-    <value>Nombre de usuario y contraseña para el registro</value>
-  </data>
-  <data name="StartOver" xml:space="preserve">
-    <value>Volver a empezar</value>
-  </data>
-  <data name="Step" xml:space="preserve">
-    <value>Paso</value>
+  <data name="SubjectHeader" xml:space="preserve">
+    <value>Subject</value>
   </data>
   <data name="Title" xml:space="preserve">
-    <value>Regístrese</value>
+    <value>Questions</value>
   </data>
 </root>

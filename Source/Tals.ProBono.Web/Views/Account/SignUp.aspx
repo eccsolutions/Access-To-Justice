@@ -6,36 +6,33 @@
 </asp:Content>
 <asp:Content ID="registerContent" ContentPlaceHolderID="MainContent" runat="server">
     <h2>
-        Sign Up Username and Password</h2>
-    <p>
-        Make a username and password to use this website.
-    </p>
-    <p>
-        Your password has to be at least 
-        <%: ViewData["PasswordLength"] %>
-        letters or numbers long.
-    </p>
-    <p><strong>Note:</strong> All fields are required except where otherwise specified</p>
+        <%=SignUp.SignUpUserNameAndPassword %></h2>
+
+    <p><%=SignUp.Instructions %></p>
+
+    <p><%=SignUp.PasswordRestriction.Replace("{{PasswordLength}}",ViewData["PasswordLength"].ToString()) %></p>
+
+    <p><strong><%=Common.Note %>:</strong> <%=SignUp.RequiredInstruction %></p>
     <% using (Html.BeginForm())
        { %>
-    <%: Html.ValidationSummary(true, "Account creation was unsuccessful. Please correct the errors and try again.") %>
+    <%: Html.ValidationSummary(true, Messages.AccountCreationFailed) %>
     <div>
         <fieldset>
-            <legend>Account Information</legend>
+            <legend><%=SignUp.AccountInformation %></legend>
             <label class="editor-label">
-                First Name</label>
+                <%=Common.FirstNameLabel %></label>
             <div class="editor-field">
                 <%: Html.TextBoxFor(m => m.FirstName) %>
                 <%: Html.ValidationMessageFor(m => m.FirstName) %>
             </div>
             <label class="editor-label">
-                Middle Initial</label>
+               <%=Common.MiddleInitialLabel %></label>
             <div class="editor-field">
                 <%: Html.TextBoxFor(m => m.MiddleInitial) %>
                 <%: Html.ValidationMessageFor(m => m.MiddleInitial) %>
             </div>
             <label class="editor-label">
-                Last Name</label>
+                <%=Common.LastNameLabel %></label>
             <div class="editor-field">
                 <%: Html.TextBoxFor(m => m.LastName) %>
                 <%: Html.ValidationMessageFor(m => m.LastName) %>
@@ -49,8 +46,8 @@
             </div>
             <div class="editor-label">
                 <%: Html.LabelFor(m => m.Email) %>
-                (Optional)<br />
-                No email address? Then you must check the website to see if you got an answer to your question.<br />
+                (<%=Common.Optional %>)<br />
+                <%=SignUp.EmailAddressMessage %><br />
             </div>
             <div class="editor-field">
                 <%: Html.TextBoxFor(m => m.Email) %>
@@ -71,13 +68,13 @@
                 <%: Html.ValidationMessageFor(m => m.ConfirmPassword) %>
             </div>
             <p class="bold">
-                Write down your username and password.  Keep them in a safe place so no one else can use them.  Don't give them to anyone else.  You will need your username and password to log back in and read the lawyer's answer to your question.
+                <%=SignUp.PasswordMessage %>
             </p>            
             <div class="editor-label">
                 <%: Html.LabelFor(m => m.SecurityQuestion) %>
             </div>
             <div class="editor-field">
-                <%: Html.DropDownListFor(model => model.SecurityQuestion, Model.SecurityQuestions, "Select a question") %>
+                <%: Html.DropDownListFor(model => model.SecurityQuestion, Model.SecurityQuestions, SignUp.SelectAQuestion) %>
                 <%: Html.ValidationMessageFor(model => model.SecurityQuestion) %>
             </div>
 
@@ -92,7 +89,7 @@
 
             <%: Html.Hidden("returnUrl", Request.QueryString["ReturnUrl"]) %>
             <p>
-                <input type="submit" value="Sign Up" class="ImageLink" />
+                <input type="submit" value="<%=SignUp.SignUpButtonLabel %>" class="ImageLink" />
             </p>
         </fieldset>
     </div>

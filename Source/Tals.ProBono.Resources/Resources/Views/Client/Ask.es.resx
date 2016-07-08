@@ -117,91 +117,58 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AccountInformation" xml:space="preserve">
-    <value>Información de la cuenta</value>
+  <data name="AboutQuestion" xml:space="preserve">
+    <value>¿De qué se trata su pregunta?</value>
   </data>
-  <data name="AskNow" xml:space="preserve">
-    <value>Preguntar ahora</value>
+  <data name="AskQuestion" xml:space="preserve">
+    <value>Escriba su pregunta</value>
   </data>
-  <data name="AskNowMessage" xml:space="preserve">
-    <value>Haga su primera pregunta al hacer clic en el botón “Preguntar ahora.”</value>
+  <data name="CountyQuestion" xml:space="preserve">
+    <value>Si esta pregunta es acerca de un caso legal abierto, ¿en qué condado se encuentra su caso? (déjelo en blanco si su caso legal no está abierto)</value>
   </data>
-  <data name="ConfirmPasswordLabel" xml:space="preserve">
-    <value>Confirmar contraseña</value>
+  <data name="CourtDateMessage" xml:space="preserve">
+    <value>Es posible que no reciba una respuesta a su pregunta antes de su cita en el tribunal.</value>
   </data>
-  <data name="Congrats" xml:space="preserve">
-    <value>¡Felicidades! Usted cumple nuestras reglas y puede hacer preguntas mediante este sistema.</value>
+  <data name="CourtDateQuestion" xml:space="preserve">
+    <value>Si tiene una cita en el tribunal, escriba la fecha aquí.</value>
   </data>
-  <data name="CountyLabel" xml:space="preserve">
-    <value>Condado</value>
+  <data name="DurationMessage" xml:space="preserve">
+    <value>Le pediremos a un abogado que le responda. Es posible que esto tome hasta 14 días. No podemos prometer que recibirá una respuesta. Si no hay una respuesta luego de 14 días, le enviaremos un correo electrónico. Si no cuenta con una dirección de correo electrónico, deberá ingresar a su cuenta para revisar si hay respuestas.</value>
   </data>
-  <data name="EmailAddressMessage" xml:space="preserve">
-    <value>¿No tiene dirección de correo electrónico? Entonces deberá revisar el sitio web para saber si obtuvo una respuesta a su pregunta.</value>
+  <data name="FollowupMessage" xml:space="preserve">
+    <value>Es posible que usted tenga preguntas acerca de la respuesta del abogado. Puede hacer preguntas de seguimiento acerca de la respuesta.</value>
   </data>
   <data name="Instructions" xml:space="preserve">
-    <value>Elija un nombre de usuario y una contraseña para usar este sitio web.</value>
+    <value>Escriba su pregunta a continuación y haga clic en “Enviar”:</value>
   </data>
-  <data name="MeetRules" xml:space="preserve">
-    <value>Regístrese - Descubra si cumple nuestras reglas</value>
+  <data name="KindHelp" xml:space="preserve">
+    <value>Si no sabe a que categoría pertenece su problema legal, seleccione “Otro”.</value>
   </data>
-  <data name="NextQuestion" xml:space="preserve">
-    <value>Siguiente pregunta</value>
+  <data name="KindMoreInfo" xml:space="preserve">
+    <value>Para obtener más información acerca de dónde podría encajar su problema legal o para recibir información general acerca de las leyes, visite {{SiteLink}}.</value>
   </data>
-  <data name="PasswordMessage" xml:space="preserve">
-    <value>Anote su nombre de usuario y contraseña. Guárdelos en un lugar seguro para que nadie más pueda usarlos. No se los dé a nadie más. Necesitará su nombre de usuario y contraseña para ingresar de nuevo y leer la respuesta del abogado a su pregunta.</value>
+  <data name="KindOfProblem" xml:space="preserve">
+    <value>Tipo de problema</value>
   </data>
-  <data name="PasswordRestriction" xml:space="preserve">
-    <value>Su contraseña debe contener al menos {{PasswordLength}} letras o números.</value>
+  <data name="LawyerAnswerMessage" xml:space="preserve">
+    <value>Es posible que el abogado tenga que hacerle algunas preguntas antes de poder responderle. De ser así, le enviaremos un correo electrónico. Si no cuenta con una dirección de correo electrónico, deberá ingresar a su cuenta para revisar si hay preguntas.</value>
   </data>
-  <data name="Rejected" xml:space="preserve">
-    <value>[NEEDS TRANSLATION]</value>
+  <data name="NameQuestion" xml:space="preserve">
+    <value>¿Cuál es el nombre de la persona o la organización que provoca su problema legal? Si no lo sabe, déjelo en blanco.</value>
   </data>
-  <data name="RequiredInstruction" xml:space="preserve">
-    <value>Todos los campos son obligatorios a menos que se especifique lo contrario</value>
+  <data name="NewQuestion" xml:space="preserve">
+    <value>Pregunta nueva</value>
   </data>
-  <data name="SecurityQuestion1" xml:space="preserve">
-    <value>Nombre de su primera mascota</value>
+  <data name="QuestionLabel" xml:space="preserve">
+    <value>Escriba su pregunta aquí:</value>
   </data>
-  <data name="SecurityQuestion2" xml:space="preserve">
-    <value>Mascota de su escuela preparatoria</value>
+  <data name="ShortSurvey" xml:space="preserve">
+    <value>breve encuesta</value>
   </data>
-  <data name="SecurityQuestion3" xml:space="preserve">
-    <value>Mes en el que nació</value>
+  <data name="SurveyMessage" xml:space="preserve">
+    <value>Tómese un momento para llenar nuestra {{SurveyLink}}. Sus comentarios son importantes para nosotros.</value>
   </data>
-  <data name="SecurityQuestion4" xml:space="preserve">
-    <value>Color favorito</value>
-  </data>
-  <data name="SecurityQuestion5" xml:space="preserve">
-    <value>Ciudad en la que nació</value>
-  </data>
-  <data name="SecurityQuestion6" xml:space="preserve">
-    <value>Padrino o madrina de su boda</value>
-  </data>
-  <data name="SecurityQuestionAnswerLabel" xml:space="preserve">
-    <value>Respuesta a la pregunta de seguridad</value>
-  </data>
-  <data name="SecurityQuestionLabel" xml:space="preserve">
-    <value>Pregunta de seguridad</value>
-  </data>
-  <data name="SelectAQuestion" xml:space="preserve">
-    <value>Seleccione una pregunta</value>
-  </data>
-  <data name="SessionExpired" xml:space="preserve">
-    <value>[NEEDS TRANSLATION]</value>
-  </data>
-  <data name="SignUpButtonLabel" xml:space="preserve">
-    <value>Registrarse</value>
-  </data>
-  <data name="SignUpUserNameAndPassword" xml:space="preserve">
-    <value>Nombre de usuario y contraseña para el registro</value>
-  </data>
-  <data name="StartOver" xml:space="preserve">
-    <value>Volver a empezar</value>
-  </data>
-  <data name="Step" xml:space="preserve">
-    <value>Paso</value>
-  </data>
-  <data name="Title" xml:space="preserve">
-    <value>Regístrese</value>
+  <data name="ThanksMessage" xml:space="preserve">
+    <value>Agradecemos su pregunta.</value>
   </data>
 </root>

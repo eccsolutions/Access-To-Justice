@@ -117,7 +117,133 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AgreeItem1" xml:space="preserve">
+    <value>A lawyer is helping you for free.</value>
+  </data>
+  <data name="AgreeItem2" xml:space="preserve">
+    <value>The lawyer only helps you with the question you type into this website. The lawyer won’t help you after that or do anything else for you.</value>
+  </data>
+  <data name="AgreeItem3" xml:space="preserve">
+    <value>This means:</value>
+  </data>
+  <data name="AgreeItem3Sub1" xml:space="preserve">
+    <value>The lawyer won't write letters, make calls, or file papers for you.</value>
+  </data>
+  <data name="AgreeItem3Sub2" xml:space="preserve">
+    <value>The lawyer won't go to meetings or court for you.</value>
+  </data>
+  <data name="AgreeItem3Sub3" xml:space="preserve">
+    <value>You can't contact the lawyer outside of this website unless the lawyer gives you permission.</value>
+  </data>
+  <data name="AgreeItem3Sub4" xml:space="preserve">
+    <value>If the lawyer asks you to send documents, and gives you contact information for you to be able to do that, you agree not to use that information to contact the lawyer for other help unless the lawyer gives you permission to do that.</value>
+  </data>
+  <data name="AgreeItem4" xml:space="preserve">
+    <value>The lawyer has a {{StateName}} law license.</value>
+  </data>
+  <data name="AgreeItem5" xml:space="preserve">
+    <value>The lawyer only tells you {{StateName}} law. Laws may be different in other states.</value>
+  </data>
+  <data name="AgreeItem6" xml:space="preserve">
+    <value>All volunteer lawyers using the system can see what you ask in your question.</value>
+  </data>
+  <data name="AgreeItem7" xml:space="preserve">
+    <value>nly the lawyer who helps you can see your name, county, and the other side's name in the case. If you have an open legal case, the lawyer who helps you can see what county you entered for that case.</value>
+  </data>
+  <data name="AgreeItem8" xml:space="preserve">
+    <value>The people who run this website do not provide the legal advice.</value>
+  </data>
+  <data name="AgreeItem9" xml:space="preserve">
+    <value>The people who run this website are not responsible for the advice the volunteer lawyer gives you through this website.</value>
+  </data>
+  <data name="AgreeWarning" xml:space="preserve">
+    <value>If you don’t agree, then you can't use this website.</value>
+  </data>
+  <data name="IAgree" xml:space="preserve">
+    <value>I agree</value>
+  </data>
+  <data name="IDontAgree" xml:space="preserve">
+    <value>I don't agree</value>
+  </data>
+  <data name="InfoAgreeItem1" xml:space="preserve">
+    <value>what type of legal problem you had (housing, family law, debt, immigration, etc.),</value>
+  </data>
+  <data name="InfoAgreeItem10" xml:space="preserve">
+    <value>how you found our website (from a Google search, from washingtonlawhelp.org, or from another organization)</value>
+  </data>
+  <data name="InfoAgreeItem11" xml:space="preserve">
+    <value>If you communicate with the lawyer outside of the website, the people running this website can’t see what the lawyer tells you and won’t keep records of this.</value>
+  </data>
+  <data name="InfoAgreeItem12" xml:space="preserve">
+    <value>The people running this website are not responsible for the advice the lawyer tells you outside of the website.</value>
+  </data>
+  <data name="InfoAgreeItem2" xml:space="preserve">
+    <value>your question</value>
+  </data>
+  <data name="InfoAgreeItem3" xml:space="preserve">
+    <value>the name of the lawyer who answered your question,</value>
+  </data>
+  <data name="InfoAgreeItem4" xml:space="preserve">
+    <value>what the lawyer told you on the website,</value>
+  </data>
+  <data name="InfoAgreeItem5" xml:space="preserve">
+    <value>your responses to what the lawyer told you,</value>
+  </data>
+  <data name="InfoAgreeItem6" xml:space="preserve">
+    <value>what county you live in,</value>
+  </data>
+  <data name="InfoAgreeItem7" xml:space="preserve">
+    <value>the other party’s name in your case (if you entered this information)</value>
+  </data>
+  <data name="InfoAgreeItem8" xml:space="preserve">
+    <value>the county your case is in (if you entered this information)</value>
+  </data>
+  <data name="InfoAgreeItem9" xml:space="preserve">
+    <value>what you clicked on in the website (where you went on this website), and</value>
+  </data>
+  <data name="InfoUnderstandAndAgree" xml:space="preserve">
+    <value>This is the information the website keeps:</value>
+  </data>
+  <data name="LawyerAgreeItem1" xml:space="preserve">
+    <value>The lawyer or the lawyer's company could be helping the other person in your case and not know that when they answer your question.</value>
+  </data>
+  <data name="LawyerAgreeItem2" xml:space="preserve">
+    <value>If the lawyer or lawyer's company is helping the other person in your case and they answer your question, they are not breaking the law because they did not know it was the same case. If you use this website, it means you will not blame the lawyer or the lawyer's company for not knowing it was the same case.</value>
+  </data>
+  <data name="LawyerAgreeItem3" xml:space="preserve">
+    <value>If the lawyer finds out they are helping both sides on the same case before they answer your question, they can't answer your question. They have to give your question to another lawyer on the website who is not already working on the case.</value>
+  </data>
+  <data name="LawyerUnderstandAndAgree" xml:space="preserve">
+    <value>Lawyers can only help one side in a case. For example, a lawyer can help either the renter or the landlord. The lawyer can’t help both of them with the same case. If you use this website, it means you understand and agree that:</value>
+  </data>
+  <data name="SecretAgreeItem1" xml:space="preserve">
+    <value>Only the people who run the website, you, and the volunteer lawyers can see the question and the facts you type into the website.</value>
+  </data>
+  <data name="SecretAgreeItem2" xml:space="preserve">
+    <value>Only the people who run the website and the lawyer who agrees to answer your question can see your name.</value>
+  </data>
+  <data name="SecretAgreeItem3" xml:space="preserve">
+    <value>This website keeps your information to help make the website better.</value>
+  </data>
+  <data name="SecretAgreeItem4" xml:space="preserve">
+    <value>We won't sell your information. We won't share it unless a judge says we have to. We can't promise no one will break into the website and see your information.</value>
+  </data>
+  <data name="SecretUnderstandAndAgree" xml:space="preserve">
+    <value>Your questions are secret.</value>
+  </data>
   <data name="Title" xml:space="preserve">
     <value>User Agreement</value>
+  </data>
+  <data name="UnderstandAndAgree" xml:space="preserve">
+    <value>If you use this website, it means you understand and agree that:</value>
+  </data>
+  <data name="UseAgreeItem1" xml:space="preserve">
+    <value>I do not already have a lawyer helping me with this problem.</value>
+  </data>
+  <data name="UseAgreeItem2" xml:space="preserve">
+    <value>I will tell the truth about my legal problem.</value>
+  </data>
+  <data name="UseUnderstandAndAgree" xml:space="preserve">
+    <value>To use this website, you must also agree to the next two statements:</value>
   </data>
 </root>

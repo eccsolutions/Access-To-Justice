@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ChangePassword" xml:space="preserve">
+    <value>Cambia la contraseña</value>
+  </data>
   <data name="HelpMessage" xml:space="preserve">
     <value>Si tiene problemas para navegar en el sitio o está experimentando problemas con el sitio, puede comunicarse con nosotros en {{EmailLink}} . Esta dirección de correo electrónico es únicamente para preguntas o problemas técnicos. No se responderán las preguntas legales.</value>
   </data>
@@ -131,5 +134,11 @@
   </data>
   <data name="OtherPlacesTitle" xml:space="preserve">
     <value>Otros lugares donde puede obtener ayuda</value>
+  </data>
+  <data name="SignIn" xml:space="preserve">
+    <value>Registrarse</value>
+  </data>
+  <data name="SignOut" xml:space="preserve">
+    <value>Desconectar</value>
   </data>
 </root>

@@ -61,11 +61,389 @@ namespace Tals.ProBono.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to A lawyer is helping you for free..
+        /// </summary>
+        public static string AgreeItem1 {
+            get {
+                return ResourceManager.GetString("AgreeItem1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The lawyer only helps you with the question you type into this website. The lawyer won’t help you after that or do anything else for you..
+        /// </summary>
+        public static string AgreeItem2 {
+            get {
+                return ResourceManager.GetString("AgreeItem2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This means:.
+        /// </summary>
+        public static string AgreeItem3 {
+            get {
+                return ResourceManager.GetString("AgreeItem3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The lawyer won&apos;t write letters, make calls, or file papers for you..
+        /// </summary>
+        public static string AgreeItem3Sub1 {
+            get {
+                return ResourceManager.GetString("AgreeItem3Sub1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The lawyer won&apos;t go to meetings or court for you..
+        /// </summary>
+        public static string AgreeItem3Sub2 {
+            get {
+                return ResourceManager.GetString("AgreeItem3Sub2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You can&apos;t contact the lawyer outside of this website unless the lawyer gives you permission..
+        /// </summary>
+        public static string AgreeItem3Sub3 {
+            get {
+                return ResourceManager.GetString("AgreeItem3Sub3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to If the lawyer asks you to send documents, and gives you contact information for you to be able to do that, you agree not to use that information to contact the lawyer for other help unless the lawyer gives you permission to do that..
+        /// </summary>
+        public static string AgreeItem3Sub4 {
+            get {
+                return ResourceManager.GetString("AgreeItem3Sub4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The lawyer has a {{StateName}} law license..
+        /// </summary>
+        public static string AgreeItem4 {
+            get {
+                return ResourceManager.GetString("AgreeItem4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The lawyer only tells you {{StateName}} law. Laws may be different in other states..
+        /// </summary>
+        public static string AgreeItem5 {
+            get {
+                return ResourceManager.GetString("AgreeItem5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to All volunteer lawyers using the system can see what you ask in your question..
+        /// </summary>
+        public static string AgreeItem6 {
+            get {
+                return ResourceManager.GetString("AgreeItem6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to nly the lawyer who helps you can see your name, county, and the other side&apos;s name in the case. If you have an open legal case, the lawyer who helps you can see what county you entered for that case..
+        /// </summary>
+        public static string AgreeItem7 {
+            get {
+                return ResourceManager.GetString("AgreeItem7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The people who run this website do not provide the legal advice..
+        /// </summary>
+        public static string AgreeItem8 {
+            get {
+                return ResourceManager.GetString("AgreeItem8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The people who run this website are not responsible for the advice the volunteer lawyer gives you through this website..
+        /// </summary>
+        public static string AgreeItem9 {
+            get {
+                return ResourceManager.GetString("AgreeItem9", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to If you don’t agree, then you can&apos;t use this website..
+        /// </summary>
+        public static string AgreeWarning {
+            get {
+                return ResourceManager.GetString("AgreeWarning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to I agree.
+        /// </summary>
+        public static string IAgree {
+            get {
+                return ResourceManager.GetString("IAgree", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to I don&apos;t agree.
+        /// </summary>
+        public static string IDontAgree {
+            get {
+                return ResourceManager.GetString("IDontAgree", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to what type of legal problem you had (housing, family law, debt, immigration, etc.),.
+        /// </summary>
+        public static string InfoAgreeItem1 {
+            get {
+                return ResourceManager.GetString("InfoAgreeItem1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to how you found our website (from a Google search, from washingtonlawhelp.org, or from another organization).
+        /// </summary>
+        public static string InfoAgreeItem10 {
+            get {
+                return ResourceManager.GetString("InfoAgreeItem10", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to If you communicate with the lawyer outside of the website, the people running this website can’t see what the lawyer tells you and won’t keep records of this..
+        /// </summary>
+        public static string InfoAgreeItem11 {
+            get {
+                return ResourceManager.GetString("InfoAgreeItem11", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The people running this website are not responsible for the advice the lawyer tells you outside of the website..
+        /// </summary>
+        public static string InfoAgreeItem12 {
+            get {
+                return ResourceManager.GetString("InfoAgreeItem12", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to your question.
+        /// </summary>
+        public static string InfoAgreeItem2 {
+            get {
+                return ResourceManager.GetString("InfoAgreeItem2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to the name of the lawyer who answered your question,.
+        /// </summary>
+        public static string InfoAgreeItem3 {
+            get {
+                return ResourceManager.GetString("InfoAgreeItem3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to what the lawyer told you on the website,.
+        /// </summary>
+        public static string InfoAgreeItem4 {
+            get {
+                return ResourceManager.GetString("InfoAgreeItem4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to your responses to what the lawyer told you,.
+        /// </summary>
+        public static string InfoAgreeItem5 {
+            get {
+                return ResourceManager.GetString("InfoAgreeItem5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to what county you live in,.
+        /// </summary>
+        public static string InfoAgreeItem6 {
+            get {
+                return ResourceManager.GetString("InfoAgreeItem6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to the other party’s name in your case (if you entered this information).
+        /// </summary>
+        public static string InfoAgreeItem7 {
+            get {
+                return ResourceManager.GetString("InfoAgreeItem7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to the county your case is in (if you entered this information).
+        /// </summary>
+        public static string InfoAgreeItem8 {
+            get {
+                return ResourceManager.GetString("InfoAgreeItem8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to what you clicked on in the website (where you went on this website), and.
+        /// </summary>
+        public static string InfoAgreeItem9 {
+            get {
+                return ResourceManager.GetString("InfoAgreeItem9", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This is the information the website keeps:.
+        /// </summary>
+        public static string InfoUnderstandAndAgree {
+            get {
+                return ResourceManager.GetString("InfoUnderstandAndAgree", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The lawyer or the lawyer&apos;s company could be helping the other person in your case and not know that when they answer your question..
+        /// </summary>
+        public static string LawyerAgreeItem1 {
+            get {
+                return ResourceManager.GetString("LawyerAgreeItem1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to If the lawyer or lawyer&apos;s company is helping the other person in your case and they answer your question, they are not breaking the law because they did not know it was the same case. If you use this website, it means you will not blame the lawyer or the lawyer&apos;s company for not knowing it was the same case..
+        /// </summary>
+        public static string LawyerAgreeItem2 {
+            get {
+                return ResourceManager.GetString("LawyerAgreeItem2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to If the lawyer finds out they are helping both sides on the same case before they answer your question, they can&apos;t answer your question. They have to give your question to another lawyer on the website who is not already working on the case..
+        /// </summary>
+        public static string LawyerAgreeItem3 {
+            get {
+                return ResourceManager.GetString("LawyerAgreeItem3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lawyers can only help one side in a case. For example, a lawyer can help either the renter or the landlord. The lawyer can’t help both of them with the same case. If you use this website, it means you understand and agree that:.
+        /// </summary>
+        public static string LawyerUnderstandAndAgree {
+            get {
+                return ResourceManager.GetString("LawyerUnderstandAndAgree", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Only the people who run the website, you, and the volunteer lawyers can see the question and the facts you type into the website..
+        /// </summary>
+        public static string SecretAgreeItem1 {
+            get {
+                return ResourceManager.GetString("SecretAgreeItem1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Only the people who run the website and the lawyer who agrees to answer your question can see your name..
+        /// </summary>
+        public static string SecretAgreeItem2 {
+            get {
+                return ResourceManager.GetString("SecretAgreeItem2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This website keeps your information to help make the website better..
+        /// </summary>
+        public static string SecretAgreeItem3 {
+            get {
+                return ResourceManager.GetString("SecretAgreeItem3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to We won&apos;t sell your information. We won&apos;t share it unless a judge says we have to. We can&apos;t promise no one will break into the website and see your information..
+        /// </summary>
+        public static string SecretAgreeItem4 {
+            get {
+                return ResourceManager.GetString("SecretAgreeItem4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your questions are secret..
+        /// </summary>
+        public static string SecretUnderstandAndAgree {
+            get {
+                return ResourceManager.GetString("SecretUnderstandAndAgree", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to User Agreement.
         /// </summary>
         public static string Title {
             get {
                 return ResourceManager.GetString("Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to If you use this website, it means you understand and agree that:.
+        /// </summary>
+        public static string UnderstandAndAgree {
+            get {
+                return ResourceManager.GetString("UnderstandAndAgree", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to I do not already have a lawyer helping me with this problem..
+        /// </summary>
+        public static string UseAgreeItem1 {
+            get {
+                return ResourceManager.GetString("UseAgreeItem1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to I will tell the truth about my legal problem..
+        /// </summary>
+        public static string UseAgreeItem2 {
+            get {
+                return ResourceManager.GetString("UseAgreeItem2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to To use this website, you must also agree to the next two statements:.
+        /// </summary>
+        public static string UseUnderstandAndAgree {
+            get {
+                return ResourceManager.GetString("UseUnderstandAndAgree", resourceCulture);
             }
         }
     }

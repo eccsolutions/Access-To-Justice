@@ -105,7 +105,7 @@ namespace Tals.ProBono.Domain.Entities
     {
         public string Question
         {
-            get { return "User Agreement"; }
+            get { return UserAgreement.Title; }
         }
 
         [UIHint("UserAgreementEditor")]

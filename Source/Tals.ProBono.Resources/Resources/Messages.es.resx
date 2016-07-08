@@ -117,13 +117,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AccountCreationFailed" xml:space="preserve">
+    <value>La creación de la cuenta no fue exitosa. Corrija los errores e inténtelo nuevamente.</value>
+  </data>
   <data name="AgeRangeError" xml:space="preserve">
     <value>El campo de Edad debe ser entre 1 y 999</value>
+  </data>
+  <data name="EmailInvalid" xml:space="preserve">
+    <value>La dirección de correo electrónico es inválida</value>
   </data>
   <data name="EnterAtLeastOne" xml:space="preserve">
     <value>Debe ingresar cuando menos 1</value>
   </data>
+  <data name="FieldRequired" xml:space="preserve">
+    <value>{0} es obligatorio</value>
+  </data>
+  <data name="PasswordNoMatch" xml:space="preserve">
+    <value>La contraseña y la confirmación de contraseña no coinciden.</value>
+  </data>
   <data name="PleaseCorrectErrorBelow" xml:space="preserve">
-    <value>Corrija el error a continuación:</value>
+    <value>Corrija los errores a continuación:</value>
   </data>
 </root>

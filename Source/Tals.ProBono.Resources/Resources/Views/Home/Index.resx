@@ -120,27 +120,6 @@
   <data name="WelcomeMessage" xml:space="preserve">
     <value>Welcome to {{SiteName}}!</value>
   </data>
-  <data name="SecurityQuestion1" xml:space="preserve">
-    <value>Name of your first pet?</value>
-  </data>
-  <data name="SecurityQuestion2" xml:space="preserve">
-    <value>High school mascot?</value>
-  </data>
-  <data name="SecurityQuestion3" xml:space="preserve">
-    <value>Month you were born in?</value>
-  </data>
-  <data name="SecurityQuestion4" xml:space="preserve">
-    <value>Favorite color?</value>
-  </data>
-  <data name="SecurityQuestion5" xml:space="preserve">
-    <value>City you were born in?</value>
-  </data>
-  <data name="SecurityQuestion6" xml:space="preserve">
-    <value>Best man/maid of honor at your wedding?</value>
-  </data>
-  <data name="SecurityQuestionBlankError" xml:space="preserve">
-    <value>The Security Answer cannot be blank</value>
-  </data>
   <data name="BeenHereBefore" xml:space="preserve">
     <value>Have you been here before? Sign in to see your answers or ask a new question:</value>
   </data>

@@ -61,6 +61,87 @@ namespace Tals.ProBono.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Account Information.
+        /// </summary>
+        public static string AccountInformation {
+            get {
+                return ResourceManager.GetString("AccountInformation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ask Now.
+        /// </summary>
+        public static string AskNow {
+            get {
+                return ResourceManager.GetString("AskNow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ask your first question by clicking the button &quot;Ask Now.&quot;.
+        /// </summary>
+        public static string AskNowMessage {
+            get {
+                return ResourceManager.GetString("AskNowMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Confirm Password.
+        /// </summary>
+        public static string ConfirmPasswordLabel {
+            get {
+                return ResourceManager.GetString("ConfirmPasswordLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Congratulations! You meet our rules and can ask questions through this system..
+        /// </summary>
+        public static string Congrats {
+            get {
+                return ResourceManager.GetString("Congrats", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to County.
+        /// </summary>
+        public static string CountyLabel {
+            get {
+                return ResourceManager.GetString("CountyLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Email address.
+        /// </summary>
+        public static string EmailAddressLabel {
+            get {
+                return ResourceManager.GetString("EmailAddressLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No email address? Then you must check the website to see if you got an answer to your question..
+        /// </summary>
+        public static string EmailAddressMessage {
+            get {
+                return ResourceManager.GetString("EmailAddressMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Make a username and password to use this website..
+        /// </summary>
+        public static string Instructions {
+            get {
+                return ResourceManager.GetString("Instructions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Sign Up - See if you meet our rules.
         /// </summary>
         public static string MeetRules {
@@ -79,11 +160,146 @@ namespace Tals.ProBono.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Write down your username and password. Keep them in a safe place so no one else can use them. Don&apos;t give them to anyone else. You will need your username and password to log back in and read the lawyer&apos;s answer to your question..
+        /// </summary>
+        public static string PasswordMessage {
+            get {
+                return ResourceManager.GetString("PasswordMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your password has to be at least {{PasswordLength}} letters or numbers long..
+        /// </summary>
+        public static string PasswordRestriction {
+            get {
+                return ResourceManager.GetString("PasswordRestriction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to We&apos;re sorry, but you do not meet the rules to be able to use this website..
         /// </summary>
         public static string Rejected {
             get {
                 return ResourceManager.GetString("Rejected", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to All fields are required except where otherwise specified.
+        /// </summary>
+        public static string RequiredInstruction {
+            get {
+                return ResourceManager.GetString("RequiredInstruction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name of your first pet?.
+        /// </summary>
+        public static string SecurityQuestion1 {
+            get {
+                return ResourceManager.GetString("SecurityQuestion1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to High school mascot?.
+        /// </summary>
+        public static string SecurityQuestion2 {
+            get {
+                return ResourceManager.GetString("SecurityQuestion2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Month you were born in?.
+        /// </summary>
+        public static string SecurityQuestion3 {
+            get {
+                return ResourceManager.GetString("SecurityQuestion3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Favorite color?.
+        /// </summary>
+        public static string SecurityQuestion4 {
+            get {
+                return ResourceManager.GetString("SecurityQuestion4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to City you were born in?.
+        /// </summary>
+        public static string SecurityQuestion5 {
+            get {
+                return ResourceManager.GetString("SecurityQuestion5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Best man/maid of honor at your wedding?.
+        /// </summary>
+        public static string SecurityQuestion6 {
+            get {
+                return ResourceManager.GetString("SecurityQuestion6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Security Question Answer.
+        /// </summary>
+        public static string SecurityQuestionAnswerLabel {
+            get {
+                return ResourceManager.GetString("SecurityQuestionAnswerLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Security Question.
+        /// </summary>
+        public static string SecurityQuestionLabel {
+            get {
+                return ResourceManager.GetString("SecurityQuestionLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select a question.
+        /// </summary>
+        public static string SelectAQuestion {
+            get {
+                return ResourceManager.GetString("SelectAQuestion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your session has expired, please try signing up again.
+        /// </summary>
+        public static string SessionExpired {
+            get {
+                return ResourceManager.GetString("SessionExpired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sign Up.
+        /// </summary>
+        public static string SignUpButtonLabel {
+            get {
+                return ResourceManager.GetString("SignUpButtonLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sign Up Username and Password.
+        /// </summary>
+        public static string SignUpUserNameAndPassword {
+            get {
+                return ResourceManager.GetString("SignUpUserNameAndPassword", resourceCulture);
             }
         }
         

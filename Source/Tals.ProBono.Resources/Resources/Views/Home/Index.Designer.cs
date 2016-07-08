@@ -178,69 +178,6 @@ namespace Tals.ProBono.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Name of your first pet?.
-        /// </summary>
-        public static string SecurityQuestion1 {
-            get {
-                return ResourceManager.GetString("SecurityQuestion1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to High school mascot?.
-        /// </summary>
-        public static string SecurityQuestion2 {
-            get {
-                return ResourceManager.GetString("SecurityQuestion2", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Month you were born in?.
-        /// </summary>
-        public static string SecurityQuestion3 {
-            get {
-                return ResourceManager.GetString("SecurityQuestion3", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Favorite color?.
-        /// </summary>
-        public static string SecurityQuestion4 {
-            get {
-                return ResourceManager.GetString("SecurityQuestion4", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to City you were born in?.
-        /// </summary>
-        public static string SecurityQuestion5 {
-            get {
-                return ResourceManager.GetString("SecurityQuestion5", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Best man/maid of honor at your wedding?.
-        /// </summary>
-        public static string SecurityQuestion6 {
-            get {
-                return ResourceManager.GetString("SecurityQuestion6", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to The Security Answer cannot be blank.
-        /// </summary>
-        public static string SecurityQuestionBlankError {
-            get {
-                return ResourceManager.GetString("SecurityQuestionBlankError", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Welcome to {{SiteName}}!.
         /// </summary>
         public static string WelcomeMessage {

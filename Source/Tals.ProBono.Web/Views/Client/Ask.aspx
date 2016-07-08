@@ -1,19 +1,20 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Client.Master" Inherits="System.Web.Mvc.ViewPage<Tals.ProBono.Domain.Entities.Question>" %>
+<%@ Import Namespace="Tals.ProBono.Resources" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-    Ask Question
+    <%=Ask.AskQuestion %>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-    <h2>Please ask your question below and click "Send":</h2>
+    <h2><%=Ask.Instructions %></h2>
     
     <% using (Html.BeginForm()) {%>
-        <%: Html.ValidationSummary("Please correct the errors shown below:") %>
+        <%: Html.ValidationSummary(Messages.PleaseCorrectErrorBelow) %>
         <fieldset>
-            <legend>New Question</legend>
+            <legend><%=Ask.NewQuestion %></legend>
                         <div class="editor-label">
-               <span>Kind of Problem</span>
+               <span><%=Ask.KindOfProblem %></span>
             </div>
             <div class="editor-field">
                 <table>
@@ -22,14 +23,14 @@
                              <%: Html.ValidationMessageFor(model => model.CategoryId) %>
                         </td>
                          <td width="70%">     
-                            <p>If you do not know which category your legal issue is in, select "Other".</p>
-                            <p>To learn more about where your legal issue may fit or to receive general information about the law, visit <a href="http://washingtonlawhelp.org" target="_blank">washingtonlawhelp.org</a></p>   
+                            <p><%=Ask.KindHelp %></p>
+                            <p><%=Ask.KindMoreInfo.Replace("{{SiteLink}}","<a href=\"http://washingtonlawhelp.org\" target=\"_blank\">washingtonlawhelp.org</a>") %></p>   
                         </td>
                     </tr>
                 </table>
             </div>
             <div class="editor-label">
-                <span>What is your question about?</span>
+                <span><%=Ask.AboutQuestion %></span>
             </div>
             <div class="editor-field">
                 <%: Html.TextBoxFor(model => model.Subject) %>
@@ -37,7 +38,7 @@
             </div>
 
             <div class="editor-label">
-                <span>If you have a court date, enter it here. <strong>You might not get an answer to your question before your court date.</strong></span>
+                <span><%=Ask.CourtDateQuestion %> <strong><%=Ask.CourtDateMessage %></strong></span>
             </div>
 
             <div class="editor-field">
@@ -45,8 +46,7 @@
             </div>
 
             <div class="editor-label">
-                <span>What is the name of the person or organization causing your legal problem?</span>
-                <span>If you don't know, just leave it blank.</span>
+                <span><%=Ask.NameQuestion %></span>
             </div>
 
             <div class="editor-field">
@@ -54,7 +54,7 @@
             </div>
 
             <div class="editor-label">
-                <span>If this question is about an open legal case, what county is your case in? (leave blank if you do not have an open legal case)</span>
+                <span><%=Ask.CountyQuestion %></span>
             </div>
 
             <div class="editor-field">
@@ -63,7 +63,7 @@
             </div>
             
             <div class="editor-label">
-                <span>Type your question here:</span>
+                <span><%=Ask.QuestionLabel %></span>
             </div>
             <div class="editor-field">
                 <%: Html.TextAreaFor(model => model.Body, 20, 80, new {@class = "bbcode"}) %>
@@ -71,15 +71,15 @@
             </div>
             
             <p>
-                <%: Html.ActionLink("Cancel", "Questions", "Client", null, new {@class = "ImageLink"}) %>
-                <input type="submit" value="Send" class="ImageLink" />
+                <%: Html.ActionLink(Common.CancelButton, "Questions", "Client", null, new {@class = "ImageLink"}) %>
+                <input type="submit" value="<%=Common.SendButton %>" class="ImageLink" />
             </p>
         </fieldset>
 
     <% } %>
 
     <div>
-        <%: Html.ActionLink("Back to List", "Index") %>
+        <%: Html.ActionLink(Common.BackToList, "Index") %>
     </div>
 
 </asp:Content>

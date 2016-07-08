@@ -61,6 +61,15 @@ namespace Tals.ProBono.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Change Password.
+        /// </summary>
+        public static string ChangePassword {
+            get {
+                return ResourceManager.GetString("ChangePassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to If you have problems navigating the site, or are experiencing problems with the site, you may contact us at {{EmailLink}}. This email address is for technical questions or problems only. Legal questions will not be answered..
         /// </summary>
         public static string HelpMessage {
@@ -102,6 +111,24 @@ namespace Tals.ProBono.Resources {
         public static string OtherPlacesTitle {
             get {
                 return ResourceManager.GetString("OtherPlacesTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sign In.
+        /// </summary>
+        public static string SignIn {
+            get {
+                return ResourceManager.GetString("SignIn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sign Out.
+        /// </summary>
+        public static string SignOut {
+            get {
+                return ResourceManager.GetString("SignOut", resourceCulture);
             }
         }
     }

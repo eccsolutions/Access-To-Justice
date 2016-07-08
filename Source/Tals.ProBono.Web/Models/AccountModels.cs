@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Globalization;
@@ -9,6 +8,7 @@ using System.Web.Mvc;
 using System.Web.Security;
 using Tals.ProBono.Domain.Constants;
 using Tals.ProBono.Domain.Services;
+using Tals.ProBono.Resources;
 using Tals.ProBono.Web.Helpers;
 
 namespace Tals.ProBono.Web.Models
@@ -58,51 +58,51 @@ namespace Tals.ProBono.Web.Models
         public bool RememberMe { get; set; }
     }
 
-    [PropertiesMustMatch("Password", "ConfirmPassword", ErrorMessage = "The password and confirmation password do not match.")]
+    [PropertiesMustMatch("Password", "ConfirmPassword", ErrorMessageResourceName = "PasswordNoMatch", ErrorMessageResourceType = typeof(Messages))]
     public class SignUpModel
     {
-        [Required]
-        [DisplayName("First Name")]
+        [Required(ErrorMessageResourceName = "FieldRequired", ErrorMessageResourceType = typeof(Messages))]
+        [Display(Name="FirstNameLabel", ResourceType = typeof(Common))]
         public string FirstName { get; set; }
 
-        [Required]
-        [DisplayName("Last Name")]
+        [Required(ErrorMessageResourceName = "FieldRequired", ErrorMessageResourceType = typeof(Messages))]
+        [Display(Name = "LastNameLabel", ResourceType = typeof(Common))]
         public string LastName { get; set; }
 
-        [DisplayName("Middle Initial")]
+        [Display(Name = "MiddleInitialLabel", ResourceType = typeof(Common))]
         public string MiddleInitial { get; set; }
 
         private string _userName;
 
-        [Required]
-        [DisplayName("User name")]
+        [Required(ErrorMessageResourceName = "FieldRequired", ErrorMessageResourceType = typeof(Messages))]
+        [Display(Name = "UserNameLabel", ResourceType = typeof(Common))]
         public string UserName
         {
             get { return _userName; }
             set { _userName = value.ToLower(); }
         }
 
-        [Required]
+        [Required(ErrorMessageResourceName = "FieldRequired", ErrorMessageResourceType = typeof(Messages))]
         [ValidatePasswordLength]
         [DataType(DataType.Password)]
-        [DisplayName("Password")]
+        [Display(Name = "PasswordLabel", ResourceType = typeof(Common))]
         public string Password { get; set; }
 
-        [Required]
+        [Required(ErrorMessageResourceName = "FieldRequired", ErrorMessageResourceType = typeof(Messages))]
         [DataType(DataType.Password)]
-        [DisplayName("Confirm password")]
+        [Display(Name = "ConfirmPasswordLabel", ResourceType = typeof(SignUp))]
         public string ConfirmPassword { get; set; }
 
-        [Required]
-        [DisplayName("County")]
+        [Required(ErrorMessageResourceName = "FieldRequired", ErrorMessageResourceType = typeof(Messages))]
+        [Display(Name = "CountyLabel", ResourceType = typeof(SignUp))]
         public int County { get; set; }
 
-        [Required]
-        [DisplayName("Security Question")]
+        [Required(ErrorMessageResourceName = "FieldRequired", ErrorMessageResourceType = typeof(Messages))]
+        [Display(Name = "SecurityQuestionLabel", ResourceType = typeof(SignUp))]
         public string SecurityQuestion { get; set; }
 
-        [Required]
-        [DisplayName("Security Question Answer")]
+        [Required(ErrorMessageResourceName = "FieldRequired", ErrorMessageResourceType = typeof(Messages))]
+        [Display(Name = "SecurityQuestionAnswerLabel", ResourceType = typeof(SignUp))]
         public string SecurityQuestionAnswer { get; set; }
 
         public SelectList SecurityQuestions { get; set; }
@@ -110,12 +110,12 @@ namespace Tals.ProBono.Web.Models
         public SelectList Counties { get; set; }
     }
 
-    [PropertiesMustMatch("Password", "ConfirmPassword", ErrorMessage = "The password and confirmation password do not match.")]
+    [PropertiesMustMatch("Password", "ConfirmPassword", ErrorMessageResourceName = "PasswordNoMatch", ErrorMessageResourceType = typeof(Messages))]
     public class SignUpClientModel : SignUpModel
     {
         [DataType(DataType.EmailAddress)]
-        [DisplayName("Email address")]
-        [Email(ErrorMessage = "The email address entered is not valid.")]
+        [Display(Name="EmailAddressLabel", ResourceType = typeof(Common))]
+        [Email(ErrorMessageResourceName = "EmailInvalid", ErrorMessageResourceType = typeof(Messages))]
         public string Email { get; set; }
     }
 

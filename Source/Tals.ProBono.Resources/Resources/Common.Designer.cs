@@ -22,14 +22,14 @@ namespace Tals.ProBono.Resources {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class Messages {
+    public class Common {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Messages() {
+        internal Common() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace Tals.ProBono.Resources {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Tals.ProBono.Resources.Resources.Messages", typeof(Messages).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Tals.ProBono.Resources.Resources.Common", typeof(Common).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,74 +61,110 @@ namespace Tals.ProBono.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Account creation was unsuccessful. Please correct the errors and try again..
+        ///   Looks up a localized string similar to Back to List.
         /// </summary>
-        public static string AccountCreationFailed {
+        public static string BackToList {
             get {
-                return ResourceManager.GetString("AccountCreationFailed", resourceCulture);
+                return ResourceManager.GetString("BackToList", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Age should be between 1 and 999.
+        ///   Looks up a localized string similar to Cancel.
         /// </summary>
-        public static string AgeRangeError {
+        public static string CancelButton {
             get {
-                return ResourceManager.GetString("AgeRangeError", resourceCulture);
+                return ResourceManager.GetString("CancelButton", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Email Address is already in use by another user.
+        ///   Looks up a localized string similar to Email Address.
         /// </summary>
-        public static string EmailInUse {
+        public static string EmailAddressLabel {
             get {
-                return ResourceManager.GetString("EmailInUse", resourceCulture);
+                return ResourceManager.GetString("EmailAddressLabel", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The email address entered is not valid..
+        ///   Looks up a localized string similar to First Name.
         /// </summary>
-        public static string EmailInvalid {
+        public static string FirstNameLabel {
             get {
-                return ResourceManager.GetString("EmailInvalid", resourceCulture);
+                return ResourceManager.GetString("FirstNameLabel", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You must enter at least 1.
+        ///   Looks up a localized string similar to Last Name.
         /// </summary>
-        public static string EnterAtLeastOne {
+        public static string LastNameLabel {
             get {
-                return ResourceManager.GetString("EnterAtLeastOne", resourceCulture);
+                return ResourceManager.GetString("LastNameLabel", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {0} is required.
+        ///   Looks up a localized string similar to Middle Initial.
         /// </summary>
-        public static string FieldRequired {
+        public static string MiddleInitialLabel {
             get {
-                return ResourceManager.GetString("FieldRequired", resourceCulture);
+                return ResourceManager.GetString("MiddleInitialLabel", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The password and confirmation password do not match..
+        ///   Looks up a localized string similar to NOTE.
         /// </summary>
-        public static string PasswordNoMatch {
+        public static string Note {
             get {
-                return ResourceManager.GetString("PasswordNoMatch", resourceCulture);
+                return ResourceManager.GetString("Note", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please correct the errors below:.
+        ///   Looks up a localized string similar to optional.
         /// </summary>
-        public static string PleaseCorrectErrorBelow {
+        public static string Optional {
             get {
-                return ResourceManager.GetString("PleaseCorrectErrorBelow", resourceCulture);
+                return ResourceManager.GetString("Optional", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Password.
+        /// </summary>
+        public static string PasswordLabel {
+            get {
+                return ResourceManager.GetString("PasswordLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Send.
+        /// </summary>
+        public static string SendButton {
+            get {
+                return ResourceManager.GetString("SendButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Username.
+        /// </summary>
+        public static string UserNameLabel {
+            get {
+                return ResourceManager.GetString("UserNameLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Welcome {{UserName}}!.
+        /// </summary>
+        public static string WelcomeUser {
+            get {
+                return ResourceManager.GetString("WelcomeUser", resourceCulture);
             }
         }
     }

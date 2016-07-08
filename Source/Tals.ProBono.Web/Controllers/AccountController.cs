@@ -4,11 +4,11 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
-using Tals.ProBono.Resources;
 using Tals.ProBono.Domain.Constants;
 using Tals.ProBono.Domain.Entities;
 using Tals.ProBono.Domain.Filters;
 using Tals.ProBono.Domain.Services;
+using Tals.ProBono.Resources;
 using Tals.ProBono.Web.Infrastructure;
 using Tals.ProBono.Web.Models;
 using Tals.ProBono.Web.Models.Shared;
@@ -103,7 +103,7 @@ namespace Tals.ProBono.Web.Controllers
 
             if (!profileAnswersAreValid())
             {
-                this.SetTempMessage(MessageDto.CreateWarningMessage("Your session has expired, please try signing up again"));
+                this.SetTempMessage(MessageDto.CreateWarningMessage(Resources.SignUp.SessionExpired));
                 return RedirectToAction("Index", "Rules");
             }
 
@@ -127,7 +127,7 @@ namespace Tals.ProBono.Web.Controllers
 
             if (!profileAnswersAreValid())
             {
-                this.SetTempMessage(MessageDto.CreateWarningMessage("Your session has expired, please try signing up again"));
+                this.SetTempMessage(MessageDto.CreateWarningMessage(Resources.SignUp.SessionExpired));
                 return RedirectToAction("Index", "Rules");
             }
 
@@ -136,7 +136,7 @@ namespace Tals.ProBono.Web.Controllers
                 //EDG: Check if  e-mail is unique
                 if (!String.IsNullOrWhiteSpace(model.Email) && Membership.FindUsersByEmail(model.Email).Count > 0)
                 {
-                    ModelState.AddModelError("Email", "E-mail is already in use by another user");
+                    ModelState.AddModelError("Email", Messages.EmailInUse);
                 }
                 else
                 {
@@ -238,7 +238,7 @@ namespace Tals.ProBono.Web.Controllers
                 //EDG: Check if attorney e-mail is unique
                 if (Membership.FindUsersByEmail(model.Email).Count > 0)
                 {
-                    ModelState.AddModelError("Email", "E-mail is already in use by another user");
+                    ModelState.AddModelError("Email", Messages.EmailInUse);
                 }
                 else
                 {
@@ -444,17 +444,17 @@ namespace Tals.ProBono.Web.Controllers
             {
                 var questions = new List<SelectListItem>() {
                                                                new SelectListItem()
-                                                               {Text = Index.SecurityQuestion1, Value = Index.SecurityQuestion1},
+                                                               {Text = Resources.SignUp.SecurityQuestion1, Value = Resources.SignUp.SecurityQuestion1},
                                                                new SelectListItem()
-                                                               {Text = Index.SecurityQuestion2, Value = Index.SecurityQuestion2},
+                                                               {Text = Resources.SignUp.SecurityQuestion2, Value = Resources.SignUp.SecurityQuestion2},
                                                                new SelectListItem()
-                                                               {Text = Index.SecurityQuestion3, Value = Index.SecurityQuestion3},
+                                                               {Text = Resources.SignUp.SecurityQuestion3, Value = Resources.SignUp.SecurityQuestion3},
                                                                new SelectListItem()
-                                                               {Text = Index.SecurityQuestion4, Value = Index.SecurityQuestion4},
+                                                               {Text = Resources.SignUp.SecurityQuestion4, Value = Resources.SignUp.SecurityQuestion4},
                                                                new SelectListItem()
-                                                               {Text = Index.SecurityQuestion5, Value = Index.SecurityQuestion5},
+                                                               {Text = Resources.SignUp.SecurityQuestion5, Value = Resources.SignUp.SecurityQuestion5},
                                                                new SelectListItem()
-                                                               {Text = Index.SecurityQuestion6, Value = Index.SecurityQuestion6}
+                                                               {Text = Resources.SignUp.SecurityQuestion6, Value = Resources.SignUp.SecurityQuestion6}
                                                            };
                 return questions;
             }
