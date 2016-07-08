@@ -132,6 +132,21 @@
   <data name="LinkName3" xml:space="preserve">
     <value>Información legal en línea</value>
   </data>
+  <data name="MenuAbout" xml:space="preserve">
+    <value>About - TRANSLATE</value>
+  </data>
+  <data name="MenuHelp" xml:space="preserve">
+    <value>Ayuda</value>
+  </data>
+  <data name="MenuHome" xml:space="preserve">
+    <value>Inicio</value>
+  </data>
+  <data name="MenuMyProfile" xml:space="preserve">
+    <value>Mi Perfil</value>
+  </data>
+  <data name="MenuMyQuestions" xml:space="preserve">
+    <value>Mis Preguntas</value>
+  </data>
   <data name="OtherPlacesTitle" xml:space="preserve">
     <value>Otros lugares donde puede obtener ayuda</value>
   </data>

@@ -1,5 +1,6 @@
 <%@ Master Language="C#" MasterPageFile="Site.Master" Inherits="System.Web.Mvc.ViewMasterPage" %>
 <%@ Import Namespace="Tals.ProBono.Domain.Services" %>
+<%@ Import Namespace="Tals.ProBono.Resources" %>
 <asp:Content runat="server" ID="Title" ContentPlaceHolderID="TitleContent">
     <asp:ContentPlaceHolder ID="TitleContent" runat="server" />
 </asp:Content>
@@ -20,8 +21,8 @@
 <asp:Content runat="server" ID="TabMenu" ContentPlaceHolderID="TabMenuContent">
     <asp:ContentPlaceHolder runat="server" ID="TabMenuContent">
     <ul id="tabmenu">
-        <%: Html.RoleActionMenuLink("My Questions", "Questions", "Client", UserRoles.BasicUser)%>
-        <%: Html.RoleActionMenuLink("My Profile", "Profile", "User", UserRoles.BasicUser) %>
+        <%: Html.RoleActionMenuLink(SiteMaster.MenuMyQuestions, "Questions", "Client", UserRoles.BasicUser)%>
+        <%: Html.RoleActionMenuLink(SiteMaster.MenuMyProfile, "Profile", "User", UserRoles.BasicUser) %>
     </ul>
     </asp:ContentPlaceHolder>
 </asp:Content>
