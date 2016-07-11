@@ -397,13 +397,14 @@ namespace Tals.ProBono.Web.Controllers
             lang = CultureHelper.GetValidCulture(lang);
 
             // Save culture in a cookie
-            HttpCookie cookie = Request.Cookies["_culture"];
+            var cookie = Request.Cookies["_culture"];
             if (cookie != null)
                 cookie.Value = lang;
             else
             {
                 cookie = new HttpCookie("_culture") { HttpOnly = false, Value = lang, Expires = DateTime.Now.AddYears(1) };
             }
+
             Response.Cookies.Add(cookie);
 
             return Redirect(returnUrl);

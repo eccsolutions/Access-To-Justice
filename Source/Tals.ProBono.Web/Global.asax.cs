@@ -1,6 +1,4 @@
-﻿using System;
-using System.Globalization;
-using System.Web;
+﻿using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 using Tals.ProBono.Web.Infrastructure;
@@ -109,18 +107,6 @@ namespace Tals.ProBono.Web
             ControllerBuilder.Current.SetControllerFactory(new NinjectControllerFactory());
             ModelBinders.Binders.Add(typeof (ReturnUrl), new ReturnUrlModelBinder());
             MembershipConfig.Config();
-        }
-
-        protected void Application_AcquireRequestState(object sender, EventArgs e)
-        {
-            HttpCookie cookie = Request.Cookies["_culture"] ??
-                                new HttpCookie("_culture") { HttpOnly = false, Value = "en", Expires = DateTime.Now.AddYears(1) };
-            Response.Cookies.Add(cookie);
-
-            var lang = cookie.Value;
-            var ci = new CultureInfo(lang);
-            System.Threading.Thread.CurrentThread.CurrentUICulture = ci;
-            System.Threading.Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture(ci.Name);
         }
 
         //void ErrorLog_Filtering(object sender, ExceptionFilterEventArgs args)
