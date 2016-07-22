@@ -9,7 +9,7 @@
     <% Html.RenderPartial("ColorCoding"); %>
 
     <div class="categorybanner">
-        <h2>Question List</h2>
+        <h2>Question List - <%: Html.ActionLink("Download", "ListDump") %> the entire list.</h2>
     </div>
     <% Html.RenderPartial("QuestionListView");%>
 </asp:Content>

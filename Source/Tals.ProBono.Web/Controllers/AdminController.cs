@@ -27,8 +27,9 @@ namespace Tals.ProBono.Web.Controllers
             _emailService = emailService;
             _unitOfWork = unitOfWork;
         }
-        
-        public ViewResult List(string category = null, string status = null, bool? taken = null, int page = 1) {
+
+        public ViewResult List(string category = null, string status = null, bool? taken = null, int page = 1)
+        {
             var pageIndex = page - 1;
             var questions = _unitOfWork.QuestionRepository.Get();
             if (category != null)
@@ -48,6 +49,30 @@ namespace Tals.ProBono.Web.Controllers
 
             return View(model);
         }
+
+        public FileContentResult ListDump()
+        {
+            var questions = _unitOfWork.QuestionRepository.Get();
+
+            string lineSeperator = "\r\n";
+            string[] questionColumns = new[] { "CreatedDate", "TakenDate", "TakenBy", "ClosedDate", "ClosedBy" };
+
+            string result = string.Join("\t", questionColumns) + ",County,Category,LastName" + lineSeperator;
+            result = result + string.Join(lineSeperator,
+                questions.ToList().Select(
+                    question => string.Join("\t", new String[] {
+                        getObjectColumns(question, questionColumns ),
+                        question.County.CountyName,
+                        question.Category.CategoryName,
+                        UserProfile.GetUserProfile(question.CreatedBy).LastName
+                    } )
+                )
+            );
+
+            //return File(System.Text.Encoding.UTF8.GetBytes(result), "text/tab-separated-values", (role == null ? "all_users" : role) + ".txt");
+            return File(System.Text.Encoding.UTF8.GetBytes(result), "application/vnd.ms-excel");
+        }
+
 
         [HttpGet]
         public ActionResult ConfirmDenial(string username)
@@ -128,6 +153,51 @@ namespace Tals.ProBono.Web.Controllers
             return View(model);
         }
 
+        public FileContentResult AccountListDump(string role)
+        {
+            var usersInRole = role != null ? Roles.GetUsersInRole(role) : null;
+
+            var users = usersInRole != null
+                            ? Membership.GetAllUsers().Cast<MembershipUser>().Where(u => usersInRole.Contains(u.UserName))
+                            : Membership.GetAllUsers().Cast<MembershipUser>();
+            string lineSeperator = "\r\n";
+            string[] membershipColumns = new[] { "UserName", "Email", "CreationDate", "LastLoginDate" };
+            string[] profileColumns = new[] { "FirstName","LastName","County","RegistrationDate" };
+            //IsApproved
+            //IsLockedOut
+            //LastActivityDate
+            //LastLockoutDate
+            //LastPasswordChangedDate
+
+            string result = "Roles\t" + string.Join("\t", membershipColumns) + "\t" + string.Join("\t", profileColumns) + lineSeperator;
+            result = result + string.Join(lineSeperator, 
+                users.Select(
+                    user => string.Join("|", Roles.GetRolesForUser(user.UserName)) + "\t" + getObjectColumns(user, membershipColumns) + "\t" + getObjectColumns( UserProfile.GetUserProfile(user.UserName), profileColumns )
+                )
+            );
+
+            //return File(System.Text.Encoding.UTF8.GetBytes(result), "text/tab-separated-values", (role == null ? "all_users" : role) + ".txt");
+            return File(System.Text.Encoding.UTF8.GetBytes(result), "application/vnd.ms-excel");
+        }
+
+        public static string getObjectColumns( object src, string[] props )
+        {
+            return string.Join("\t", props.Select(prop => GetPropValue(src, prop)) );
+        }
+
+        public static string GetPropValue(object src, string propName)
+        {
+            object value = src.GetType().GetProperty(propName).GetValue(src);
+            if( value == null )
+            {
+                return "";
+            }
+            else
+            {
+                return value.ToString();
+            }
+        }
+
         public ActionResult Edit(int id)
         {
             var question = _unitOfWork.QuestionRepository.Get().WithId(id);
@@ -137,6 +207,17 @@ namespace Tals.ProBono.Web.Controllers
 
             var model = EditViewModel.CreateViewModel(question, posts, categories, users);
             return View(model);
+        }
+
+        public ActionResult Delete(int id)
+        {
+            foreach( Post post in _unitOfWork.PostRepository.Get().WithQuestionId(id) ) {
+                _unitOfWork.PostRepository.Delete(post);
+            }
+            var question = _unitOfWork.QuestionRepository.Get().WithId(id);
+            _unitOfWork.QuestionRepository.Delete(question);
+            _unitOfWork.Save();
+            return View();
         }
 
         //

@@ -11,7 +11,7 @@
 
     <div class="horizontalMenu"><% Html.RenderAction("RolesMenu", "Nav"); %></div>
     <br /><br />
-    <p style="clear:both;">Click on the Profile link for a client in order to access that client's profile.</p>
+    <p style="clear:both;">Click on the Profile link for a client in order to access that client's profile.  Or <%: Html.ActionLink("Download", "AccountListDump", new { role= ViewBag.Role }, null) %> the entire list.</p>
     <div>
         <% using(Ajax.BeginForm("SearchAccounts", "Admin", new AjaxOptions {UpdateTargetId = "accounts"}, new {id = "searchForm"})) {%>
             Search: <%: Html.AutoCompleteTextBox("searchTextBox", "searchText", new {style = "width:450px;"}) %>
